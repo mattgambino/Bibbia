@@ -1,0 +1,25 @@
+# Dipendenze e build
+node_modules
+dist
+dist-ssr
+*.local
+
+# Sorgenti scaricate per gli script di import (TSV STEPBible ecc.)
+scripts/sources/*
+!scripts/sources/.gitkeep
+
+# Log
+logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
