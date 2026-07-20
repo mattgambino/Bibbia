@@ -1,0 +1,50 @@
+[
+  {
+    "id": "nota-finta-01",
+    "target": { "tipo": "versetto", "ref": "gen.1.1" },
+    "tipo": "storica",
+    "titolo": "Nota finta 1 (ROTTURA 13: commentatore su nota storica)",
+    "testo": "Testo finto di prova.",
+    "confidence": "majority",
+    "commentatore": "Commentatore Finto Fuori Posto",
+    "sefaria_ref": null,
+    "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }],
+    "da_verificare": false
+  },
+  {
+    "id": "nota-finta-02",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.1.1", "a": "gen.1.2" } },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Nota finta 2 (valida)",
+    "testo": "Testo finto di prova.",
+    "confidence": "consensus",
+    "commentatore": "Commentatore Finto",
+    "sefaria_ref": "Finto on Finto 1:1:1",
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "nota-finta-03",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.1.2", "a": "gen.1.1" } },
+    "tipo": "filologica",
+    "titolo": "Nota finta 3 (ROTTURA 14: pericope invertita)",
+    "testo": "Testo finto di prova.",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }],
+    "da_verificare": false
+  },
+  {
+    "id": "nota-finta-04",
+    "target": { "tipo": "versetto", "ref": "gen.1.1" },
+    "tipo": "geografica",
+    "titolo": "Nota finta 4 (ROTTURA 15: senza fonti ma da_verificare false)",
+    "testo": "Testo finto di prova.",
+    "confidence": "speculative",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [],
+    "da_verificare": false
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "luogo-finto",
+    "tipnr_id": null,
+    "nomi": { "he": "finto-he", "translit": "finto", "it": "Luogo Finto" },
+    "status": "disputed",
+    "candidati": [
+      {
+        "id": "luogo-finto.candidato-a",
+        "etichetta": "Candidato finto A",
+        "lat": 0,
+        "lon": 0,
+        "pro": ["motivo finto a favore"],
+        "contro": [],
+        "peso_openbible": 0.5,
+        "fonti": [{ "tipo": "dataset", "titolo": "Dataset finto di prova" }]
+      }
+    ],
+    "riferimenti": ["gen.1.1"],
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "luogo-finto-rotto",
+    "tipnr_id": null,
+    "nomi": { "he": "finto-he-rotto", "translit": "finto-rotto", "it": "Luogo Finto Rotto" },
+    "status": "certissimo",
+    "candidati": [],
+    "riferimenti": ["gen.1.2"],
+    "fonti": [],
+    "da_verificare": true
+  }
+]

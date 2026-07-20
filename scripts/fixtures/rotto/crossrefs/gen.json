@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "fonte": "FIXTURE — dati finti di prova, nessuna fonte reale",
+    "licenza": "nessuna (dati finti)",
+    "generato": "2026-07-19",
+    "script": "fixture scritta a mano (nessuno script)"
+  },
+  "riferimenti": [
+    { "da": "gen.1.1", "a": "psa.1.1", "interno": true, "tipo": null, "curato": false },
+    { "da": "gen.1.3", "a": "1sa.3.1", "interno": false, "tipo": "parallelo_tematico", "curato": true }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "persona-finta-a",
+    "tipnr_id": "FintoA",
+    "nomi": { "he": "finto-he-a", "translit": "finto-a", "it": "Persona Finta A" },
+    "relazioni": { "padre": null, "madre": null, "coniugi": ["persona-finta-c"], "figli": ["persona-finta-b"] },
+    "riferimenti": ["gen.1.1"],
+    "dati_narrativi": { "eta_totale": 999, "eta_al_primo_figlio": null, "versetti": ["gen.1.2"] },
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "persona-finta-b",
+    "tipnr_id": null,
+    "nomi": { "he": "finto-he-b", "translit": "finto-b", "it": "Persona Finta B" },
+    "relazioni": { "padre": "persona-finta-a", "madre": null, "coniugi": [], "figli": [] },
+    "riferimenti": ["gen.1.3"],
+    "dati_narrativi": null,
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "persona-finta-c",
+    "tipnr_id": null,
+    "nomi": { "he": "finto-he-c", "translit": "finto-c", "it": "Persona Finta C" },
+    "relazioni": { "padre": null, "madre": null, "coniugi": ["persona-finta-a"], "figli": [] },
+    "riferimenti": ["gen.2.1"],
+    "dati_narrativi": null,
+    "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }],
+    "da_verificare": false
+  }
+]

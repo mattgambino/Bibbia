@@ -1,0 +1,49 @@
+[
+  {
+    "id": "evento-finto-1",
+    "titolo": "Evento finto 1",
+    "range": { "da": "gen.1.1", "a": "gen.1.1" },
+    "persone": ["persona-finta-a"],
+    "luoghi": ["luogo-finto"],
+    "tempo_narrato": {
+      "am": { "da": 1, "a": 2 },
+      "riferimenti_interni": ["gen.1.1"],
+      "nota": "Nota finta sulla cronologia interna."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "speculative",
+      "sintesi": "Sintesi finta di prova.",
+      "fonti": []
+    },
+    "composizione": {
+      "range": { "da": -600, "a": -500 },
+      "posizioni": [
+        {
+          "etichetta": "Posizione finta",
+          "sintesi": "Sintesi finta di prova.",
+          "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }]
+        }
+      ]
+    },
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "evento-finto-2",
+    "titolo": "Evento finto 2 (ROTTURE 11 e 12: buco su gen.1.2 e range di composizione invertito)",
+    "range": { "da": "gen.1.3", "a": "gen.2.1" },
+    "persone": ["persona-finta-b"],
+    "luoghi": [],
+    "tempo_narrato": { "am": null, "riferimenti_interni": [], "nota": null },
+    "tempo_storico": {
+      "ancoraggio": { "da": -900, "a": -800 },
+      "confidence": "disputed",
+      "sintesi": "Sintesi finta di prova.",
+      "fonti": [{ "tipo": "url", "titolo": "Pagina finta di prova", "url": "https://example.com/finto" }]
+    },
+    "composizione": { "range": { "da": -450, "a": -550 }, "posizioni": [] },
+    "fonti": [],
+    "da_verificare": true
+  }
+]

@@ -13,6 +13,9 @@ logs
 *.log
 npm-debug.log*
 
+# Claude Code: impostazioni locali (i permessi restano fuori dal repo)
+.claude/settings.local.json
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

@@ -14,10 +14,11 @@ Regole di esecuzione:
   *Fatto quando:* `npm run dev` mostra la shell vuota dell'app e la struttura cartelle esiste (con `.gitkeep` dove serve), `.gitignore` copre `scripts/sources/` e `node_modules`.
 - [x] **F0.2 Schemi Zod.** In `src/tipi/`: tutti gli schemi di SCHEMI-DATI §2, inclusi i tipi condivisi (`Fonte`, `Range`, enum confidenza, target polimorfo delle note) e i tipi derivati con `z.infer`.
   *Fatto quando:* compilazione pulita e tipi esportati; nessuna definizione di tipo duplicata a mano.
-- [ ] **F0.3 Validatore.** `scripts/valida.ts`: valida ogni JSON presente in `public/data/` e `bootstrap/` contro gli schemi + controlli incrociati (riferimenti esistenti; reciprocità relazioni familiari; copertura contigua delle pericopi sul range curato; coerenza fonti ↔ `da_verificare`; chiavi traduzioni risolvibili su id TM). Output leggibile: file, record, errore.
-  *Fatto quando:* `npm run valida` gira su un mini-dataset di prova (valido e volutamente rotto) con esiti corretti.
-- [ ] **F0.4 Loader + stub morfologia.** `src/dati/`: caricamento JSON con cache per libro e hook React; `src/lib/morfologia.ts` con la decodifica di una prima manciata di codici comuni e fallback "codice non decodificato: <sigla>".
+- [x] **F0.3 Validatore.** `scripts/valida.ts`: valida ogni JSON presente in `public/data/` e `bootstrap/` (default; altre directory passabili come argomento) contro gli schemi + controlli incrociati (riferimenti esistenti; reciprocità relazioni familiari; copertura contigua delle pericopi sul range curato; coerenza fonti ↔ `da_verificare`; chiavi traduzioni risolvibili su id TM; `commentatore` e `sefaria_ref` valorizzati solo quando `tipo = "tradizione_ebraica"`; `da ≤ a` in `RangeAnni` e `RangeVersetti`, per i versetti stesso libro e confronto capitolo/versetto). Output leggibile: file, record, errore; exit code diverso da 0 in presenza di errori.
+  *Fatto quando:* `npm run valida` gira su un mini-dataset di prova (valido e volutamente rotto, in `scripts/fixtures/`, solo placeholder dichiaratamente finti) con esiti corretti.
+- [x] **F0.4 Loader + stub morfologia.** `src/dati/`: caricamento JSON con cache per libro e hook React; `src/lib/morfologia.ts` con la decodifica di una prima manciata di codici comuni e fallback "codice non decodificato: <sigla>".
   *Fatto quando:* l'app carica un `verses/gen.json` di prova e lo mostra in forma grezza.
+  *Nota:* i `verses/gen.json` e `words/gen.json` ora in `public/data/` sono copie delle fixture dichiaratamente finte di F0.3 (il `meta` lo dichiara): verranno sovrascritti dall'import TAHOT in F1.1.
 
 ## Fase 1 — Import e vista lettura
 

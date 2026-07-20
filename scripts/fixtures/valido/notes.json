@@ -1,0 +1,62 @@
+[
+  {
+    "id": "nota-finta-01",
+    "target": { "tipo": "versetto", "ref": "gen.1.1" },
+    "tipo": "filologica",
+    "titolo": "Nota finta 1",
+    "testo": "Testo finto di prova.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova", "autore": "Autore Finto", "anno": 2000 }],
+    "da_verificare": false
+  },
+  {
+    "id": "nota-finta-02",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.1.1", "a": "gen.1.2" } },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Nota finta 2",
+    "testo": "Testo finto di prova.",
+    "confidence": "consensus",
+    "commentatore": "Commentatore Finto",
+    "sefaria_ref": "Finto on Finto 1:1:1",
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "nota-finta-03",
+    "target": { "tipo": "parola", "ref": "gen.1.1.02" },
+    "tipo": "divergenza_traduttiva",
+    "titolo": "Nota finta 3",
+    "testo": "Testo finto di prova.",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "nota-finta-04",
+    "target": { "tipo": "luogo", "ref": "luogo-finto" },
+    "tipo": "geografica",
+    "titolo": "Nota finta 4",
+    "testo": "Testo finto di prova.",
+    "confidence": "speculative",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "nota-finta-05",
+    "target": { "tipo": "persona", "ref": "persona-finta-c" },
+    "tipo": "storica",
+    "titolo": "Nota finta 5",
+    "testo": "Testo finto di prova.",
+    "confidence": "symbolic",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [],
+    "da_verificare": true
+  }
+]

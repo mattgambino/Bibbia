@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "fonte": "FIXTURE — dati finti di prova, nessuna fonte reale",
+    "licenza": "nessuna (dati finti)",
+    "generato": "2026-07-19",
+    "script": "fixture scritta a mano (nessuno script)"
+  },
+  "parole": [
+    {
+      "id": "gen.1.1.01",
+      "verso": "gen.1.1",
+      "pos": 1,
+      "testo": "PAROLA-FINTA-1",
+      "translit": "parola-finta-1",
+      "morph": "XX/Finto",
+      "morfemi": [{ "strong": "H9999", "lemma": "LEMMA-FINTO-A", "glossa_en": "fake gloss A" }],
+      "ketiv": null,
+      "qere": null
+    },
+    {
+      "id": "gen.1.1.02",
+      "verso": "gen.1.1",
+      "pos": 2,
+      "testo": "PAROLA-FINTA-2",
+      "translit": "parola-finta-2",
+      "morph": "XX/Finto",
+      "morfemi": [{ "strong": "H7777", "lemma": "LEMMA-FINTO-B", "glossa_en": "fake gloss B" }],
+      "ketiv": null,
+      "qere": null
+    },
+    {
+      "id": "gen.1.2.01",
+      "verso": "gen.1.2",
+      "pos": 1,
+      "testo": "PAROLA-FINTA-3",
+      "translit": "parola-finta-3",
+      "morph": "XX/Finto",
+      "morfemi": [],
+      "ketiv": null,
+      "qere": null
+    },
+    {
+      "id": "gen.1.3.01",
+      "verso": "gen.1.3",
+      "pos": 9,
+      "testo": "PAROLA-FINTA-4 (ROTTURA 1: pos incoerente con l'id)",
+      "translit": "parola-finta-4",
+      "morph": "XX/Finto",
+      "morfemi": [],
+      "ketiv": null,
+      "qere": null
+    },
+    {
+      "id": "gen.2.1.01",
+      "verso": "gen.2.1",
+      "pos": 1,
+      "testo": "PAROLA-FINTA-5",
+      "translit": "parola-finta-5",
+      "morph": "XX/Finto",
+      "morfemi": [],
+      "ketiv": null,
+      "qere": null
+    }
+  ]
+}

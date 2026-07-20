@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "fonte": "FIXTURE — dati finti di prova, nessuna fonte reale",
+    "licenza": "nessuna (dati finti)",
+    "generato": "2026-07-19",
+    "script": "fixture scritta a mano (nessuno script)"
+  },
+  "lemmi": {
+    "H9999": {
+      "lemma": "LEMMA-FINTO-A",
+      "translit": "lemma-finto-a",
+      "glossa_en": "fake gloss A",
+      "occorrenze": ["gen.1.1.01", "gen.1.2.01"]
+    },
+    "H7777": {
+      "lemma": "LEMMA-FINTO-B",
+      "translit": "lemma-finto-b",
+      "glossa_en": "fake gloss B",
+      "occorrenze": ["gen.1.1.02"]
+    }
+  }
+}

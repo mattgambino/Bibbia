@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "modello": "modello-finto",
+    "dim": 3,
+    "normalizzati": false,
+    "testo_sorgente": "fixture finte di prova",
+    "generato": "2026-07-19"
+  },
+  "voci": [
+    { "tipo": "versetto", "ref": "gen.1.1", "v": [0.1, 0.2, 0.3] },
+    { "tipo": "nota", "ref": "nota-finta-01", "v": [0.0, -0.5, 0.5] }
+  ]
+}
