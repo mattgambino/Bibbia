@@ -10,7 +10,8 @@
 //     verificata sull'ordine dei versetti del file verses/<libro>.json);
 //   - coerenza fonti ↔ da_verificare: un record senza alcuna fonte (in tutti i suoi
 //     array `fonti`, anche annidati) non può avere da_verificare: false;
-//   - chiavi delle traduzioni risolvibili su id TM; traduzione "completa" senza buchi;
+//   - chiavi delle traduzioni risolvibili su id TM; traduzione "completa" senza buchi
+//     oltre a quelli dichiarati in meta.lacune (e ogni lacuna dichiarata dev'essere reale);
 //   - commentatore e sefaria_ref valorizzati solo quando tipo = "tradizione_ebraica";
 //   - da ≤ a in RangeAnni e RangeVersetti (per i versetti: stesso libro, confronto
 //     capitolo/versetto);
@@ -529,11 +530,21 @@ for (const { file, n } of fileNote) {
 for (const { file, t } of fileTraduzioni) {
   for (const chiave of Object.keys(t.testi))
     if (!versetti.has(chiave)) err(file, t.meta.id, `chiave non risolvibile su id TM: "${chiave}"`)
+  const lacune = new Set((t.meta.lacune ?? []).map((l) => l.id))
   if (t.meta.completa && versetti.size > 0) {
-    const mancanti = [...versetti].filter((id) => !(id in t.testi))
+    // Un buco è accettabile solo se dichiarato: così una perdita accidentale di
+    // versetti nel rimappaggio della versificazione resta un errore rosso.
+    const mancanti = [...versetti].filter((id) => !(id in t.testi) && !lacune.has(id))
     if (mancanti.length > 0)
-      err(file, t.meta.id, `dichiarata "completa" ma mancano ${mancanti.length} versetti TM (es. ${mancanti.slice(0, 3).join(', ')})`)
+      err(file, t.meta.id, `dichiarata "completa" ma mancano ${mancanti.length} versetti TM non dichiarati in meta.lacune (es. ${mancanti.slice(0, 3).join(', ')})`)
   }
+  // Simmetrico: una lacuna dichiarata ma coperta dal testo è una dichiarazione stantia.
+  for (const id of lacune) {
+    if (id in t.testi) err(file, t.meta.id, `lacuna dichiarata ma il versetto ha testo: "${id}"`)
+    else if (versetti.size > 0 && !versetti.has(id)) err(file, t.meta.id, `lacuna dichiarata su un id TM inesistente: "${id}"`)
+  }
+  if (!t.meta.completa && lacune.size > 0)
+    err(file, t.meta.id, 'meta.lacune ha senso solo con completa: true')
 }
 for (const radice of radici) {
   const manifesti = fileManifest.filter((x) => x.root === radice)

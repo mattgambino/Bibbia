@@ -227,7 +227,15 @@ File traduzione, uno per file. `luzzi` `[G]`; `letterale` `[C]`; gli slot person
 
 ```jsonc
 {
-  "meta": { "id": "luzzi", "nome": "Riveduta (Luzzi)", "anno": 1927, "lingua": "it", "licenza": "pubblico dominio", "completa": true },  // anno nullable
+  "meta": {
+    "id": "luzzi", "nome": "Riveduta (Luzzi)", "anno": 1927,       // anno nullable
+    "lingua": "it", "licenza": "pubblico dominio", "completa": true,
+    // I campi seguenti sono opzionali: presenti sulle traduzioni importate, assenti sulla letterale.
+    "fonti": [ { "tipo": "url", "titolo": "…", "url": "…" } ],     // provenienza reale del testo
+    "note": ["…"],                                                 // avvertenze sulla fonte, non claim di curation
+    "generato": "2026-07-21", "script": "import-luzzi v0.1",
+    "lacune": [ { "id": "num.25.19", "motivo": "…" } ]             // solo con completa: true
+  },
   "testi": {
     "gen.1.1": "…",
     "gen.1.2": "…"
@@ -239,6 +247,8 @@ Note di progetto:
 - Le chiavi sono **sempre** id TM, già rimappati via TVTMS in fase di import.
 - `letterale.json` ha `completa: false` e copre solo i capitoli curati. Le ambiguità reali della resa vanno in note (`filologica` o `divergenza_traduttiva`), mai dentro il testo: il testo della traduzione resta pulito.
 - `meta.anno` è nullable: per una traduzione senza un anno di pubblicazione univoco (es. la letterale, costruita in sessione) il campo è `null`.
+- `meta.fonti` usa lo stesso tipo `Fonte` del resto del dataset, così la provenienza di un testo importato si legge come ogni altro claim. `meta.note` porta le avvertenze sulla fonte che sopravvivono alle rigenerazioni (p.es. metadata a monte incoerenti).
+- `meta.lacune` dichiara i versetti TM che una traduzione `completa` non può coprire perché la sua versificazione d'origine non li distingue (due versetti TM fusi in uno solo). Il validatore accetta come buco **solo** ciò che è dichiarato qui, e rifiuta le dichiarazioni stantie (lacuna su un versetto che ha testo, o su un id TM inesistente): un versetto perso per errore nel rimappaggio resta un errore rosso. Nel Pentateuco l'unico caso con la Riveduta è `num.25.19`, che la versificazione KJV ingloba in Num 26:1.
 
 ### 2.8 `crossrefs/<libro>.json` — `[G]` (TSK), arricchibile in curation
 
@@ -365,6 +375,6 @@ Scala di confidenza e sua semantica; tre assi temporali mai fusi (tre strutture 
 ## 6. Rischi e verifiche rimandate alla fase di import
 
 - **Mapping colonne TAHOT/TIPNR**: da fissare sulla documentazione del repository quando si scrivono gli script. Gli schemi sopra non cambiano: cambia solo il codice di parsing.
-- **Edizione esatta della "Luzzi"**: la Riveduta risulta NT 1924 / Bibbia completa 1927 a seconda della fonte digitale (eBible, moduli CrossWire). Verificare edizione e provenienza scrivendo `import-luzzi.ts`; l'anno nel `meta` si fissa allora.
+- ~~**Edizione esatta della "Luzzi"**~~ — **risolto in F1.4**: fonte eBible.org `ita1927` / `itaRIV` (USFM, pubblico dominio), anno fissato a **1927**. I metadata di eBible contengono residui di copia dalla scheda Diodati (`abbreviationLocal "DO885"`, "The Diodati Bible was published in 1885"): l'avvertenza è registrata in `meta.note` di `luzzi.json`.
 - **Versificazione**: il rimappaggio TVTMS è il punto dove un errore silenzioso costerebbe caro (versetti agganciati al testo sbagliato). Il validatore include un controllo di completezza: ogni versetto TM del Pentateuco deve avere 0 o 1 testo per traduzione completa, mai buchi inattesi.
 - **Termini d'uso Sefaria** per l'eventuale caching locale: verifica in Fase 2, quando entrano le note `tradizione_ebraica`.
