@@ -11,7 +11,7 @@
 **ID.**
 - Versetto: `gen.1.1` → `libro.capitolo.versetto`, numerazione **TM/BHS**, canonica in tutta l'app.
 - Parola: `gen.1.1.01` → posizione a due cifre nel versetto, in ordine di lettura.
-- Entità curate (luoghi, persone, eventi, note): slug minuscolo ASCII, con disambiguatore dove esistono omonimi (`lemek.gen4` vs `lemek.gen5`). Il campo `tipnr_id` conserva la chiave TIPNR d'origine, così il legame col dataset non si perde.
+- Entità curate (luoghi, persone, eventi, note): slug minuscolo ASCII, con disambiguatore dove esistono omonimi (`lemek.gen4` vs `lemek.gen5`). Il disambiguatore è libro+capitolo della prima occorrenza e lo prendono **tutti** gli omonimi: uno slug nudo garantisce quindi che omonimi non ce ne siano. Il campo `tipnr_id` conserva la chiave TIPNR d'origine, così il legame col dataset non si perde.
 
 **Versificazione.** Gli id sono sempre TM. Le traduzioni con versificazione diversa vengono **rimappate in fase di import** usando TVTMS (il dataset di mapping versificazioni di STEPBible-Data). Le divergenze nel Pentateuco esistono e non sono marginali (p.es. Gen 32, Es 8 e 22, Lv 5–6, Nm 17, Dt 13/23/29). Nell'app non circolano mai doppie numerazioni.
 

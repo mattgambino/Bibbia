@@ -100,8 +100,9 @@
 // I marcatori TIPNR sui nomi: "(?)" (decisione su un'ambiguità) si toglie e
 // l'arco si tiene; "(a)" (antenato, non genitore effettivo) e "(d)" (capostipite
 // di un gruppo/nazione) NON sono legami di parentela diretta e si scartano.
-// dati_narrativi = null ovunque: TIPNR non dà le età, e ricavarle a memoria dal
-// testo è escluso (CLAUDE.md regola 1).
+// dati_narrativi: TIPNR non porta le età, ma il TM sì. Si leggono dalle parole
+// già importate in public/data/words/ con le due formule genealogiche — vedi la
+// sezione "Età letterali del TM" più sotto. Mai scritte a memoria (regola 1).
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import * as path from 'node:path'
@@ -399,12 +400,31 @@ const traslitPerDStrong: Record<string, string> = (() => {
   return out
 })()
 
+/**
+ * Ripiego sul numero Strong nudo. TIPNR e TAHOT disambiguano lo stesso nome con
+ * lettere diverse ("Lot" è H3876G in TIPNR e H3876 in TAHOT; Zibeon H6649 vs
+ * H6649G), e sui nomi propri le lettere distinguono le *entità* omonime, non la
+ * grafia: la traslitterazione della famiglia è quindi la stessa. Il ripiego vale
+ * solo per entità che hanno una forma ebraica propria — le entità senza nome
+ * ("una moglie di Lot", H3876J) resterebbero altrimenti traslitterate "Lot".
+ */
+const traslitPerNumeroStrong: Record<string, string> = (() => {
+  const out: Record<string, string> = {}
+  for (const [k, t] of Object.entries(traslitPerDStrong)) {
+    const numero = /^(H\d{4})/.exec(k)?.[1]
+    if (numero && t && !(numero in out)) out[numero] = t
+  }
+  return out
+})()
+
 interface Entita {
   rec: RecordTipnr
   nome: NomeUnificato
   riferimenti: string[]
   he: string
   translit: string
+  /** dStrong di tutte le forme ebraiche del nome: Giacobbe/Israele sono un'entità sola con due Strong. */
+  dStrong: string[]
   /** Assegnato dopo la risoluzione degli omonimi. */
   id: string
 }
@@ -413,6 +433,7 @@ let scartatiLxxTotali = 0
 let scartatiFuoriPentateucoTotali = 0
 let senzaFormaEbraica = 0
 let dStrongFuoriIndice = 0
+let traslitPerRipiego = 0
 
 function costruisciEntita(rec: RecordTipnr): Entita | null {
   const nome = analizzaNomeUnificato(rec.testa[0] ?? '')
@@ -433,8 +454,10 @@ function costruisciEntita(rec: RecordTipnr): Entita | null {
   const forme = rec.sub.map((s) => analizzaFormaEbraica(s[2] ?? '')).filter((f) => f !== null)
   const forma = forme.find((f) => f.dStrong === nome.uStrong) ?? forme[0]
   if (forma === undefined) senzaFormaEbraica++
-  const translit = forma ? (traslitPerDStrong[forma.dStrong] ?? '') : ''
+  const numero = forma ? (/^(H\d{4})/.exec(forma.dStrong)?.[1] ?? '') : ''
+  const translit = forma ? (traslitPerDStrong[forma.dStrong] ?? traslitPerNumeroStrong[numero] ?? '') : ''
   if (forma && translit === '') dStrongFuoriIndice++
+  else if (forma && traslitPerDStrong[forma.dStrong] === undefined) traslitPerRipiego++
 
   return {
     rec,
@@ -442,13 +465,20 @@ function costruisciEntita(rec: RecordTipnr): Entita | null {
     riferimenti: esito.ids,
     he: forma?.he ?? '',
     translit,
+    dStrong: [...new Set(forme.map((f) => f.dStrong))],
     id: '', // assegnato da assegnaId
   }
 }
 
 /**
- * Slug definitivi: sugli omonimi l'entità con l'ancora canonicamente più antica
- * tiene lo slug nudo, le altre prendono il disambiguatore libro+capitolo.
+ * Slug definitivi. Un nome portato da una sola entità dà lo slug nudo; sugli
+ * omonimi **nessuno** tiene lo slug nudo: prendono tutti il disambiguatore
+ * libro+capitolo della propria ancora (`lamech.gen4` e `lamech.gen5`).
+ * La regola precedente — slug nudo a chi ha l'ancora canonicamente più antica —
+ * era deterministica ma illeggibile dall'esterno: `lamech` era il discendente di
+ * Caino e `lamech.gen5` il padre di Noè, cioè il contrario di quel che un
+ * lettore si aspetta, e per saperlo bisognava conoscere la regola. Così invece
+ * un id senza disambiguatore garantisce che omonimi non ce ne siano.
  * Le collisioni si risolvono dentro il singolo file (luoghi e persone sono
  * namespace distinti nel validatore).
  */
@@ -481,15 +511,15 @@ function assegnaId(entita: Entita[], etichettaFile: string): string[] {
       return ra.length > 0 ? -1 : rb.length > 0 ? 1 : a.nome.completo.localeCompare(b.nome.completo)
     })
     lista.forEach((e, i) => {
-      let candidato = i === 0 ? base : `${base}.${disambiguatore(e.nome.ancora)}`
-      if (candidato.endsWith('.')) candidato = `${base}.${i}`
+      let candidato = `${base}.${disambiguatore(e.nome.ancora)}`
+      if (candidato.endsWith('.')) candidato = `${base}.${i + 1}`
       // Due omonimi con la stessa ancora libro+capitolo: si aggiunge l'indice.
       let finale = candidato
       let n = 2
       while (usati.has(finale)) finale = `${candidato}-${n++}`
       e.id = finale
       usati.add(finale)
-      if (i > 0) disambiguati.push(`${e.nome.completo} → ${finale}`)
+      disambiguati.push(`${e.nome.completo} → ${finale}`)
     })
   }
   if (usati.size !== entita.filter((e) => e.id !== '').length)
@@ -698,6 +728,10 @@ interface StatPersone {
   madriInConflitto: number
   /** Archi tenuti ma marcati "(?)" da TIPNR: decisione su un'ambiguità, non dato del testo. */
   ambigui: string[]
+  /** Archi scartati perché identificazioni extratestuali (vedi RELAZIONI_EXTRATESTUALI). */
+  extratestuali: string[]
+  /** Archi tenuti ma senza un versetto in comune fra le due entità: da controllare. */
+  senzaVersettoComune: string[]
 }
 
 const statPersone: StatPersone = {
@@ -710,6 +744,8 @@ const statPersone: StatPersone = {
   padriInConflitto: 0,
   madriInConflitto: 0,
   ambigui: [],
+  extratestuali: [],
+  senzaVersettoComune: [],
 }
 
 /**
@@ -740,6 +776,45 @@ function risolviParente(grezzo: string, perTipnrId: Map<string, string>, contest
   return id
 }
 
+/**
+ * Legami che TIPNR codifica come dato ma che il testo masoretico non afferma:
+ * vengono da identificazioni della tradizione interpretativa, e nella struttura
+ * di `relazioni` sarebbero indistinguibili da un dato testuale. Si scartano qui e
+ * si dicono altrove, in una nota `tradizione_ebraica` con la sua confidenza e le
+ * sue fonti — che è il posto in cui il progetto tiene i claim di questo genere.
+ *
+ * L'elenco è per forza esplicito e va allungato a mano: riconoscere in automatico
+ * un'identificazione midrashica dentro TIPNR non è possibile. Il riepilogo dello
+ * script stampa i legami *sospetti* (coniugi o genitori che non condividono
+ * nessun versetto) proprio per dare una lista da controllare a mano.
+ *
+ * Le chiavi sono UniqueName TIPNR senza Strong: restano stabili anche quando gli
+ * slug cambiano.
+ */
+const RELAZIONI_EXTRATESTUALI: { a: string; b: string; motivo: string }[] = [
+  {
+    a: 'Naamah@Gen.4.22',
+    b: 'Noah@Gen.5.29',
+    motivo:
+      'Naamah moglie di Noè è identificazione di Bereshit Rabbah 23,3 (e contestata già lì), non un dato di Gen 4,22 — vedi la nota naamah-moglie-di-noe',
+  },
+  {
+    a: 'Naamah@Gen.4.22',
+    b: 'Shem@Gen.5.32',
+    motivo: 'discende dall’identificazione midrashica Naamah = moglie di Noè',
+  },
+  {
+    a: 'Naamah@Gen.4.22',
+    b: 'Ham@Gen.5.32',
+    motivo: 'discende dall’identificazione midrashica Naamah = moglie di Noè',
+  },
+  {
+    a: 'Naamah@Gen.4.22',
+    b: 'Japheth@Gen.5.32',
+    motivo: 'discende dall’identificazione midrashica Naamah = moglie di Noè',
+  },
+]
+
 /** Ruolo genitoriale dedotto dal campo Type di TIPNR ("Male"/"Female"). */
 function ruoloGenitore(rec: RecordTipnr): 'padre' | 'madre' | null {
   const tipo = cella(rec.testa, 8).toLowerCase()
@@ -758,6 +833,21 @@ function costruisciPersone(entita: Entita[]): Persona[] {
     perTipnrId.set(`${e.nome.nome}@${e.nome.ancora}`, e.id)
   }
 
+  // Archi da scartare, risolti sugli id: la coppia è non orientata.
+  const esclusi = new Set<string>()
+  for (const r of RELAZIONI_EXTRATESTUALI) {
+    const a = perTipnrId.get(r.a)
+    const b = perTipnrId.get(r.b)
+    if (a === undefined || b === undefined) {
+      err(`${r.a} ↔ ${r.b}`, 'relazione extratestuale non trovata: elenco da aggiornare')
+      continue
+    }
+    esclusi.add(`${a}|${b}`)
+    esclusi.add(`${b}|${a}`)
+    statPersone.extratestuali.push(`${a} ↔ ${b} — ${r.motivo}`)
+  }
+  const escluso = (a: string, b: string): boolean => esclusi.has(`${a}|${b}`)
+
   // Grafo: archi genitore→figlio con ruolo, e archi coniugali simmetrici.
   const padreDi = new Map<string, string>() // figlio → padre
   const madreDi = new Map<string, string>() // figlio → madre
@@ -768,6 +858,7 @@ function costruisciPersone(entita: Entita[]): Persona[] {
       statPersone.scartatiSeStesso++
       return
     }
+    if (escluso(figlio, genitore)) return
     const mappa = ruolo === 'padre' ? padreDi : madreDi
     const esistente = mappa.get(figlio)
     if (esistente !== undefined && esistente !== genitore) {
@@ -783,6 +874,7 @@ function costruisciPersone(entita: Entita[]): Persona[] {
       statPersone.scartatiSeStesso++
       return
     }
+    if (escluso(a, b)) return
     for (const [x, y] of [
       [a, b],
       [b, a],
@@ -859,7 +951,274 @@ function costruisciPersone(entita: Entita[]): Persona[] {
       da_verificare: true,
     })
   }
+
+  // Sospetti da controllare a mano: due persone legate da parentela diretta che
+  // non compaiono mai nello stesso versetto. Non è di per sé un errore (le
+  // genealogie di Gen 5 nominano padre e figlio in versetti diversi), ma è il
+  // sintomo di un legame ricavato altrove che il testo non mette insieme — come
+  // Naamah e Noè. L'elenco serve alla revisione, non si scarta niente in automatico.
+  const rifDi = new Map(persone.map((p) => [p.id, new Set(p.riferimenti)]))
+  const gia = new Set<string>()
+  for (const p of persone) {
+    const legami: [string, string][] = [
+      ...(p.relazioni.padre ? [['padre', p.relazioni.padre] as [string, string]] : []),
+      ...(p.relazioni.madre ? [['madre', p.relazioni.madre] as [string, string]] : []),
+      ...p.relazioni.coniugi.map((c) => ['coniuge', c] as [string, string]),
+    ]
+    for (const [ruolo, altro] of legami) {
+      const chiave = [p.id, altro].sort().join('|')
+      if (gia.has(chiave)) continue
+      gia.add(chiave)
+      const suoi = rifDi.get(altro)
+      if (suoi && [...(rifDi.get(p.id) ?? [])].some((r) => suoi.has(r))) continue
+      statPersone.senzaVersettoComune.push(`${p.id} — ${ruolo} — ${altro}`)
+    }
+  }
+
   return persone
+}
+
+// ---------------------------------------------------------------------------
+// Età letterali del TM (dati_narrativi)
+// ---------------------------------------------------------------------------
+//
+// Le età non stanno in TIPNR: stanno nel testo, e si leggono dalle parole già
+// importate in public/data/words/ — mai scritte a memoria (CLAUDE.md regola 1).
+// La catena è: valore del numerale ← glossa TBESH del suo dStrong; numero
+// grammaticale (singolare/duale/plurale) ← codice morfologico TAHOT; persona ←
+// nome proprio nel versetto, disambiguato sui riferimenti TIPNR dell'entità.
+//
+// Le due formule riconosciute sono quelle ricorrenti delle genealogie:
+//   «X visse N anni e generò Y»        → eta_al_primo_figlio
+//   «i giorni di X furono N anni»      → eta_totale
+// Un gruppo di numerali preceduto da אַחֲרֵי ("dopo aver generato") non è né
+// l'una né l'altra e si scarta: sono gli anni vissuti dopo, che il TM dà a parte.
+//
+// Le due formule si riconoscono dalla forma grammaticale, non dal solo lemma, ed
+// è quel vincolo a tenere fuori i falsi positivi: «generò» deve essere il
+// wayyiqtol hifil וַיּוֹלֶד (Vhw3ms) — così «quando gli nacque Isacco» (Gen 21,5,
+// infinito) non diventa l'età al primo figlio di Abramo, che è un'altra cosa —
+// e «i giorni di» deve essere il plurale costrutto יְמֵי (Ncmpc), che tiene fuori
+// «in quel giorno» di Gen 7,13 e le feste "del settimo giorno" del Levitico.
+//
+// Composizione del numerale (Gen 5,5 «novecento anni e trenta anni» = 930):
+// i gruppi separati da שָׁנָה si sommano; dentro un gruppo, מֵאָה al plurale
+// moltiplica l'unità che la precede (תְּשַׁע מֵאוֹת = 900), al duale vale il
+// doppio (מָאתַיִם = 200), al singolare vale sé stessa (שְׁלֹשִׁים וּמְאַת = 130).
+
+const SORGENTE_TBESH = path.join(
+  'scripts',
+  'sources',
+  'STEPBible-Data',
+  'Lexicons',
+  'TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt',
+)
+const DIR_PAROLE = path.join('public', 'data', 'words')
+
+/** Cardinali inglesi: serve solo a leggere il valore dalla glossa TBESH. */
+const CARDINALI_INGLESI: Record<string, number> = {
+  one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10,
+  eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17,
+  eighteen: 18, nineteen: 19, twenty: 20, thirty: 30, forty: 40, fifty: 50, sixty: 60,
+  seventy: 70, eighty: 80, ninety: 90, hundred: 100, thousand: 1000,
+}
+
+/** dStrong → valore, letto dalle glosse TBESH (nessun numero scritto a mano qui). */
+function leggiNumerali(): Map<string, number> {
+  const out = new Map<string, number>()
+  for (const riga of leggiObbligatorio(SORGENTE_TBESH, 'Clonare STEPBible-Data in scripts/sources/.').split(/\r?\n/)) {
+    const col = riga.split('\t')
+    if (col.length < 7) continue
+    const m = /^(H\d{1,4}[A-Za-z]?)\s*=/.exec(col[1] ?? '')
+    if (!m) continue
+    const valore = CARDINALI_INGLESI[(col[6] ?? '').trim().toLowerCase()]
+    if (valore !== undefined) out.set(`H${m[1].slice(1).padStart(4, '0')}`, valore)
+  }
+  return out
+}
+
+const H_ANNO = 'H8141'
+const H_GIORNO = 'H3117'
+const H_GENERARE = 'H3205'
+const H_DOPO = 'H0310'
+
+interface ParolaTm {
+  verso: string
+  strong: string[]
+  /** Ultimo segmento del codice morfologico: quello del morfema lessicale. */
+  morfo: string
+  /** dStrong del nome proprio, se la parola è un nome proprio (morph HNp…). */
+  nomeProprio: string | null
+}
+
+/** Numero Strong nudo: TIPNR e TAHOT usano lettere di disambiguazione diverse. */
+const numeroStrong = (s: string): string => /^(H\d{4})/.exec(s)?.[1] ?? s
+
+function leggiParoleTm(): Map<string, ParolaTm[]> {
+  const perVersetto = new Map<string, ParolaTm[]>()
+  for (const libro of ORDINE_LIBRI) {
+    const file = path.join(DIR_PAROLE, `${libro}.json`)
+    if (!existsSync(file)) continue
+    const dati = JSON.parse(readFileSync(file, 'utf8')) as {
+      parole: { verso: string; morph: string; morfemi: { strong: string }[] }[]
+    }
+    for (const p of dati.parole) {
+      const segmenti = p.morph.replace(/^H/, '').split('/')
+      const morfo = segmenti[segmenti.length - 1] ?? ''
+      const strong = p.morfemi.map((m) => numeroStrong(m.strong))
+      const lista = perVersetto.get(p.verso) ?? []
+      lista.push({
+        verso: p.verso,
+        strong,
+        morfo,
+        nomeProprio: /^Np/.test(morfo) ? (p.morfemi[p.morfemi.length - 1]?.strong ?? null) : null,
+      })
+      perVersetto.set(p.verso, lista)
+    }
+  }
+  return perVersetto
+}
+
+/** Valore di un gruppo di numerali fra due occorrenze di שָׁנָה. */
+function valoreGruppo(gruppo: { valore: number; numero: string }[]): number {
+  let totale = 0
+  let unita = 0
+  for (const { valore, numero } of gruppo) {
+    if (valore < 100) {
+      unita += valore
+      continue
+    }
+    if (numero === 'd') totale += 2 * valore
+    else if (numero === 'p') {
+      totale += (unita === 0 ? 1 : unita) * valore
+      unita = 0
+    } else totale += valore
+  }
+  return totale + unita
+}
+
+/**
+ * Corsa di numerali che occupa le parole [inizio, fine): gruppi separati da
+ * שָׁנָה, sommati fra loro. Restituisce null se non c'è nessun numerale.
+ */
+function valoreCorsa(parole: ParolaTm[], numerali: Map<string, number>): number | null {
+  const gruppi: { valore: number; numero: string }[][] = [[]]
+  let visto = false
+  // Senza שָׁנָה la cifra non è un'età: Gen 50,3 conta i settanta *giorni* del
+  // lutto per Giacobbe con la stessa struttura di frase.
+  if (!parole.some((p) => p.strong.includes(H_ANNO))) return null
+  for (const p of parole) {
+    if (p.strong.includes(H_ANNO)) {
+      gruppi.push([])
+      continue
+    }
+    for (const s of p.strong) {
+      const valore = numerali.get(s)
+      if (valore === undefined) continue
+      visto = true
+      gruppi[gruppi.length - 1].push({ valore, numero: p.morfo.charAt(3) })
+    }
+  }
+  return visto ? gruppi.reduce((n, g) => n + valoreGruppo(g), 0) : null
+}
+
+/** Parole numeriche (numerale o שָׁנָה) contigue che finiscono all'indice `fine`. */
+function corsaCheFinisceA(parole: ParolaTm[], fine: number, numerali: Map<string, number>): number {
+  const numerica = (p: ParolaTm) => p.strong.some((s) => numerali.has(s) || s === H_ANNO)
+  let i = fine
+  while (i > 0 && numerica(parole[i - 1])) i--
+  return i
+}
+
+interface EtaTrovata {
+  eta: number
+  verso: string
+  nomeProprio: string
+}
+
+/** Le due formule genealogiche, cercate su ogni versetto del Pentateuco. */
+function estraiEta(numerali: Map<string, number>): { primoFiglio: EtaTrovata[]; totale: EtaTrovata[] } {
+  const primoFiglio: EtaTrovata[] = []
+  const totale: EtaTrovata[] = []
+
+  for (const parole of leggiParoleTm().values()) {
+    // «X visse N anni e generò Y»: la corsa numerica che tocca il primo verbo
+    // "generare". Se davanti c'è אַחֲרֵי sono gli anni vissuti *dopo*, non l'età.
+    const iGenerare = parole.findIndex((p) => p.strong.includes(H_GENERARE) && p.morfo.startsWith('Vhw3ms'))
+    if (iGenerare > 0) {
+      const inizio = corsaCheFinisceA(parole, iGenerare, numerali)
+      const eta = inizio < iGenerare ? valoreCorsa(parole.slice(inizio, iGenerare), numerali) : null
+      const nome = [...parole.slice(0, inizio)].reverse().find((p) => p.nomeProprio)?.nomeProprio
+      const dopo = parole.slice(0, inizio).some((p) => p.strong.includes(H_DOPO))
+      if (eta !== null && eta > 0 && nome && !dopo)
+        primoFiglio.push({ eta, verso: parole[0].verso, nomeProprio: nome })
+    }
+
+    // «i giorni di X furono N anni»: primo numerale dopo il nome proprio che
+    // segue יְמֵי, sempre che in mezzo non ci sia אַחֲרֵי (Gen 5,4 e simili).
+    const iGiorno = parole.findIndex((p) => p.strong.includes(H_GIORNO) && p.morfo === 'Ncmpc')
+    if (iGiorno >= 0) {
+      const iNome = parole.findIndex((p, i) => i > iGiorno && p.nomeProprio)
+      if (iNome > 0) {
+        const resto = parole.slice(iNome + 1)
+        const iNumero = resto.findIndex((p) => p.strong.some((s) => numerali.has(s)))
+        const dopo = iNumero > 0 && resto.slice(0, iNumero).some((p) => p.strong.includes(H_DOPO))
+        if (iNumero >= 0 && !dopo) {
+          const fine = resto.findIndex((p, i) => i > iNumero && !p.strong.some((s) => numerali.has(s) || s === H_ANNO))
+          const eta = valoreCorsa(resto.slice(iNumero, fine < 0 ? resto.length : fine), numerali)
+          const nome = parole[iNome].nomeProprio
+          if (eta !== null && eta > 0 && nome) totale.push({ eta, verso: parole[0].verso, nomeProprio: nome })
+        }
+      }
+    }
+  }
+  return { primoFiglio, totale }
+}
+
+/**
+ * Attribuzione a una persona: stesso numero Strong **e** versetto fra i suoi
+ * riferimenti TIPNR. Il secondo criterio è quello che separa gli omonimi (i due
+ * Lamech condividono il nome e lo Strong, non i versetti). Zero o più di un
+ * candidato: non si attribuisce niente e il caso finisce nel riepilogo.
+ */
+function assegnaEta(
+  persone: Persona[],
+  strongPerId: Map<string, Set<string>>,
+  numerali: Map<string, number>,
+): string[] {
+  const { primoFiglio, totale } = estraiEta(numerali)
+  const ambigui: string[] = []
+
+  const candidati = (t: EtaTrovata): Persona[] =>
+    persone.filter(
+      (p) => strongPerId.get(p.id)?.has(numeroStrong(t.nomeProprio)) && p.riferimenti.includes(t.verso),
+    )
+
+  const applica = (lista: EtaTrovata[], campo: 'eta_totale' | 'eta_al_primo_figlio'): void => {
+    for (const t of lista) {
+      const c = candidati(t)
+      if (c.length !== 1) {
+        ambigui.push(`${t.verso} ${t.nomeProprio} = ${t.eta} → ${c.length} candidati (${c.map((p) => p.id).join(', ')})`)
+        continue
+      }
+      const p = c[0]
+      const d = p.dati_narrativi ?? { eta_totale: null, eta_al_primo_figlio: null, versetti: [] }
+      // Prima attribuzione vince: una seconda formula sullo stesso campo è un
+      // caso da guardare a mano, non da sovrascrivere in silenzio.
+      if (d[campo] !== null && d[campo] !== t.eta) {
+        ambigui.push(`${p.id}.${campo}: ${d[campo]} in conflitto con ${t.eta} (${t.verso})`)
+        continue
+      }
+      d[campo] = t.eta
+      if (!d.versetti.includes(t.verso)) d.versetti.push(t.verso)
+      d.versetti.sort(confrontaVersetti)
+      p.dati_narrativi = d
+    }
+  }
+
+  applica(primoFiglio, 'eta_al_primo_figlio')
+  applica(totale, 'eta_totale')
+  return ambigui
 }
 
 // ---------------------------------------------------------------------------
@@ -890,6 +1249,10 @@ const disambiguatiLuoghi = assegnaId(entitaLuoghi, 'bootstrap/places.json')
 
 const luoghi = entitaLuoghi.filter((e) => e.id !== '').map(costruisciLuogo)
 const persone = costruisciPersone(entitaPersone.filter((e) => e.id !== ''))
+const strongPerPersona = new Map(
+  entitaPersone.filter((e) => e.id !== '').map((e) => [e.id, new Set(e.dStrong.map(numeroStrong))]),
+)
+const etaAmbigue = assegnaEta(persone, strongPerPersona, leggiNumerali())
 
 // Validazione Zod prima della scrittura: se qui qualcosa non torna, è un bug dello script.
 for (const l of luoghi) {
@@ -945,7 +1308,10 @@ console.log(`    rimappaggi ENG→TM disponibili:   ${mappaEngTm.size}`)
 console.log(`\n  NOMI (da compilare in revisione)`)
 console.log(`    nomi.it vuoti:                   ${luoghi.length + persone.length}`)
 console.log(`    nomi.he vuoti:                   ${senzaEbraico} (sub-record senza forma ebraica: ${senzaFormaEbraica})`)
-console.log(`    nomi.translit vuoti:             ${senzaTranslit} (dStrong fuori da indices/lemmi.json: ${dStrongFuoriIndice})`)
+console.log(
+  `    nomi.translit vuoti:             ${senzaTranslit} (dStrong fuori da indices/lemmi.json: ${dStrongFuoriIndice}` +
+    `; risolti col ripiego sul numero Strong: ${traslitPerRipiego})`,
+)
 console.log(`\n  LUOGHI`)
 console.log(`    agganciati a OpenBible per id:   ${statLuoghi.agganciatiPerId}`)
 console.log(`    agganciati per nome OpenBible:   ${statLuoghi.agganciatiPerNome}`)
@@ -971,6 +1337,23 @@ console.log(`      scartati, marcatore (d) discendenza: ${statPersone.scartatiDi
 console.log(`      scartati, auto-riferimento:    ${statPersone.scartatiSeStesso}`)
 console.log(`      scartati, ruolo indeterminato: ${statPersone.ruoloIndeterminato}`)
 console.log(`      conflitti padre / madre:       ${statPersone.padriInConflitto} / ${statPersone.madriInConflitto}`)
+const conEta = persone.filter((p) => p.dati_narrativi !== null)
+console.log(`    con dati_narrativi (età dal TM):  ${conEta.length}`)
+for (const p of conEta)
+  console.log(
+    `      · ${p.id.padEnd(18)} primo figlio: ${String(p.dati_narrativi?.eta_al_primo_figlio ?? '—').padStart(4)}` +
+      `  totale: ${String(p.dati_narrativi?.eta_totale ?? '—').padStart(4)}  [${p.dati_narrativi?.versetti.join(' ')}]`,
+  )
+if (etaAmbigue.length > 0) {
+  console.log(`    età lette ma NON attribuite:      ${etaAmbigue.length}`)
+  for (const a of etaAmbigue) console.log(`      · ${a}`)
+}
+console.log(`    relazioni extratestuali scartate: ${statPersone.extratestuali.length}`)
+for (const e of statPersone.extratestuali) console.log(`      · ${e}`)
+console.log(`    legami senza un versetto in comune (da controllare): ${statPersone.senzaVersettoComune.length}`)
+for (const s of statPersone.senzaVersettoComune.slice(0, 40)) console.log(`      · ${s}`)
+if (statPersone.senzaVersettoComune.length > 40)
+  console.log(`      … e altri ${statPersone.senzaVersettoComune.length - 40}`)
 console.log(`    link tenuti ma marcati "(?)" da TIPNR (decisione su un'ambiguità, da rivedere): ${statPersone.ambigui.length}`)
 for (const a of statPersone.ambigui) console.log(`      · ${a}`)
 if (disambiguatiPersone.length > 0) {
