@@ -227,6 +227,82 @@
 .parola--lemma {
   box-shadow: inset 0 -2px 0 var(--filetto-marcato);
 }
+/* Parola che porta una nota: un tratteggio sotto la parola, spinto in basso per
+   non toccare i te'amim sottolineari. Il click apre pannello parola e note
+   insieme (nessun secondo bersaglio dentro il testo ebraico: un segno cliccabile
+   in linea romperebbe il flusso rtl). */
+.parola--annotata {
+  text-decoration: underline dotted var(--filetto-marcato);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.42em;
+}
+.parola--annotata:hover {
+  text-decoration-color: var(--inchiostro-medio);
+}
+
+/* Indicatori delle note nella fascia di margine, sotto il numero di versetto
+   (F2.4). Due canali distinti: la lettera dice il tipo di nota, il segno
+   geometrico la confidenza. Il colore ripete la confidenza, non la porta da
+   solo. */
+.margine-note {
+  position: absolute;
+  left: 0;
+  top: calc(var(--sp-3) + 1.5em);
+  width: var(--fascia-margine);
+  margin: 0;
+  padding: 0 var(--sp-2) 0 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+}
+.indicatore-nota {
+  display: flex;
+  align-items: center;
+  gap: 0.15em;
+  font: inherit;
+  line-height: 1;
+  background: none;
+  border: 0;
+  border-radius: var(--raggio-sm);
+  padding: 1px 2px;
+  cursor: pointer;
+  transition: background var(--transizione);
+}
+.indicatore-nota:hover {
+  background: var(--carta-incisa);
+}
+.indicatore-nota--aperta {
+  background: var(--evidenza-parola);
+}
+.indicatore-sigla {
+  font-size: var(--testo-xs);
+  font-weight: var(--peso-forte);
+  letter-spacing: 0;
+}
+.indicatore-nota .segno-status::before {
+  font-size: var(--testo-xs);
+}
+.indicatore-nota--consensus .indicatore-sigla {
+  color: var(--status-consensus);
+}
+.indicatore-nota--majority .indicatore-sigla {
+  color: var(--status-majority);
+}
+.indicatore-nota--disputed .indicatore-sigla {
+  color: var(--status-disputed);
+}
+.indicatore-nota--speculative .indicatore-sigla {
+  color: var(--status-speculative);
+}
+.indicatore-nota--symbolic .indicatore-sigla {
+  color: var(--status-symbolic);
+}
+.indicatore-nota--attribuito .indicatore-sigla {
+  color: var(--status-attribuito);
+}
+
 .traduzione {
   font-family: var(--font-lettura);
   font-size: var(--testo-md);
@@ -595,6 +671,129 @@
   color: var(--status-attribuito);
   background: var(--status-attribuito-fondo);
   border: 1px var(--status-attribuito-tratto) var(--status-attribuito);
+}
+
+/* --- pannello note (F2.4) --- */
+
+/* Le due prospettive si distinguono per bordo e per etichetta, mai per
+   posizione o per peso: nessuna delle due è "la nota", l'altra un'aggiunta
+   (specifica §3.5). Il bordo è lo stesso token usato dalle posizioni sugli
+   assi, così il segno vuol dire la stessa cosa in tutta l'app. */
+.note-ancoraggio {
+  margin: 0 0 var(--sp-3);
+  font-weight: var(--peso-medio);
+  font-variant-numeric: tabular-nums;
+}
+.note {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nota {
+  padding: var(--sp-2) 0 var(--sp-3) var(--sp-3);
+  margin-bottom: var(--sp-3);
+}
+.nota--critica {
+  border-left: var(--prospettiva-critica-bordo);
+}
+.nota--tradizione {
+  border-left: var(--prospettiva-tradizione-bordo);
+}
+/* La nota da cui si è arrivati: si trova a colpo d'occhio senza che le altre
+   dello stesso versetto siano nascoste o attenuate. */
+.nota--evidenziata {
+  background: var(--evidenza-occorrenza);
+}
+.nota-prospettiva {
+  margin: 0;
+  font-size: var(--testo-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+}
+.nota--critica .nota-prospettiva {
+  color: var(--prospettiva-critica);
+}
+.nota--tradizione .nota-prospettiva {
+  color: var(--prospettiva-tradizione);
+}
+.nota-testa {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  margin: var(--sp-1) 0 0;
+}
+/* La stessa sigla che sta a margine, qui accanto al tipo per esteso: il margine
+   si impara leggendo il pannello, non da una legenda a parte. */
+.sigla {
+  font-size: var(--testo-xs);
+  font-weight: var(--peso-forte);
+  line-height: 1.2;
+  padding: 0 var(--sp-1);
+  border: 1px solid currentColor;
+  border-radius: var(--raggio-sm);
+}
+.sigla--critica {
+  color: var(--prospettiva-critica);
+}
+.sigla--tradizione {
+  color: var(--prospettiva-tradizione);
+}
+.nota-tipo {
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+.nota-titolo {
+  font-family: var(--font-lettura);
+  font-size: var(--testo-base);
+  font-weight: var(--peso-forte);
+  line-height: var(--interlinea-stretta);
+  margin: var(--sp-2) 0 0;
+}
+.nota-ancora {
+  margin: var(--sp-1) 0 0;
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+  font-variant-numeric: tabular-nums;
+}
+.nota-testo {
+  font-family: var(--font-lettura);
+  font-size: var(--testo-sm);
+  line-height: var(--interlinea-lettura);
+  color: var(--inchiostro-medio);
+  margin: var(--sp-2) 0 0;
+}
+.nota-commentatore {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--testo-sm);
+}
+.nota-commentatore a {
+  color: var(--accento-link);
+}
+.nota-commentatore a:hover {
+  color: var(--accento-link-attivo);
+}
+/* Rimando dalle schede di luogo e persona: quelle note non hanno un versetto a
+   cui stare a margine, e senza questo rimando resterebbero irraggiungibili. */
+.scheda-note {
+  margin: var(--sp-2) 0 0;
+}
+.rimando-note {
+  font: inherit;
+  font-size: var(--testo-sm);
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--filetto-marcato);
+  border-radius: 0;
+  padding: 0;
+  color: var(--accento-link);
+  cursor: pointer;
+  transition: color var(--transizione), border-color var(--transizione);
+}
+.rimando-note:hover {
+  color: var(--accento-link-attivo);
+  border-bottom-color: currentColor;
 }
 
 /* I tre assi restano tre blocchi separati, con un filetto fra l'uno e l'altro:

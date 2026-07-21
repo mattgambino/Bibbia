@@ -10,12 +10,13 @@ import type {
   ManifestTraduzioni,
   Traduzione,
 } from '../tipi/index.ts'
-import type { Eventi, Luoghi, Persone } from './caricamento.ts'
+import type { Eventi, Luoghi, Note, Persone } from './caricamento.ts'
 import {
   caricaEventi,
   caricaIndiceLemmi,
   caricaLexiconIt,
   caricaLuoghi,
+  caricaNote,
   caricaPersone,
   caricaManifestTraduzioni,
   caricaParole,
@@ -88,6 +89,11 @@ export function useLuoghi(): Caricamento<Luoghi> {
 
 export function usePersone(): Caricamento<Persone> {
   return useRisorsa('people', caricaPersone)
+}
+
+/** Le note stanno a margine del testo: servono appena la vista lettura si apre. */
+export function useNote(): Caricamento<Note> {
+  return useRisorsa('notes', caricaNote)
 }
 
 /** Come sopra: le glosse italiane servono solo a pannello parola aperto. */

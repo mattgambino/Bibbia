@@ -211,8 +211,10 @@
   --col-navigazione: 15rem;
   --col-lettura-max: 40rem;  /* ~65-70 caratteri di traduzione a 17px */
   --col-contesto: 22rem;
-  /* Fascia di margine dell'apparato: i segni di status vivono qui */
-  --fascia-margine: 1.75rem;
+  /* Fascia di margine dell'apparato: numero di versetto e indicatori delle note
+     vivono qui. Da F2.4 ospita sigla del tipo + segno della confidenza, quindi è
+     più larga: la misura di lettura non cambia, è la colonna a spostarsi. */
+  --fascia-margine: 2.5rem;
 
   /* Ombre: solo per staccare un livello reale (pannello sopra la pagina) */
   --ombra-pannello: 0 1px 3px rgba(28, 28, 25, 0.14);

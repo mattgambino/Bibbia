@@ -8,6 +8,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { ColonnaContesto } from '../componenti/ColonnaContesto.tsx'
 import { ColonnaLettura } from '../componenti/ColonnaLettura.tsx'
 import { ColonnaNavigazione } from '../componenti/ColonnaNavigazione.tsx'
+import { PannelloNote } from '../componenti/PannelloNote.tsx'
 import { PannelloParola } from '../componenti/PannelloParola.tsx'
 import {
   useEventi,
@@ -15,15 +16,20 @@ import {
   useLexiconIt,
   useLuoghi,
   useManifestTraduzioni,
+  useNote,
   useParole,
   usePersone,
   useTraduzione,
   useVersetti,
 } from '../dati/hooks.ts'
+import { indicizzaNote } from '../lib/note.ts'
 import { pericopeDi } from '../lib/pericopi.ts'
-import { leggiVersettoId, nomeLibro, versettoDiParola } from '../lib/riferimenti.ts'
+import { etichettaVersetto, leggiVersettoId, nomeLibro, versettoDiParola } from '../lib/riferimenti.ts'
 import { usaPosizione, usaTraduzione } from '../stato/preferenze.ts'
-import type { Parola, Versetto } from '../tipi/index.ts'
+import type { Nota, Parola, Versetto } from '../tipi/index.ts'
+
+/** Che cosa mostra il pannello note: da dove si è arrivati, le note di quell'ancoraggio, quale evidenziare. */
+type SelezioneNote = { ancoraggio: string; note: Nota[]; idEvidenziata: string | null }
 
 /**
  * Il versetto "in lettura": il primo che intercetta la fascia alta della
@@ -69,6 +75,7 @@ export function Lettura() {
   const [posizione, setPosizione] = usaPosizione()
   const [idTraduzione, setIdTraduzione] = usaTraduzione()
   const [parolaAttiva, setParolaAttiva] = useState<string | null>(null)
+  const [noteSelezionate, setNoteSelezionate] = useState<SelezioneNote | null>(null)
   // Su desktop l'apparato è sempre in colonna; l'interruttore serve solo sotto
   // 1100px, dove la colonna diventa un pannello sovrapposto.
   const [contestoAperto, setContestoAperto] = useState(true)
@@ -85,6 +92,11 @@ export function Lettura() {
   const eventi = useEventi()
   const luoghi = useLuoghi()
   const persone = usePersone()
+  const note = useNote()
+
+  // Le note si riducono una volta sola a "che cosa compare a margine di quale
+  // versetto"; i cinque target restano leggibili nel pannello (lib/note.ts).
+  const indiceNote = useMemo(() => indicizzaNote(note.stato === 'pronto' ? note.dati : []), [note])
 
   const parolePerId = useMemo<Map<string, Parola>>(() => {
     if (parole.stato !== 'pronto') return new Map()
@@ -119,6 +131,50 @@ export function Lettura() {
     return insieme
   }, [parola, versettiCapitolo, parolePerId])
 
+  // Le parole con almeno una nota si marcano nel testo: gli id di parola sono
+  // unici su tutto il Pentateuco, quindi l'insieme vale per qualunque capitolo.
+  const paroleAnnotate = useMemo(() => new Set(indiceNote.perParola.keys()), [indiceNote])
+
+  // Aperture del pannello note: dall'indicatore a margine (tutte le note di quel
+  // versetto, evidenziata quella scelta), dalla parola annotata (le sue note),
+  // dalla scheda di un luogo o di una persona (colonna contesto).
+  const apriNoteVersetto = (versettoId: string, notaId: string) => {
+    setNoteSelezionate({
+      ancoraggio: etichettaVersetto(versettoId),
+      note: indiceNote.perVersetto.get(versettoId) ?? [],
+      idEvidenziata: notaId,
+    })
+    setContestoAperto(true)
+  }
+
+  const apriNoteEntita = (ancoraggio: string, elenco: Nota[], idEvidenziata: string | null) => {
+    setNoteSelezionate({ ancoraggio, note: elenco, idEvidenziata })
+    setContestoAperto(true)
+  }
+
+  // La parola selezionata apre sempre il pannello parola; se porta note, apre
+  // anche quelle. Il segno tratteggiato sotto la parola annunciava un apparato:
+  // sarebbe un tratto senza conseguenze se il click non lo aprisse.
+  const apriParola = (id: string) => {
+    setParolaAttiva(id)
+    setContestoAperto(true)
+    const noteParola = indiceNote.perParola.get(id)
+    if (noteParola && noteParola.length > 0) {
+      setNoteSelezionate({
+        ancoraggio: etichettaVersetto(versettoDiParola(id)),
+        note: noteParola,
+        idEvidenziata: noteParola[0].id,
+      })
+    }
+  }
+
+  /** La parola ebraica a cui una nota è ancorata, quando il target è `parola`. */
+  const parolaDiNota = (notaId: string): Parola | null => {
+    const nota = noteSelezionate?.note.find((n) => n.id === notaId)
+    if (!nota || nota.target.tipo !== 'parola') return null
+    return parolePerId.get(nota.target.ref) ?? null
+  }
+
   // Se la traduzione salvata non è più installata si ricade sulla prima
   // disponibile, invece di lasciare la colonna centrale senza testo a fronte.
   useEffect(() => {
@@ -137,9 +193,8 @@ export function Lettura() {
     if (rif.libro !== posizione.libro || rif.capitolo !== posizione.capitolo) {
       setPosizione({ libro: rif.libro, capitolo: rif.capitolo })
     }
-    setParolaAttiva(id)
+    apriParola(id)
     daPortareInVista.current = versettoDiParola(id)
-    setContestoAperto(true)
   }
 
   useEffect(() => {
@@ -184,6 +239,7 @@ export function Lettura() {
         onPosizione={(p) => {
           setPosizione(p)
           setParolaAttiva(null)
+          setNoteSelezionate(null)
         }}
         traduzioni={traduzioni}
         traduzione={idTraduzione}
@@ -209,14 +265,25 @@ export function Lettura() {
           traduzione={traduzione.stato === 'pronto' ? traduzione.dati : null}
           parolaAttiva={parolaAttiva}
           paroleDelLemma={paroleDelLemma}
-          onParola={(id) => {
-            setParolaAttiva(id)
-            setContestoAperto(true)
-          }}
+          notePerVersetto={indiceNote.perVersetto}
+          paroleAnnotate={paroleAnnotate}
+          notaAperta={noteSelezionate?.idEvidenziata ?? null}
+          onParola={apriParola}
+          onNota={apriNoteVersetto}
         />
       )}
 
       <aside className="contesto" aria-label="Apparato" hidden={!contestoAperto}>
+        {noteSelezionate && (
+          <PannelloNote
+            ancoraggio={noteSelezionate.ancoraggio}
+            note={noteSelezionate.note}
+            idEvidenziata={noteSelezionate.idEvidenziata}
+            parolaDi={parolaDiNota}
+            onChiudi={() => setNoteSelezionate(null)}
+          />
+        )}
+
         {parola ? (
           <PannelloParola
             parola={parola}
@@ -232,7 +299,15 @@ export function Lettura() {
           </section>
         )}
 
-        <ColonnaContesto pericope={pericope} eventi={eventi} luoghi={luoghi} persone={persone} />
+        <ColonnaContesto
+          pericope={pericope}
+          eventi={eventi}
+          luoghi={luoghi}
+          persone={persone}
+          notePerLuogo={indiceNote.perLuogo}
+          notePerPersona={indiceNote.perPersona}
+          onNote={apriNoteEntita}
+        />
       </aside>
 
       <button

@@ -14,6 +14,7 @@ import {
   LibroVersetti,
   Luogo,
   ManifestTraduzioni,
+  Nota,
   Persona,
   Traduzione,
 } from '../tipi/index.ts'
@@ -99,6 +100,8 @@ export const Luoghi = z.array(Luogo)
 export type Luoghi = z.infer<typeof Luoghi>
 export const Persone = z.array(Persona)
 export type Persone = z.infer<typeof Persone>
+export const Note = z.array(Nota)
+export type Note = z.infer<typeof Note>
 
 // Stessa regola del lexicon: finché la curation di un file [C] non è stata
 // revisionata e spostata da bootstrap/ a public/data/, il file non esiste e
@@ -121,4 +124,8 @@ export function caricaLuoghi(): Promise<Luoghi> {
 
 export function caricaPersone(): Promise<Persone> {
   return caricaCurato('people.json', Persone)
+}
+
+export function caricaNote(): Promise<Note> {
+  return caricaCurato('notes.json', Note)
 }

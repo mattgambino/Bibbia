@@ -12,11 +12,11 @@
 
 import { useMemo, useRef, useState } from 'react'
 import { Minimappa } from './Minimappa.tsx'
-import { ETICHETTA_CONFIDENZA, GLOSSA_CONFIDENZA } from '../lib/confidenza.ts'
+import { BadgeConfidenza, ElencoFonti, SegnoDaVerificare, SegnoStatus } from './Elementi.tsx'
 import { etichettaAnni, etichettaAnno, etichettaRange } from '../lib/pericopi.ts'
 import type { Caricamento } from '../dati/hooks.ts'
 import type { Eventi, Luoghi, Persone } from '../dati/caricamento.ts'
-import type { Confidenza, Evento, Fonte, Luogo, Persona, RangeAnni } from '../tipi/index.ts'
+import type { Evento, Luogo, Nota, Persona, RangeAnni } from '../tipi/index.ts'
 
 type Tab = 'dove' | 'quando' | 'chi'
 const TAB: { id: Tab; etichetta: string }[] = [
@@ -25,14 +25,28 @@ const TAB: { id: Tab; etichetta: string }[] = [
   { id: 'chi', etichetta: 'Chi' },
 ]
 
+/** Apre il pannello note su un'entità: etichetta di ancoraggio, note, nota da evidenziare. */
+export type ApriNote = (ancoraggio: string, note: Nota[], idEvidenziata: string | null) => void
+
 type Props = {
   pericope: Evento | null
   eventi: Caricamento<Eventi>
   luoghi: Caricamento<Luoghi>
   persone: Caricamento<Persone>
+  notePerLuogo: Map<string, Nota[]>
+  notePerPersona: Map<string, Nota[]>
+  onNote: ApriNote
 }
 
-export function ColonnaContesto({ pericope, eventi, luoghi, persone }: Props) {
+export function ColonnaContesto({
+  pericope,
+  eventi,
+  luoghi,
+  persone,
+  notePerLuogo,
+  notePerPersona,
+  onNote,
+}: Props) {
   const [tab, setTab] = useState<Tab>('dove')
   const bottoni = useRef<(HTMLButtonElement | null)[]>([])
 
@@ -89,11 +103,23 @@ export function ColonnaContesto({ pericope, eventi, luoghi, persone }: Props) {
         {!pericope ? (
           <p className="vuoto">Il contesto compare quando il passo in lettura appartiene a una pericope curata.</p>
         ) : tab === 'dove' ? (
-          <Dove pericope={pericope} luoghiPerId={luoghiPerId} stato={luoghi} />
+          <Dove
+            pericope={pericope}
+            luoghiPerId={luoghiPerId}
+            stato={luoghi}
+            notePerLuogo={notePerLuogo}
+            onNote={onNote}
+          />
         ) : tab === 'quando' ? (
           <Quando pericope={pericope} eventi={eventi} />
         ) : (
-          <Chi pericope={pericope} personePerId={personePerId} stato={persone} />
+          <Chi
+            pericope={pericope}
+            personePerId={personePerId}
+            stato={persone}
+            notePerPersona={notePerPersona}
+            onNote={onNote}
+          />
         )}
       </div>
     </section>
@@ -143,10 +169,14 @@ function Dove({
   pericope,
   luoghiPerId,
   stato,
+  notePerLuogo,
+  onNote,
 }: {
   pericope: Evento
   luoghiPerId: Map<string, Luogo>
   stato: Caricamento<Luoghi>
+  notePerLuogo: Map<string, Nota[]>
+  onNote: ApriNote
 }) {
   if (stato.stato === 'in_corso') return <p className="vuoto">Caricamento dei luoghi…</p>
   if (stato.stato === 'errore')
@@ -206,6 +236,11 @@ function Dove({
                 ))}
               </ul>
             )}
+            <RimandoNote
+              note={notePerLuogo.get(luogo.id) ?? []}
+              ancoraggio={`Luogo: ${luogo.nomi.it || luogo.nomi.translit || luogo.id}`}
+              onNote={onNote}
+            />
             {luogo.da_verificare && <SegnoDaVerificare />}
           </li>
         ))}
@@ -318,10 +353,14 @@ function Chi({
   pericope,
   personePerId,
   stato,
+  notePerPersona,
+  onNote,
 }: {
   pericope: Evento
   personePerId: Map<string, Persona>
   stato: Caricamento<Persone>
+  notePerPersona: Map<string, Nota[]>
+  onNote: ApriNote
 }) {
   if (stato.stato === 'in_corso') return <p className="vuoto">Caricamento delle persone…</p>
   if (stato.stato === 'errore')
@@ -377,6 +416,11 @@ function Chi({
                 <p className="conteggio">Età nel racconto: {persona.dati_narrativi.eta_totale} anni.</p>
               )}
               <p className="conteggio">{persona.riferimenti.length} riferimenti nel Pentateuco.</p>
+              <RimandoNote
+                note={notePerPersona.get(persona.id) ?? []}
+                ancoraggio={`Persona: ${persona.nomi.it || persona.nomi.translit || persona.id}`}
+                onNote={onNote}
+              />
               {persona.da_verificare && <SegnoDaVerificare />}
             </li>
           )
@@ -391,46 +435,18 @@ function Chi({
 
 /* ------------------------------------------------------------ elementi --- */
 
-function SegnoStatus({ status }: { status: Confidenza }) {
+/**
+ * Rimando alle note ancorate a un luogo o a una persona: quelle note non hanno
+ * un versetto a cui stare a margine, quindi il loro unico accesso è la scheda
+ * dell'entità (F2.4).
+ */
+function RimandoNote({ note, ancoraggio, onNote }: { note: Nota[]; ancoraggio: string; onNote: ApriNote }) {
+  if (note.length === 0) return null
   return (
-    <span className={`segno-status segno-status--${status}`} title={GLOSSA_CONFIDENZA[status]}>
-      <span className="solo-lettore-schermo">Status: {ETICHETTA_CONFIDENZA[status]}. </span>
-    </span>
-  )
-}
-
-function BadgeConfidenza({ status }: { status: Confidenza }) {
-  return (
-    <span className={`badge badge--${status}`} title={GLOSSA_CONFIDENZA[status]}>
-      {ETICHETTA_CONFIDENZA[status]}
-    </span>
-  )
-}
-
-function SegnoDaVerificare() {
-  return <p className="scheda-verificare">Da verificare</p>
-}
-
-function ElencoFonti({ fonti }: { fonti: Fonte[] }) {
-  if (fonti.length === 0) return null
-  return (
-    <ul className="fonti">
-      {fonti.map((f, i) => (
-        <li key={`${f.titolo}-${i}`}>
-          {f.url ? (
-            <a href={f.url} target="_blank" rel="noreferrer noopener">
-              {f.autore ? `${f.autore}, ` : ''}
-              {f.titolo}
-            </a>
-          ) : (
-            <>
-              {f.autore ? `${f.autore}, ` : ''}
-              {f.titolo}
-            </>
-          )}
-          {f.anno ? ` (${f.anno})` : ''}
-        </li>
-      ))}
-    </ul>
+    <p className="scheda-note">
+      <button type="button" className="rimando-note" onClick={() => onNote(ancoraggio, note, note[0].id)}>
+        {note.length === 1 ? '1 nota curata' : `${note.length} note curate`}
+      </button>
+    </p>
   )
 }
