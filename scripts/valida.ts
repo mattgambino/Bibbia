@@ -13,11 +13,19 @@
 //   - chiavi delle traduzioni risolvibili su id TM; traduzione "completa" senza buchi
 //     oltre a quelli dichiarati in meta.lacune (e ogni lacuna dichiarata dev'essere reale);
 //   - commentatore e sefaria_ref valorizzati solo quando tipo = "tradizione_ebraica";
+//   - confidence "attribuito" ⇔ nota di tipo "tradizione_ebraica": il valore è fuori dalla
+//     scala storico-critica e non può comparire su note storiche, luoghi o eventi;
 //   - da ≤ a in RangeAnni e RangeVersetti (per i versetti: stesso libro, confronto
 //     capitolo/versetto);
 //   - coerenze interne dei file generati: id ↔ campi (versetti e parole), libro ↔ nome
 //     file, flag `interno` dei crossref, dimensione degli embeddings, manifest ↔ file
 //     delle traduzioni.
+//
+// Oltre agli errori emette AVVISI, che non fanno fallire la validazione: al momento uno
+// solo, lo stesso id in file diversi della stessa collezione (tipicamente una bozza in
+// bootstrap/ e il file curato in public/data/). Non è un dato invalido — durante una
+// revisione le due copie coesistono per forza — ma a valle vince il file letto per primo,
+// quindi va visto.
 //
 // Uso:  npx tsx scripts/valida.ts [directory ...]
 //       Senza argomenti valida public/data e bootstrap.
@@ -45,7 +53,7 @@ import {
 } from '../src/tipi/index.ts'
 
 // ---------------------------------------------------------------------------
-// Raccolta errori
+// Raccolta errori e avvisi
 // ---------------------------------------------------------------------------
 
 interface Errore {
@@ -55,10 +63,36 @@ interface Errore {
 }
 
 const errori: Errore[] = []
+const avvisi: Errore[] = []
 let erroriDiSchema = 0
 
 function err(file: string, record: string, messaggio: string): void {
   errori.push({ file, record, messaggio })
+}
+
+/** Segnalazione che non fa fallire la validazione: situazione da guardare, non dato invalido. */
+function avv(file: string, record: string, messaggio: string): void {
+  avvisi.push({ file, record, messaggio })
+}
+
+// Stesso id in file diversi della stessa collezione. Non è un errore — nel flusso normale
+// bootstrap/ contiene bozze e public/data/ i file curati, e durante una revisione i due
+// possono legittimamente coesistere — ma è ambiguo: a valle vince il primo file letto
+// (per le persone lo dice esplicitamente `if (!persone.has(p.id))`), quindi una copia
+// pristina dimenticata in bootstrap/ può mettere in ombra il record curato senza che nulla
+// lo segnali. Da qui l'avviso, che nomina i file coinvolti.
+const idPerCollezione = new Map<string, Map<string, string[]>>()
+
+function registraId(collezione: string, id: string, file: string): void {
+  let perId = idPerCollezione.get(collezione)
+  if (!perId) {
+    perId = new Map<string, string[]>()
+    idPerCollezione.set(collezione, perId)
+  }
+  const files = perId.get(id)
+  if (files) {
+    if (!files.includes(file)) files.push(file)
+  } else perId.set(id, [file])
 }
 
 function formattaPath(p: PropertyKey[]): string {
@@ -318,6 +352,7 @@ for (const radice of radici) {
       }
       case 'places': {
         for (const record of senzaDuplicati(file, validaCollezione(file, grezzo, Luogo))) {
+          registraId('places', record.id, file)
           luoghi.add(record.id)
           fileLuoghi.push({ file, record })
         }
@@ -325,16 +360,21 @@ for (const radice of radici) {
       }
       case 'people': {
         for (const p of senzaDuplicati(file, validaCollezione(file, grezzo, Persona))) {
+          registraId('people', p.id, file)
           if (!persone.has(p.id)) persone.set(p.id, { file, p })
         }
         break
       }
       case 'events': {
-        for (const e of senzaDuplicati(file, validaCollezione(file, grezzo, Evento))) fileEventi.push({ file, e })
+        for (const e of senzaDuplicati(file, validaCollezione(file, grezzo, Evento))) {
+          registraId('events', e.id, file)
+          fileEventi.push({ file, e })
+        }
         break
       }
       case 'notes': {
         for (const n of senzaDuplicati(file, validaCollezione(file, grezzo, Nota))) {
+          registraId('notes', n.id, file)
           noteIds.add(n.id)
           fileNote.push({ file, n })
         }
@@ -401,6 +441,8 @@ for (const { file, w } of fileParole)
 // B. places
 for (const { file, record } of fileLuoghi) {
   record.riferimenti.forEach((id, i) => controllaVersettoRef(file, record.id, `riferimenti[${i}]`, id))
+  if (record.status === 'attribuito')
+    err(file, record.id, 'status "attribuito": valore riservato alle note di tradizione ebraica, non ammesso sui luoghi')
   const totaleFonti = record.fonti.length + record.candidati.reduce((n, c) => n + c.fonti.length, 0)
   controllaFontiDaVerificare(file, record.id, totaleFonti, record.da_verificare)
 }
@@ -461,6 +503,8 @@ for (const { file, e } of fileEventi) {
   controllaRangeAnni(file, e.id, 'tempo_narrato.am', e.tempo_narrato.am)
   controllaRangeAnni(file, e.id, 'tempo_storico.ancoraggio', e.tempo_storico.ancoraggio)
   controllaRangeAnni(file, e.id, 'composizione.range', e.composizione.range)
+  if (e.tempo_storico.confidence === 'attribuito')
+    err(file, e.id, 'tempo_storico.confidence "attribuito": valore riservato alle note di tradizione ebraica')
   const totaleFonti =
     e.fonti.length + e.tempo_storico.fonti.length + e.composizione.posizioni.reduce((n, p) => n + p.fonti.length, 0)
   controllaFontiDaVerificare(file, e.id, totaleFonti, e.da_verificare)
@@ -522,6 +566,13 @@ for (const { file, n } of fileNote) {
       err(file, n.id, `commentatore valorizzato ma tipo = "${n.tipo}": ammesso solo per tradizione_ebraica`)
     if (n.sefaria_ref !== null)
       err(file, n.id, `sefaria_ref valorizzato ma tipo = "${n.tipo}": ammesso solo per tradizione_ebraica`)
+    if (n.confidence === 'attribuito')
+      err(file, n.id, `confidence "attribuito" ma tipo = "${n.tipo}": ammesso solo per tradizione_ebraica`)
+  } else if (n.confidence !== 'attribuito') {
+    // La scala storico-critica misura il consenso; su una lettura della tradizione la
+    // domanda è un'altra (chi la dice), e mescolarle è il modo più rapido per far
+    // leggere un commento rabbinico come una posizione accademica minoritaria.
+    err(file, n.id, `confidence "${n.confidence}" su una nota tradizione_ebraica: atteso "attribuito"`)
   }
   controllaFontiDaVerificare(file, n.id, n.fonti.length, n.da_verificare)
 }
@@ -598,14 +649,43 @@ for (const { file, c } of fileCrossref)
     if (r.interno && nelPentateuco && !versetti.has(r.a)) err(file, etichetta, `destinazione interna inesistente: "${r.a}"`)
   })
 
+// K. stesso id in file diversi della stessa collezione (avviso, non errore)
+// Si raggruppa per combinazione di file invece di emettere un avviso per id: fra una bozza
+// e il corrispondente file curato la sovrapposizione è tipicamente totale, e 244 righe
+// identiche nasconderebbero il punto invece di mostrarlo.
+for (const [collezione, perId] of idPerCollezione) {
+  const perCombinazione = new Map<string, string[]>()
+  for (const [id, files] of perId) {
+    if (files.length < 2) continue
+    const chiave = [...files].sort().join(' + ')
+    const lista = perCombinazione.get(chiave) ?? []
+    lista.push(id)
+    perCombinazione.set(chiave, lista)
+  }
+  for (const [chiave, ids] of perCombinazione) {
+    const esempi = ids.slice(0, 5).join(', ')
+    avv(
+      chiave,
+      `(${collezione})`,
+      `${ids.length} id presenti in più file della stessa collezione (${esempi}${ids.length > 5 ? `, … +${ids.length - 5}` : ''}): ` +
+        'a valle vince il file letto per primo, quindi una copia pristina in bootstrap/ può mettere in ombra il record curato di public/data/',
+    )
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Esito
 // ---------------------------------------------------------------------------
 
 console.log(`valida: ${fileEsaminati} file JSON esaminati in ${radici.join(', ')}`)
 
+if (avvisi.length > 0) {
+  console.warn(`\nAVVISI (${avvisi.length}) — non bloccanti:`)
+  for (const a of avvisi) console.warn(`  ${a.file} ${a.record} — ${a.messaggio}`)
+}
+
 if (errori.length === 0) {
-  console.log('OK — nessun errore.')
+  console.log(avvisi.length > 0 ? `OK — nessun errore (${avvisi.length} avvisi non bloccanti).` : 'OK — nessun errore.')
   process.exit(0)
 }
 

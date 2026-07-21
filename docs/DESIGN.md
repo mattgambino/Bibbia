@@ -26,6 +26,7 @@ Esplicitamente **fuori direzione**, anche se le skill li propongono: gradienti d
 ## 4. Semantica visiva della confidenza (trasversale a tutta l'app)
 
 - I 5 status (`consensus`, `majority`, `disputed`, `speculative`, `symbolic`) hanno ciascuno **colore + forma/pattern** distinti — mai solo colore (accessibilità, daltonismo). La specifica fissa già la grammatica per la mappa: marker pieno = identificato, tratteggiato = conteso, segnaposto dedicato = simbolico; la stessa grammatica si estende a badge delle note e alla timeline (range e sfumature, mai punti secchi).
+- `attribuito` (note della tradizione ebraica) non è un sesto grado della scala e non deve sembrarlo: prende il colore della prospettiva tradizionale (`--prospettiva-tradizione`), così badge della nota e bordo della prospettiva dicono la stessa cosa, e l'unico segno tondo (○) fra cinque segni quadrangolari. Non compare mai sui marker della mappa.
 - `da_verificare`: trattamento visivo dedicato e volutamente "non finito" (es. bordo tratteggiato), mai nascosto o attenuato.
 - Le due prospettive (storico-critica vs `tradizione_ebraica`) distinguibili a colpo d'occhio nelle note (etichetta + tratto visivo), senza gerarchizzarle.
 - Tutti questi valori vivono come **design token** (CSS custom properties) in un unico file (`src/stili/tokens.css`), definiti una volta in F1.6 e riusati ovunque: badge, indicatori a margine, marker mappa, timeline. Vietati valori esadecimali sparsi nei componenti.

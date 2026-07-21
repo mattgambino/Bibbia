@@ -36,8 +36,17 @@ export const RiferimentoBiblico = z
   .regex(/^(?:\d[a-z]{2}|[a-z]{3})\.\d+\.\d+$/, 'riferimento biblico non valido (atteso lib.capitolo.versetto)')
 export type RiferimentoBiblico = z.infer<typeof RiferimentoBiblico>
 
-/** Scala di confidenza — specifica §3.1, invariata. Usata da places.status, notes.confidence, events.tempo_storico.confidence. */
-export const Confidenza = z.enum(['consensus', 'majority', 'disputed', 'speculative', 'symbolic'])
+/**
+ * Scala di confidenza — specifica §3.1. Usata da places.status, notes.confidence,
+ * events.tempo_storico.confidence.
+ *
+ * I primi cinque valori misurano lo stato del dibattito storico-critico. `attribuito` non è
+ * un sesto grado della stessa scala: è il valore delle note `tradizione_ebraica`, dove il
+ * dato non è "quanto consenso raccoglie" ma "chi lo dice". Un commento di Rashi non è né
+ * consenso né congettura: è un'attribuzione a un'autorità della tradizione. `valida.ts`
+ * tiene le due cose separate (tradizione_ebraica ⇔ attribuito, e mai altrove).
+ */
+export const Confidenza = z.enum(['consensus', 'majority', 'disputed', 'speculative', 'symbolic', 'attribuito'])
 export type Confidenza = z.infer<typeof Confidenza>
 
 /** Fonte citata da un claim curato. */

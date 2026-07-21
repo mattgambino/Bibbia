@@ -553,6 +553,10 @@
   content: var(--segno-symbolic);
   color: var(--status-symbolic);
 }
+.segno-status--attribuito::before {
+  content: var(--segno-attribuito);
+  color: var(--status-attribuito);
+}
 
 .badge {
   font-size: var(--testo-xs);
@@ -586,6 +590,11 @@
   color: var(--status-symbolic);
   background: var(--status-symbolic-fondo);
   border: 1px var(--status-symbolic-tratto) var(--status-symbolic);
+}
+.badge--attribuito {
+  color: var(--status-attribuito);
+  background: var(--status-attribuito-fondo);
+  border: 1px var(--status-attribuito-tratto) var(--status-attribuito);
 }
 
 /* I tre assi restano tre blocchi separati, con un filetto fra l'uno e l'altro:

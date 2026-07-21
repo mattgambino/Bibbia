@@ -157,12 +157,22 @@
   --status-symbolic-fondo: #e7e6e1;
   --status-symbolic-tratto: double;
 
-  /* Segni di margine: distinguono gli status anche in bianco e nero */
+  /* Fuori scala: non un grado di consenso ma un'attribuzione alla tradizione.
+     Prende il colore della prospettiva tradizionale, così badge della nota e
+     bordo della prospettiva dicono la stessa cosa. */
+  --status-attribuito: #5a4a3b;
+  --status-attribuito-fondo: #ede8e1;
+  --status-attribuito-tratto: solid;
+
+  /* Segni di margine: distinguono gli status anche in bianco e nero.
+     Le cinque forme della scala sono quadrangolari; il cerchio è l'unico
+     tondo perché `attribuito` non sta su quella scala. */
   --segno-consensus: '\25A0';   /* ■ quadrato pieno */
   --segno-majority: '\25A3';    /* ▣ quadrato con nucleo */
   --segno-disputed: '\25A1';    /* □ quadrato vuoto */
   --segno-speculative: '\25CA'; /* ◊ losanga */
   --segno-symbolic: '\25B3';    /* △ triangolo */
+  --segno-attribuito: '\25CB';  /* ○ cerchio vuoto */
 
   /* da_verificare: volutamente "non finito", mai attenuato (DESIGN.md §4) */
   --verificare-colore: #8a2f2f;

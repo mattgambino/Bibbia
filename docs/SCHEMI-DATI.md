@@ -38,7 +38,9 @@
 { "da": "gen.6.9", "a": "gen.9.17" }
 ```
 
-**Scala di confidenza** (§3.1 della specifica, invariata): `consensus` | `majority` | `disputed` | `speculative` | `symbolic`.
+**Scala di confidenza** (§3.1 della specifica): `consensus` | `majority` | `disputed` | `speculative` | `symbolic`.
+
+**`attribuito`** — sesto valore dell'enum, fuori da quella scala. Le prime cinque graduazioni misurano lo stato del dibattito storico-critico; su una nota `tradizione_ebraica` la domanda non è quanto consenso raccolga una lettura, ma **chi la dice**: un commento di Rashi non è né consenso accademico né congettura minoritaria. Regola imposta dal validatore: `tipo: "tradizione_ebraica"` ⇔ `confidence: "attribuito"`, e il valore non è ammesso altrove (né su `places.status`, né su `events.tempo_storico.confidence`, né su note storico-critiche). Che una lettura sia contestata *dentro* la tradizione si dice nel testo della nota e in `commentatore`, non abbassando la confidenza.
 
 **`da_verificare`.** Boolean su ogni record curato. Regola imposta dal validatore: un record con affermazioni prive di fonti **deve** avere `da_verificare: true`.
 
