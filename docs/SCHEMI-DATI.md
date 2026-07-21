@@ -254,7 +254,7 @@ Note di progetto:
 
 ```jsonc
 {
-  "meta": { "fonte": "Treasury of Scripture Knowledge", "licenza": "pubblico dominio", "generato": "…", "script": "import-tsk v0.1" },
+  "meta": { "fonte": "Treasury of Scripture Knowledge, Enhanced (TSKe) v1.2", "licenza": "© 2010 Timothy S. Morton (BibleAnalyzer.com), copyright derivativo…", "generato": "…", "script": "import-tsk v0.1" },
   "riferimenti": [
     { "da": "gen.1.1", "a": "psa.33.6", "interno": false, "tipo": null, "curato": false }
   ]
@@ -264,7 +264,9 @@ Note di progetto:
 Note di progetto:
 - `interno: true` = destinazione nel Pentateuco, navigabile in app; i riferimenti esterni (qui `psa` = Salmi) restano visibili come etichette non navigabili. `tipo` (`citazione` | `allusione` | `parallelo_tematico`) si valorizza solo in curation, come da specifica.
 - `meta.script` è sempre presente, come per gli altri file `[G]` (§1).
-- Il codice libro di `a` ammette anche la forma con cifra iniziale (es. `1sa.3.1` per 1 Samuele), oltre ai tre codici a lettere del Pentateuco e degli altri libri; la verifica puntuale dell'insieme completo dei codici reali è rimandata a F1.5 (import TSK).
+- Il codice libro di `a` ammette anche la forma con cifra iniziale (es. `1sa.3.1` per 1 Samuele), oltre ai tre codici a lettere del Pentateuco e degli altri libri. Verificato in F1.5: le sigle usate dalla sorgente sono esattamente 66, tutte nella forma `[1-3]?xx` (minuscolate: `gen`, `psa`, `1ch`, `3jo`, …), tutte accettate dalla regex.
+- **Fonte e licenza reali (decisione F1.5):** il TSK originale è pubblico dominio, ma l'edizione usata è il *TSK Enhanced* v1.2, con copyright derivativo di Timothy S. Morton (BibleAnalyzer.com) e ridistribuzione permessa solo a titolo gratuito, in formato aperto e con la nota di copyright allegata. Il `meta` riporta questa licenza per esteso, non "pubblico dominio".
+- Versificazione: la sorgente è numerata come la KJV. In import si rimappa sul TM (TVTMS, stessa logica di F1.4) **solo ciò che cade nel Pentateuco**, sia le chiavi `da` sia le destinazioni `a`; per gli altri libri non esiste un inventario TM in progetto, quindi i riferimenti restano nella numerazione della fonte. `interno: true` viene assegnato solo quando `a` corrisponde a un versetto TM realmente presente in `verses/`.
 
 ### 2.9 `indices/lemmi.json` `[G]` + `lexicon_it.json` `[C]`
 
