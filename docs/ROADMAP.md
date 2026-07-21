@@ -5,6 +5,7 @@ Regole di esecuzione:
 - Non iniziare il task o la fase successiva senza ok esplicito dell'utente.
 - I task marcati **⏸ REVISIONE** producono bozze in `bootstrap/` e si fermano lì: lo spostamento in `public/data/` avviene solo dopo revisione umana.
 - Aggiornare lo stato dei task in questo file (`[ ]` → `[x]`) man mano.
+- **Ogni task di curation estende `lexicon_it.json`** (glosse italiane per lemma) con i lemmi del range appena curato: l'italiano cresce capitolo per capitolo insieme al resto, non in un blocco finale. Vale per F2.1 (già fatto → recuperato in F2.5), F2.3, F3.4 e ogni curation successiva.
 
 ---
 
@@ -40,10 +41,16 @@ Regole di esecuzione:
 
 ## Fase 2 — Contesto e curation Genesi 1–3
 
-- [ ] **F2.1 Bozze curation Gen 1–3.** ⏸ REVISIONE — `events` (segmentazione in pericopi completa e contigua su Gen 1–3, tre assi compilati), `notes`, integrazione/correzione di `places`/`people` per il range. Ogni claim con fonti reali o `da_verificare: true`. Mai inventare fonti o consenso.
+- [x] **F2.1 Bozze curation Gen 1–3.** ⏸ REVISIONE — `events` (segmentazione in pericopi completa e contigua su Gen 1–3, tre assi compilati), `notes`, integrazione/correzione di `places`/`people` per il range. Ogni claim con fonti reali o `da_verificare: true`. Mai inventare fonti o consenso.
+  *Esito:* fonti concordate con l'utente: **Bible Odyssey** (SBL) per la parte storico-critica — Carr *The First Creation*, Halvorson-Taylor *The Second Creation*, Petersen *The Primeval History*, Callender *Eden* — e **Sefaria** per la tradizione ebraica. `bootstrap/events.json`: 8 pericopi contigue su Gen 1,1–3,24. `bootstrap/notes.json`: 22 note (17 storico-critiche, 5 `tradizione_ebraica`). `places`/`people`: compilati `nomi.it` e `nomi.translit` (convenzioni del progetto, non il formato TIPNR) per le 10 entità del range; `eden` portato da `disputed` a `symbolic` con `pro`/`contro` sui candidati mesopotamici. Tutti i record restano `da_verificare: true` per la passata finale F5.3.
+  *Termini Sefaria (verifica richiesta da SCHEMI-DATI §6):* la licenza è **per singola versione**, non per opera, ed è leggibile dall'API (`/api/v3/texts/...`, campo `license`) o dal pannello "About this Text". Verificato: Rashi nella versione Rosenbaum-Silbermann 1929-34 → *Public Domain*; Ibn Ezra ebraico "Piotrkow 1907-1911" → *Public Domain*, ma la traduzione inglese Strickman-Silver → *CC-BY-NC*; Ramban in traduzione Chavel → *CC-BY*. Nome e logo Sefaria sono marchi registrati. **Decisione:** le note memorizzano solo `sefaria_ref` più una sintesi originale in italiano, e linkano in uscita; nessun testo di commento viene copiato nel dataset, così la questione del caching non si pone. Se in futuro servisse il caching, va verificata la licenza della singola versione citata.
+  *Cesura Gen 2,4:* il versetto-cerniera (1,1–2,4a P / 2,4b– secondo racconto) non è divisibile con id al versetto; il v. 4 sta per intero nella pericope del secondo racconto e la doppia attribuzione è spiegata nella nota `gen24-cesura-versetto-cerniera`.
+  *Aperto:* `composizione.range` del materiale non sacerdotale è un intervallo largo e provvisorio (-900/-400) perché le fonti usate non danno datazione assoluta — l'avvertenza è dentro le `sintesi`, la datazione va fissata in F5.3. `dati_narrativi` di `adam` resta `null`: le età di Gen 5 appartengono a F3.3/F3.4.
 - [ ] **F2.2 Colonna contesto.** Tab Dove/Quando/Chi sincronizzati con la pericope visibile durante lo scroll, con miniature (minimappa con stile marker per status; tre assi in miniatura; mini-schede persone). Installazione Leaflet (e D3 se serve già qui).
 - [ ] **F2.3 Traduzione letterale Gen 1–3.** Proposta pericope per pericope in sessione, approvazione esplicita dell'utente, solo poi scrittura in `translations/letterale.json`. Ambiguità reali → note, non risolte in silenzio.
-- [ ] **F2.4 Note in UI.** Indicatori a margine per tipo/confidenza, pannello nota con badge, fonti, flag `da_verificare`; note `tradizione_ebraica` con link Sefaria (prima: verifica dei termini d'uso per l'eventuale caching).
+- [ ] **F2.4 Note in UI.** Indicatori a margine per tipo/confidenza, pannello nota con badge, fonti, flag `da_verificare`; note `tradizione_ebraica` con link Sefaria (verifica dei termini d'uso già fatta in F2.1: solo `sefaria_ref` e link in uscita, nessun testo di commento nel dataset).
+- [ ] **F2.5 Glosse italiane per lemma.** Creazione di `public/data/lexicon_it.json` `[C]` (SCHEMI-DATI §2.9, schema già in `src/tipi/lemma.ts`) popolato con i lemmi di Gen 1–3, più il caricamento nel pannello parola: dove esiste una glossa italiana si mostra quella, con la glossa EN di TAHOT che resta visibile ed etichettata come tale (mai sostituita in silenzio). Ogni voce porta `fonti`: la glossa TAHOT da cui deriva e/o un lessico con licenza compatibile — nessuna glossa scritta a memoria. Da F2.5 in poi ogni task di curation estende il file sul proprio range (vedi regole di esecuzione).
+  *Nota:* tocca la UI, quindi vale la regola delle skill `frontend-design` e `ui-ux-pro-max` e i vincoli di `docs/DESIGN.md`.
 
 ## Fase 3 — Viste complete e curation Genesi 4–11
 
@@ -63,4 +70,5 @@ Regole di esecuzione:
 
 - [ ] **F5.1 Ricerca** (testo traduzioni, lemmi, entità).
 - [ ] **F5.2 Export/backup del dataset** curato.
-- [ ] **F5.3 Pulizia finale** e README tecnico (setup, comandi, come aggiungere una traduzione personale, come rigenerare i dati).
+- [ ] **F5.3 Passata di verifica dei `da_verificare`.** ⏸ REVISIONE — rassegna in blocco di **tutti** i record curati rimasti con `da_verificare: true` (events, notes, places, people, lexicon): controllo delle fonti, conferma o correzione di confidenze e status, abbassamento del flag a `false` dove verificato. **Decisione dell'utente (21/07/2026):** durante le fasi di curation non ci si ferma sui `da_verificare`, si producono le bozze complete e si prosegue; la verifica avviene qui, una volta sola.
+- [ ] **F5.4 Pulizia finale** e README tecnico (setup, comandi, come aggiungere una traduzione personale, come rigenerare i dati).

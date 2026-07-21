@@ -1,0 +1,461 @@
+[
+  {
+    "id": "gen11-bereshit-costrutto",
+    "target": { "tipo": "versetto", "ref": "gen.1.1" },
+    "tipo": "filologica",
+    "titolo": "«In principio Dio creò» oppure «Quando Dio cominciò a creare»?",
+    "testo": "La resa tradizionale rende Gen 1,1 come una frase principale conclusa: «In principio Dio creò il cielo e la terra». Carr osserva che la ricerca storica suggerisce piuttosto una costruzione dipendente: «Quando Dio cominciò a creare il cielo e la terra — e la terra era informe e vuota, la tenebra era sulla faccia dell'abisso e un vento divino aleggiava sulle acque — Dio disse…». La differenza non è marginale: nella prima lettura il v. 1 è il primo atto creativo, nella seconda i vv. 1-2 descrivono il caos che precede l'ordinamento. Le traduzioni italiane correnti seguono in maggioranza la resa tradizionale.",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David Carr",
+        "titolo": "The First Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-first-creation/",
+        "dettaglio": "sezione «Does Genesis 1 describe creation \"out of nothing\"?»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen11-non-ex-nihilo",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.1.1", "a": "gen.1.2" } },
+    "tipo": "storica",
+    "titolo": "Gen 1 non descrive una creazione «dal nulla»",
+    "testo": "L'accento del capitolo è sul potere di Dio di organizzare la creazione nelle parti di un tempio cosmico, non su una produzione magica di materia dal nulla. La dottrina della creatio ex nihilo è una elaborazione successiva, che il testo di Gen 1 non afferma: al principio, per così dire, c'è il caos.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David Carr",
+        "titolo": "The First Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-first-creation/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen12-ruach-elohim",
+    "target": { "tipo": "versetto", "ref": "gen.1.2" },
+    "tipo": "divergenza_traduttiva",
+    "titolo": "רוּחַ אֱלֹהִים: «spirito di Dio» o «vento divino»?",
+    "testo": "Il sintagma ammette entrambe le rese: rûaḥ vale sia «soffio, vento» sia «spirito», ed ʾĕlōhîm può funzionare da genitivo («di Dio») o da superlativo/qualificatore («divino», «poderoso»). La tradizione traduttiva italiana rende quasi sempre «lo spirito di Dio»; Carr, nella sua parafrasi del v. 2, adotta invece «un vento divino aleggiava sulle acque», coerente con la lettura dei vv. 1-2 come descrizione del caos. La scelta orienta l'interpretazione: presenza personale di Dio da un lato, elemento del quadro caotico dall'altro.",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David Carr",
+        "titolo": "The First Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-first-creation/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1-giorno-non-era",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.1.3", "a": "gen.1.13" } },
+    "tipo": "filologica",
+    "titolo": "«Giorno» in Gen 1 non significa «era»",
+    "testo": "La proposta di leggere yôm come «era» geologica, per armonizzare il capitolo con la scienza moderna, urta contro la struttura del testo: l'intera scansione dei sei giorni porta a una conclusione fondata su una settimana reale, il riposo (šabbāṯ) e la benedizione del settimo giorno (Gen 2,1-3). Carr rileva che nessun altro racconto di creazione antico è organizzato così: alcuni descrivono divinità che riposano, ma perché hanno creato gli umani per lavorare al posto loro. Reinterpretare i giorni come ere fa perdere proprio il punto del racconto.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David Carr",
+        "titolo": "The First Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-first-creation/",
+        "dettaglio": "sezione «Can the word 'day' in Genesis 1 also mean 'era'?»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen126-immagine-e-dominio",
+    "target": { "tipo": "versetto", "ref": "gen.1.26" },
+    "tipo": "storica",
+    "titolo": "«A nostra immagine»: l'umanità come replica terrestre del re cosmico",
+    "testo": "Il Dio di Gen 1 è raffigurato come un re cosmico, insieme comandante supremo e sommo sacerdote, e l'universo come un tempio cosmico su cui presiede. In questo quadro gli umani sono repliche terrestri di Dio: riflettono il potere sovrano e creativo divino nel modo in cui «dominano» sulla creazione e generano a loro volta figli. Il dominio affidato all'umanità (vv. 26-28) è uno degli elementi che distinguono questo racconto dal secondo, dove all'umano è affidato invece il compito di coltivare e custodire un giardino (Gen 2,15).",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David Carr",
+        "titolo": "The First Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-first-creation/"
+      },
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen24-cesura-versetto-cerniera",
+    "target": { "tipo": "versetto", "ref": "gen.2.4" },
+    "tipo": "filologica",
+    "titolo": "Gen 2,4 è il versetto-cerniera fra i due racconti: perché l'app non può dividerlo",
+    "testo": "La critica divide questo versetto a metà: Gen 1,1-2,4a è attribuito alla mano sacerdotale, mentre il secondo racconto di creazione comincia in Gen 2,4b. La segmentazione in pericopi di questa applicazione lavora su id di versetto interi e non può rappresentare una cesura interna al versetto: il v. 4 è stato perciò assegnato per intero alla pericope del secondo racconto («Il giardino in Eden, i fiumi e il comando», Gen 2,4-17), che si apre così con la formula delle «generazioni» (tôleḏôṯ). Chi legge tenga presente che la prima metà del versetto appartiene, nell'analisi delle fonti, all'unità precedente. Scelta editoriale del progetto, non un'affermazione critica.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+        "dettaglio": "attribuzione di Gen 1,1-2,4a alla mano sacerdotale e di Gen 2,4b-25 al racconto anteriore"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen27-adam-adamah",
+    "target": { "tipo": "versetto", "ref": "gen.2.7" },
+    "tipo": "filologica",
+    "titolo": "ʾāḏām e ʾăḏāmâ: il gioco di parole fra l'umano e il suolo",
+    "testo": "Il secondo racconto lega l'umanità (ʾāḏām) al suolo (ʾăḏāmâ) da cui è tratta: prima della sua creazione «non c'era nessuno che lavorasse il terreno». Per questo alcuni propongono che «terrestre» renda ʾāḏām meglio di «uomo». Il legame è anche di scena: il racconto è tutto agricolo — irrigazione, terra coltivabile, giardino, alberi, piante, animali e i primi agricoltori. La resa italiana perde inevitabilmente l'assonanza dell'ebraico.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen210-quattro-fiumi",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.2.10", "a": "gen.2.14" } },
+    "tipo": "geografica",
+    "titolo": "I quattro fiumi: due identificati, due no",
+    "testo": "Tigri ed Eufrate sono fiumi noti e identificati; Pishon e Ghicon no, e le proposte di identificazione sono numerose e fra loro incompatibili — il dataset OpenBible registra per il Ghicon candidati che vanno dal Nilo alla sorgente di Ghicon a Gerusalemme, dal Karkheh al Diyala, e per il Pishon dal Wadi Baysh al Gange all'Indo. Il quadro fluviale è l'argomento principale di chi colloca il giardino nella bassa Mesopotamia, anche sulla base del sumerico edin («steppa, pianura») e del mito di Dilmun; l'epopea di Atrahasis si apre con gli dèi che scavano i canali della steppa, Tigri ed Eufrate compresi. Nessuna di queste identificazioni è dimostrata: la dispersione stessa delle proposte è il dato da mostrare in mappa.",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Dexter Callender",
+        "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/eden/"
+      },
+      {
+        "tipo": "dataset",
+        "titolo": "OpenBible.info Bible Geocoding",
+        "url": "https://www.openbible.info/geo/",
+        "dettaglio": "CC BY 4.0; ventaglio dei candidati per Pishon e Gihon in ancient.jsonl"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen218-ezer-kenegdo",
+    "target": { "tipo": "versetto", "ref": "gen.2.18" },
+    "tipo": "divergenza_traduttiva",
+    "titolo": "ʿēzer kəneḡdô: «aiuto», non «aiutante»",
+    "testo": "L'espressione indica una controparte corrispondente: la donna è creata come partner dell'umano, non come suo subordinato. Il fatto di essere formata per seconda non implica di per sé che sia secondaria — nel primo racconto è l'umanità a essere creata per ultima, e questo la segnala come speciale. Le traduzioni prendono strade sensibilmente diverse su questo sintagma e su ʾāḏām («uomo» o «umanità»), e con esse cambia la concezione di creazione, sesso e genere che il lettore ricava dal testo.",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+        "dettaglio": "sezione «Is the woman created to be second to the man?»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen223-ish-ishah",
+    "target": { "tipo": "versetto", "ref": "gen.2.23" },
+    "tipo": "filologica",
+    "titolo": "ʾîš / ʾiššâ: quando compare il maschile",
+    "testo": "Fino a questo punto il testo usa per il primo essere il nome generico ʾāḏām, che designa l'insieme degli umani, non il maschio (ʾîš). Interpreti rabbinici antichi e moderni ne hanno tratto l'ipotesi che il primo essere fosse sessualmente indifferenziato, androgino, o maschile e femminile insieme: solo con la formazione della donna — cioè con la sua distinzione dal primo essere — compare un essere propriamente maschile, come segnalano le prime parole dell'uomo: «costei sarà chiamata ʾiššâ, perché da ʾîš è stata tratta».",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen31-arum-serpente",
+    "target": { "tipo": "versetto", "ref": "gen.3.1" },
+    "tipo": "filologica",
+    "titolo": "ʿārûm: il serpente «astuto» e i nudi del versetto precedente",
+    "testo": "L'aggettivo che qualifica il serpente è ambiguo fra «astuto» e «accorto, sagace», ed è un gioco di parole con il termine ebraico per «nudi» usato subito prima, alla fine di Gen 2,25 (ʿărûmmîm). Il legame verbale salda le due scene, che la divisione in capitoli separa.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Dexter Callender",
+        "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/eden/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen31-serpente-non-satana",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.3.1", "a": "gen.3.13" } },
+    "tipo": "storica",
+    "titolo": "Nel racconto il serpente non è Satana",
+    "testo": "In nessun punto della narrazione di Eden il serpente è chiamato Satana o diavolo; l'identificazione è il risultato di una convergenza posteriore fra il drago serpentino associato al mare e al caos precosmico (Sal 74,13-14; Is 27,1; Gb 3,8), la figura di ha-śāṭān come membro della corte celeste (Gb 1-2; Zc 3,1-2) e l'affermazione della donna di essere stata ingannata (Gen 3,13); la saldatura è attestata in testi molto più tardi (Ap 12,9; 20,2; Gv 8,44; 2Cor 11,3). Nel racconto, per di più, la rivelazione fatta dal serpente circa il motivo nascosto del Signore risulta a conti fatti veritiera.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Dexter Callender",
+        "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/eden/",
+        "dettaglio": "sezione «Who is the talking serpent?»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen36-frutto-non-mela",
+    "target": { "tipo": "versetto", "ref": "gen.3.6" },
+    "tipo": "storica",
+    "titolo": "Il frutto proibito non è identificato",
+    "testo": "Il testo non dice di che frutto si tratti. Le identificazioni proposte nella storia dell'interpretazione e nell'iconografia sono varie — fico, melograno, uva e soprattutto mela; quest'ultima deriva forse dalla traduzione latina della Vulgata, molto posteriore. Quanto all'albero, «conoscenza del bene e del male» può indicare conoscenza morale, sessuale, onnicomprensiva o matura: anche qui il testo non decide.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/"
+      },
+      {
+        "tipo": "url",
+        "autore": "Dexter Callender",
+        "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/eden/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen320-nomi-propri-tardivi",
+    "target": { "tipo": "versetto", "ref": "gen.3.20" },
+    "tipo": "filologica",
+    "titolo": "«Adamo» ed «Eva» come nomi propri arrivano tardi",
+    "testo": "I due protagonisti non sono designati con nomi propri finché non lasciano il giardino: il nome della donna compare qui (Gen 3,20), quello dell'uomo in Gen 4,1 e Gen 5,1. Prima si parla dell'«umano» (ʾāḏām, con l'articolo) e della «donna»: un tratto che suggerisce figure generiche o archetipiche all'inizio del racconto. Le traduzioni che introducono «Adamo» già in Gen 2 anticipano un passaggio che il testo ebraico colloca alla fine.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen3-caduta-peccato-originale",
+    "target": { "tipo": "pericope", "ref": { "da": "gen.3.14", "a": "gen.3.24" } },
+    "tipo": "storica",
+    "titolo": "«Caduta» e «peccato originale» sono categorie della ricezione",
+    "testo": "Le parole «caduta», «tentazione» e «peccato originale» non compaiono nel racconto: sono categorie sviluppate più tardi, soprattutto nel cristianesimo antico, che legge la vicenda di Eden come base della dottrina del peccato originale. L'ebraismo non vi riconosce tale dottrina. La distinzione fra ciò che il testo dice e ciò che la sua ricezione vi ha letto va tenuta ferma, in entrambe le direzioni.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/"
+      },
+      {
+        "tipo": "url",
+        "autore": "Dexter Callender",
+        "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/eden/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "eden-paradiso-pardes",
+    "target": { "tipo": "luogo", "ref": "eden" },
+    "tipo": "geografica",
+    "titolo": "Perché Eden si chiama «paradiso»",
+    "testo": "«Paradiso» non è parola del testo ebraico: viene dal persiano pardes, «parco o giardino cinto da mura», passato in greco come paradeisos e usato dai traduttori greci di Genesi per rendere l'ebraico gan, «giardino». Nell'orizzonte antico-orientale il giardino-oasi è un simbolo di vita in un clima arido, e la sua associazione con il tempio, la «casa» del Signore, fa di Eden un modello dell'incontro fra umano e divino (cfr. Ez 47,1-12; Zc 14,8). Altri testi biblici chiamano Eden «giardino di Dio» (Ez 28,13; Is 51,3).",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Dexter Callender",
+        "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/eden/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "eve-riferimenti-solo-nome",
+    "target": { "tipo": "persona", "ref": "eve" },
+    "tipo": "filologica",
+    "titolo": "I riferimenti di Eva coprono solo le occorrenze del nome",
+    "testo": "La scheda elenca due soli versetti (Gen 3,20 e Gen 4,1) perché il dataset TIPNR indicizza le occorrenze del nome proprio, che nel racconto compare appena. La donna è presente in tutta la sezione Gen 2,18-3,24, dove però è chiamata «la donna». Il dato non è un errore di importazione: è la conseguenza del fatto che i nomi propri arrivano tardi nel racconto (vedi la nota su Gen 3,20). Una eventuale estensione dei riferimenti alle occorrenze non nominali è lavoro di curation, da fare esplicitamente e non in silenzio.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TIPNR (Translators Individualised Proper Names with all References), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0; indicizzazione per occorrenza del nome proprio"
+      },
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen11-rashi-perche-iniziare-dalla-creazione",
+    "target": { "tipo": "versetto", "ref": "gen.1.1" },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: perché la Torah non comincia dai comandamenti",
+    "testo": "Rashi apre il suo commento riportando la domanda di Rabbi Yitzchak: la Torah, in quanto libro di leggi di Israele, avrebbe dovuto cominciare da Es 12,2, il primo comandamento dato a Israele; perché allora comincia dalla creazione? La risposta che Rashi riporta è di ordine giuridico-politico: se le nazioni accusassero Israele di aver preso con la violenza le terre delle sette nazioni di Canaan, Israele potrà rispondere che tutta la terra appartiene al Santo, benedetto Egli sia, che l'ha data a chi ha voluto e, secondo la sua volontà, l'ha tolta a quelli e l'ha data a noi. Lo stesso passaggio apre anche il commento di Ramban al versetto.",
+    "confidence": "consensus",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 1:1:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "titolo": "Rashi on Genesis 1:1:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.1.1.1",
+        "dettaglio": "versione «Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934», licenza dichiarata: Public Domain"
+      },
+      {
+        "tipo": "url",
+        "titolo": "Ramban on Genesis 1:1:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Ramban_on_Genesis.1.1.1",
+        "dettaglio": "traduzione Chavel 1971-1976, licenza dichiarata: CC-BY"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen11-ibn-ezra-bet-di-bereshit",
+    "target": { "tipo": "versetto", "ref": "gen.1.1" },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Ibn Ezra: la bet di bereshit",
+    "testo": "Ibn Ezra apre il commento al versetto con una questione grammaticale: riporta che i sapienti hanno detto che la bet iniziale di bərēʾšîṯ è aggiunta, come la bet di bārīʾšōnâ («in principio, dapprima»). La discussione riguarda dunque lo statuto della preposizione e, con esso, la sintassi dell'incipit — lo stesso nodo che la critica moderna affronta discutendo se Gen 1,1 sia una principale o una temporale dipendente (vedi la nota corrispondente).",
+    "confidence": "consensus",
+    "commentatore": "Ibn Ezra",
+    "sefaria_ref": "Ibn Ezra on Genesis 1:1:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "titolo": "Ibn Ezra on Genesis 1:1:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Ibn_Ezra_on_Genesis.1.1.1",
+        "dettaglio": "versione ebraica «Piotrkow, 1907-1911», licenza dichiarata: Public Domain"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen126-rashi-naaseh-adam",
+    "target": { "tipo": "versetto", "ref": "gen.1.26" },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: perché «facciamo» al plurale",
+    "testo": "Sul plurale «facciamo l'umano» Rashi riporta la lettura rabbinica secondo cui da qui si impara l'umiltà del Santo, benedetto Egli sia: poiché l'umano è a somiglianza degli angeli e questi avrebbero potuto invidiarlo, Dio si consultò con loro. Rashi porta a sostegno altri passi in cui Dio consulta la corte celeste (1Re 22,19; Dn 4,14), e conclude con la motivazione riportata in Sanhedrin 38b: se non ci fossero anche sulla terra esseri a somiglianza di Dio, ci sarebbe invidia fra le creature.",
+    "confidence": "consensus",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 1:26:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "titolo": "Rashi on Genesis 1:26:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.1.26.1",
+        "dettaglio": "versione Rosenbaum-Silbermann 1929-1934, licenza dichiarata: Public Domain; fonti citate da Rashi: Midrash Tanchuma, Bereshit Rabbah 8, Sanhedrin 38b"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen218-rashi-non-due-divinita",
+    "target": { "tipo": "versetto", "ref": "gen.2.18" },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: «non è bene che l'umano sia solo»",
+    "testo": "Rashi spiega il versetto con un motivo riportato da Pirqé de-Rabbi Eliezer 12: Dio fa all'umano un aiuto perché non si dica che vi sono due divinità — il Santo, benedetto Egli sia, unico fra gli esseri celesti senza compagno, e l'umano, unico fra gli esseri terrestri senza compagno. La solitudine dell'umano è letta cioè come un rischio teologico, non solo affettivo.",
+    "confidence": "consensus",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 2:18:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "titolo": "Rashi on Genesis 2:18:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.2.18.1",
+        "dettaglio": "versione Rosenbaum-Silbermann 1929-1934, licenza dichiarata: Public Domain; fonte citata da Rashi: Pirkei d'Rabbi Eliezer 12"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen31-rashi-nesso-col-versetto-precedente",
+    "target": { "tipo": "versetto", "ref": "gen.3.1" },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: che cosa lega il serpente alla nudità appena menzionata",
+    "testo": "Rashi si pone il problema del nesso narrativo: dopo la nudità senza vergogna di Gen 2,25 ci si aspetterebbe il seguito di Gen 3,21 («fece per l'uomo e sua moglie tuniche di pelle e li vestì»). La Scrittura, spiega, informa invece con quale disegno il serpente li assalì: li vide nudi e senza vergogna e la desiderò (Bereshit Rabbah 18,6). Anche in questa lettura, come nell'osservazione filologica sul gioco di parole ʿārûm / ʿărûmmîm, il legame fra le due scene passa dalla nudità.",
+    "confidence": "consensus",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 3:1:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "titolo": "Rashi on Genesis 3:1:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.3.1.1",
+        "dettaglio": "versione Rosenbaum-Silbermann 1929-1934, licenza dichiarata: Public Domain; fonte citata da Rashi: Bereshit Rabbah 18:6"
+      }
+    ],
+    "da_verificare": true
+  }
+]
