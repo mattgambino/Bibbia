@@ -217,6 +217,11 @@ type Categoria =
   | 'lexicon'
   | 'embeddings'
 
+/** `notes.json` oppure `notes-<qualcosa>.json`, mai `notesfoo.json`. */
+function collezione(base: string, nome: string): boolean {
+  return base === `${nome}.json` || (base.startsWith(`${nome}-`) && base.endsWith('.json'))
+}
+
 function classifica(relativo: string): Categoria | null {
   const base = path.posix.basename(relativo)
   const cartella = path.posix.basename(path.posix.dirname(relativo))
@@ -225,10 +230,15 @@ function classifica(relativo: string): Categoria | null {
   if (cartella === 'crossrefs') return 'crossrefs'
   if (cartella === 'indices' && base === 'lemmi.json') return 'lemmi'
   if (cartella === 'translations') return base === 'index.json' ? 'manifest' : 'traduzione'
-  if (base === 'places.json') return 'places'
-  if (base === 'people.json') return 'people'
-  if (base === 'events.json') return 'events'
-  if (base === 'notes.json') return 'notes'
+  // Le collezioni curate ammettono anche bozze parziali con suffisso — `notes-f23.json`,
+  // `places-gen4.json` — perché la curation procede per range e una bozza va tenuta
+  // separata dal file già revisionato senza per questo uscire dalla validazione. Il
+  // controllo sugli id duplicati fra file (avviso K) copre il rischio che la bozza e il
+  // file curato si sovrappongano.
+  if (collezione(base, 'places')) return 'places'
+  if (collezione(base, 'people')) return 'people'
+  if (collezione(base, 'events')) return 'events'
+  if (collezione(base, 'notes')) return 'notes'
   if (base === 'lexicon_it.json') return 'lexicon'
   if (base === 'embeddings.json') return 'embeddings'
   return null
