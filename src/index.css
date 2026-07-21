@@ -1,4 +1,10 @@
-* {
+/* I token vengono per primi: tutto il resto ne dipende (DESIGN.md §4). */
+@import './stili/tokens.css';
+@import './stili/app.css';
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 

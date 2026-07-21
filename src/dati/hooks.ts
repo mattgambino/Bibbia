@@ -1,8 +1,21 @@
 // src/dati/hooks.ts — hook React sopra i loader di caricamento.ts (task F0.4).
 
 import { useEffect, useState } from 'react'
-import type { CodiceLibro, LibroParole, LibroVersetti } from '../tipi/index.ts'
-import { caricaParole, caricaVersetti } from './caricamento.ts'
+import type {
+  CodiceLibro,
+  IndiceLemmi,
+  LibroParole,
+  LibroVersetti,
+  ManifestTraduzioni,
+  Traduzione,
+} from '../tipi/index.ts'
+import {
+  caricaIndiceLemmi,
+  caricaManifestTraduzioni,
+  caricaParole,
+  caricaTraduzione,
+  caricaVersetti,
+} from './caricamento.ts'
 
 /** Stato di un caricamento asincrono, discriminato su `stato`. */
 export type Caricamento<T> =
@@ -40,4 +53,19 @@ export function useVersetti(libro: CodiceLibro): Caricamento<LibroVersetti> {
 
 export function useParole(libro: CodiceLibro): Caricamento<LibroParole> {
   return useRisorsa(`words/${libro}`, () => caricaParole(libro))
+}
+
+export function useManifestTraduzioni(): Caricamento<ManifestTraduzioni> {
+  return useRisorsa('translations/index', caricaManifestTraduzioni)
+}
+
+export function useTraduzione(id: string): Caricamento<Traduzione> {
+  return useRisorsa(`translations/${id}`, () => caricaTraduzione(id))
+}
+
+/** `attivo: false` evita di scaricare i ~2 MB dell'indice finché non serve. */
+export function useIndiceLemmi(attivo: boolean): Caricamento<IndiceLemmi> {
+  return useRisorsa(attivo ? 'indices/lemmi' : '', () =>
+    attivo ? caricaIndiceLemmi() : new Promise<IndiceLemmi>(() => {}),
+  )
 }

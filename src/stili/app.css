@@ -1,0 +1,396 @@
+/* Stili della vista lettura (F1.6b). Ogni valore viene da tokens.css:
+   nessun esadecimale qui né nei componenti. */
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: var(--col-navigazione) minmax(0, 1fr) var(--col-contesto);
+  min-height: 100vh;
+  background: var(--carta-apparato);
+  color: var(--inchiostro);
+  font-family: var(--font-ui);
+  font-size: var(--testo-base);
+  line-height: var(--interlinea-ui);
+}
+
+/* Sotto 1100px la colonna destra si apre a richiesta, sopra il testo.
+   Il mobile non è un obiettivo dell'MVP (DESIGN.md §5). */
+@media (max-width: 1100px) {
+  .app {
+    grid-template-columns: var(--col-navigazione) minmax(0, 1fr);
+  }
+  .contesto {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--col-contesto);
+    z-index: var(--z-pannello);
+    background: var(--carta-apparato);
+    border-left: var(--bordo-marcato);
+    overflow-y: auto;
+  }
+  .contesto[hidden] {
+    display: none;
+  }
+}
+@media (min-width: 1101px) {
+  .contesto-interruttore {
+    display: none;
+  }
+}
+
+/* --- etichette e controlli comuni --- */
+.etichetta {
+  font-size: var(--testo-xs);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+  margin: var(--sp-5) 0 var(--sp-2);
+}
+
+.stato-caricamento,
+.stato-errore {
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-tenue);
+  padding: var(--sp-4);
+}
+.stato-errore {
+  color: var(--verificare-colore);
+  border: var(--verificare-bordo);
+  border-radius: var(--raggio);
+  background-image: var(--verificare-fondo);
+}
+
+/* --- colonna sinistra: navigazione --- */
+.navigazione {
+  border-right: var(--bordo-sottile);
+  padding: var(--sp-5) var(--sp-4);
+  overflow-y: auto;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.marchio {
+  font-size: var(--testo-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+  margin: 0;
+}
+.libri {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.libri button {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: var(--raggio-sm);
+  padding: var(--sp-1) var(--sp-2);
+  font: inherit;
+  color: var(--inchiostro-medio);
+  cursor: pointer;
+  transition: background var(--transizione), color var(--transizione);
+}
+.libri button:hover {
+  background: var(--carta-incisa);
+  color: var(--inchiostro);
+}
+.libri button[aria-current='true'] {
+  background: var(--carta-incisa);
+  color: var(--inchiostro);
+  font-weight: var(--peso-medio);
+}
+.capitoli {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-1);
+}
+.capitoli button {
+  border: var(--bordo-sottile);
+  background: var(--carta-rilievo);
+  border-radius: var(--raggio-sm);
+  padding: var(--sp-1) 0;
+  font: inherit;
+  font-size: var(--testo-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro-medio);
+  cursor: pointer;
+  transition: background var(--transizione);
+}
+.capitoli button:hover {
+  background: var(--carta-incisa);
+}
+.capitoli button[aria-current='true'] {
+  background: var(--inchiostro);
+  color: var(--carta-rilievo);
+  border-color: var(--inchiostro);
+}
+.selettore {
+  width: 100%;
+  font: inherit;
+  font-size: var(--testo-sm);
+  padding: var(--sp-1) var(--sp-2);
+  border: var(--bordo-sottile);
+  border-radius: var(--raggio-sm);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro);
+  cursor: pointer;
+}
+
+/* --- colonna centrale: lettura --- */
+.lettura {
+  background: var(--carta-lettura);
+  border-right: var(--bordo-sottile);
+  padding: var(--sp-6) var(--sp-6) var(--sp-8);
+  min-width: 0;
+}
+.intestazione-capitolo {
+  max-width: calc(var(--col-lettura-max) + var(--fascia-margine));
+  margin: 0 auto var(--sp-6);
+  padding: 0 0 var(--sp-3) var(--fascia-margine);
+  border-bottom: var(--bordo-marcato);
+}
+.intestazione-capitolo h1 {
+  font-family: var(--font-lettura);
+  font-size: var(--testo-lg);
+  font-weight: var(--peso-normale);
+  margin: 0;
+}
+.fonte {
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+  margin: var(--sp-1) 0 0;
+}
+.testo {
+  max-width: calc(var(--col-lettura-max) + var(--fascia-margine));
+  margin: 0 auto;
+}
+
+/* La fascia di margine: numero di versetto e segni dell'apparato stanno fuori
+   dalla colonna di testo, come nel margine di un'edizione critica. */
+.versetto {
+  position: relative;
+  padding: var(--sp-3) 0 var(--sp-3) var(--fascia-margine);
+  border-bottom: 1px solid var(--filetto);
+  scroll-margin-top: var(--sp-5);
+}
+.versetto:last-child {
+  border-bottom: 0;
+}
+.versetto--corrente {
+  background: var(--carta-rilievo);
+}
+.numero {
+  position: absolute;
+  left: 0;
+  top: var(--sp-3);
+  width: var(--fascia-margine);
+  padding-right: var(--sp-2);
+  text-align: right;
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro-tenue);
+}
+.ebraico {
+  font-family: var(--font-ebraico);
+  font-size: var(--testo-ebraico);
+  line-height: var(--interlinea-ebraico);
+  letter-spacing: normal;
+  margin: 0 0 var(--sp-3);
+  text-align: right;
+}
+.parola {
+  font: inherit;
+  background: none;
+  border: 0;
+  border-radius: var(--raggio-sm);
+  padding: 0 0.1em;
+  color: var(--inchiostro);
+  cursor: pointer;
+  transition: background var(--transizione);
+}
+.parola:hover {
+  background: var(--evidenza-occorrenza);
+}
+.parola--attiva {
+  background: var(--evidenza-parola);
+}
+/* Altre occorrenze dello stesso lemma nel capitolo aperto */
+.parola--lemma {
+  box-shadow: inset 0 -2px 0 var(--filetto-marcato);
+}
+.traduzione {
+  font-family: var(--font-lettura);
+  font-size: var(--testo-md);
+  line-height: var(--interlinea-lettura);
+  color: var(--inchiostro-medio);
+  margin: 0;
+}
+.traduzione--assente {
+  font-family: var(--font-ui);
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-tenue);
+}
+
+/* --- colonna destra: apparato --- */
+.contesto {
+  padding: var(--sp-6) var(--sp-4);
+  overflow-y: auto;
+  max-height: 100vh;
+}
+.contesto-interruttore {
+  position: fixed;
+  right: var(--sp-4);
+  bottom: var(--sp-4);
+  z-index: var(--z-sovrapposto);
+  font: inherit;
+  font-size: var(--testo-sm);
+  padding: var(--sp-2) var(--sp-3);
+  border: var(--bordo-marcato);
+  border-radius: var(--raggio);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro);
+  box-shadow: var(--ombra-pannello);
+  cursor: pointer;
+}
+.pannello {
+  background: var(--carta-rilievo);
+  border: var(--bordo-sottile);
+  border-radius: var(--raggio);
+  box-shadow: var(--ombra-pannello);
+  padding: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+.pannello h2 {
+  font-size: var(--testo-xs);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+  font-weight: var(--peso-medio);
+  margin: 0 0 var(--sp-3);
+}
+.pannello-testa {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-2);
+}
+.chiudi {
+  font: inherit;
+  font-size: var(--testo-sm);
+  line-height: 1;
+  background: none;
+  border: 0;
+  padding: var(--sp-1);
+  color: var(--inchiostro-tenue);
+  cursor: pointer;
+  border-radius: var(--raggio-sm);
+}
+.chiudi:hover {
+  color: var(--inchiostro);
+  background: var(--carta-incisa);
+}
+.parola-grande {
+  font-family: var(--font-ebraico);
+  font-size: var(--testo-ebraico-grande);
+  line-height: var(--interlinea-ebraico);
+  display: block;
+  text-align: right;
+}
+.translit {
+  font-family: var(--font-translit);
+  font-style: italic;
+  color: var(--inchiostro-medio);
+}
+.parsing {
+  font-size: var(--testo-sm);
+  margin: var(--sp-2) 0 var(--sp-3);
+  color: var(--inchiostro-medio);
+}
+.parsing .codice {
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+}
+.etichetta-inline {
+  font-size: var(--testo-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--inchiostro-tenue);
+}
+.morfemi {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.morfemi > li {
+  padding: var(--sp-2) 0;
+  border-top: 1px solid var(--filetto);
+}
+.morfema-testa {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-2);
+}
+.lemma {
+  font-family: var(--font-ebraico);
+  font-size: var(--testo-md);
+  unicode-bidi: isolate;
+}
+.glossa {
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+.strong {
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro-tenue);
+}
+.occorrenze {
+  list-style: none;
+  margin: var(--sp-2) 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  max-height: 11rem;
+  overflow-y: auto;
+}
+.occorrenze button {
+  font: inherit;
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--filetto-marcato);
+  border-radius: 0;
+  padding: 0 var(--sp-1);
+  color: var(--accento-link);
+  cursor: pointer;
+  transition: color var(--transizione), border-color var(--transizione);
+}
+.occorrenze button:hover {
+  color: var(--accento-link-attivo);
+  border-bottom-color: currentColor;
+}
+.occorrenze button[aria-current='true'] {
+  background: var(--evidenza-parola);
+  color: var(--inchiostro);
+}
+.conteggio {
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+}
+.vuoto {
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-tenue);
+  margin: 0;
+}

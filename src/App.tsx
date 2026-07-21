@@ -1,22 +1,9 @@
-import { useVersetti } from './dati/hooks.ts'
+import { Lettura } from './viste/Lettura.tsx'
 
-// Vista provvisoria del task F0.4: prova del loader, il JSON si mostra in forma
-// grezza come da ROADMAP. La vera vista lettura arriva in F1.6, col sistema di design.
+// La vista provvisoria di F0.4 (dump JSON del loader) è sostituita qui dalla
+// vista lettura vera, come previsto dalla ROADMAP.
 function App() {
-  const versetti = useVersetti('gen')
-
-  return (
-    <main>
-      <h1>Pentateuco in contesto</h1>
-      <p>
-        F0.4 — prova del loader: <code>data/verses/gen.json</code> in forma grezza. I dati sono una
-        fixture dichiaratamente finta, sostituita dall'import TAHOT in F1.1.
-      </p>
-      {versetti.stato === 'in_corso' && <p>Caricamento…</p>}
-      {versetti.stato === 'errore' && <p role="alert">Errore di caricamento: {versetti.messaggio}</p>}
-      {versetti.stato === 'pronto' && <pre>{JSON.stringify(versetti.dati, null, 2)}</pre>}
-    </main>
-  )
+  return <Lettura />
 }
 
 export default App

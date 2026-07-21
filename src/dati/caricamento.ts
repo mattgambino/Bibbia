@@ -6,7 +6,7 @@
 // la voce si rimuove, così un tentativo successivo può riprovare.
 
 import { z } from 'zod'
-import { LibroParole, LibroVersetti } from '../tipi/index.ts'
+import { IndiceLemmi, LibroParole, LibroVersetti, ManifestTraduzioni, Traduzione } from '../tipi/index.ts'
 import type { CodiceLibro } from '../tipi/index.ts'
 
 const cache = new Map<string, Promise<unknown>>()
@@ -42,4 +42,18 @@ export function caricaVersetti(libro: CodiceLibro): Promise<LibroVersetti> {
 
 export function caricaParole(libro: CodiceLibro): Promise<LibroParole> {
   return caricaJson(`words/${libro}.json`, LibroParole)
+}
+
+export function caricaManifestTraduzioni(): Promise<ManifestTraduzioni> {
+  return caricaJson('translations/index.json', ManifestTraduzioni)
+}
+
+export function caricaTraduzione(id: string): Promise<Traduzione> {
+  return caricaJson(`translations/${id}.json`, Traduzione)
+}
+
+// L'indice dei lemmi è un file unico (~2 MB) per tutto il Pentateuco: si carica
+// alla prima apertura del pannello parola, non all'avvio della vista.
+export function caricaIndiceLemmi(): Promise<IndiceLemmi> {
+  return caricaJson('indices/lemmi.json', IndiceLemmi)
 }

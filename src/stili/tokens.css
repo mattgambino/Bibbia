@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Design token — unica fonte di verità per colori, spaziature, tipografia.
+   Vincolante: nessun valore esadecimale nei componenti (DESIGN.md §4).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Font self-hosted (DESIGN.md §2-3). Nessun CDN: l'app funziona offline.
+   - Ezra SIL (OFL + MIT per la layout intelligence): ebraico masoretico con
+     niqqud e te'amim completi. Distribuito solo in TTF dal produttore: si
+     serve il TTF così com'è, senza riconversioni non verificabili.
+   - Charis SIL (OFL): serif di lettura per le traduzioni. Copertura verificata
+     su tutti i diacritici di traslitterazione (ʾ ʿ ā ē î ḏ ṯ š ḥ ṭ ṣ).
+   - IBM Plex Sans (OFL): solo apparato UI. Verificato: NON copre ʾ ʿ ḏ ṯ ḥ ṭ ṣ,
+     quindi ogni traslitterazione usa --font-translit (Charis), mai il sans.
+   -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Ezra SIL';
+  src: url('/fonts/EzraSIL-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Charis SIL';
+  src: url('/fonts/CharisSIL-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Charis SIL';
+  src: url('/fonts/CharisSIL-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Charis SIL';
+  src: url('/fonts/CharisSIL-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Charis SIL';
+  src: url('/fonts/CharisSIL-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/fonts/IBMPlexSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/fonts/IBMPlexSans-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/fonts/IBMPlexSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('/fonts/IBMPlexSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ------------------------------------------------------------------------
+     2. Famiglie e scala tipografica
+     ------------------------------------------------------------------------ */
+  --font-ebraico: 'Ezra SIL', serif;
+  --font-lettura: 'Charis SIL', Georgia, serif;
+  --font-ui: 'IBM Plex Sans', system-ui, sans-serif;
+  /* Traslitterazioni e caratteri scientifici: mai il sans (copertura assente) */
+  --font-translit: 'Charis SIL', Georgia, serif;
+
+  --testo-xs: 0.75rem;   /* 12px — etichette di margine, numeri di versetto */
+  --testo-sm: 0.8125rem; /* 13px — badge, metadati */
+  --testo-base: 0.9375rem; /* 15px — apparato UI */
+  --testo-md: 1.0625rem; /* 17px — traduzione a fronte */
+  --testo-lg: 1.375rem;  /* 22px — titoli di sezione */
+  /* L'ebraico sta al ~135% del latino affiancato (DESIGN.md §2) */
+  --testo-ebraico: 1.4375rem; /* 23px ≈ 135% di --testo-md */
+  --testo-ebraico-grande: 1.75rem;
+
+  --interlinea-stretta: 1.3;
+  --interlinea-ui: 1.5;
+  --interlinea-lettura: 1.7;
+  /* I te'amim stanno sopra e sotto la riga: interlinea larga, obbligatoria */
+  --interlinea-ebraico: 2.05;
+
+  --peso-normale: 400;
+  --peso-medio: 500;
+  --peso-forte: 600;
+
+  /* ------------------------------------------------------------------------
+     3. Colori — carta e inchiostro. Nessun accento decorativo: il colore
+        entra solo dove porta significato (status, prospettive, link).
+     ------------------------------------------------------------------------ */
+  --carta-apparato: #ecebe6;  /* fondo delle colonne laterali */
+  --carta-lettura: #fbfbf9;   /* fondo della colonna centrale */
+  --carta-rilievo: #ffffff;   /* pannelli e schede sopra la carta */
+  --carta-incisa: #e3e2db;    /* fondo di elementi premuti/selezionati */
+
+  --inchiostro: #1c1c19;      /* testo primario, ebraico compreso */
+  --inchiostro-medio: #4d4d46; /* traduzione secondaria, metadati leggibili */
+  --inchiostro-tenue: #6f6f66; /* etichette; contrasto ≥ 4.5:1 su --carta-* */
+
+  --filetto: #d5d3ca;         /* righe di separazione */
+  --filetto-marcato: #b3b0a4;
+
+  --accento-link: #2c4a6e;    /* rimandi e riferimenti incrociati */
+  --accento-link-attivo: #17304d;
+  --evidenza-parola: #e8e2cc; /* parola selezionata nel testo ebraico */
+  --evidenza-occorrenza: #f0ead2;
+
+  --focus: #1f5f8b;           /* anello di focus, sempre visibile */
+
+  /* ------------------------------------------------------------------------
+     4. Semantica della confidenza — colore E forma, mai solo colore.
+        Ogni status ha: un colore, uno stile di tratto, un segno di margine.
+        La stessa grammatica vale per badge, note, marker mappa e timeline.
+     ------------------------------------------------------------------------ */
+  --status-consensus: #2f5d46;
+  --status-consensus-fondo: #e4ede8;
+  --status-consensus-tratto: solid;
+
+  --status-majority: #3b5c7e;
+  --status-majority-fondo: #e3e9f0;
+  --status-majority-tratto: solid; /* filetto più sottile, vedi --bordo-* */
+
+  --status-disputed: #8f5420;
+  --status-disputed-fondo: #f2e8dd;
+  --status-disputed-tratto: dashed;
+
+  --status-speculative: #6a4d86;
+  --status-speculative-fondo: #ece6f1;
+  --status-speculative-tratto: dotted;
+
+  --status-symbolic: #5c5c54;
+  --status-symbolic-fondo: #e7e6e1;
+  --status-symbolic-tratto: double;
+
+  /* Segni di margine: distinguono gli status anche in bianco e nero */
+  --segno-consensus: '\25A0';   /* ■ quadrato pieno */
+  --segno-majority: '\25A3';    /* ▣ quadrato con nucleo */
+  --segno-disputed: '\25A1';    /* □ quadrato vuoto */
+  --segno-speculative: '\25CA'; /* ◊ losanga */
+  --segno-symbolic: '\25B3';    /* △ triangolo */
+
+  /* da_verificare: volutamente "non finito", mai attenuato (DESIGN.md §4) */
+  --verificare-colore: #8a2f2f;
+  --verificare-bordo: 1px dashed var(--verificare-colore);
+  --verificare-fondo: repeating-linear-gradient(
+    45deg,
+    transparent 0 5px,
+    rgba(138, 47, 47, 0.09) 5px 10px
+  );
+
+  /* Prospettive: distinte per tratto ed etichetta, senza gerarchia */
+  --prospettiva-critica: #3b4a5a;
+  --prospettiva-critica-bordo: 2px solid var(--prospettiva-critica);
+  --prospettiva-tradizione: #5a4a3b;
+  --prospettiva-tradizione-bordo: 3px double var(--prospettiva-tradizione);
+
+  /* ------------------------------------------------------------------------
+     5. Spaziature (scala 4px) e geometria
+     ------------------------------------------------------------------------ */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+
+  --raggio-sm: 2px;
+  --raggio: 3px; /* apparato a stampa: angoli quasi vivi, mai pillole */
+
+  --bordo-sottile: 1px solid var(--filetto);
+  --bordo-marcato: 1px solid var(--filetto-marcato);
+
+  /* Larghezze di colonna (DESIGN.md §5): le laterali non competono col centro */
+  --col-navigazione: 15rem;
+  --col-lettura-max: 40rem;  /* ~65-70 caratteri di traduzione a 17px */
+  --col-contesto: 22rem;
+  /* Fascia di margine dell'apparato: i segni di status vivono qui */
+  --fascia-margine: 1.75rem;
+
+  /* Ombre: solo per staccare un livello reale (pannello sopra la pagina) */
+  --ombra-pannello: 0 1px 3px rgba(28, 28, 25, 0.14);
+
+  /* ------------------------------------------------------------------------
+     6. Movimento — solo orientamento, breve e discreto
+     ------------------------------------------------------------------------ */
+  --transizione: 140ms ease-out;
+  --z-pannello: 20;
+  --z-sovrapposto: 30;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transizione: 0ms;
+  }
+}
