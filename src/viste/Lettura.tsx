@@ -5,20 +5,65 @@
 // arrivano dagli hook di dati/hooks.ts, un file per libro.
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { ColonnaContesto } from '../componenti/ColonnaContesto.tsx'
 import { ColonnaLettura } from '../componenti/ColonnaLettura.tsx'
 import { ColonnaNavigazione } from '../componenti/ColonnaNavigazione.tsx'
 import { PannelloParola } from '../componenti/PannelloParola.tsx'
 import {
+  useEventi,
   useIndiceLemmi,
   useLexiconIt,
+  useLuoghi,
   useManifestTraduzioni,
   useParole,
+  usePersone,
   useTraduzione,
   useVersetti,
 } from '../dati/hooks.ts'
+import { pericopeDi } from '../lib/pericopi.ts'
 import { leggiVersettoId, nomeLibro, versettoDiParola } from '../lib/riferimenti.ts'
 import { usaPosizione, usaTraduzione } from '../stato/preferenze.ts'
-import type { Parola } from '../tipi/index.ts'
+import type { Parola, Versetto } from '../tipi/index.ts'
+
+/**
+ * Il versetto "in lettura": il primo che intercetta la fascia alta della
+ * finestra. Serve solo a sincronizzare la colonna contesto, quindi basta un
+ * IntersectionObserver — nessun listener di scroll, nessun calcolo a ogni frame.
+ * Il margine inferiore negativo esclude la metà bassa dello schermo: senza,
+ * "visibile" comprenderebbe versetti che il lettore non ha ancora raggiunto.
+ */
+function usaVersettoInLettura(versetti: Versetto[]): string | null {
+  const [id, setId] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (versetti.length === 0) {
+      setId(null)
+      return
+    }
+    setId(versetti[0].id)
+
+    const visibili = new Set<string>()
+    const osservatore = new IntersectionObserver(
+      (voci) => {
+        for (const voce of voci) {
+          const idVersetto = voce.target.id.replace(/^v-/, '')
+          if (voce.isIntersecting) visibili.add(idVersetto)
+          else visibili.delete(idVersetto)
+        }
+        const primo = versetti.find((v) => visibili.has(v.id))
+        if (primo) setId(primo.id)
+      },
+      { rootMargin: '0px 0px -55% 0px' },
+    )
+    for (const v of versetti) {
+      const elemento = document.getElementById(`v-${v.id}`)
+      if (elemento) osservatore.observe(elemento)
+    }
+    return () => osservatore.disconnect()
+  }, [versetti])
+
+  return id
+}
 
 export function Lettura() {
   const [posizione, setPosizione] = usaPosizione()
@@ -35,6 +80,11 @@ export function Lettura() {
   // L'indice dei lemmi (~2 MB) si scarica solo alla prima parola aperta.
   const indiceLemmi = useIndiceLemmi(parolaAttiva !== null)
   const lexiconIt = useLexiconIt(parolaAttiva !== null)
+  // I file di curation valgono per tutto il Pentateuco e servono alla colonna
+  // contesto fin dal primo scroll: si caricano con la vista.
+  const eventi = useEventi()
+  const luoghi = useLuoghi()
+  const persone = usePersone()
 
   const parolePerId = useMemo<Map<string, Parola>>(() => {
     if (parole.stato !== 'pronto') return new Map()
@@ -47,6 +97,12 @@ export function Lettura() {
   }, [versetti, posizione.capitolo])
 
   const parola = parolaAttiva ? (parolePerId.get(parolaAttiva) ?? null) : null
+
+  const versettoInLettura = usaVersettoInLettura(versettiCapitolo)
+  const pericope = useMemo(() => {
+    if (eventi.stato !== 'pronto' || !versettoInLettura) return null
+    return pericopeDi(eventi.dati, versettoInLettura)
+  }, [eventi, versettoInLettura])
 
   // Altre occorrenze del lemma dentro il capitolo aperto: si evidenziano nel
   // testo, mentre l'elenco completo (tutto il Pentateuco) sta nel pannello.
@@ -175,6 +231,8 @@ export function Lettura() {
             <p className="vuoto">Scegli una parola del testo ebraico per vederne parsing e occorrenze.</p>
           </section>
         )}
+
+        <ColonnaContesto pericope={pericope} eventi={eventi} luoghi={luoghi} persone={persone} />
       </aside>
 
       <button

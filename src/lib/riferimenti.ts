@@ -38,6 +38,19 @@ export function versettoDiParola(id: ParolaId): VersettoId {
   return id.split('.').slice(0, 3).join('.')
 }
 
+const ORDINE_LIBRI = new Map(LIBRI.map((l, i) => [l.codice, i]))
+
+/**
+ * Chiave numerica per ordinare o confrontare id versetto (capitoli ≤ 50 e
+ * versetti ≤ 176 stanno abbondantemente dentro i moltiplicatori scelti).
+ * `null` fuori dal Pentateuco: i rimandi TSK non sono ordinabili qui.
+ */
+export function chiaveVersetto(id: string): number | null {
+  const rif = leggiVersettoId(id)
+  if (!rif) return null
+  return (ORDINE_LIBRI.get(rif.libro) ?? 0) * 1_000_000 + rif.capitolo * 1_000 + rif.versetto
+}
+
 export function nomeLibro(codice: CodiceLibro): string {
   return NOMI.get(codice) ?? codice
 }

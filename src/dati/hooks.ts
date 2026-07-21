@@ -10,9 +10,13 @@ import type {
   ManifestTraduzioni,
   Traduzione,
 } from '../tipi/index.ts'
+import type { Eventi, Luoghi, Persone } from './caricamento.ts'
 import {
+  caricaEventi,
   caricaIndiceLemmi,
   caricaLexiconIt,
+  caricaLuoghi,
+  caricaPersone,
   caricaManifestTraduzioni,
   caricaParole,
   caricaTraduzione,
@@ -70,6 +74,20 @@ export function useIndiceLemmi(attivo: boolean): Caricamento<IndiceLemmi> {
   return useRisorsa(attivo ? 'indices/lemmi' : '', () =>
     attivo ? caricaIndiceLemmi() : new Promise<IndiceLemmi>(() => {}),
   )
+}
+
+// I tre file di curation sono unici per tutto il Pentateuco e servono alla
+// colonna contesto fin dal primo scroll: si caricano insieme alla vista lettura.
+export function useEventi(): Caricamento<Eventi> {
+  return useRisorsa('events', caricaEventi)
+}
+
+export function useLuoghi(): Caricamento<Luoghi> {
+  return useRisorsa('places', caricaLuoghi)
+}
+
+export function usePersone(): Caricamento<Persone> {
+  return useRisorsa('people', caricaPersone)
 }
 
 /** Come sopra: le glosse italiane servono solo a pannello parola aperto. */
