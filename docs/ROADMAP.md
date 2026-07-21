@@ -22,9 +22,9 @@ Regole di esecuzione:
 
 ## Fase 1 — Import e vista lettura
 
-- [ ] **F1.1 Import TAHOT.** Leggere la documentazione del formato nel repo STEPBible-Data; `scripts/import-tahot.ts` genera `verses/` e `words/` per i 5 libri, con `meta` e attribuzione. Documentare nel codice il mapping colonne→campi deciso.
+- [x] **F1.1 Import TAHOT.** Leggere la documentazione del formato nel repo STEPBible-Data; `scripts/import-tahot.ts` genera `verses/` e `words/` per i 5 libri, con `meta` e attribuzione. Documentare nel codice il mapping colonne→campi deciso.
   *Fatto quando:* validazione verde sull'intero Pentateuco; conteggi versetti/parole plausibili riportati nel riepilogo.
-- [ ] **F1.2 Indice lemmi.** Estensione dell'import: `indices/lemmi.json` (chiave dStrong, occorrenze).
+- [x] **F1.2 Indice lemmi.** Estensione dell'import: `indices/lemmi.json` (chiave dStrong, occorrenze).
 - [ ] **F1.3 Import TIPNR + OpenBible.** ⏸ REVISIONE — `scripts/import-tipnr.ts` produce bozze `places.json` e `people.json` in `bootstrap/` (luoghi con candidati e `peso_openbible`; persone con relazioni e riferimenti; tutto `da_verificare: true`, `status` NON assegnato automaticamente oltre un default prudente).
 - [ ] **F1.4 Import Luzzi.** `scripts/import-luzzi.ts` con rimappaggio versificazione via TVTMS; genera `translations/luzzi.json` e aggiorna il manifest. Verificare fonte, edizione (1924/1927) e licenza; fissare l'anno nel `meta`.
   *Fatto quando:* controllo di completezza del validatore verde (nessun buco inatteso sui versetti TM).
