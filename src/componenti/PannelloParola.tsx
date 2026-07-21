@@ -5,7 +5,7 @@
 import { decodificaMorph } from '../lib/morfologia.ts'
 import { etichettaVersetto, versettoDiParola } from '../lib/riferimenti.ts'
 import type { Caricamento } from '../dati/hooks.ts'
-import type { IndiceLemmi, Morfema, Parola } from '../tipi/index.ts'
+import type { IndiceLemmi, LexiconIt, Morfema, Parola, VoceLexiconIt } from '../tipi/index.ts'
 
 // In TAHOT i codici H9xxx non sono lemmi del dizionario Strong ma marcatori di
 // prefissi/suffissi (articolo H9009, waw H9002, preposizioni H9003…, suffissi
@@ -18,11 +18,12 @@ function eLessicale(morfema: Morfema): boolean {
 type Props = {
   parola: Parola
   indice: Caricamento<IndiceLemmi>
+  lexicon: Caricamento<LexiconIt>
   onOccorrenza: (parolaId: string) => void
   onChiudi: () => void
 }
 
-export function PannelloParola({ parola, indice, onOccorrenza, onChiudi }: Props) {
+export function PannelloParola({ parola, indice, lexicon, onOccorrenza, onChiudi }: Props) {
   return (
     <section className="pannello" aria-label="Parola selezionata">
       <div className="pannello-testa">
@@ -64,9 +65,7 @@ export function PannelloParola({ parola, indice, onOccorrenza, onChiudi }: Props
               </span>
               <span className="strong">{morfema.strong}</span>
             </div>
-            <p className="glossa">
-              <span className="etichetta-inline">glossa EN</span> {morfema.glossa_en}
-            </p>
+            <Glosse morfema={morfema} lexicon={lexicon} />
             {eLessicale(morfema) ? (
               <Occorrenze
                 strong={morfema.strong}
@@ -86,6 +85,34 @@ export function PannelloParola({ parola, indice, onOccorrenza, onChiudi }: Props
         </p>
       )}
     </section>
+  )
+}
+
+/**
+ * Le due glosse convivono sempre, ciascuna etichettata con la sua provenienza:
+ * l'italiano è curato lemma per lemma (lexicon_it.json) e non deve mai sembrare
+ * "la" glossa del dataset, né sostituire in silenzio quella TAHOT. Dove la voce
+ * italiana manca — lemma non ancora curato, o file [C] non ancora in
+ * public/data/ — resta la sola riga EN, senza segnalare nulla: è la condizione
+ * normale, non un errore.
+ */
+function Glosse({ morfema, lexicon }: { morfema: Morfema; lexicon: Caricamento<LexiconIt> }) {
+  const voce: VoceLexiconIt | undefined =
+    lexicon.stato === 'pronto' ? lexicon.dati[morfema.strong] : undefined
+
+  return (
+    <>
+      {voce && (
+        <p className="glossa glossa-it">
+          <span className="etichetta-inline">glossa IT</span>{' '}
+          <span className={voce.da_verificare ? 'da-verificare' : undefined}>{voce.glossa_it}</span>
+          {voce.da_verificare && <span className="solo-lettore-schermo"> (da verificare)</span>}
+        </p>
+      )}
+      <p className="glossa">
+        <span className="etichetta-inline">glossa EN</span> {morfema.glossa_en}
+      </p>
+    </>
   )
 }
 

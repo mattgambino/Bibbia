@@ -8,7 +8,14 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { ColonnaLettura } from '../componenti/ColonnaLettura.tsx'
 import { ColonnaNavigazione } from '../componenti/ColonnaNavigazione.tsx'
 import { PannelloParola } from '../componenti/PannelloParola.tsx'
-import { useIndiceLemmi, useManifestTraduzioni, useParole, useTraduzione, useVersetti } from '../dati/hooks.ts'
+import {
+  useIndiceLemmi,
+  useLexiconIt,
+  useManifestTraduzioni,
+  useParole,
+  useTraduzione,
+  useVersetti,
+} from '../dati/hooks.ts'
 import { leggiVersettoId, nomeLibro, versettoDiParola } from '../lib/riferimenti.ts'
 import { usaPosizione, usaTraduzione } from '../stato/preferenze.ts'
 import type { Parola } from '../tipi/index.ts'
@@ -27,6 +34,7 @@ export function Lettura() {
   const traduzione = useTraduzione(idTraduzione)
   // L'indice dei lemmi (~2 MB) si scarica solo alla prima parola aperta.
   const indiceLemmi = useIndiceLemmi(parolaAttiva !== null)
+  const lexiconIt = useLexiconIt(parolaAttiva !== null)
 
   const parolePerId = useMemo<Map<string, Parola>>(() => {
     if (parole.stato !== 'pronto') return new Map()
@@ -157,6 +165,7 @@ export function Lettura() {
           <PannelloParola
             parola={parola}
             indice={indiceLemmi}
+            lexicon={lexiconIt}
             onOccorrenza={vaiAParola}
             onChiudi={() => setParolaAttiva(null)}
           />

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import type {
   CodiceLibro,
   IndiceLemmi,
+  LexiconIt,
   LibroParole,
   LibroVersetti,
   ManifestTraduzioni,
@@ -11,6 +12,7 @@ import type {
 } from '../tipi/index.ts'
 import {
   caricaIndiceLemmi,
+  caricaLexiconIt,
   caricaManifestTraduzioni,
   caricaParole,
   caricaTraduzione,
@@ -67,5 +69,12 @@ export function useTraduzione(id: string): Caricamento<Traduzione> {
 export function useIndiceLemmi(attivo: boolean): Caricamento<IndiceLemmi> {
   return useRisorsa(attivo ? 'indices/lemmi' : '', () =>
     attivo ? caricaIndiceLemmi() : new Promise<IndiceLemmi>(() => {}),
+  )
+}
+
+/** Come sopra: le glosse italiane servono solo a pannello parola aperto. */
+export function useLexiconIt(attivo: boolean): Caricamento<LexiconIt> {
+  return useRisorsa(attivo ? 'lexicon_it' : '', () =>
+    attivo ? caricaLexiconIt() : new Promise<LexiconIt>(() => {}),
   )
 }

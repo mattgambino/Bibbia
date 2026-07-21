@@ -1,0 +1,3266 @@
+{
+  "H0001G": {
+    "glossa_it": "padre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"father\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0068G": {
+    "glossa_it": "pietra",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"stone\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0108": {
+    "glossa_it": "vapore",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"mist\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0120G": {
+    "glossa_it": "uomo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"man\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0120H": {
+    "glossa_it": "l'uomo (Adamo)",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"the man (Adam)\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0121G": {
+    "glossa_it": "Adamo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Adam\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0127G": {
+    "glossa_it": "terra: suolo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"land: soil\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0215": {
+    "glossa_it": "illuminare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to light\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0216": {
+    "glossa_it": "luce",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"light\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0226H": {
+    "glossa_it": "segno: indicatore",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"sign:  indicator\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0259": {
+    "glossa_it": "uno",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"one\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0335": {
+    "glossa_it": "dove?",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"where?\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0342": {
+    "glossa_it": "inimicizia",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"enmity\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0369": {
+    "glossa_it": "nulla, non esserci",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"nothing\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0376G": {
+    "glossa_it": "uomo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"man\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0376H": {
+    "glossa_it": "uomo: marito",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"man: husband\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0398": {
+    "glossa_it": "mangiare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to eat\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0402": {
+    "glossa_it": "cibo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"food\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0413": {
+    "glossa_it": "a, verso",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to(wards)\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0428": {
+    "glossa_it": "questi",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"these\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0430G": {
+    "glossa_it": "Dio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"God\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0517": {
+    "glossa_it": "madre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"mother\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0559": {
+    "glossa_it": "dire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to say\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0595": {
+    "glossa_it": "io",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"I\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0637": {
+    "glossa_it": "anche, per di più",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"also\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0639H": {
+    "glossa_it": "faccia: naso",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"face: nose\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0639I": {
+    "glossa_it": "faccia",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"face\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0702": {
+    "glossa_it": "quattro",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"four\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0776G": {
+    "glossa_it": "terra: paese/pianeta",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"land: country/planet\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0776H": {
+    "glossa_it": "terra: suolo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"land: soil\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0779": {
+    "glossa_it": "maledire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to curse\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0802G": {
+    "glossa_it": "donna",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"woman\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0802H": {
+    "glossa_it": "donna: moglie",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"woman: wife\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0804G": {
+    "glossa_it": "Assiria",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Assyria\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0834A": {
+    "glossa_it": "che, il quale",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"which\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0853": {
+    "glossa_it": "[segnacaso dell'oggetto diretto]",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"[Obj.]\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0859A": {
+    "glossa_it": "tu (m. sing.)",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"you(m.s.)\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0905H": {
+    "glossa_it": "solo, da solo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"alone\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0914": {
+    "glossa_it": "separare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to separate\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0916": {
+    "glossa_it": "bdellio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"bdellium\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0922": {
+    "glossa_it": "vuoto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"void\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0929": {
+    "glossa_it": "animale",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"animal\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0935P": {
+    "glossa_it": "venire, entrare: portare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to come (in): bring\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0954": {
+    "glossa_it": "vergognarsi",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"be ashamed\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H0996G": {
+    "glossa_it": "tra",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"between\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1115": {
+    "glossa_it": "perché non",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"lest\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1121A": {
+    "glossa_it": "figlio: bambino",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"son: child\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1129": {
+    "glossa_it": "costruire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to build\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1242": {
+    "glossa_it": "mattino",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"morning\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1254A": {
+    "glossa_it": "creare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to create\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1288": {
+    "glossa_it": "benedire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to bless\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1320": {
+    "glossa_it": "carne",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"flesh\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1419A": {
+    "glossa_it": "grande: ampio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"great: large\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1512": {
+    "glossa_it": "ventre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"belly\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1521": {
+    "glossa_it": "Ghicon",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Gihon\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1571": {
+    "glossa_it": "anche",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"also\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1588M": {
+    "glossa_it": "giardino",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"garden\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1644G": {
+    "glossa_it": "scacciare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to drive out: drive out\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1692": {
+    "glossa_it": "aderire, unirsi",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to cleave\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1710": {
+    "glossa_it": "pesce",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"fish\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1823": {
+    "glossa_it": "somiglianza",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"likeness\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1847": {
+    "glossa_it": "conoscenza",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"knowledge\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1863": {
+    "glossa_it": "cardo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"thistle\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1870K": {
+    "glossa_it": "via: strada",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"way: road\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1876": {
+    "glossa_it": "germogliare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to sprout\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1877": {
+    "glossa_it": "erba",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"grass\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1931": {
+    "glossa_it": "egli/ella/esso",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"he/she/it\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1961": {
+    "glossa_it": "essere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to be\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1980G": {
+    "glossa_it": "andare: andò",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to go: went\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1980I": {
+    "glossa_it": "andare: camminare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to go: walk\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H1992": {
+    "glossa_it": "essi (m.)",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"they(masc.)\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2005": {
+    "glossa_it": "ecco!",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"look!\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2009": {
+    "glossa_it": "ecco",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"behold\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2015": {
+    "glossa_it": "rivoltare, volgere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to overturn\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2032": {
+    "glossa_it": "concepimento",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"conception\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2063": {
+    "glossa_it": "questa",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"this\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2091": {
+    "glossa_it": "oro",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"gold\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2145": {
+    "glossa_it": "maschio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"male\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2188": {
+    "glossa_it": "sudore",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"sweat\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2232": {
+    "glossa_it": "seminare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to sow\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2233G": {
+    "glossa_it": "seme",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"seed\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2233H": {
+    "glossa_it": "seme: discendenza",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"seed: children\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2244": {
+    "glossa_it": "nascondersi",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to hide\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2290B": {
+    "glossa_it": "cintura",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"belt\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2313": {
+    "glossa_it": "Tigri",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Tigris\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2332": {
+    "glossa_it": "Eva",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Eve\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2341G": {
+    "glossa_it": "Avila",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Havilah\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2416A": {
+    "glossa_it": "vivo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"alive\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2416C": {
+    "glossa_it": "essere vivente",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"living thing\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2416E": {
+    "glossa_it": "vita",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"life\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2421": {
+    "glossa_it": "vivere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to live\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2530A": {
+    "glossa_it": "desiderare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to desire\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2549": {
+    "glossa_it": "quinto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"fifth\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2719": {
+    "glossa_it": "spada",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"sword\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2822": {
+    "glossa_it": "tenebra",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"darkness\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2895": {
+    "glossa_it": "essere buono, piacere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"be pleasing\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2896A": {
+    "glossa_it": "piacevole",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"pleasant\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2896B": {
+    "glossa_it": "buono",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"good\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H2962": {
+    "glossa_it": "non ancora, prima che",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"before\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3004": {
+    "glossa_it": "terraferma",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"dry land\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3027G": {
+    "glossa_it": "mano",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"hand\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3045": {
+    "glossa_it": "conoscere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to know\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3068G": {
+    "glossa_it": "SIGNORE (tetragramma YHWH)",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"LORD\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3117G": {
+    "glossa_it": "giorno",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"day\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3205": {
+    "glossa_it": "generare, partorire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to beget\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3220G": {
+    "glossa_it": "mare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"sea\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3318L": {
+    "glossa_it": "uscire: sgorgare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to come out: issue\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3318M": {
+    "glossa_it": "uscire: produrre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to come out: produce\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3335G": {
+    "glossa_it": "plasmare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to form: formed\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3372G": {
+    "glossa_it": "temere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to fear\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3418": {
+    "glossa_it": "verde",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"green\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3462": {
+    "glossa_it": "dormire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to sleep\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3533": {
+    "glossa_it": "sottomettere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to subdue\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3556": {
+    "glossa_it": "stella",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"star\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3568A": {
+    "glossa_it": "Cus",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Cush\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3588A": {
+    "glossa_it": "poiché",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"for\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3605": {
+    "glossa_it": "tutto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"all\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3615G": {
+    "glossa_it": "terminare, portare a compimento",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to end: finish\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3651C": {
+    "glossa_it": "così",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"so\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3671": {
+    "glossa_it": "ala",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"wing\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3742": {
+    "glossa_it": "cherubino",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"cherub\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3801": {
+    "glossa_it": "tunica",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"tunic\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3808": {
+    "glossa_it": "non",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"not\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3847": {
+    "glossa_it": "vestire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to clothe\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3858": {
+    "glossa_it": "fiamma",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"flame\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3899H": {
+    "glossa_it": "cibo: pane",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"food: bread\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3915": {
+    "glossa_it": "notte",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"night\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3947G": {
+    "glossa_it": "prendere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to take: take\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3966": {
+    "glossa_it": "molto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"much\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3974": {
+    "glossa_it": "luce (corpo luminoso)",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"light\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H3978": {
+    "glossa_it": "cibo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"food\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4100": {
+    "glossa_it": "che cosa?",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"what?\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4150G": {
+    "glossa_it": "incontro: tempo fissato",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"meeting: time appointed\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4191": {
+    "glossa_it": "morire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to die\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4305": {
+    "glossa_it": "far piovere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to rain\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4310": {
+    "glossa_it": "chi?",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"who?\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4325G": {
+    "glossa_it": "acqua",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"water\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4327": {
+    "glossa_it": "specie",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"kind\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4390": {
+    "glossa_it": "riempire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to fill\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4399": {
+    "glossa_it": "lavoro, opera",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"work\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4475": {
+    "glossa_it": "dominio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"dominion\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4480A": {
+    "glossa_it": "da",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"from\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4672": {
+    "glossa_it": "trovare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to find\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4723C": {
+    "glossa_it": "raccolta",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"collection\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4725": {
+    "glossa_it": "luogo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"place\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4758": {
+    "glossa_it": "aspetto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"appearance\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H4910": {
+    "glossa_it": "dominare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to rule\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5046": {
+    "glossa_it": "riferire, annunciare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to tell\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5048": {
+    "glossa_it": "davanti a",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"before\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5060": {
+    "glossa_it": "toccare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to touch\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5104H": {
+    "glossa_it": "fiume",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"river\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5117": {
+    "glossa_it": "riposare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to rest\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5175": {
+    "glossa_it": "serpente",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"serpent\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5193": {
+    "glossa_it": "piantare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to plant\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5301": {
+    "glossa_it": "soffiare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to breathe\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5307G": {
+    "glossa_it": "cadere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to fall: fall\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5315H": {
+    "glossa_it": "anima: vita",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"soul: life\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5315K": {
+    "glossa_it": "anima: animale",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"soul: animal\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5347": {
+    "glossa_it": "femmina",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"female\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5377": {
+    "glossa_it": "ingannare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to deceive\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5397": {
+    "glossa_it": "alito",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"breath\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5414G": {
+    "glossa_it": "dare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to give: give\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5414H": {
+    "glossa_it": "dare: porre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to give: put\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5437G": {
+    "glossa_it": "girare, circondare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to turn: turn\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5462": {
+    "glossa_it": "chiudere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to shut\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5647I": {
+    "glossa_it": "servire: lavorare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to serve: labour\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5668": {
+    "glossa_it": "a causa di",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"for the sake of\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5704": {
+    "glossa_it": "fino a",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"till\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5731B": {
+    "glossa_it": "Eden",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Eden\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5769G": {
+    "glossa_it": "sempre: perpetuo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"forever: enduring\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5774A": {
+    "glossa_it": "volare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to fly\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5775": {
+    "glossa_it": "uccello",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"bird\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5785": {
+    "glossa_it": "pelle",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"skin\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5800A": {
+    "glossa_it": "lasciare: abbandonare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to leave: forsake\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5828": {
+    "glossa_it": "aiuto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"helper\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5869A": {
+    "glossa_it": "occhio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"eye\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5903": {
+    "glossa_it": "nudo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"naked\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5921A": {
+    "glossa_it": "sopra, su",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"upon\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5927G": {
+    "glossa_it": "salire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to ascend: rise\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5929": {
+    "glossa_it": "foglia",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"leaf\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5973A": {
+    "glossa_it": "con",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"with\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H5978": {
+    "glossa_it": "con me",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"with me\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6083": {
+    "glossa_it": "polvere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"dust\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6086H": {
+    "glossa_it": "albero",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"tree\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6089A": {
+    "glossa_it": "pena",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"toil\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6093": {
+    "glossa_it": "fatica",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"toil\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6106G": {
+    "glossa_it": "osso",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"bone\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6119": {
+    "glossa_it": "calcagno",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"heel\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6153": {
+    "glossa_it": "sera",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"evening\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6174": {
+    "glossa_it": "nudo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"naked\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6175": {
+    "glossa_it": "accorto, astuto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"prudent\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6212": {
+    "glossa_it": "vegetazione",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"vegetation\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6213A": {
+    "glossa_it": "fare: compiere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to make: do\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6213H": {
+    "glossa_it": "fare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to make\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6258": {
+    "glossa_it": "ora",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"now\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6376": {
+    "glossa_it": "Pison",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Pishon\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6435": {
+    "glossa_it": "perché non",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"lest\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6440H": {
+    "glossa_it": "faccia",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"face\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6440J": {
+    "glossa_it": "faccia: superficie",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"face: surface\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6471": {
+    "glossa_it": "volta",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"beat\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6491": {
+    "glossa_it": "aprire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to open\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6504": {
+    "glossa_it": "dividersi",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to separate\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6509": {
+    "glossa_it": "essere fecondo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"be fruitful\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6529": {
+    "glossa_it": "frutto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"fruit\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6578": {
+    "glossa_it": "Eufrate",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"Euphrates\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6635A": {
+    "glossa_it": "schiera",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"army\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6680": {
+    "glossa_it": "comandare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to command\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6754": {
+    "glossa_it": "immagine",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"image\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6763": {
+    "glossa_it": "fianco, costola",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"side\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6779": {
+    "glossa_it": "germogliare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to spring\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6924G": {
+    "glossa_it": "davanti: oriente",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"front: east\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6926": {
+    "glossa_it": "oriente",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"east\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6942G": {
+    "glossa_it": "consacrare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to consecrate: consecate\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6960B": {
+    "glossa_it": "raccogliersi",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to collect\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6963A": {
+    "glossa_it": "voce",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"voice\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6963H": {
+    "glossa_it": "voce: rumore",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"voice: sound\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6975": {
+    "glossa_it": "spina",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"thorn\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H6996B": {
+    "glossa_it": "piccolo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"small\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7121G": {
+    "glossa_it": "chiamare: rivolgersi a",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to call: call to\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7121H": {
+    "glossa_it": "chiamare: chiamare per nome",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to call: call by\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7200G": {
+    "glossa_it": "vedere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to see: see\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7218A": {
+    "glossa_it": "testa",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"head\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7218J": {
+    "glossa_it": "testa: principale",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"head: first\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7225G": {
+    "glossa_it": "primo: principio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"first: beginning\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7235A": {
+    "glossa_it": "moltiplicare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to multiply\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7243": {
+    "glossa_it": "quarto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"fourth\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7287A": {
+    "glossa_it": "dominare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to rule\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7307G": {
+    "glossa_it": "spirito",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"spirit\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7307H": {
+    "glossa_it": "spirito: soffio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"spirit: breath\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7363B": {
+    "glossa_it": "aleggiare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to hover\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7430": {
+    "glossa_it": "strisciare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to creep\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7431": {
+    "glossa_it": "strisciante",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"creeping\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7451B": {
+    "glossa_it": "cattivo: male",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"bad: evil\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7549": {
+    "glossa_it": "distesa",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"expanse\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7637": {
+    "glossa_it": "settimo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"seventh\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7673A": {
+    "glossa_it": "cessare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to cease\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7704G": {
+    "glossa_it": "terra: campo, campagna",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"land: country\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7718": {
+    "glossa_it": "onice",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"onyx\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7725G": {
+    "glossa_it": "tornare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to return: return\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7760H": {
+    "glossa_it": "porre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to set: put\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7779": {
+    "glossa_it": "schiacciare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to bruise\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7880": {
+    "glossa_it": "arbusto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"bush\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7896H": {
+    "glossa_it": "porre",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to set: put\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7919A": {
+    "glossa_it": "essere accorto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"be prudent\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7931": {
+    "glossa_it": "abitare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to dwell\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7971G": {
+    "glossa_it": "mandare: allontanare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to send: depart\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7971K": {
+    "glossa_it": "mandare: stendere",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to send: reach\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H7992": {
+    "glossa_it": "terzo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"third\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8033G": {
+    "glossa_it": "là",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"there\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8034": {
+    "glossa_it": "nome",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"name\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8064": {
+    "glossa_it": "cielo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"heaven\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8085G": {
+    "glossa_it": "udire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to hear: hear\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8104H": {
+    "glossa_it": "custodire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to keep: guard\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8141": {
+    "glossa_it": "anno",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"year\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8145": {
+    "glossa_it": "secondo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"second\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8147": {
+    "glossa_it": "due",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"two\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8248G": {
+    "glossa_it": "irrigare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to water: watering\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8317": {
+    "glossa_it": "brulicare",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to swarm\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8318": {
+    "glossa_it": "brulichio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"swarm\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8345": {
+    "glossa_it": "sesto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"sixth\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8378": {
+    "glossa_it": "desiderio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"desire\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8384": {
+    "glossa_it": "fico",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"fig\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8414": {
+    "glossa_it": "assenza di forma",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"formlessness\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8415": {
+    "glossa_it": "abisso",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"abyss\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8432": {
+    "glossa_it": "mezzo",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"midst\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8435": {
+    "glossa_it": "generazione",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"generation\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8478G": {
+    "glossa_it": "sotto",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"underneath: under\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8478H": {
+    "glossa_it": "sotto: al posto di",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"underneath: instead\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8577N": {
+    "glossa_it": "serpente: mostro",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"serpent: monster\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8609": {
+    "glossa_it": "cucire",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"to sew\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8639": {
+    "glossa_it": "torpore",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"deep sleep\""
+      }
+    ],
+    "da_verificare": true
+  },
+  "H8669": {
+    "glossa_it": "desiderio",
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"desire\""
+      }
+    ],
+    "da_verificare": true
+  }
+}

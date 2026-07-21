@@ -6,7 +6,14 @@
 // la voce si rimuove, così un tentativo successivo può riprovare.
 
 import { z } from 'zod'
-import { IndiceLemmi, LibroParole, LibroVersetti, ManifestTraduzioni, Traduzione } from '../tipi/index.ts'
+import {
+  IndiceLemmi,
+  LexiconIt,
+  LibroParole,
+  LibroVersetti,
+  ManifestTraduzioni,
+  Traduzione,
+} from '../tipi/index.ts'
 import type { CodiceLibro } from '../tipi/index.ts'
 
 const cache = new Map<string, Promise<unknown>>()
@@ -56,4 +63,17 @@ export function caricaTraduzione(id: string): Promise<Traduzione> {
 // alla prima apertura del pannello parola, non all'avvio della vista.
 export function caricaIndiceLemmi(): Promise<IndiceLemmi> {
   return caricaJson('indices/lemmi.json', IndiceLemmi)
+}
+
+// lexicon_it.json è curato [C] e cresce un range alla volta: finché la bozza di
+// bootstrap/ non è stata revisionata e spostata in public/data/, il file non
+// esiste. Un 404 non è un errore da mostrare — significa "nessuna glossa
+// italiana ancora disponibile" — e si risolve in un lexicon vuoto: il pannello
+// mostra allora la sola glossa inglese, come per ogni lemma non ancora curato.
+// Ogni altro esito (500, JSON malformato, dati non conformi) resta un errore.
+export function caricaLexiconIt(): Promise<LexiconIt> {
+  return caricaJson('lexicon_it.json', LexiconIt).catch((e: unknown) => {
+    if (e instanceof Error && / HTTP 404$/.test(e.message)) return {}
+    throw e
+  })
 }
