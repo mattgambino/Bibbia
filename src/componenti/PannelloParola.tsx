@@ -5,7 +5,15 @@
 import { decodificaMorph } from '../lib/morfologia.ts'
 import { etichettaVersetto, versettoDiParola } from '../lib/riferimenti.ts'
 import type { Caricamento } from '../dati/hooks.ts'
-import type { IndiceLemmi, Parola } from '../tipi/index.ts'
+import type { IndiceLemmi, Morfema, Parola } from '../tipi/index.ts'
+
+// In TAHOT i codici H9xxx non sono lemmi del dizionario Strong ma marcatori di
+// prefissi/suffissi (articolo H9009, waw H9002, preposizioni H9003…, suffissi
+// pronominali H90xx). Le occorrenze devono puntare al morfema lessicale, non a
+// questi: altrimenti הַשָּׁמַיִם mostrerebbe le 7436 occorrenze dell'articolo.
+function eLessicale(morfema: Morfema): boolean {
+  return !/^H9\d{3}/.test(morfema.strong)
+}
 
 type Props = {
   parola: Parola
@@ -59,15 +67,24 @@ export function PannelloParola({ parola, indice, onOccorrenza, onChiudi }: Props
             <p className="glossa">
               <span className="etichetta-inline">glossa EN</span> {morfema.glossa_en}
             </p>
-            <Occorrenze
-              strong={morfema.strong}
-              parolaCorrente={parola.id}
-              indice={indice}
-              onOccorrenza={onOccorrenza}
-            />
+            {eLessicale(morfema) ? (
+              <Occorrenze
+                strong={morfema.strong}
+                parolaCorrente={parola.id}
+                indice={indice}
+                onOccorrenza={onOccorrenza}
+              />
+            ) : (
+              <p className="conteggio">Prefisso/suffisso: nessun conteggio di occorrenze.</p>
+            )}
           </li>
         ))}
       </ul>
+      {!parola.morfemi.some(eLessicale) && (
+        <p className="conteggio">
+          Parola formata solo da prefissi/suffissi: nessun morfema lessicale a cui riferire le occorrenze.
+        </p>
+      )}
     </section>
   )
 }
