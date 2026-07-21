@@ -69,10 +69,22 @@
 // Il join con OpenBible è esatto, non per nome: ancient.jsonl porta linked_data
 // con la chiave della fonte "tipnr" (id s3b25cf in source.jsonl), il cui valore è
 // l'UniqueName TIPNR senza suffisso di libro e senza Strong ("Hebron@Gen.13.18").
-// Fallback per i luoghi non agganciati così: url_slug ↔ colonna "OpenBible name".
+// Il legame è però molti-a-molti, e questa è la trappola: lo stesso id TIPNR può
+// essere rivendicato da PIÙ voci OpenBible (Gaza@Gen.10.19 è linkato tanto da "gaza"
+// quanto da "ayyah"), su 52 dei nostri luoghi. Prendere la prima voce incontrata
+// vuol dire scegliere per ordine alfabetico del file: è così che Gaza si era presa i
+// candidati di Ai, Assiria quelli di Asshur e Babilonia quelli di Babel. Quando l'id
+// è conteso si sceglie la voce il cui url_slug coincide con la colonna "OpenBible
+// name" di TIPNR — l'unico segnale che venga dalla sorgente e non dall'ordine — e se
+// il nome non discrimina l'ambiguità si stampa invece di risolverla in silenzio.
+// Ripiego, solo se l'id non aggancia nulla: url_slug ↔ colonna "OpenBible name",
+// anch'esso elencato per intero nel riepilogo perché è un match per nome.
 //
 // Ogni identificazione OpenBible con coordinate diventa un candidato che porta il
-// proprio peso; la coordinata dell'URL Google Maps di TIPNR entra come candidato
+// proprio peso, deduplicando per coordinata esatta (4 decimali): identificazioni
+// diverse possono risolvere allo stesso punto, e senza dedup lo stesso sito entra
+// più volte con pesi diversi. Vince la prima, cioè il peso massimo; i pesi non si
+// sommano. La coordinata dell'URL Google Maps di TIPNR entra come candidato
 // aggiuntivo solo quando non coincide con nessuno di essi (tolleranza 0,05° ≈ 5 km,
 // decisa in sessione), e in quel caso senza peso: TIPNR dichiara coordinate
 // "based on geoposition as defined by OpenBible" ma da uno snapshot precedente, e
@@ -551,8 +563,13 @@ function testoSemplice(descrizione: string): string {
   return descrizione.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
 }
 
-function caricaOpenBible(): { perTipnr: Map<string, LuogoOb>; perSlug: Map<string, LuogoOb> } {
-  const perTipnr = new Map<string, LuogoOb>()
+// Il legame TIPNR→OpenBible è molti-a-molti: una voce OpenBible può linkare più id TIPNR,
+// e lo STESSO id TIPNR può essere rivendicato da più voci (Gaza@Gen.10.19 è linkato sia da
+// "gaza" sia da "ayyah"). Qui si raccolgono tutte le voci per id e la scelta si fa dopo, con
+// la colonna "OpenBible name" di TIPNR: prendere la prima e basta significherebbe decidere
+// per ordine alfabetico del file, che è come Gaza si era presa i candidati di Ai.
+function caricaOpenBible(): { perTipnr: Map<string, LuogoOb[]>; perSlug: Map<string, LuogoOb> } {
+  const perTipnr = new Map<string, LuogoOb[]>()
   const perSlug = new Map<string, LuogoOb>()
   const testo = leggiObbligatorio(
     SORGENTE_OPENBIBLE,
@@ -594,8 +611,11 @@ function caricaOpenBible(): { perTipnr: Map<string, LuogoOb>; perSlug: Map<strin
     if (voce.url_slug !== '' && !perSlug.has(voce.url_slug)) perSlug.set(voce.url_slug, voce)
     const collegamento = o.linked_data?.[CHIAVE_TIPNR_IN_OPENBIBLE]
     if (collegamento)
-      for (const id of collegamento.ids ?? (collegamento.id ? [collegamento.id] : []))
-        if (!perTipnr.has(id)) perTipnr.set(id, voce)
+      for (const id of collegamento.ids ?? (collegamento.id ? [collegamento.id] : [])) {
+        const lista = perTipnr.get(id)
+        if (lista) lista.push(voce)
+        else perTipnr.set(id, [voce])
+      }
   }
   return { perTipnr, perSlug }
 }
@@ -608,22 +628,32 @@ const { perTipnr: obPerTipnr, perSlug: obPerSlug } = caricaOpenBible()
 
 interface StatLuoghi {
   agganciatiPerId: number
+  agganciatiPerIdDisambiguati: number
+  agganciatiPerIdAmbigui: number
+  dettaglioContesi: string[]
   agganciatiPerNome: number
+  dettaglioPerNome: string[]
   senzaOpenBible: string[]
   senzaCoordinateTipnr: number
   candidatiTipnrFusi: number
   candidatiTipnrAggiunti: number
+  candidatiDuplicatiScartati: number
   risoluzioniSpeciali: number
   senzaAlcunCandidato: string[]
 }
 
 const statLuoghi: StatLuoghi = {
   agganciatiPerId: 0,
+  agganciatiPerIdDisambiguati: 0,
+  agganciatiPerIdAmbigui: 0,
+  dettaglioContesi: [],
   agganciatiPerNome: 0,
+  dettaglioPerNome: [],
   senzaOpenBible: [],
   senzaCoordinateTipnr: 0,
   candidatiTipnrFusi: 0,
   candidatiTipnrAggiunti: 0,
+  candidatiDuplicatiScartati: 0,
   risoluzioniSpeciali: 0,
   senzaAlcunCandidato: [],
 }
@@ -637,14 +667,43 @@ function costruisciLuogo(e: Entita): Luogo {
   const testa = e.rec.testa
   const nomeOpenBible = cella(testa, 1)
 
-  // Join: prima per chiave TIPNR in linked_data, poi per url_slug ↔ colonna "OpenBible name".
+  // Join per chiave TIPNR in linked_data. Poiché lo stesso id può essere rivendicato da più
+  // voci OpenBible, quando ce n'è più d'una si sceglie quella il cui url_slug coincide con la
+  // colonna "OpenBible name" di TIPNR: è l'unico segnale disponibile che venga dalla sorgente
+  // e non dall'ordine del file. Se il nome non discrimina, la scelta resta arbitraria e viene
+  // stampata nel riepilogo — un'ambiguità dichiarata è revisionabile, una silenziosa no.
+  // Ripiego, solo se l'id non aggancia nulla: url_slug ↔ colonna "OpenBible name". È un match
+  // per nome, può agganciare la voce sbagliata, e anch'esso viene elencato per intero.
   const chiave = `${e.nome.nome}@${e.nome.ancora}`
-  let ob = obPerTipnr.get(chiave)
-  if (ob) statLuoghi.agganciatiPerId++
-  else {
-    ob = nomeOpenBible === '' ? undefined : obPerSlug.get(slugifica(nomeOpenBible))
-    if (ob) statLuoghi.agganciatiPerNome++
-    else statLuoghi.senzaOpenBible.push(e.nome.completo)
+  const slugTipnr = nomeOpenBible === '' ? '' : slugifica(nomeOpenBible)
+  const vociPerId = obPerTipnr.get(chiave) ?? []
+  let ob: LuogoOb | undefined
+
+  if (vociPerId.length === 1) {
+    ob = vociPerId[0]
+    statLuoghi.agganciatiPerId++
+  } else if (vociPerId.length > 1) {
+    // Ogni id conteso finisce nel log, anche quando il nome discrimina: la scelta resta
+    // un'euristica su una sorgente ambigua, e ci sono casi in cui la voce indicata da
+    // TIPNR è la più povera delle due (Gihon@Gen.2.13-2Ch tiene insieme il fiume dell'Eden
+    // e la sorgente di Gerusalemme, che OpenBible separa). Sono decisioni di curation:
+    // lo script le espone, non le prende per conto di chi rivede.
+    const perNome = vociPerId.filter((v) => v.url_slug === slugTipnr)
+    const risoltoSulNome = perNome.length === 1
+    ob = risoltoSulNome ? perNome[0] : vociPerId[0]
+    if (risoltoSulNome) statLuoghi.agganciatiPerIdDisambiguati++
+    else statLuoghi.agganciatiPerIdAmbigui++
+    const scartate = vociPerId.filter((v) => v !== ob).map((v) => `${v.url_slug}(${v.risoluzioni.length})`)
+    statLuoghi.dettaglioContesi.push(
+      `${risoltoSulNome ? 'nome ' : 'ARBITR'} ${e.id.padEnd(20)} ${chiave} → "${ob.url_slug}"(${ob.risoluzioni.length}) ` +
+        `scartate [${scartate.join(', ')}]${risoltoSulNome ? '' : `; "OpenBible name" TIPNR = "${slugTipnr || '(vuoto)'}" non discrimina`}`,
+    )
+  } else {
+    ob = slugTipnr === '' ? undefined : obPerSlug.get(slugTipnr)
+    if (ob) {
+      statLuoghi.agganciatiPerNome++
+      statLuoghi.dettaglioPerNome.push(`${e.id.padEnd(22)} ${chiave} → url_slug "${slugTipnr}"`)
+    } else statLuoghi.senzaOpenBible.push(e.nome.completo)
   }
   statLuoghi.risoluzioniSpeciali += ob?.speciali.length ?? 0
 
@@ -659,7 +718,23 @@ function costruisciLuogo(e: Entita): Luogo {
     return finale
   }
 
+  // Dedup per coordinata esatta. OpenBible ha più identifications[] per luogo, ognuna col
+  // proprio score, e due identificazioni distinte possono risolvere allo stesso punto: senza
+  // questo filtro lo stesso sito entra N volte con N pesi diversi (idCandidato() si limita a
+  // uniquificare lo slug con -2/-3, non deduplica). `risoluzioni` è già ordinato per peso
+  // decrescente, quindi il primo che arriva porta il peso massimo; i pesi NON si sommano —
+  // sarebbe un'inferenza sul significato di time_total, e sforerebbe l'1 dello schema.
+  // La chiave è la coordinata a 4 decimali (~11 m) e non `vicini()`: la tolleranza di 0,05°
+  // fonderebbe proposte realmente distinte, come i quattro khirbet di Ai a 1–3 km l'uno
+  // dall'altro, che sono la sostanza stessa della disputa su quel sito.
+  const coordinateViste = new Set<string>()
   for (const r of ob?.risoluzioni ?? []) {
+    const chiaveCoordinata = `${r.lat.toFixed(4)},${r.lon.toFixed(4)}`
+    if (coordinateViste.has(chiaveCoordinata)) {
+      statLuoghi.candidatiDuplicatiScartati++
+      continue
+    }
+    coordinateViste.add(chiaveCoordinata)
     const etichetta = r.descrizione === '' ? 'candidato OpenBible senza descrizione' : r.descrizione
     candidati.push({
       id: idCandidato(slugifica(r.descrizione)),
@@ -1313,11 +1388,20 @@ console.log(
     `; risolti col ripiego sul numero Strong: ${traslitPerRipiego})`,
 )
 console.log(`\n  LUOGHI`)
-console.log(`    agganciati a OpenBible per id:   ${statLuoghi.agganciatiPerId}`)
-console.log(`    agganciati per nome OpenBible:   ${statLuoghi.agganciatiPerNome}`)
+const agganciatiPerIdTotali =
+  statLuoghi.agganciatiPerId + statLuoghi.agganciatiPerIdDisambiguati + statLuoghi.agganciatiPerIdAmbigui
+console.log(`    agganciati a OpenBible per id:   ${agganciatiPerIdTotali}`)
+console.log(`      id con una sola voce OB:       ${statLuoghi.agganciatiPerId}`)
+console.log(`      id conteso, risolto sul nome:  ${statLuoghi.agganciatiPerIdDisambiguati}`)
+console.log(`      id conteso, scelta arbitraria: ${statLuoghi.agganciatiPerIdAmbigui}`)
+console.log(`      (tutti gli id contesi, da controllare in revisione — fra parentesi le risoluzioni di ogni voce:)`)
+for (const d of statLuoghi.dettaglioContesi) console.log(`      · ${d}`)
+console.log(`    agganciati per nome OpenBible:   ${statLuoghi.agganciatiPerNome} (ripiego: il match è sul nome, va controllato)`)
+for (const d of statLuoghi.dettaglioPerNome) console.log(`      · ${d}`)
 console.log(`    senza corrispondenza OpenBible:  ${statLuoghi.senzaOpenBible.length}`)
 for (const n of statLuoghi.senzaOpenBible) console.log(`      · ${n}`)
 console.log(`    candidati totali:                ${totaleCandidati} (con peso_openbible: ${conPeso})`)
+console.log(`    candidati duplicati scartati:    ${statLuoghi.candidatiDuplicatiScartati} (stessa coordinata, identifications OB diverse)`)
 console.log(`    coordinata TIPNR fusa con OB:    ${statLuoghi.candidatiTipnrFusi}`)
 console.log(`    coordinata TIPNR come candidato: ${statLuoghi.candidatiTipnrAggiunti}`)
 console.log(`    luoghi senza coordinate TIPNR:   ${statLuoghi.senzaCoordinateTipnr}`)

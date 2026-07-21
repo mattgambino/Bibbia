@@ -1,0 +1,1479 @@
+{
+  "meta": {
+    "descrizione": "Curation manuale sulle bozze bootstrap/, da riapplicare dopo ogni esecuzione di import-tipnr.ts.",
+    "generato": "2026-07-21",
+    "script": "curation-override.ts estrai",
+    "indice": "tipnr_id"
+  },
+  "luoghi": {
+    "Accad@Gen.10.10=H0390": {
+      "id_bozza": "accad",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Accad"
+        }
+      }
+    },
+    "Admah@Gen.10.19-Hos=H0126": {
+      "id_bozza": "admah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Adma"
+        }
+      }
+    },
+    "Ararat@Gen.8.4-Jer=H0780": {
+      "id_bozza": "ararat",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ararat"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "majority"
+        }
+      }
+    },
+    "Assyria@Gen.2.14-Zec=H0804G": {
+      "id_bozza": "assyria",
+      "campi": {
+        "nomi.translit": {
+          "generato": "'a.Shur",
+          "curato": "ʾaššûr"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Assiria"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Babylon@Gen.10.10-Rev=H0894": {
+      "id_bozza": "babylon",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Babilonia"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Calah@Gen.10.11-=H3625": {
+      "id_bozza": "calah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Calach"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Calneh@Gen.10.10-Amo=H3641A": {
+      "id_bozza": "calneh",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Calne"
+        }
+      }
+    },
+    "Canaan@Gen.10.18-Act=H3667A": {
+      "id_bozza": "canaan",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Canaan"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Chaldea@Gen.11.28-Act=H3778": {
+      "id_bozza": "chaldea",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Caldea"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Cush@Gen.2.13-Act=H3568A": {
+      "id_bozza": "cush",
+      "campi": {
+        "nomi.translit": {
+          "generato": "Kush",
+          "curato": "kûš"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Cush"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Eden@Gen.2.8-Jol=H5731B": {
+      "id_bozza": "eden",
+      "campi": {
+        "nomi.translit": {
+          "generato": "'E.den",
+          "curato": "ʿēḏen"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Eden"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "symbolic"
+        },
+        "fonti": {
+          "generato": [
+            {
+              "tipo": "dataset",
+              "titolo": "STEPBible TIPNR (Translators Individualised Proper Names with all References), Tyndale House Cambridge",
+              "url": "https://github.com/STEPBible/STEPBible-Data",
+              "dettaglio": "CC BY 4.0"
+            }
+          ],
+          "curato": [
+            {
+              "tipo": "dataset",
+              "titolo": "STEPBible TIPNR (Translators Individualised Proper Names with all References), Tyndale House Cambridge",
+              "url": "https://github.com/STEPBible/STEPBible-Data",
+              "dettaglio": "CC BY 4.0"
+            },
+            {
+              "tipo": "url",
+              "autore": "Dexter Callender",
+              "titolo": "Eden (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/eden/",
+              "dettaglio": "giardino-oasi come simbolo di vita e modello del tempio; edin sumerico e mito di Dilmun"
+            }
+          ]
+        }
+      },
+      "candidati": {
+        "eden.in-babylonia": {
+          "pro": {
+            "generato": [],
+            "curato": [
+              "Il sumerico edin (\"steppa, pianura\") e il mito di Dilmun hanno suggerito ad alcuni una collocazione nella bassa Mesopotamia",
+              "Quadro fluviale di Gen 2,10-14: Tigri ed Eufrate sono fiumi mesopotamici identificati"
+            ]
+          },
+          "contro": {
+            "generato": [],
+            "curato": [
+              "Pishon e Ghicon restano senza identificazione non forzata"
+            ]
+          }
+        },
+        "eden.within-200-km-of-tell-el-muqayyar": {
+          "pro": {
+            "generato": [],
+            "curato": [
+              "Il sumerico edin (\"steppa, pianura\") e il mito di Dilmun hanno suggerito ad alcuni una collocazione nella bassa Mesopotamia",
+              "Quadro fluviale di Gen 2,10-14: Tigri ed Eufrate sono fiumi mesopotamici identificati"
+            ]
+          },
+          "contro": {
+            "generato": [],
+            "curato": [
+              "Pishon e Ghicon restano senza identificazione non forzata"
+            ]
+          }
+        }
+      }
+    },
+    "Erech@Gen.10.10-Ezr=H0751": {
+      "id_bozza": "erech",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Erec"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Euphrates@Gen.2.14-Rev=H6578": {
+      "id_bozza": "euphrates",
+      "campi": {
+        "nomi.translit": {
+          "generato": "pe.Rat",
+          "curato": "pərāṯ"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Eufrate"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      },
+      "candidati": {
+        "euphrates.euphrates-river": {
+          "pro": {
+            "generato": [],
+            "curato": [
+              "Fiume identificato senza controversia; compare anche nell’epopea di Atrahasis fra i canali della steppa scavati dagli dèi"
+            ]
+          }
+        }
+      }
+    },
+    "Gaza@Gen.10.19-Act=H5804": {
+      "id_bozza": "gaza",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gaza"
+        }
+      }
+    },
+    "Gerar@Gen.10.19-2Ch=H1642": {
+      "id_bozza": "gerar",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gerar"
+        }
+      }
+    },
+    "Gihon@Gen.2.13-2Ch=H1521": {
+      "id_bozza": "gihon",
+      "campi": {
+        "nomi.translit": {
+          "generato": "gi.Chon",
+          "curato": "gîḥôn"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ghicon"
+        }
+      }
+    },
+    "Gomorrah@Gen.10.19-Jud=H6017": {
+      "id_bozza": "gomorrah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gomorra"
+        }
+      }
+    },
+    "Haran@Gen.11.31-Act=H2771A": {
+      "id_bozza": "haran",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Carran"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Havilah@Gen.2.11=H2341G": {
+      "id_bozza": "havilah.gen2",
+      "campi": {
+        "nomi.translit": {
+          "generato": "cha.vi.Lah",
+          "curato": "ḥăwîlâ"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Avila"
+        }
+      }
+    },
+    "Lasha@Gen.10.19-Num=H3962": {
+      "id_bozza": "lasha",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Lesa"
+        }
+      }
+    },
+    "Mesha@Gen.10.30=H4852": {
+      "id_bozza": "mesha",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Mesa"
+        }
+      }
+    },
+    "Nineveh@Gen.10.11-Luk=H5210": {
+      "id_bozza": "nineveh",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ninive"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Nod@Gen.4.16=H5113": {
+      "id_bozza": "nod",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Nod"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "symbolic"
+        }
+      }
+    },
+    "Pishon@Gen.2.11=H6376": {
+      "id_bozza": "pishon",
+      "campi": {
+        "nomi.translit": {
+          "generato": "pi.Shon",
+          "curato": "pîšôn"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Pison"
+        }
+      }
+    },
+    "Resen@Gen.10.12=H7449": {
+      "id_bozza": "resen",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Resen"
+        }
+      }
+    },
+    "Sephar@Gen.10.30=H5611": {
+      "id_bozza": "sephar",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sefar"
+        }
+      }
+    },
+    "Shinar@Gen.10.10-Zec=H8152": {
+      "id_bozza": "shinar",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sinar"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Sidon@Gen.10.19-Act=H6721H": {
+      "id_bozza": "sidon",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sidone"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      }
+    },
+    "Sodom@Gen.10.19-Rev=H5467": {
+      "id_bozza": "sodom",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sodoma"
+        }
+      }
+    },
+    "Tigris@Gen.2.14-Dan=H2313": {
+      "id_bozza": "tigris",
+      "campi": {
+        "nomi.translit": {
+          "generato": "chi.De.kel",
+          "curato": "ḥiddeqel"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Tigri"
+        },
+        "status": {
+          "generato": "disputed",
+          "curato": "consensus"
+        }
+      },
+      "candidati": {
+        "tigris.tigris-river": {
+          "pro": {
+            "generato": [],
+            "curato": [
+              "Fiume identificato senza controversia; compare anche nell’epopea di Atrahasis fra i canali della steppa scavati dagli dèi"
+            ]
+          }
+        }
+      }
+    },
+    "Ur@Gen.11.28-Neh=H0218B": {
+      "id_bozza": "ur",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ur"
+        }
+      }
+    },
+    "Zeboiim@Gen.10.19-Hos=H6636": {
+      "id_bozza": "zeboiim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Seboim"
+        }
+      }
+    }
+  },
+  "persone": {
+    "Abel@Gen.4.2-Heb=H1893": {
+      "id_bozza": "abel",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Abele"
+        }
+      }
+    },
+    "Abimael@Gen.10.28-1Ch=H0039": {
+      "id_bozza": "abimael",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Abimael"
+        }
+      }
+    },
+    "Abraham@Gen.11.26-1Pe=H0085": {
+      "id_bozza": "abraham",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Abramo"
+        }
+      }
+    },
+    "Adah@Gen.4.19-=H5711G": {
+      "id_bozza": "adah.gen4",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ada"
+        }
+      }
+    },
+    "Adam@Gen.2.19-Jud=H0121G": {
+      "id_bozza": "adam",
+      "campi": {
+        "nomi.translit": {
+          "generato": "'a.Dam",
+          "curato": "ʾāḏām"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Adamo"
+        }
+      }
+    },
+    "Almodad@Gen.10.26-1Ch=H0486": {
+      "id_bozza": "almodad",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Almodad"
+        }
+      }
+    },
+    "Amorites@Gen.10.16-Amo=H0567": {
+      "id_bozza": "amorites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Amorrei"
+        }
+      }
+    },
+    "Anamim@Gen.10.13-1Ch=H6047": {
+      "id_bozza": "anamim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Anamim"
+        }
+      }
+    },
+    "Aram@Gen.10.22-1Ch=H0758G": {
+      "id_bozza": "aram.gen10",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Aram"
+        }
+      }
+    },
+    "Arkites@Gen.10.17-1Ch=H6208": {
+      "id_bozza": "arkites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Archei"
+        }
+      }
+    },
+    "Arpachshad@Gen.10.22-Luk=H0775": {
+      "id_bozza": "arpachshad",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Arpacsad"
+        }
+      }
+    },
+    "Arvadites@Gen.10.18-1Ch=H0721": {
+      "id_bozza": "arvadites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Arvadei"
+        }
+      }
+    },
+    "Ashkenaz@Gen.10.3-1Ch=H0813G": {
+      "id_bozza": "ashkenaz",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Aschenaz"
+        }
+      }
+    },
+    "Asshur@Gen.10.22-1Ch=H0804H": {
+      "id_bozza": "asshur",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Assur"
+        }
+      }
+    },
+    "Cain@Gen.4.1-Jud=H7014B": {
+      "id_bozza": "cain",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Caino"
+        }
+      }
+    },
+    "Canaan@Gen.9.18-1Ch=H3667G": {
+      "id_bozza": "canaan",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Canaan"
+        }
+      }
+    },
+    "Caphtorim@Gen.10.14-1Ch=H3732": {
+      "id_bozza": "caphtorim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Caftorim"
+        }
+      }
+    },
+    "Casluhim@Gen.10.14-1Ch=H3695": {
+      "id_bozza": "casluhim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Casluchim"
+        }
+      }
+    },
+    "Cush@Gen.10.6-1Ch=H3568G": {
+      "id_bozza": "cush",
+      "campi": {
+        "nomi.translit": {
+          "generato": "Khush",
+          "curato": "kûš"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Cush"
+        }
+      }
+    },
+    "Dedan@Gen.10.7-1Ch=H1719B": {
+      "id_bozza": "dedan.gen10",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Dedan"
+        }
+      }
+    },
+    "Diklah@Gen.10.27-1Ch=H1853": {
+      "id_bozza": "diklah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Dikla"
+        }
+      }
+    },
+    "Dodanim@Gen.10.4-1Ch=H1721": {
+      "id_bozza": "dodanim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Dodanim"
+        }
+      }
+    },
+    "Eber@Gen.10.21-Luk=H5677G": {
+      "id_bozza": "eber",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Eber"
+        }
+      }
+    },
+    "Egypt@Gen.10.6-1Ch=H4714H": {
+      "id_bozza": "egypt",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Misraim"
+        }
+      }
+    },
+    "Elam@Gen.10.22-1Ch=H5867C": {
+      "id_bozza": "elam",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Elam"
+        }
+      }
+    },
+    "Elishah@Gen.10.4-1Ch=H0473G": {
+      "id_bozza": "elishah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Elisa"
+        }
+      }
+    },
+    "Enoch@Gen.4.17-=H2585G": {
+      "id_bozza": "enoch.gen4",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Enoc"
+        }
+      }
+    },
+    "Enoch@Gen.5.18-Jud=H2585H": {
+      "id_bozza": "enoch.gen5",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Enoc"
+        }
+      }
+    },
+    "Enosh@Gen.4.26-Luk=H0583": {
+      "id_bozza": "enosh",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Enos"
+        }
+      }
+    },
+    "Eve@Gen.3.20-1Ti=H2332": {
+      "id_bozza": "eve",
+      "campi": {
+        "nomi.translit": {
+          "generato": "cha.Vah",
+          "curato": "ḥawwâ"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Eva"
+        }
+      }
+    },
+    "Gether@Gen.10.23-1Ch=H1666": {
+      "id_bozza": "gether",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gheter"
+        }
+      }
+    },
+    "Girgashites@Gen.10.16-Neh=H1622": {
+      "id_bozza": "girgashites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gergesei"
+        }
+      }
+    },
+    "Gomer@Gen.10.2-Ezk=H1586G": {
+      "id_bozza": "gomer",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gomer"
+        }
+      }
+    },
+    "Hadoram@Gen.10.27-1Ch=H1913A": {
+      "id_bozza": "hadoram",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Adoram"
+        }
+      }
+    },
+    "Ham@Gen.5.32-1Ch=H2526G": {
+      "id_bozza": "ham",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Cam"
+        }
+      }
+    },
+    "Hamathites@Gen.10.18-1Ch=H2577": {
+      "id_bozza": "hamathites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Camatei"
+        }
+      }
+    },
+    "Haran@Gen.11.26-=H2039G": {
+      "id_bozza": "haran",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Aran"
+        }
+      }
+    },
+    "Havilah@Gen.10.29-1Ch=H2341I": {
+      "id_bozza": "havilah.gen10-2",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Avila"
+        }
+      }
+    },
+    "Havilah@Gen.10.7-1Ch=H2341H": {
+      "id_bozza": "havilah.gen10",
+      "campi": {
+        "nomi.translit": {
+          "generato": "cha.vi.Lah",
+          "curato": "ḥăwîlâ"
+        },
+        "nomi.it": {
+          "generato": "",
+          "curato": "Avila"
+        }
+      }
+    },
+    "Hazarmaveth@Gen.10.26-1Ch=H2700": {
+      "id_bozza": "hazarmaveth",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Asarmavet"
+        }
+      }
+    },
+    "Heth@Gen.10.15-Ezk=H2845": {
+      "id_bozza": "heth",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Chet"
+        }
+      }
+    },
+    "Hivites@Gen.10.17-2Ch=H2340": {
+      "id_bozza": "hivites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Evei"
+        }
+      }
+    },
+    "Hul@Gen.10.23-1Ch=H2343": {
+      "id_bozza": "hul",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ul"
+        }
+      }
+    },
+    "Irad@Gen.4.18=H5897": {
+      "id_bozza": "irad",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Irad"
+        }
+      }
+    },
+    "Iscah@Gen.11.29=H3252": {
+      "id_bozza": "iscah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Isca"
+        }
+      }
+    },
+    "Jabal@Gen.4.20=H2989": {
+      "id_bozza": "jabal",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Iabal"
+        }
+      }
+    },
+    "Japheth@Gen.5.32-1Ch=H3315": {
+      "id_bozza": "japheth",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Iafet"
+        }
+      }
+    },
+    "Jared@Gen.5.15-Luk=H3382G": {
+      "id_bozza": "jared",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Iered"
+        }
+      }
+    },
+    "Javan@Gen.10.2-Col=H3120G": {
+      "id_bozza": "javan",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Iavan"
+        }
+      }
+    },
+    "Jebusites@Gen.10.16-Zec=H2983G": {
+      "id_bozza": "jebusites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Gebusei"
+        }
+      }
+    },
+    "Jerah@Gen.10.26-1Ch=H3392": {
+      "id_bozza": "jerah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ierach"
+        }
+      }
+    },
+    "Jobab@Gen.10.29-1Ch=H3103G": {
+      "id_bozza": "jobab.gen10",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Iobab"
+        }
+      }
+    },
+    "Joktan@Gen.10.25-1Ch=H3355": {
+      "id_bozza": "joktan",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ioktan"
+        }
+      }
+    },
+    "Jubal@Gen.4.21=H3106": {
+      "id_bozza": "jubal",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Iubal"
+        }
+      }
+    },
+    "Kenan@Gen.5.9-Luk=H7018": {
+      "id_bozza": "kenan",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Kenan"
+        }
+      }
+    },
+    "Kittim@Gen.10.4-1Ch=H3794G": {
+      "id_bozza": "kittim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Chittim"
+        }
+      }
+    },
+    "Lamech@Gen.4.18-=H3929G": {
+      "id_bozza": "lamech.gen4",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Lamec"
+        }
+      }
+    },
+    "Lamech@Gen.5.25-Luk=H3929H": {
+      "id_bozza": "lamech.gen5",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Lamec"
+        }
+      }
+    },
+    "Lehabim@Gen.10.13-1Ch=H3853": {
+      "id_bozza": "lehabim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Leabim"
+        }
+      }
+    },
+    "Lot@Gen.11.27-2Pe=H3876G": {
+      "id_bozza": "lot",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Lot"
+        }
+      }
+    },
+    "Lud@Gen.10.22-Ezk=H3865": {
+      "id_bozza": "lud",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Lud"
+        }
+      }
+    },
+    "Ludim@Gen.10.13-1Ch=H3866G": {
+      "id_bozza": "ludim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ludim"
+        }
+      }
+    },
+    "Madai@Gen.10.2-1Ch=H4074G": {
+      "id_bozza": "madai",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Madai"
+        }
+      }
+    },
+    "Magog@Gen.10.2-1Ch=H4031G": {
+      "id_bozza": "magog",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Magog"
+        }
+      }
+    },
+    "Mahalalel@Gen.5.12-Luk=H4111G": {
+      "id_bozza": "mahalalel",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Maalalel"
+        }
+      }
+    },
+    "Mash@Gen.10.23-1Ch=H4851": {
+      "id_bozza": "mash",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Mas"
+        }
+      }
+    },
+    "Mehujael@Gen.4.18=H4232": {
+      "id_bozza": "mehujael",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Mecuiael"
+        }
+      }
+    },
+    "Meshech@Gen.10.2-1Ch=H4902G": {
+      "id_bozza": "meshech",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Mesec"
+        }
+      }
+    },
+    "Methuselah@Gen.5.21-Luk=H4968": {
+      "id_bozza": "methuselah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Matusalemme"
+        }
+      }
+    },
+    "Methushael@Gen.4.18=H4967": {
+      "id_bozza": "methushael",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Metusael"
+        }
+      }
+    },
+    "Milcah@Gen.11.29-=H4435G": {
+      "id_bozza": "milcah.gen11",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Milca"
+        }
+      }
+    },
+    "Naamah@Gen.4.22=H5279G": {
+      "id_bozza": "naamah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Naamà"
+        }
+      }
+    },
+    "Nahor@Gen.11.22-Luk=H5152G": {
+      "id_bozza": "nahor.gen11",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Nacor"
+        }
+      }
+    },
+    "Nahor@Gen.11.26-=H5152H": {
+      "id_bozza": "nahor.gen11-2",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Nacor"
+        }
+      }
+    },
+    "Naphtuhim@Gen.10.13-1Ch=H5320": {
+      "id_bozza": "naphtuhim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Naftuchim"
+        }
+      }
+    },
+    "Nephilim@Gen.6.4-Num=H5303": {
+      "id_bozza": "nephilim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Nefilim"
+        }
+      }
+    },
+    "Nimrod@Gen.10.8-Mic=H5248": {
+      "id_bozza": "nimrod",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Nimrod"
+        }
+      }
+    },
+    "Noah@Gen.5.29-2Pe=H5146": {
+      "id_bozza": "noah.gen5",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Noè"
+        }
+      }
+    },
+    "Obal@Gen.10.28-1Ch=H5745": {
+      "id_bozza": "obal",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Obal"
+        }
+      }
+    },
+    "Ophir@Gen.10.29-1Ch=H0211G": {
+      "id_bozza": "ophir",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Ofir"
+        }
+      }
+    },
+    "Pathrusim@Gen.10.14-1Ch=H6625": {
+      "id_bozza": "pathrusim",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Patrusim"
+        }
+      }
+    },
+    "Peleg@Gen.10.25-Luk=H6389": {
+      "id_bozza": "peleg",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Peleg"
+        }
+      }
+    },
+    "Philistine@Gen.10.14-1Ch=H6430H": {
+      "id_bozza": "philistine",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Filistei"
+        }
+      }
+    },
+    "Put@Gen.10.6-1Ch=H6316G": {
+      "id_bozza": "put",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Put"
+        }
+      }
+    },
+    "Raamah@Gen.10.7-1Ch=H7484G": {
+      "id_bozza": "raamah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Raamà"
+        }
+      }
+    },
+    "Reu@Gen.11.18-Luk=H7466": {
+      "id_bozza": "reu",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Reu"
+        }
+      }
+    },
+    "Riphath@Gen.10.3-1Ch=H7384B": {
+      "id_bozza": "riphath",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Rifat"
+        }
+      }
+    },
+    "Sabtah@Gen.10.7-1Ch=H5454": {
+      "id_bozza": "sabtah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sabta"
+        }
+      }
+    },
+    "Sabteca@Gen.10.7-1Ch=H5455": {
+      "id_bozza": "sabteca",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sabtecà"
+        }
+      }
+    },
+    "Sarah@Gen.11.29-1Pe=H8283": {
+      "id_bozza": "sarah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sara"
+        }
+      }
+    },
+    "Seba@Gen.10.7-1Ch=H5434G": {
+      "id_bozza": "seba",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Seba"
+        }
+      }
+    },
+    "Serug@Gen.11.20-Luk=H8286": {
+      "id_bozza": "serug",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Serug"
+        }
+      }
+    },
+    "Seth@Gen.4.25-Luk=H8352": {
+      "id_bozza": "seth",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Set"
+        }
+      }
+    },
+    "Sheba@Gen.10.28-1Ch=H7614H": {
+      "id_bozza": "sheba.gen10-2",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Saba"
+        }
+      }
+    },
+    "Sheba@Gen.10.7-Jol=H7614G": {
+      "id_bozza": "sheba.gen10",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Saba"
+        }
+      }
+    },
+    "Shelah@Gen.10.24-Luk=H7974": {
+      "id_bozza": "shelah.gen10",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Selach"
+        }
+      }
+    },
+    "Sheleph@Gen.10.26-1Ch=H8026": {
+      "id_bozza": "sheleph",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Selef"
+        }
+      }
+    },
+    "Shem@Gen.5.32-Luk=H8035": {
+      "id_bozza": "shem",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sem"
+        }
+      }
+    },
+    "Sidon@Gen.10.15-1Ch=H6721G": {
+      "id_bozza": "sidon",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sidone"
+        }
+      }
+    },
+    "Sinites@Gen.10.17-1Ch=H5513": {
+      "id_bozza": "sinites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Sinei"
+        }
+      }
+    },
+    "Tarshish@Gen.10.4-1Ch=H8659G": {
+      "id_bozza": "tarshish",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Tarsis"
+        }
+      }
+    },
+    "Terah@Gen.11.24-Luk=H8646G": {
+      "id_bozza": "terah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Terach"
+        }
+      }
+    },
+    "Tiras@Gen.10.2-1Ch=H8494": {
+      "id_bozza": "tiras",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Tiras"
+        }
+      }
+    },
+    "Togarmah@Gen.10.3-1Ch=H8425G": {
+      "id_bozza": "togarmah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Togarmà"
+        }
+      }
+    },
+    "Tubal@Gen.10.2-1Ch=H8422G": {
+      "id_bozza": "tubal",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Tubal"
+        }
+      }
+    },
+    "Tubal-cain@Gen.4.22=H8423": {
+      "id_bozza": "tubal-cain",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Tubal-Kain"
+        }
+      }
+    },
+    "Uz@Gen.10.23-1Ch=H5780G": {
+      "id_bozza": "uz.gen10",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Us"
+        }
+      }
+    },
+    "Uzal@Gen.10.27-1Ch=H0187G": {
+      "id_bozza": "uzal",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Uzal"
+        }
+      }
+    },
+    "Zemarites@Gen.10.18-1Ch=H6786": {
+      "id_bozza": "zemarites",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Semarei"
+        }
+      }
+    },
+    "Zillah@Gen.4.19-=H6741": {
+      "id_bozza": "zillah",
+      "campi": {
+        "nomi.it": {
+          "generato": "",
+          "curato": "Silla"
+        }
+      }
+    }
+  }
+}
