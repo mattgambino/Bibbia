@@ -28,8 +28,18 @@ import { etichettaVersetto, leggiVersettoId, nomeLibro, versettoDiParola } from 
 import { usaPosizione, usaTraduzione } from '../stato/preferenze.ts'
 import type { Nota, Parola, Versetto } from '../tipi/index.ts'
 
-/** Che cosa mostra il pannello note: da dove si è arrivati, le note di quell'ancoraggio, quale evidenziare. */
-type SelezioneNote = { ancoraggio: string; note: Nota[]; idEvidenziata: string | null }
+/**
+ * Che cosa mostra il pannello note: da dove si è arrivati, le note di
+ * quell'ancoraggio, quale evidenziare. `versetto` è l'id del versetto da cui la
+ * selezione nasce (null per luogo e persona, che non stanno su un versetto):
+ * serve a chiudere il pannello quando la lettura si sposta altrove.
+ */
+type SelezioneNote = {
+  ancoraggio: string
+  versetto: string | null
+  note: Nota[]
+  idEvidenziata: string | null
+}
 
 /**
  * Il versetto "in lettura": il primo che intercetta la fascia alta della
@@ -141,6 +151,7 @@ export function Lettura() {
   const apriNoteVersetto = (versettoId: string, notaId: string) => {
     setNoteSelezionate({
       ancoraggio: etichettaVersetto(versettoId),
+      versetto: versettoId,
       note: indiceNote.perVersetto.get(versettoId) ?? [],
       idEvidenziata: notaId,
     })
@@ -148,23 +159,33 @@ export function Lettura() {
   }
 
   const apriNoteEntita = (ancoraggio: string, elenco: Nota[], idEvidenziata: string | null) => {
-    setNoteSelezionate({ ancoraggio, note: elenco, idEvidenziata })
+    setNoteSelezionate({ ancoraggio, versetto: null, note: elenco, idEvidenziata })
     setContestoAperto(true)
   }
 
   // La parola selezionata apre sempre il pannello parola; se porta note, apre
   // anche quelle. Il segno tratteggiato sotto la parola annunciava un apparato:
   // sarebbe un tratto senza conseguenze se il click non lo aprisse.
+  //
+  // Se invece la parola non ha note, il pannello resta aperto solo finché parla
+  // dello stesso versetto: spostandosi altrove mostrerebbe l'apparato di un
+  // passo che il lettore ha già lasciato, e si chiude.
   const apriParola = (id: string) => {
     setParolaAttiva(id)
     setContestoAperto(true)
+    const versetto = versettoDiParola(id)
     const noteParola = indiceNote.perParola.get(id)
     if (noteParola && noteParola.length > 0) {
       setNoteSelezionate({
-        ancoraggio: etichettaVersetto(versettoDiParola(id)),
+        ancoraggio: etichettaVersetto(versetto),
+        versetto,
         note: noteParola,
         idEvidenziata: noteParola[0].id,
       })
+    } else {
+      setNoteSelezionate((precedente) =>
+        precedente && precedente.versetto === versetto ? precedente : null,
+      )
     }
   }
 
