@@ -1,0 +1,684 @@
+[
+  {
+    "id": "gen-tavola-iafetiti",
+    "titolo": "Tavola dei popoli: intestazione e i figli di Iafet",
+    "range": {
+      "da": "gen.10.1",
+      "a": "gen.10.5"
+    },
+    "persone": [
+      "ashkenaz",
+      "dodanim",
+      "elishah",
+      "gomer",
+      "ham",
+      "japheth",
+      "javan",
+      "kittim",
+      "madai",
+      "magog",
+      "meshech",
+      "noah.gen5",
+      "riphath",
+      "shem",
+      "tarshish",
+      "tiras",
+      "togarmah",
+      "tubal"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Gen 10 non porta cifre di anni: la tavola dei popoli è una genealogia segmentata, senza età né date. La cronologia in Anno Mundi riprende a contare in Gen 11,10 con la linea di Sem, Arpacsad e i loro discendenti fino ad Abramo."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La tavola dei popoli è una delle genealogie della storia primordiale (Gen 5; 10; 11,10-30): non colloca eventi in una cronologia esterna, ma spiega l’origine e la distribuzione dei popoli conosciuti come discendenza dei tre figli di Noè, prima che il racconto si restringa su Abramo alla fine di Gen 11. Questa prima sezione elenca i figli di Iafet, riferiti tradizionalmente ai popoli del settentrione e delle coste egee e anatoliche.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale della storia primordiale",
+          "sintesi": "La tavola dei popoli appartiene alla storia primordiale (Petersen), il cui materiale è in prevalenza non sacerdotale. Le formule di chiusura ripetute («secondo le loro famiglie, le loro lingue, i loro paesi, le loro nazioni», vv. 5.20.31-32) hanno lo stile riassuntivo della cornice genealogica, ma l’attribuzione interna P / non sacerdotale verso per verso non è qui asserita: va fissata in F5.3. Il range -900/-400 copre entrambi gli strati.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Gerhard von Rad",
+              "titolo": "Das formgeschichtliche Problem des Hexateuch",
+              "anno": 1938,
+              "dettaglio": "jahwista di età salomonica: è la datazione alta che il manuale di Römer-Macchi-Nihan dà oggi per lasciata dalla maggioranza degli studiosi. Riferimento bibliografico dell'opera da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John Van Seters",
+              "titolo": "Prologue to History: The Yahwist as Historian in Genesis",
+              "anno": 1992,
+              "dettaglio": "datazione bassa, esilica, del jahwista; riferimento bibliografico da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Rolf Rendtorff",
+              "titolo": "Das überlieferungsgeschichtliche Problem des Pentateuch",
+              "anno": 1977,
+              "dettaglio": "critica dell'ipotesi documentaria: unità narrative maggiori al posto delle fonti continue; riferimento bibliografico verificato sull'Anchor Bible Dictionary (BZAW 147, Berlino-New York 1977) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Erhard Blum",
+              "titolo": "Studien zur Komposition des Pentateuch",
+              "anno": 1990,
+              "dettaglio": "modello compositivo-supplementare: i testi non sacerdotali come «composizione deuteronomistica» di età esilica; riferimento verificato (BZAW 189, Berlino-New York 1990) sulla bibliografia del cap. 5 di Römer-Macchi-Nihan La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Hans Heinrich Schmid",
+              "titolo": "Der sogenannte Jahwist",
+              "anno": 1976,
+              "dettaglio": "datazione bassa del jahwista; riferimento verificato sull'Anchor Bible Dictionary (Zurigo 1976), dove figura fra le critiche all'ipotesi documentaria. Da non confondere con Konrad Schmid, di un'altra generazione, cui si devono le datazioni persiane La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Eckart Otto",
+              "titolo": "Die Paradieserzählung Genesis 2-3: Eine nachpriesterliche Lehrerzählung in ihrem religionshistorischen Kontext",
+              "anno": 1996,
+              "dettaglio": "in «Jedes Ding hat seine Zeit...». Studien zur israelitischen und altorientalischen Weisheit, Diethelm Michel zum 65. Geburtstag (BZAW 241), Berlino-New York, pp. 167-192: lettura di Gen 2-3 come racconto post-sacerdotale. Riferimento tratto dalla bibliografia del cap. 5 di Römer-Macchi-Nihan; il contributo non è stato letto direttamente La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-figli-di-cam-e-cus",
+    "titolo": "I figli di Cam e di Cus",
+    "range": {
+      "da": "gen.10.6",
+      "a": "gen.10.7"
+    },
+    "persone": [
+      "canaan",
+      "cush",
+      "dedan.gen10",
+      "egypt",
+      "ham",
+      "havilah.gen10",
+      "put",
+      "raamah",
+      "sabtah",
+      "sabteca",
+      "seba",
+      "sheba.gen10"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Gen 10 non porta cifre di anni: la tavola dei popoli è una genealogia segmentata, senza età né date. La cronologia in Anno Mundi riprende a contare in Gen 11,10 con la linea di Sem, Arpacsad e i loro discendenti fino ad Abramo."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La tavola dei popoli è una delle genealogie della storia primordiale (Gen 5; 10; 11,10-30): non colloca eventi in una cronologia esterna, ma spiega l’origine e la distribuzione dei popoli conosciuti come discendenza dei tre figli di Noè, prima che il racconto si restringa su Abramo alla fine di Gen 11. La linea di Cam raccoglie Cus, Egitto, Put e Canaan, cioè l’Africa nordorientale e la costa siro-palestinese; i figli di Cus indicano genti dell’Arabia meridionale e del mar Rosso.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale della storia primordiale",
+          "sintesi": "La tavola dei popoli appartiene alla storia primordiale (Petersen), il cui materiale è in prevalenza non sacerdotale. Le formule di chiusura ripetute («secondo le loro famiglie, le loro lingue, i loro paesi, le loro nazioni», vv. 5.20.31-32) hanno lo stile riassuntivo della cornice genealogica, ma l’attribuzione interna P / non sacerdotale verso per verso non è qui asserita: va fissata in F5.3. Il range -900/-400 copre entrambi gli strati.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Gerhard von Rad",
+              "titolo": "Das formgeschichtliche Problem des Hexateuch",
+              "anno": 1938,
+              "dettaglio": "jahwista di età salomonica: è la datazione alta che il manuale di Römer-Macchi-Nihan dà oggi per lasciata dalla maggioranza degli studiosi. Riferimento bibliografico dell'opera da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John Van Seters",
+              "titolo": "Prologue to History: The Yahwist as Historian in Genesis",
+              "anno": 1992,
+              "dettaglio": "datazione bassa, esilica, del jahwista; riferimento bibliografico da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Rolf Rendtorff",
+              "titolo": "Das überlieferungsgeschichtliche Problem des Pentateuch",
+              "anno": 1977,
+              "dettaglio": "critica dell'ipotesi documentaria: unità narrative maggiori al posto delle fonti continue; riferimento bibliografico verificato sull'Anchor Bible Dictionary (BZAW 147, Berlino-New York 1977) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Erhard Blum",
+              "titolo": "Studien zur Komposition des Pentateuch",
+              "anno": 1990,
+              "dettaglio": "modello compositivo-supplementare: i testi non sacerdotali come «composizione deuteronomistica» di età esilica; riferimento verificato (BZAW 189, Berlino-New York 1990) sulla bibliografia del cap. 5 di Römer-Macchi-Nihan La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Hans Heinrich Schmid",
+              "titolo": "Der sogenannte Jahwist",
+              "anno": 1976,
+              "dettaglio": "datazione bassa del jahwista; riferimento verificato sull'Anchor Bible Dictionary (Zurigo 1976), dove figura fra le critiche all'ipotesi documentaria. Da non confondere con Konrad Schmid, di un'altra generazione, cui si devono le datazioni persiane La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Eckart Otto",
+              "titolo": "Die Paradieserzählung Genesis 2-3: Eine nachpriesterliche Lehrerzählung in ihrem religionshistorischen Kontext",
+              "anno": 1996,
+              "dettaglio": "in «Jedes Ding hat seine Zeit...». Studien zur israelitischen und altorientalischen Weisheit, Diethelm Michel zum 65. Geburtstag (BZAW 241), Berlino-New York, pp. 167-192: lettura di Gen 2-3 come racconto post-sacerdotale. Riferimento tratto dalla bibliografia del cap. 5 di Römer-Macchi-Nihan; il contributo non è stato letto direttamente La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-nimrod-primi-regni",
+    "titolo": "Nimrod e i primi regni: Babele, Assiria, Ninive",
+    "range": {
+      "da": "gen.10.8",
+      "a": "gen.10.12"
+    },
+    "persone": [
+      "cush",
+      "nimrod"
+    ],
+    "luoghi": [
+      "accad",
+      "assyria",
+      "babylon",
+      "calah",
+      "calneh",
+      "erech",
+      "nineveh",
+      "rehoboth-ir",
+      "resen",
+      "shinar"
+    ],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Gen 10 non porta cifre di anni: la tavola dei popoli è una genealogia segmentata, senza età né date. La cronologia in Anno Mundi riprende a contare in Gen 11,10 con la linea di Sem, Arpacsad e i loro discendenti fino ad Abramo."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La tavola dei popoli è una delle genealogie della storia primordiale (Gen 5; 10; 11,10-30): non colloca eventi in una cronologia esterna, ma spiega l’origine e la distribuzione dei popoli conosciuti come discendenza dei tre figli di Noè, prima che il racconto si restringa su Abramo alla fine di Gen 11. Al centro della linea camitica sta l’unico brano narrativo del capitolo: Nimrod, «primo potente sulla terra», a cui il testo lega la nascita dei grandi centri mesopotamici, prima in Sinar (Babele, Erech, Accad), poi in Assiria (Ninive, Calah).",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale della storia primordiale",
+          "sintesi": "A differenza del resto del capitolo, fatto di liste di nomi, gli otto versetti su Nimrod (10,8-12) sono un breve racconto: è l’inserto narrativo più netto della tavola dei popoli, e la critica delle fonti vi ha tradizionalmente riconosciuto materiale non sacerdotale. L’attribuzione verso per verso non è qui asserita (rinviata a F5.3); il range -900/-400 copre entrambi gli strati del capitolo.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Gerhard von Rad",
+              "titolo": "Das formgeschichtliche Problem des Hexateuch",
+              "anno": 1938,
+              "dettaglio": "jahwista di età salomonica: è la datazione alta che il manuale di Römer-Macchi-Nihan dà oggi per lasciata dalla maggioranza degli studiosi. Riferimento bibliografico dell'opera da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John Van Seters",
+              "titolo": "Prologue to History: The Yahwist as Historian in Genesis",
+              "anno": 1992,
+              "dettaglio": "datazione bassa, esilica, del jahwista; riferimento bibliografico da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Rolf Rendtorff",
+              "titolo": "Das überlieferungsgeschichtliche Problem des Pentateuch",
+              "anno": 1977,
+              "dettaglio": "critica dell'ipotesi documentaria: unità narrative maggiori al posto delle fonti continue; riferimento bibliografico verificato sull'Anchor Bible Dictionary (BZAW 147, Berlino-New York 1977) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Erhard Blum",
+              "titolo": "Studien zur Komposition des Pentateuch",
+              "anno": 1990,
+              "dettaglio": "modello compositivo-supplementare: i testi non sacerdotali come «composizione deuteronomistica» di età esilica; riferimento verificato (BZAW 189, Berlino-New York 1990) sulla bibliografia del cap. 5 di Römer-Macchi-Nihan La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Hans Heinrich Schmid",
+              "titolo": "Der sogenannte Jahwist",
+              "anno": 1976,
+              "dettaglio": "datazione bassa del jahwista; riferimento verificato sull'Anchor Bible Dictionary (Zurigo 1976), dove figura fra le critiche all'ipotesi documentaria. Da non confondere con Konrad Schmid, di un'altra generazione, cui si devono le datazioni persiane La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Eckart Otto",
+              "titolo": "Die Paradieserzählung Genesis 2-3: Eine nachpriesterliche Lehrerzählung in ihrem religionshistorischen Kontext",
+              "anno": 1996,
+              "dettaglio": "in «Jedes Ding hat seine Zeit...». Studien zur israelitischen und altorientalischen Weisheit, Diethelm Michel zum 65. Geburtstag (BZAW 241), Berlino-New York, pp. 167-192: lettura di Gen 2-3 come racconto post-sacerdotale. Riferimento tratto dalla bibliografia del cap. 5 di Römer-Macchi-Nihan; il contributo non è stato letto direttamente La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-camiti-egitto-e-canaan",
+    "titolo": "Discendenti di Egitto e di Canaan",
+    "range": {
+      "da": "gen.10.13",
+      "a": "gen.10.20"
+    },
+    "persone": [
+      "amorites",
+      "anamim",
+      "arkites",
+      "arvadites",
+      "canaan",
+      "caphtorim",
+      "casluhim",
+      "egypt",
+      "girgashites",
+      "ham",
+      "hamathites",
+      "heth",
+      "hivites",
+      "jebusites",
+      "lehabim",
+      "ludim",
+      "naphtuhim",
+      "pathrusim",
+      "philistine",
+      "sidon",
+      "sinites",
+      "zemarites"
+    ],
+    "luoghi": [
+      "admah",
+      "canaan",
+      "gaza",
+      "gerar",
+      "gomorrah",
+      "lasha",
+      "sidon",
+      "sodom",
+      "zeboiim"
+    ],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Gen 10 non porta cifre di anni: la tavola dei popoli è una genealogia segmentata, senza età né date. La cronologia in Anno Mundi riprende a contare in Gen 11,10 con la linea di Sem, Arpacsad e i loro discendenti fino ad Abramo."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La tavola dei popoli è una delle genealogie della storia primordiale (Gen 5; 10; 11,10-30): non colloca eventi in una cronologia esterna, ma spiega l’origine e la distribuzione dei popoli conosciuti come discendenza dei tre figli di Noè, prima che il racconto si restringa su Abramo alla fine di Gen 11. La linea camitica prosegue con i popoli discesi da Egitto e con quelli di Canaan, dei quali il testo traccia anche il confine (da Sidone verso Gerar e Gaza, fino a Sodoma e Gomorra): sono le genti che Israele incontra come vicine e rivali.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale della storia primordiale",
+          "sintesi": "La tavola dei popoli appartiene alla storia primordiale (Petersen), il cui materiale è in prevalenza non sacerdotale. Le formule di chiusura ripetute («secondo le loro famiglie, le loro lingue, i loro paesi, le loro nazioni», vv. 5.20.31-32) hanno lo stile riassuntivo della cornice genealogica, ma l’attribuzione interna P / non sacerdotale verso per verso non è qui asserita: va fissata in F5.3. Il range -900/-400 copre entrambi gli strati.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Gerhard von Rad",
+              "titolo": "Das formgeschichtliche Problem des Hexateuch",
+              "anno": 1938,
+              "dettaglio": "jahwista di età salomonica: è la datazione alta che il manuale di Römer-Macchi-Nihan dà oggi per lasciata dalla maggioranza degli studiosi. Riferimento bibliografico dell'opera da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John Van Seters",
+              "titolo": "Prologue to History: The Yahwist as Historian in Genesis",
+              "anno": 1992,
+              "dettaglio": "datazione bassa, esilica, del jahwista; riferimento bibliografico da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Rolf Rendtorff",
+              "titolo": "Das überlieferungsgeschichtliche Problem des Pentateuch",
+              "anno": 1977,
+              "dettaglio": "critica dell'ipotesi documentaria: unità narrative maggiori al posto delle fonti continue; riferimento bibliografico verificato sull'Anchor Bible Dictionary (BZAW 147, Berlino-New York 1977) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Erhard Blum",
+              "titolo": "Studien zur Komposition des Pentateuch",
+              "anno": 1990,
+              "dettaglio": "modello compositivo-supplementare: i testi non sacerdotali come «composizione deuteronomistica» di età esilica; riferimento verificato (BZAW 189, Berlino-New York 1990) sulla bibliografia del cap. 5 di Römer-Macchi-Nihan La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Hans Heinrich Schmid",
+              "titolo": "Der sogenannte Jahwist",
+              "anno": 1976,
+              "dettaglio": "datazione bassa del jahwista; riferimento verificato sull'Anchor Bible Dictionary (Zurigo 1976), dove figura fra le critiche all'ipotesi documentaria. Da non confondere con Konrad Schmid, di un'altra generazione, cui si devono le datazioni persiane La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Eckart Otto",
+              "titolo": "Die Paradieserzählung Genesis 2-3: Eine nachpriesterliche Lehrerzählung in ihrem religionshistorischen Kontext",
+              "anno": 1996,
+              "dettaglio": "in «Jedes Ding hat seine Zeit...». Studien zur israelitischen und altorientalischen Weisheit, Diethelm Michel zum 65. Geburtstag (BZAW 241), Berlino-New York, pp. 167-192: lettura di Gen 2-3 come racconto post-sacerdotale. Riferimento tratto dalla bibliografia del cap. 5 di Römer-Macchi-Nihan; il contributo non è stato letto direttamente La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-figli-di-sem",
+    "titolo": "I figli di Sem e la chiusa della tavola",
+    "range": {
+      "da": "gen.10.21",
+      "a": "gen.10.32"
+    },
+    "persone": [
+      "abimael",
+      "almodad",
+      "aram.gen10",
+      "arpachshad",
+      "asshur",
+      "diklah",
+      "eber",
+      "elam",
+      "gether",
+      "hadoram",
+      "havilah.gen10-2",
+      "hazarmaveth",
+      "hul",
+      "japheth",
+      "jerah",
+      "jobab.gen10",
+      "joktan",
+      "lud",
+      "mash",
+      "noah.gen5",
+      "obal",
+      "ophir",
+      "peleg",
+      "sheba.gen10-2",
+      "shelah.gen10",
+      "sheleph",
+      "shem",
+      "uz.gen10",
+      "uzal"
+    ],
+    "luoghi": [
+      "mesha",
+      "sephar"
+    ],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Gen 10 non porta cifre di anni: la tavola dei popoli è una genealogia segmentata, senza età né date. La cronologia in Anno Mundi riprende a contare in Gen 11,10 con la linea di Sem, Arpacsad e i loro discendenti fino ad Abramo."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La tavola dei popoli è una delle genealogie della storia primordiale (Gen 5; 10; 11,10-30): non colloca eventi in una cronologia esterna, ma spiega l’origine e la distribuzione dei popoli conosciuti come discendenza dei tre figli di Noè, prima che il racconto si restringa su Abramo alla fine di Gen 11. L’ultima linea, quella di Sem, è collocata in chiusura e non per prima: da essa il testo fa discendere Eber — l’antenato eponimo verso cui punta la genealogia — e Peleg, «perché ai suoi giorni la terra fu divisa». La formula finale del v. 32 chiude l’intera tavola.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale della storia primordiale",
+          "sintesi": "La tavola dei popoli appartiene alla storia primordiale (Petersen), il cui materiale è in prevalenza non sacerdotale. Le formule di chiusura ripetute («secondo le loro famiglie, le loro lingue, i loro paesi, le loro nazioni», vv. 5.20.31-32) hanno lo stile riassuntivo della cornice genealogica, ma l’attribuzione interna P / non sacerdotale verso per verso non è qui asserita: va fissata in F5.3. Il range -900/-400 copre entrambi gli strati.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Gerhard von Rad",
+              "titolo": "Das formgeschichtliche Problem des Hexateuch",
+              "anno": 1938,
+              "dettaglio": "jahwista di età salomonica: è la datazione alta che il manuale di Römer-Macchi-Nihan dà oggi per lasciata dalla maggioranza degli studiosi. Riferimento bibliografico dell'opera da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John Van Seters",
+              "titolo": "Prologue to History: The Yahwist as Historian in Genesis",
+              "anno": 1992,
+              "dettaglio": "datazione bassa, esilica, del jahwista; riferimento bibliografico da verificare La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Rolf Rendtorff",
+              "titolo": "Das überlieferungsgeschichtliche Problem des Pentateuch",
+              "anno": 1977,
+              "dettaglio": "critica dell'ipotesi documentaria: unità narrative maggiori al posto delle fonti continue; riferimento bibliografico verificato sull'Anchor Bible Dictionary (BZAW 147, Berlino-New York 1977) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Erhard Blum",
+              "titolo": "Studien zur Komposition des Pentateuch",
+              "anno": 1990,
+              "dettaglio": "modello compositivo-supplementare: i testi non sacerdotali come «composizione deuteronomistica» di età esilica; riferimento verificato (BZAW 189, Berlino-New York 1990) sulla bibliografia del cap. 5 di Römer-Macchi-Nihan La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Hans Heinrich Schmid",
+              "titolo": "Der sogenannte Jahwist",
+              "anno": 1976,
+              "dettaglio": "datazione bassa del jahwista; riferimento verificato sull'Anchor Bible Dictionary (Zurigo 1976), dove figura fra le critiche all'ipotesi documentaria. Da non confondere con Konrad Schmid, di un'altra generazione, cui si devono le datazioni persiane La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "Eckart Otto",
+              "titolo": "Die Paradieserzählung Genesis 2-3: Eine nachpriesterliche Lehrerzählung in ihrem religionshistorischen Kontext",
+              "anno": 1996,
+              "dettaglio": "in «Jedes Ding hat seine Zeit...». Studien zur israelitischen und altorientalischen Weisheit, Diethelm Michel zum 65. Geburtstag (BZAW 241), Berlino-New York, pp. 167-192: lettura di Gen 2-3 come racconto post-sacerdotale. Riferimento tratto dalla bibliografia del cap. 5 di Römer-Macchi-Nihan; il contributo non è stato letto direttamente La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [],
+    "da_verificare": true
+  }
+]

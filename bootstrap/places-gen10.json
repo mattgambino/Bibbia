@@ -1,0 +1,23 @@
+[
+  {
+    "id": "rehoboth-ir",
+    "tipnr_id": null,
+    "nomi": {
+      "he": "רְחֹבֹת עִיר",
+      "translit": "reḥovot ʿir",
+      "it": "Recobot-Ir"
+    },
+    "status": "disputed",
+    "candidati": [],
+    "riferimenti": ["gen.10.11"],
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — dato testuale: il nome רְחֹבֹת עִיר compare in gen.10.11 fra le città che il testo attribuisce a Nimrod in Assiria. Nessun candidato di geolocalizzazione in OpenBible.info e nessuna voce corrispondente fra i luoghi importati da TIPNR: sito non identificato, record creato a mano (tipnr_id null), status disputed senza candidati. L'identificazione va decisa in F5.3."
+      }
+    ],
+    "da_verificare": true
+  }
+]

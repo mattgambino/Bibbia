@@ -1,0 +1,145 @@
+[
+  {
+    "id": "gen108-nimrod-re-mesopotamico",
+    "target": {
+      "tipo": "pericope",
+      "ref": {
+        "da": "gen.10.8",
+        "a": "gen.10.12"
+      }
+    },
+    "tipo": "storica",
+    "titolo": "Nimrod e l'origine dei regni mesopotamici",
+    "testo": "Nel mezzo delle liste di nomi, il testo racconta di Nimrod, «il primo a essere potente sulla terra», e gli attribuisce l'origine dei grandi centri di potere della Mesopotamia: prima in Sinar, la pianura babilonese (Babele, Erech, Accad), poi in Assiria (Ninive, Rehobot-Ir, Calah, Resen). L'HarperCollins Bible Dictionary lo descrive come un re e conquistatore mesopotamico e ricorda che in Michea 5,5 «terra di Nimrod» è un modo poetico per dire Assiria. Il testo non lo identifica con un sovrano databile e la voce non ne propone uno: Nimrod resta la figura eziologica a cui la tavola dei popoli fa risalire la nascita della regalità mesopotamica, non un personaggio collocabile in una cronologia esterna.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "HarperCollins Bible Dictionary",
+        "titolo": "Nimrod (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/dictionary/nimrod/",
+        "dettaglio": "«An ancient Mesopotamian king and conqueror mentioned in Gen 10:8-12 [...] the 'land of Nimrod' is a poetic term for Assyria. Nimrod is called the son of Cush»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1011-ninive-capitale-assira",
+    "target": {
+      "tipo": "luogo",
+      "ref": "nineveh"
+    },
+    "tipo": "geografica",
+    "titolo": "Ninive: la capitale assira e la sua fondazione eziologica",
+    "testo": "La tavola dei popoli (Gen 10,11) è la prima menzione biblica di Ninive e ne fa risalire la fondazione a Nimrod. Storicamente, però, Ninive — sulla riva orientale del Tigri, di fronte all'odierna Mosul — diventa capitale dell'Assiria al suo apice tardo, da Sennacherib (salito al trono nel 705 a.C.) fino alla caduta della città nel 612 a.C. La collocazione della sua fondazione nell'età primordiale è quindi eziologica: il testo spiega l'esistenza dei grandi centri assiri risalendo a un progenitore, non ne registra la cronologia reale. È lo stesso genere di indizio già osservato per «i monti di Ararat» e per il subentrare di Urartu nelle fonti assire.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "HarperCollins Bible Dictionary",
+        "titolo": "Nineveh (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/dictionary/nineveh/",
+        "dettaglio": "«Nineveh was the capital of Assyria at its height, from the time of Sennacherib, who assumed the throne in 705, to its fall in 612 BCE [...] on the east bank of the Tigris River opposite Mosul. The earliest biblical mention of Nineveh is in the Table of Nations (Gen 10:11), which claims Nimrod as the city's founder»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen109-rashi-nimrod-ribelle",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.10.9"
+    },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: «valente cacciatore davanti al Signore», cioè contro di Lui",
+    "testo": "Il testo chiama Nimrod «valente cacciatore davanti al Signore» (gibbor ṣayid lifnè YHWH). Rashi legge quel «davanti» come «contro»: Nimrod cacciava con le parole le menti delle persone, traviandole e spingendole a ribellarsi a Dio. E chi agisce con sfrontatezza, riconoscendo il suo Signore e ribellandoglisi apposta, di lui si dice «costui è come Nimrod, valente cacciatore». Nella tradizione ebraica il nome diventa così il tipo del ribelle consapevole, non del semplice conquistatore.",
+    "confidence": "attribuito",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 10:9:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Rashi",
+        "titolo": "Rashi on Genesis 10:9 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.10.9",
+        "dettaglio": "versione «Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934», licenza dichiarata dall'API: Public Domain. Sintesi in italiano, senza copiare il testo della fonte"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen108-nimrod-babele-ricezione",
+    "target": {
+      "tipo": "pericope",
+      "ref": {
+        "da": "gen.10.8",
+        "a": "gen.10.12"
+      }
+    },
+    "tipo": "storica",
+    "titolo": "Nimrod costruttore di Babele: una lettura posteriore",
+    "testo": "Nella ricezione, Nimrod diventa il costruttore della torre di Babele e il tiranno che vi spinge l'umanità — è la figura barbuta che Bruegel dipinge a sovrintendere ai lavori, assente dal racconto biblico. Sherman ricorda che il nome, in ebraico, si può leggere come «ribelliamoci», e che a fare di Nimrod il costruttore di Babele sono fonti successive: Giuseppe Flavio (Antichità giudaiche 1,114), che lo descrive come un tiranno deciso a vendicarsi del diluvio, e la tradizione rabbinica (Bereshit Rabbah 38). Il testo di Gen 10-11, invece, colloca soltanto Nimrod in Sinar (10,10), dove poi sarà costruita la torre (11,2), senza mai attribuirgli quella costruzione: il legame è un'inferenza dei lettori, non un dato del racconto.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Phillip Michael Sherman",
+        "titolo": "The Reception History of the Tower of Babel (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-reception-history-of-the-tower-of-babel/",
+        "dettaglio": "«He is Nimrod [...] His name, in Hebrew, can also mean 'Let us rebel' [...] Josephus claims that Nimrod was a tyrant»; con rimando a Giuseppe Flavio, Ant. 1,114 e a Genesis Rabbah 38. La bibliografia dell'articolo cita K. van der Toorn – P. W. van der Horst, «Nimrod Before and After the Bible», Harvard Theological Review 83 (1990) 1-29, e T. Hiebert, «The Tower of Babel and the Origins of the World's Cultures», Journal of Biblical Literature 126 (2007) 29-58: non letti direttamente, riferimenti tratti dall'articolo"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1025-rashi-peleg-divisione",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.10.25"
+    },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: Peleg e la terra «divisa», Ioktan «il piccolo»",
+    "testo": "Il testo dice che a uno dei figli di Eber fu dato nome Peleg, «perché ai suoi giorni la terra fu divisa». Rashi spiega quella divisione come la dispersione di Babele: le lingue si confusero e i popoli si sparsero dalla pianura di Sinar per tutto il mondo. Ne ricava che Eber fosse profeta, perché diede al figlio un nome tratto da un evento ancora futuro; e calcola che la dispersione cadde nell'anno stesso della morte di Peleg. Del fratello Ioktan Rashi dice che il nome viene da «il piccolo»: era umile e si teneva in poco conto, e per questo meritò di generare tutte le famiglie elencate dopo di lui. La nota collega così Gen 10,25 al racconto di Babele che segue in Gen 11.",
+    "confidence": "attribuito",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 10:25",
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Rashi",
+        "titolo": "Rashi on Genesis 10:25 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.10.25",
+        "dettaglio": "versione «Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934», licenza dichiarata dall'API: Public Domain. Sintesi in italiano dei due commenti (Peleg; Ioktan), senza copiare il testo della fonte"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1014-filistei-ordine-del-testo",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.10.14"
+    },
+    "tipo": "filologica",
+    "titolo": "«Donde uscirono i Filistei»: dove cade l'inciso nel TM",
+    "testo": "Nel Testo Masoretico l'inciso «donde uscirono i Filistei» compare, nell'ordine delle parole, subito dopo i Casluchiti e prima dei Caftoriti (gen.10.14). Altrove la Scrittura fa invece venire i Filistei da Caftor. La nota registra soltanto questo dato di collocazione nel testo consonantico e non scioglie a quale dei due nomi l'inciso vada legato: è un punto discusso, che qui si segnala senza asserire una soluzione.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — dato testuale: ordine delle parole di gen.10.14, con l'inciso ʾăšer yāṣəʾū miššām pəlištîm collocato fra Casluchiti e Caftoriti"
+      }
+    ],
+    "da_verificare": true
+  }
+]
