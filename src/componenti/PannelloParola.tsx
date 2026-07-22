@@ -2,6 +2,7 @@
 // parsing leggibile, glossa EN etichettata, occorrenze del lemma navigabili
 // tramite indices/lemmi.json (ROADMAP F1.6b).
 
+import { useEffect, useRef } from 'react'
 import { decodificaMorph } from '../lib/morfologia.ts'
 import { etichettaVersetto, versettoDiParola } from '../lib/riferimenti.ts'
 import type { Caricamento } from '../dati/hooks.ts'
@@ -19,13 +20,22 @@ type Props = {
   parola: Parola
   indice: Caricamento<IndiceLemmi>
   lexicon: Caricamento<LexiconIt>
+  /** Vero quando la scelta della parola è l'ultima azione del lettore: solo allora il pannello si porta in vista. */
+  portaInVista: boolean
   onOccorrenza: (parolaId: string) => void
   onChiudi: () => void
 }
 
-export function PannelloParola({ parola, indice, lexicon, onOccorrenza, onChiudi }: Props) {
+export function PannelloParola({ parola, indice, lexicon, portaInVista, onOccorrenza, onChiudi }: Props) {
+  // La colonna dell'apparato scorre per conto suo: scegliendo una parola mentre
+  // si legge una nota o il contesto, il pannello si aprirebbe fuori campo.
+  const pannello = useRef<HTMLElement>(null)
+  useEffect(() => {
+    if (portaInVista) pannello.current?.scrollIntoView({ block: 'nearest' })
+  }, [parola.id, portaInVista])
+
   return (
-    <section className="pannello" aria-label="Parola selezionata">
+    <section className="pannello" aria-label="Parola selezionata" ref={pannello}>
       <div className="pannello-testa">
         <h2>Parola</h2>
         <button type="button" className="chiudi" aria-label="Chiudi il pannello parola" onClick={onChiudi}>

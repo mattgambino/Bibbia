@@ -86,6 +86,10 @@ export function Lettura() {
   const [idTraduzione, setIdTraduzione] = usaTraduzione()
   const [parolaAttiva, setParolaAttiva] = useState<string | null>(null)
   const [noteSelezionate, setNoteSelezionate] = useState<SelezioneNote | null>(null)
+  // Quale dei due pannelli porta l'ultima azione del lettore: è quello che si
+  // riporta in vista. Selezionare una parola annotata li apre entrambi, e lì il
+  // fuoco resta sulla parola — è quella che il lettore ha toccato.
+  const [focoApparato, setFocoApparato] = useState<'parola' | 'note'>('parola')
   // Su desktop l'apparato è sempre in colonna; l'interruttore serve solo sotto
   // 1100px, dove la colonna diventa un pannello sovrapposto.
   const [contestoAperto, setContestoAperto] = useState(true)
@@ -155,11 +159,13 @@ export function Lettura() {
       note: indiceNote.perVersetto.get(versettoId) ?? [],
       idEvidenziata: notaId,
     })
+    setFocoApparato('note')
     setContestoAperto(true)
   }
 
   const apriNoteEntita = (ancoraggio: string, elenco: Nota[], idEvidenziata: string | null) => {
     setNoteSelezionate({ ancoraggio, versetto: null, note: elenco, idEvidenziata })
+    setFocoApparato('note')
     setContestoAperto(true)
   }
 
@@ -172,6 +178,7 @@ export function Lettura() {
   // passo che il lettore ha già lasciato, e si chiude.
   const apriParola = (id: string) => {
     setParolaAttiva(id)
+    setFocoApparato('parola')
     setContestoAperto(true)
     const versetto = versettoDiParola(id)
     const noteParola = indiceNote.perParola.get(id)
@@ -294,22 +301,17 @@ export function Lettura() {
         />
       )}
 
+      {/* L'ordine dell'apparato è fisso: la parola scelta apre la colonna, poi
+          le note, poi il contesto. Il pannello che porta l'ultima azione si
+          riporta da sé in vista (`portaInVista`), così l'ordine non cambia sotto
+          gli occhi del lettore e nulla resta aperto fuori campo. */}
       <aside className="contesto" aria-label="Apparato" hidden={!contestoAperto}>
-        {noteSelezionate && (
-          <PannelloNote
-            ancoraggio={noteSelezionate.ancoraggio}
-            note={noteSelezionate.note}
-            idEvidenziata={noteSelezionate.idEvidenziata}
-            parolaDi={parolaDiNota}
-            onChiudi={() => setNoteSelezionate(null)}
-          />
-        )}
-
         {parola ? (
           <PannelloParola
             parola={parola}
             indice={indiceLemmi}
             lexicon={lexiconIt}
+            portaInVista={focoApparato === 'parola'}
             onOccorrenza={vaiAParola}
             onChiudi={() => setParolaAttiva(null)}
           />
@@ -318,6 +320,17 @@ export function Lettura() {
             <h2>Parola</h2>
             <p className="vuoto">Scegli una parola del testo ebraico per vederne parsing e occorrenze.</p>
           </section>
+        )}
+
+        {noteSelezionate && (
+          <PannelloNote
+            ancoraggio={noteSelezionate.ancoraggio}
+            note={noteSelezionate.note}
+            idEvidenziata={noteSelezionate.idEvidenziata}
+            parolaDi={parolaDiNota}
+            portaInVista={focoApparato === 'note'}
+            onChiudi={() => setNoteSelezionate(null)}
+          />
         )}
 
         <ColonnaContesto

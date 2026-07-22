@@ -29,10 +29,12 @@ type Props = {
   idEvidenziata: string | null
   /** Parola ebraica a cui una nota è ancorata, quando l'ancoraggio è una parola. */
   parolaDi: (notaId: string) => Parola | null
+  /** Vero quando l'apertura delle note è l'ultima azione del lettore: solo allora il pannello si porta in vista. */
+  portaInVista: boolean
   onChiudi: () => void
 }
 
-export function PannelloNote({ ancoraggio, note, idEvidenziata, parolaDi, onChiudi }: Props) {
+export function PannelloNote({ ancoraggio, note, idEvidenziata, parolaDi, portaInVista, onChiudi }: Props) {
   // La colonna dell'apparato scorre per conto suo: se è già scesa sul contesto,
   // il pannello si apre fuori campo e il click sull'indicatore sembra non aver
   // fatto nulla. Si riporta in vista a ogni apertura, senza animazione.
@@ -41,9 +43,10 @@ export function PannelloNote({ ancoraggio, note, idEvidenziata, parolaDi, onChiu
   const pannello = useRef<HTMLElement>(null)
   const evidenziata = useRef<HTMLLIElement>(null)
   useEffect(() => {
+    if (!portaInVista) return
     const bersaglio = evidenziata.current ?? pannello.current
     bersaglio?.scrollIntoView({ block: 'nearest' })
-  }, [ancoraggio, idEvidenziata])
+  }, [ancoraggio, idEvidenziata, portaInVista])
 
   return (
     <section className="pannello pannello-note" aria-label="Note critiche" ref={pannello}>
