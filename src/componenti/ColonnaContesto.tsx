@@ -321,9 +321,25 @@ function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Ev
 }
 
 /**
+ * Passo della graduazione: si sceglie fra 1, 2 e 5 per decade in modo da avere
+ * fra le quattro e le otto divisioni. Un passo tondo (100, 500 anni) è l'unico
+ * che un lettore possa usare per misurare a occhio.
+ */
+function passoTacche(larghezza: number): number {
+  const magnitudo = 10 ** Math.floor(Math.log10(larghezza / 5))
+  return [1, 2, 5, 10].map((m) => m * magnitudo).find((p) => larghezza / p <= 8) ?? magnitudo * 10
+}
+
+/**
  * Asse in miniatura: la barra dice dove cade questa pericope rispetto a tutte le
  * altre già curate. Senza dominio (nessun evento ha quell'asse) la barra non si
  * disegna affatto: una scala inventata direbbe più di quel che sappiamo.
+ *
+ * La traccia è graduata e gli estremi del segmento portano il loro anno ancorato
+ * al punto in cui cadono: senza, la barra dice che il passo "comincia più in là"
+ * ma non dove, e la cifra nella riga sotto resta senza posto sulla scala. Gli
+ * ancoraggi si scrivono solo dove non si accavallano con gli estremi della
+ * scala — meglio nessuna cifra che due cifre sovrapposte.
  */
 function MiniAsse({
   dominio,
@@ -338,6 +354,22 @@ function MiniAsse({
   if (!dominio) return null
   const larghezza = dominio.a - dominio.da
   const etichetta = scala === 'am' ? etichettaAnnoMundi : etichettaAnno
+  const posizione = (n: number) => ((n - dominio.da) / larghezza) * 100
+
+  const passo = passoTacche(larghezza)
+  const tacche: number[] = []
+  for (let t = Math.ceil(dominio.da / passo) * passo; t < dominio.a; t += passo) {
+    if (t > dominio.da) tacche.push(t)
+  }
+
+  // Un ancoraggio troppo vicino a un estremo della scala gli finirebbe addosso.
+  const ancoraggi = range
+    ? [range.da, range.a].filter((n, i, tutti) => {
+        const p = posizione(n)
+        return p > 14 && p < 86 && tutti.indexOf(n) === i
+      })
+    : []
+
   // La descrizione per i lettori di schermo dice gli anni come li dice la
   // pagina: un «-700» letto ad alta voce non è un anno, è un numero negativo.
   const testo = range
@@ -347,19 +379,27 @@ function MiniAsse({
   return (
     <div className="mini-asse" role="img" aria-label={testo}>
       <div className="mini-asse-traccia">
+        {tacche.map((t) => (
+          <span key={t} className="mini-asse-tacca" style={{ left: `${posizione(t)}%` }} />
+        ))}
         {range && (
           <div
             className="mini-asse-segmento"
             style={{
-              left: `${((range.da - dominio.da) / larghezza) * 100}%`,
-              width: `${Math.max(((range.a - range.da) / larghezza) * 100, 1.5)}%`,
+              left: `${posizione(range.da)}%`,
+              width: `${Math.max(posizione(range.a) - posizione(range.da), 1.5)}%`,
             }}
           />
         )}
       </div>
       <p className="mini-asse-estremi" aria-hidden="true">
-        <span>{etichetta(dominio.da)}</span>
-        <span>{etichetta(dominio.a)}</span>
+        <span className="mini-asse-estremo mini-asse-estremo--da">{etichetta(dominio.da)}</span>
+        {ancoraggi.map((n) => (
+          <span key={n} className="mini-asse-ancora" style={{ left: `${posizione(n)}%` }}>
+            {etichetta(n)}
+          </span>
+        ))}
+        <span className="mini-asse-estremo mini-asse-estremo--a">{etichetta(dominio.a)}</span>
       </p>
     </div>
   )
