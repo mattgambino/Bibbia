@@ -13,7 +13,13 @@
 import { useMemo, useRef, useState } from 'react'
 import { Minimappa } from './Minimappa.tsx'
 import { BadgeConfidenza, ElencoFonti, SegnoDaVerificare, SegnoStatus } from './Elementi.tsx'
-import { etichettaAnni, etichettaAnno, etichettaRange } from '../lib/pericopi.ts'
+import {
+  etichettaAnni,
+  etichettaAnniMundi,
+  etichettaAnno,
+  etichettaAnnoMundi,
+  etichettaRange,
+} from '../lib/pericopi.ts'
 import type { Caricamento } from '../dati/hooks.ts'
 import type { Eventi, Luoghi, Persone } from '../dati/caricamento.ts'
 import type { Evento, Luogo, Nota, Persona, RangeAnni } from '../tipi/index.ts'
@@ -278,9 +284,9 @@ function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Ev
       <section className="asse">
         <h3>Tempo narrato</h3>
         <p className="asse-nota">Cronologia interna al racconto (Anno Mundi). Dato testuale, non affermazione storica.</p>
-        <MiniAsse dominio={domini.narrato} range={pericope.tempo_narrato.am} unita="AM" />
+        <MiniAsse dominio={domini.narrato} range={pericope.tempo_narrato.am} scala="am" />
         <p className="asse-valore">
-          {etichettaAnni(pericope.tempo_narrato.am) ?? 'Nessuna cifra di anni in questo passo.'}
+          {etichettaAnniMundi(pericope.tempo_narrato.am) ?? 'Nessuna cifra di anni in questo passo.'}
         </p>
         {pericope.tempo_narrato.nota && <p className="asse-sintesi">{pericope.tempo_narrato.nota}</p>}
       </section>
@@ -288,7 +294,7 @@ function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Ev
       <section className="asse">
         <h3>Tempo storico-critico</h3>
         <p className="asse-nota">Ancoraggio dell'evento narrato a una storia esterna, se esiste.</p>
-        <MiniAsse dominio={domini.storico} range={pericope.tempo_storico.ancoraggio} unita="anni" />
+        <MiniAsse dominio={domini.storico} range={pericope.tempo_storico.ancoraggio} scala="era" />
         <p className="asse-valore">
           {etichettaAnni(pericope.tempo_storico.ancoraggio) ?? 'Nessun ancoraggio storico.'}{' '}
           <BadgeConfidenza status={pericope.tempo_storico.confidence} />
@@ -300,7 +306,7 @@ function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Ev
       <section className="asse">
         <h3>Composizione</h3>
         <p className="asse-nota">Quando il testo è stato scritto e redatto: asse indipendente dai due precedenti.</p>
-        <MiniAsse dominio={domini.composizione} range={pericope.composizione.range} unita="anni" />
+        <MiniAsse dominio={domini.composizione} range={pericope.composizione.range} scala="era" />
         <p className="asse-valore">{etichettaAnni(pericope.composizione.range)}</p>
         {pericope.composizione.posizioni.map((p) => (
           <div key={p.etichetta} className="posizione">
@@ -319,12 +325,24 @@ function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Ev
  * altre già curate. Senza dominio (nessun evento ha quell'asse) la barra non si
  * disegna affatto: una scala inventata direbbe più di quel che sappiamo.
  */
-function MiniAsse({ dominio, range, unita }: { dominio: RangeAnni | null; range: RangeAnni | null; unita: string }) {
+function MiniAsse({
+  dominio,
+  range,
+  scala,
+}: {
+  dominio: RangeAnni | null
+  range: RangeAnni | null
+  /** `am` conta in Anno Mundi, `era` in anni a.C./d.C.: due conteggi diversi, due etichette diverse. */
+  scala: 'am' | 'era'
+}) {
   if (!dominio) return null
   const larghezza = dominio.a - dominio.da
+  const etichetta = scala === 'am' ? etichettaAnnoMundi : etichettaAnno
+  // La descrizione per i lettori di schermo dice gli anni come li dice la
+  // pagina: un «-700» letto ad alta voce non è un anno, è un numero negativo.
   const testo = range
-    ? `${unita}: da ${range.da} a ${range.a}, sull'intervallo curato da ${dominio.da} a ${dominio.a}`
-    : `${unita}: nessun valore per questa pericope`
+    ? `da ${etichetta(range.da)} a ${etichetta(range.a)}, sull'intervallo curato da ${etichetta(dominio.da)} a ${etichetta(dominio.a)}`
+    : `nessun valore per questa pericope, sull'intervallo curato da ${etichetta(dominio.da)} a ${etichetta(dominio.a)}`
 
   return (
     <div className="mini-asse" role="img" aria-label={testo}>
@@ -340,8 +358,8 @@ function MiniAsse({ dominio, range, unita }: { dominio: RangeAnni | null; range:
         )}
       </div>
       <p className="mini-asse-estremi" aria-hidden="true">
-        <span>{etichettaAnno(dominio.da)}</span>
-        <span>{etichettaAnno(dominio.a)}</span>
+        <span>{etichetta(dominio.da)}</span>
+        <span>{etichetta(dominio.a)}</span>
       </p>
     </div>
   )

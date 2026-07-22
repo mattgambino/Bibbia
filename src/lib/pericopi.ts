@@ -35,13 +35,37 @@ export function etichettaRange(da: string, a: string): string {
   return `${etichettaVersetto(da)}–${ra.versetto}`
 }
 
-/** Un anno in forma leggibile: negativi = a.e.v., positivi = e.v. */
+/**
+ * Un anno in forma leggibile: negativi = a.C., positivi = d.C.
+ * Nei dati l'anno resta un intero con segno (SCHEMI-DATI §1): la notazione è
+ * solo resa di superficie, e cambiarla non tocca nessun file.
+ */
 export function etichettaAnno(n: number): string {
-  return n < 0 ? `${Math.abs(n)} a.e.v.` : `${n} e.v.`
+  return n < 0 ? `${Math.abs(n)} a.C.` : `${n} d.C.`
 }
 
-/** Anni in forma leggibile: negativi = a.e.v., positivi = e.v. */
+/** Anni in forma leggibile: negativi = a.C., positivi = d.C. */
 export function etichettaAnni(range: { da: number; a: number } | null): string | null {
+  return etichettaIntervallo(range, etichettaAnno)
+}
+
+/**
+ * L'asse narrato conta in Anno Mundi, che non è l'era cristiana: un 1656 di
+ * Gen 5 va letto "1656 AM", mai "1656 d.C.". Sono due conteggi diversi e
+ * l'unico modo di non fonderli è non usare per entrambi la stessa etichetta.
+ */
+export function etichettaAnnoMundi(n: number): string {
+  return `${n} AM`
+}
+
+export function etichettaAnniMundi(range: { da: number; a: number } | null): string | null {
+  return etichettaIntervallo(range, etichettaAnnoMundi)
+}
+
+function etichettaIntervallo(
+  range: { da: number; a: number } | null,
+  etichetta: (n: number) => string,
+): string | null {
   if (!range) return null
-  return range.da === range.a ? etichettaAnno(range.da) : `${etichettaAnno(range.da)} – ${etichettaAnno(range.a)}`
+  return range.da === range.a ? etichetta(range.da) : `${etichetta(range.da)} – ${etichetta(range.a)}`
 }
