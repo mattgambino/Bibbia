@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ararat",
+    "tipnr_id": "Ararat@Gen.8.4-Jer=H0780",
+    "nomi": {
+      "he": "אֲרָרַט",
+      "translit": "ʾărāraṭ",
+      "it": "Ararat"
+    },
+    "status": "majority",
+    "candidati": [
+      {
+        "id": "ararat.urartu",
+        "etichetta": "Urartu (regione)",
+        "lat": 39.702761,
+        "lon": 44.300381,
+        "pro": [
+          "Il testo parla di «monti di Ararat» al plurale costrutto (gen.8.4, morfologia HNcmpc): indica una regione montuosa, non una cima, e una regione è quello che Urartu è."
+        ],
+        "contro": [
+          "Il punto in carta è il centroide convenzionale di OpenBible, non una localizzazione dell'approdo: la regione è vasta e il racconto non individua un monte."
+        ],
+        "peso_openbible": 1,
+        "fonti": [
+          {
+            "tipo": "dataset",
+            "titolo": "OpenBible.info Bible Geocoding",
+            "url": "https://www.openbible.info/geo/",
+            "dettaglio": "CC BY 4.0; punteggio score.time_total di ancient.jsonl"
+          }
+        ]
+      }
+    ],
+    "riferimenti": ["gen.8.4"],
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TIPNR (Translators Individualised Proper Names with all References), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — forma ebraica e riferimento"
+      },
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — gen.8.4: הָרֵי plurale costrutto (H2022G, HNcmpc) e אֲרָרָט come nome di luogo (H0780, HNpl)"
+      },
+      {
+        "tipo": "opera",
+        "titolo": "Encyclopaedia Judaica, voce «Ararat»",
+        "url": "https://www.encyclopedia.com/religion/encyclopedias-almanacs-transcripts-and-maps/ararat",
+        "dettaglio": "Equazione onomastica ebraico אררט = accadico Urarṭu, terra e regione montuosa attorno al lago Van; la Bibbia non nomina alcuna montagna specifica"
+      }
+    ],
+    "da_verificare": true
+  }
+]

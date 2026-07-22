@@ -1,0 +1,29 @@
+[
+  {
+    "id": "nod",
+    "tipnr_id": "Nod@Gen.4.16=H5113",
+    "nomi": {
+      "he": "נוֹד",
+      "translit": "nôḏ",
+      "it": "Nod"
+    },
+    "status": "symbolic",
+    "candidati": [],
+    "riferimenti": ["gen.4.16"],
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TIPNR (Translators Individualised Proper Names with all References), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — forma ebraica e unico riferimento (Gen 4,16)"
+      },
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — nôḏ (H5113) in gen.4.16 sulla stessa radice di nāḏ (H5110), «fuggiasco», in gen.4.12 e gen.4.14: il nome del paese ripete la condanna di Caino"
+      }
+    ],
+    "da_verificare": true
+  }
+]

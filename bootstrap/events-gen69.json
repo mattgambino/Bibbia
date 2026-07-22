@@ -1,0 +1,577 @@
+[
+  {
+    "id": "gen-figli-di-dio-e-nefilim",
+    "titolo": "I figli di Dio, le figlie degli uomini, i nefilim",
+    "range": {
+      "da": "gen.6.1",
+      "a": "gen.6.4"
+    },
+    "persone": [
+      "nephilim"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [
+        "gen.6.3"
+      ],
+      "nota": "Il passo contiene una cifra — «i suoi giorni saranno centoventi anni» (gen.6.3) — ma non è una data: è un limite posto alla vita umana, e non colloca l'episodio nel conteggio degli anni. Il testo dice anzi che i nefilim erano sulla terra «in quei giorni e anche dopo», cioè fuori da qualunque scansione."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. Angel definisce Gen 6,1-4 un passo notoriamente difficile, che racconta un'apparente breccia nel confine fra il mondo divino e quello umano in tempi primordiali; l'unico altro luogo biblico che nomina chiaramente i nefilim è Nm 13,32-33, dove sono uomini di statura enorme visti dagli esploratori nella terra di Canaan. Non c'è nulla, qui, di collocabile in una storia esterna.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "Joseph Angel",
+          "titolo": "Nephilim (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/nephilim/",
+          "dettaglio": "sezione «Who are the Nephilim and what does the Bible say about them?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale della storia primordiale",
+          "sintesi": "Petersen colloca il matrimonio fra «i figli di Dio» e le donne fra le parti meno lette della storia primordiale, dentro la stessa raccolta composita di Gen 1-11; Halvorson-Taylor include il materiale fino a Gen 11 nella narrazione estesa che prosegue oltre il secondo racconto di creazione.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What material is included in the Primeval History?»: «the marriages between \"the sons of God\" and human women (Gen 6:1-4)»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Il mito dei Vigilanti è posteriore, non la fonte del passo",
+          "sintesi": "La lettura corrente che fa dei «figli di Dio» angeli ribelli e del diluvio la risposta divina ai giganti viene dalla tradizione dei Vigilanti, la cui prima attestazione è il Libro dei Vigilanti (parte di 1 Enoc), in parti databili già al IV secolo a.C.: Angel osserva che quel racconto sta «in opposizione» al racconto biblico. Nella datazione di questa pericope entra il testo di Gen 6, non la sua ricezione enochica.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Joseph Angel",
+              "titolo": "Nephilim (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/nephilim/",
+              "dettaglio": "sezione «How did the Nephilim legend grow in later tradition?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Joseph Angel",
+        "titolo": "Nephilim (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/nephilim/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-corruzione-e-arca",
+    "titolo": "La corruzione della terra e le istruzioni per l'arca",
+    "range": {
+      "da": "gen.6.5",
+      "a": "gen.6.22"
+    },
+    "persone": [
+      "noah.gen5",
+      "shem",
+      "ham",
+      "japheth"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "La sezione non porta date: Noè ha 500 anni in gen.5.32 e ne avrà 600 quando le acque arrivano (gen.7.6), ma quanto duri la costruzione dell'arca il testo non lo dice."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. Il racconto del diluvio è, fra tutti i materiali della storia primordiale, quello per cui il rapporto con la letteratura mesopotamica anteriore è più stretto: Petersen riassume il mito di Atrahasis — creazione dell'umanità, moltiplicazione, rumore che irrita Enlil, decisione di sterminarla con un diluvio, un altro dio che avverte un uomo e gli comanda di costruire una nave con gli animali, l'uccello inviato a vedere se la terra è asciutta, il sacrificio all'approdo — e conclude che gli autori biblici probabilmente conoscevano quel racconto. Un ancoraggio a un evento storico non è in questione; il confronto riguarda i testi.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What material is included in the Primeval History?»: il parallelo con Atrahasis e il problema che il racconto biblico si crea, avendo un solo Dio che manda il diluvio e ne salva"
+        },
+        {
+          "tipo": "url",
+          "autore": "Jenna Kemp",
+          "titolo": "Noah (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/noah/",
+          "dettaglio": "sezione «Who is Noah?»: prima del diluvio l'agire umano è violento e ha corrotto la terra; Noè è l'eccezione, e agisce solo su comando"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale sacerdotale",
+          "sintesi": "Alla versione sacerdotale appartengono la cornice del racconto — misure dell'arca, formule di alleanza, il computo per mesi e giorni — con la datazione già usata per il materiale sacerdotale di Gen 1,1-2,4a, cioè l'estremo basso di questa forbice.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «How was the Primeval History composed?»: «there is an early account and a subsequent priestly version… woven together into a single narrative»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Materiale non sacerdotale",
+          "sintesi": "Il racconto anteriore, che Petersen distingue dalla versione sacerdotale e Halvorson-Taylor include nella narrazione estesa che prosegue oltre Gen 3, porta la datazione del materiale non sacerdotale — l'estremo alto di questa forbice. Le due datazioni convivono nello stesso testo: le incoerenze che le lasciano vedere sono nel racconto, non nella lettura (due animali per specie in gen.6.19 contro sette coppie di puri in gen.7.2; quaranta giorni di pioggia contro centocinquanta di acque alte).",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "«Did you know?»: il secondo racconto prosegue, con interruzioni, fino a Gen 11, e comprende Noè e il diluvio"
+            }
+          ]
+        },
+        {
+          "etichetta": "Perché una forbice sola su un testo intrecciato",
+          "sintesi": "A differenza dei due racconti di creazione, che stanno affiancati, qui i due materiali sono stati intrecciati in un'unica narrazione: non c'è modo di assegnare la pericope a una sola datazione. Il range -900/-400 copre entrambi gli strati, e la sua ampiezza è l'informazione corretta — un testo intrecciato è più incerto, e così si legge sulla timeline. Che il modello preveda un solo range per pericope è una semplificazione dichiarata: le due datazioni stanno qui, nelle posizioni.",
+          "fonti": []
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-il-diluvio",
+    "titolo": "Il diluvio: le acque prevalgono",
+    "range": {
+      "da": "gen.7.1",
+      "a": "gen.7.24"
+    },
+    "persone": [
+      "noah.gen5",
+      "shem",
+      "ham",
+      "japheth"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": {
+        "da": 1656,
+        "a": 1656
+      },
+      "riferimenti_interni": [
+        "gen.7.6",
+        "gen.7.11",
+        "gen.7.24"
+      ],
+      "nota": "Prima pericope datata con precisione dentro il racconto: Noè ha seicento anni quando le acque vengono (gen.7.6) e il testo dà giorno e mese — secondo mese, diciassettesimo giorno del seicentesimo anno (gen.7.11). Sommando le età di Gen 5 con la creazione di Adamo posta ad anno 0, Noè nasce nel 1056 e il suo seicentesimo anno cade nel 1656. Il capitolo conta poi quaranta giorni di pioggia (gen.7.4.12.17) e centocinquanta giorni di acque che prevalgono (gen.7.24): due misure diverse, entrambe nel testo. La cronologia qui mostrata è quella del Testo masoretico, e i tre testimoni testuali divergono sulle età dei patriarchi: vedi la nota gen5-tre-tradizioni-testuali."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La cifra in Anno Mundi che l'asse del tempo narrato mostra qui è il conteggio interno del racconto, non una data: sta su un asse separato proprio per non essere scambiata per un evento databile. Il diluvio come catastrofe universale non ha ancoraggio nella storia verificabile, e il confronto che la ricerca conduce è quello con i racconti mesopotamici, non con una cronologia.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "il diluvio fra i materiali della storia primordiale influenzati dalla letteratura antico-orientale"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale sacerdotale",
+          "sintesi": "Il computo per anno, mese e giorno di gen.7.11 e le formule di enumerazione appartengono alla versione sacerdotale, con la datazione già usata per Gen 1,1-2,4a: è l'estremo basso di questa forbice.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «How was the Primeval History composed?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Materiale non sacerdotale",
+          "sintesi": "Il racconto anteriore, che prosegue qui la narrazione estesa oltre Gen 3, porta la datazione del materiale non sacerdotale: è l'estremo alto della forbice. Le due misure del tempo di questo stesso capitolo sono l'indizio più visibile che i materiali sono due.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "«Did you know?»: il secondo racconto prosegue fino a Gen 11, e comprende Noè e il diluvio"
+            }
+          ]
+        },
+        {
+          "etichetta": "Le due misure del tempo come indizio di due racconti",
+          "sintesi": "Le quaranta notti di pioggia e i centocinquanta giorni di acque alte sono la stessa doppiezza che Petersen documenta con il numero degli animali: due misure che convivono nello stesso capitolo. Questa bozza registra il dato testuale; l'assegnazione di ciascuna cifra a un materiale o all'altro è operazione di manuale che qui non si asserisce.",
+          "fonti": [
+            {
+              "tipo": "dataset",
+              "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+              "url": "https://github.com/STEPBible/STEPBible-Data",
+              "dettaglio": "CC BY 4.0 — quaranta giorni in gen.7.4, gen.7.12, gen.7.17; centocinquanta in gen.7.24 e gen.8.3"
+            }
+          ]
+        },
+        {
+          "etichetta": "Perché una forbice sola su un testo intrecciato",
+          "sintesi": "Il range -900/-400 copre entrambi gli strati, perché la pericope li contiene entrambi intrecciati e non c'è modo di assegnarla a una sola datazione. Che il modello preveda un solo range per pericope è una semplificazione dichiarata: le due datazioni stanno nelle posizioni qui sopra.",
+          "fonti": []
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — cifre di gen.7.6, gen.7.11, gen.7.24 lette dal testo"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-le-acque-si-ritirano",
+    "titolo": "Le acque si ritirano: i monti, gli uccelli, il sacrificio",
+    "range": {
+      "da": "gen.8.1",
+      "a": "gen.8.22"
+    },
+    "persone": [
+      "noah.gen5"
+    ],
+    "luoghi": [
+      "ararat"
+    ],
+    "tempo_narrato": {
+      "am": {
+        "da": 1656,
+        "a": 1657
+      },
+      "riferimenti_interni": [
+        "gen.8.3",
+        "gen.8.4",
+        "gen.8.13",
+        "gen.8.14"
+      ],
+      "nota": "La pericope attraversa l'anno: l'arca si posa sui monti di Ararat nel settimo mese, giorno diciassette (gen.8.4), e la terra è asciutta nel seicentounesimo anno di Noè (gen.8.13), cioè nel 1657 del conteggio interno. Il capitolo conta anche i centocinquanta giorni delle acque (gen.8.3), che riprendono la cifra di gen.7.24."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. Kemp mette in rilievo che in questo capitolo Noè comincia ad agire di propria iniziativa: prima manda gli uccelli senza che nessuno glielo ordini (gen.8.6-12), poi offre un sacrificio (gen.8.20-22), e a quel sacrificio segue la decisione divina di porre un limite alla distruzione. È una svolta nel rapporto fra Dio, l'umanità e la natura, non un evento collocabile.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "Jenna Kemp",
+          "titolo": "Noah (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/noah/",
+          "dettaglio": "sezione «What does Noah do?»: le prime due azioni autonome di Noè"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale sacerdotale",
+          "sintesi": "Le date precise — settimo mese, giorno diciassette (gen.8.4); primo giorno del primo mese del seicentounesimo anno (gen.8.13) — appartengono al modo di contare della cornice sacerdotale, con la sua datazione: l'estremo basso della forbice.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «How was the Primeval History composed?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Materiale non sacerdotale",
+          "sintesi": "L'episodio degli uccelli mandati fuori e il sacrificio con l'odore gradito hanno il tono e il vocabolario del racconto anteriore — è la scena che Petersen ritrova anche in Atrahasis — e portano la datazione del materiale non sacerdotale: l'estremo alto della forbice.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «What material is included in the Primeval History?»: l'uccello inviato e il sacrificio all'approdo nel racconto mesopotamico"
+            }
+          ]
+        },
+        {
+          "etichetta": "Perché una forbice sola su un testo intrecciato",
+          "sintesi": "Come per le altre pericopi del diluvio: il range copre entrambi gli strati, e la semplificazione di averne uno solo è dichiarata invece che nascosta. Questa bozza non spinge la distinzione versetto per versetto.",
+          "fonti": []
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Jenna Kemp",
+        "titolo": "Noah (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/noah/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-patto-con-ogni-vivente",
+    "titolo": "Il patto con ogni vivente e l'arco nella nube",
+    "range": {
+      "da": "gen.9.1",
+      "a": "gen.9.17"
+    },
+    "persone": [
+      "noah.gen5",
+      "shem",
+      "ham",
+      "japheth"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Nessuna data: la sezione è discorso diretto, fra la fine del diluvio e il resto della vita di Noè."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La sezione stabilisce nuove regole: agli uomini è concesso di mangiare carne, ed è vietato il sangue — quello degli animali e, con più forza, quello umano (gen.9.3-5). Kemp legge questi limiti come risposta alla brutalità che il racconto ha appena descritto: Dio limita la capacità distruttiva di tutti, compresa la propria. Petersen sottolinea che il patto di Gen 9 è stipulato con tutti gli uomini e con «ogni animale della terra», non con una sola famiglia.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "Jenna Kemp",
+          "titolo": "Noah (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/noah/",
+          "dettaglio": "sezione «What does Noah do?»: i limiti posti dopo il sacrificio"
+        },
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: il patto di Gen 9 con tutti gli uomini e ogni animale"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale sacerdotale",
+          "sintesi": "Il vocabolario del patto (bərîṯ), la formula di benedizione che riprende gen.1.28 e la struttura del segno appartengono alla cornice che Petersen attribuisce alla mano sacerdotale nel racconto del diluvio: è la parte prevalente di questa pericope, e porta l'estremo basso della forbice.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "sezione «How was the Primeval History composed?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Materiale non sacerdotale",
+          "sintesi": "La pericope non è però separabile dal seguito del racconto anteriore, con cui condivide il filo — il limite posto dopo il sacrificio di gen.8.21 e le concessioni sul cibo — e la forbice resta perciò aperta anche verso l'estremo alto, come sulle altre pericopi del ciclo. Che qui la parte non sacerdotale sia minore è dichiarato, non nascosto: è la ragione per cui la posizione precedente parla di parte prevalente.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "«Did you know?»: la narrazione estesa che prosegue fino a Gen 11"
+            }
+          ]
+        },
+        {
+          "etichetta": "Perché una forbice sola su un testo intrecciato",
+          "sintesi": "Stesso criterio applicato a tutte le pericopi del ciclo del diluvio, per non dare a una sola di esse una precisione che le altre non hanno: il range copre entrambi gli strati e le due datazioni stanno nelle posizioni.",
+          "fonti": []
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-noe-la-vigna-e-canaan",
+    "titolo": "La vigna di Noè, l'atto di Cam, la maledizione di Canaan",
+    "range": {
+      "da": "gen.9.18",
+      "a": "gen.9.29"
+    },
+    "persone": [
+      "noah.gen5",
+      "shem",
+      "ham",
+      "japheth",
+      "canaan"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": {
+        "da": 1657,
+        "a": 2006
+      },
+      "riferimenti_interni": [
+        "gen.9.28",
+        "gen.9.29"
+      ],
+      "nota": "La pericope chiude la vita di Noè: trecentocinquanta anni dopo il diluvio (gen.9.28) e novecentocinquanta in tutto (gen.9.29), cioè la morte nel 2006 del conteggio interno (1056 di nascita più 950). Va segnalata una piccola incoerenza interna al testo: 600 anni al diluvio più 350 dopo danno 950, quindi i trecentocinquanta si contano dall'anno del diluvio (1656), mentre la terra si asciuga nell'anno successivo (gen.8.13, 1657). Un anno di scarto fra le due maniere di contare, che il testo non ricompone."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico per il racconto. La sezione ha però una storia di interpretazione con conseguenze storiche reali: la cosiddetta «maledizione di Cam» è stata usata dai cristiani schiavisti del Sud degli Stati Uniti per giustificare la schiavitù, in una lettura che Biddle data al XVI-XVII secolo e mostra non sostenuta dal testo — Noè maledice Canaan, non Cam, e la maledizione è pronunciata da Noè, non da Dio. La curation tiene distinte le due cose: il racconto non è databile, la sua ricezione sì.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "Mark E. Biddle",
+          "titolo": "The Curse of Ham (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-curse-of-ham/",
+          "dettaglio": "l'interpretazione schiavista «first surfaced in the sixteenth or seventeenth century»; «Noah pronounced the curse, God did not»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale: l'episodio della vigna",
+          "sintesi": "Petersen elenca l'episodio dell'ubriachezza di Noè (gen.9.20-27) fra le parti meno lette della storia primordiale e fra le eziologie della cultura (chi fece il primo vino); Kemp ne mostra il legame verbale con il materiale anteriore: Noè «uomo della terra» (gen.9.20) richiama la terra maledetta di gen.3.17 e corrotta di gen.6.11.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Jenna Kemp",
+              "titolo": "Noah (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/noah/",
+              "dettaglio": "sezione «What does Noah do?»: «As Noah plants his grape vine, he becomes \"a man of the earth\" (9:20)»"
+            },
+            {
+              "tipo": "url",
+              "autore": "David L. Petersen",
+              "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+              "dettaglio": "«Who made the first wine (Gen 9:20)?»"
+            }
+          ]
+        },
+        {
+          "etichetta": "La maledizione come eziologia dei rapporti con i Cananei",
+          "sintesi": "Biddle riporta che gli studiosi leggono da tempo il passo come eziologia: i Cananei sono presenza costante nella storia di Israele, e almeno due testi dicono che Israele li ridusse in servitù invece di eliminarli (Gs 9,21.23; cfr. 1Re 9,16). Una voce posteriore avrebbe così dato una giustificazione ideologica al trattamento riservato a quei popoli, mettendola in bocca a Noè per darle l'autorità dell'antichità. Se l'argomento regge, il passo dice della composizione più che della vigna.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Mark E. Biddle",
+              "titolo": "The Curse of Ham (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-curse-of-ham/",
+              "dettaglio": "«Scholars have long recognized this passage as an etiology»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio. I versetti 28-29, che chiudono la vita di Noè con lo schema di Gen 5, appartengono invece alla cornice genealogica e non a questo materiale.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Mark E. Biddle",
+        "titolo": "The Curse of Ham (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-curse-of-ham/"
+      }
+    ],
+    "da_verificare": true
+  }
+]

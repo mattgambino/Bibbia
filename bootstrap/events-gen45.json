@@ -1,0 +1,424 @@
+[
+  {
+    "id": "gen-caino-e-abele",
+    "titolo": "Caino e Abele: l'offerta, l'omicidio, l'esilio",
+    "range": {
+      "da": "gen.4.1",
+      "a": "gen.4.16"
+    },
+    "persone": [
+      "adam",
+      "eve",
+      "cain",
+      "abel"
+    ],
+    "luoghi": [
+      "nod",
+      "eden"
+    ],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Nessuna cifra di anni: il TM non data gli eventi di Gen 4. La cronologia interna del racconto ricomincia a contare solo in Gen 5,3, con l'età di Adamo alla nascita di Set."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La sezione appartiene a quella che gli studi chiamano «storia primordiale» (Gen 1-11), una raccolta di miti, genealogie e racconti di famiglia che spiegano l'origine delle cose come sono: qui l'origine dell'omicidio e della vendetta di sangue. Il testo non nomina luoghi identificabili né persone collocabili in una cronologia esterna, e la sua domanda non è quando sia accaduto ma perché il mondo sia così. Petersen elenca il primo omicidio (Gen 4,8) fra le eziologie della storia primordiale; Barmash legge il racconto come esplorazione della vita interiore dell'omicida, in continuità con l'interesse del diritto biblico per l'intenzione di chi uccide.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: elenco delle eziologie, fra cui «Who committed the first murder (Gen 4:8)?»"
+        },
+        {
+          "tipo": "url",
+          "autore": "Pamela Barmash",
+          "titolo": "Cain (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/cain/",
+          "dettaglio": "sezioni «Why did Cain kill Abel?» e «Why does God question Cain rather than confront him directly about Abel's murder?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale, continuazione del secondo racconto",
+          "sintesi": "Halvorson-Taylor colloca esplicitamente l'episodio di Caino e Abele dentro il secondo racconto di creazione, che prosegue oltre Gen 3 e, con interruzioni, fino a Gen 11: trasgressione, Caino e Abele, diluvio e Babele sono parti di un'unica narrazione estesa sull'origine del mondo com'è. È la stessa attribuzione già registrata sulle pericopi di Gen 2-3.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "«Did you know?»: «The second creation account continues through Gen 3 and, with some interruptions, through Gen 11», con esplicita menzione dell'episodio di Caino e Abele"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999. La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray). La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-discendenza-di-caino",
+    "titolo": "La discendenza di Caino: la città, i mestieri, il canto di Lamec",
+    "range": {
+      "da": "gen.4.17",
+      "a": "gen.4.24"
+    },
+    "persone": [
+      "cain",
+      "enoch.gen4",
+      "irad",
+      "mehujael",
+      "methushael",
+      "lamech.gen4",
+      "adah.gen4",
+      "zillah",
+      "jabal",
+      "jubal",
+      "tubal-cain",
+      "naamah"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Nessuna cifra di anni: la lista dei discendenti di Caino conta generazioni, non anni. Le età compaiono solo nella lista parallela di Gen 5."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. La lista funziona come eziologia delle origini della cultura: chi costruì la prima città, chi fu il primo allevatore, chi suonò per primo gli strumenti, chi forgiò per primo il metallo. Petersen elenca proprio questi versetti (Gen 4,17.20.21.22) fra le domande a cui la storia primordiale risponde. È una lista di primati culturali, non una cronaca di persone databili; il repertorio delle genealogie bibliche la registra come la prima lista genealogica dell'Antico Testamento, su sette generazioni.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: «Who built the first cities (Gen 4:17)? Who first played musical instruments (Gen 4:21)? Who first forged metal (Gen 4:22)? … Who was the initial herder of domestic animals (Gen 4:20)?»"
+        },
+        {
+          "tipo": "url",
+          "titolo": "genealogy (HarperCollins Bible Dictionary, in Bible Odyssey)",
+          "url": "https://www.bibleodyssey.org/dictionary/genealogy/",
+          "dettaglio": "«The first is at Gen 4:17-22 (from Cain through seven generations)»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale, continuazione del secondo racconto",
+          "sintesi": "Stessa unità narrativa della pericope precedente: il secondo racconto prosegue oltre Gen 3 e comprende il materiale di Gen 4.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "«Did you know?»: il secondo racconto prosegue fino a Gen 11"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999. La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray). La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-set-ed-enos",
+    "titolo": "Set ed Enos: l'altra discendenza e il nome invocato",
+    "range": {
+      "da": "gen.4.25",
+      "a": "gen.4.26"
+    },
+    "persone": [
+      "adam",
+      "eve",
+      "seth",
+      "enosh"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": null,
+      "riferimenti_interni": [],
+      "nota": "Nessuna cifra di anni: la nascita di Set è raccontata qui senza data, e riceve la sua età solo in Gen 5,3."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. I due versetti sono una cerniera: aprono la linea di Set, che Gen 5 riprenderà, e chiudono con un'eziologia del culto — «allora si cominciò a invocare il nome del Signore» (Gen 4,26). Petersen elenca proprio questo versetto fra le domande di origine a cui la storia primordiale risponde: quando gli uomini vennero a conoscere il nome di Dio.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "sezione «What is the purpose of the Primeval History?»: «When did people learn the name of God (4:26)?»"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Materiale non sacerdotale, continuazione del secondo racconto",
+          "sintesi": "Stessa unità del materiale di Gen 4, che il secondo racconto porta avanti oltre Gen 3.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "«Did you know?»: il secondo racconto prosegue fino a Gen 11"
+            }
+          ]
+        },
+        {
+          "etichetta": "Il nome divino come indice di distinzione fra racconti",
+          "sintesi": "Halvorson-Taylor usa i diversi nomi di Dio («YHWH Dio» in Gen 2 contro «Dio» in Gen 1) fra gli indizi che distinguono i due racconti di creazione: qui la questione torna, perché Gen 4,26 fa dell'invocazione del nome un fatto databile dentro il racconto. L'argomento classico che ne discende — quale fonte conosca il nome fin dalle origini e quale lo faccia rivelare solo a Mosè (Es 3; 6) — è posizione di manuale che questa bozza non asserisce: manca una fonte verificata, e la questione va sciolta nella verifica finale.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Martien A. Halvorson-Taylor",
+              "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+              "dettaglio": "sezione «Are we starting all over again?»: i nomi divini fra i criteri di distinzione dei due racconti"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione del materiale non sacerdotale: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 non è una datazione: copre la forbice delle posizioni sulla composizione del materiale non sacerdotale. La documentaria classica assegnava questi testi al jahvista di età salomonica (X sec.), ma quella datazione alta è oggi lasciata dalla maggioranza degli studiosi: il ventaglio in campo va dalle datazioni basse ed esiliche del jahvista ai modelli compositivo-supplementari, fino alle letture post-sacerdotali. Le posizioni sono esposte per esteso alle pericopi di Gen 2-3, con la bibliografia primaria; qui si citano le due opere che ne riassumono il dibattito. Resta ampio e provvisorio.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999. La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray). La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "David L. Petersen",
+        "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-primeval-history/"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen-genealogia-adamo-noe",
+    "titolo": "Da Adamo a Noè: il libro delle generazioni",
+    "range": {
+      "da": "gen.5.1",
+      "a": "gen.5.32"
+    },
+    "persone": [
+      "adam",
+      "seth",
+      "enosh",
+      "kenan",
+      "mahalalel",
+      "jared",
+      "enoch.gen5",
+      "methuselah",
+      "lamech.gen5",
+      "noah.gen5",
+      "shem",
+      "ham",
+      "japheth"
+    ],
+    "luoghi": [],
+    "tempo_narrato": {
+      "am": {
+        "da": 130,
+        "a": 1556
+      },
+      "riferimenti_interni": [
+        "gen.5.3",
+        "gen.5.6",
+        "gen.5.9",
+        "gen.5.12",
+        "gen.5.15",
+        "gen.5.18",
+        "gen.5.21",
+        "gen.5.25",
+        "gen.5.28",
+        "gen.5.32"
+      ],
+      "nota": "Prima pericope con una cronologia interna in anni. Le cifre sono quelle del TM già estratte in people.json (dati_narrativi.eta_al_primo_figlio) e qui solo sommate: Adamo genera a 130, Set a 105, Enos a 90, Kenan a 70, Maalalel a 65, Iered a 162, Enoc a 65, Matusalemme a 187, Lamec a 182; Noè ha 500 anni in Gen 5,32. Contando la creazione di Adamo come anno 0, la nascita di Set cade nel 130, quella di Noè nel 1056 e il suo cinquecentesimo anno nel 1556 — che è la convenzione presupposta dallo schema del progetto, dove il diluvio (Noè a 600 anni) cade nel 1656. La somma è aritmetica sulle cifre del TM, non una datazione; e le cifre del TM sono quelle di un testimone fra tre: Settanta e Pentateuco samaritano divergono, e la nota gen5-tre-tradizioni-testuali dice in che senso."
+    },
+    "tempo_storico": {
+      "ancoraggio": null,
+      "confidence": "consensus",
+      "sintesi": "Nessun ancoraggio storico. Le età di Gen 5 sono un dato letterario della storia primordiale, non una cronologia esterna: nessuna delle figure della lista è collocabile in una storia verificabile. Coblentz Bautch lo dice in modo diretto a proposito del membro più discusso della lista: i libri attribuiti a Enoc «non forniscono informazioni storiche su una persona reale dal tempo di un grande diluvio». La cifra in Anno Mundi che questa app mostra sull'asse narrato è il conteggio interno al racconto, e sta su un asse diverso proprio per non essere scambiata per una data.",
+      "fonti": [
+        {
+          "tipo": "url",
+          "autore": "Kelley Coblentz Bautch",
+          "titolo": "Enoch (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/enoch/",
+          "dettaglio": "sezione «Where did the books of Enoch come from and how were they used?»: «The books associated with Enoch do not provide historical information about an actual person from a time of a great flood»"
+        },
+        {
+          "tipo": "url",
+          "autore": "David L. Petersen",
+          "titolo": "The Primeval History (Bible Odyssey, Society of Biblical Literature)",
+          "url": "https://www.bibleodyssey.org/articles/the-primeval-history/",
+          "dettaglio": "le genealogie estese (Gen 5; 10; 11,10-30) come parte della storia primordiale"
+        }
+      ]
+    },
+    "composizione": {
+      "range": {
+        "da": -900,
+        "a": -400
+      },
+      "posizioni": [
+        {
+          "etichetta": "Cornice sacerdotale",
+          "sintesi": "La formula di intestazione di Gen 5,1 («questo è il libro delle generazioni di Adamo») e l'inserimento della lista dentro la storia primordiale sono opera della mano sacerdotale: è la cornice a essere sacerdotale, e a lei appartiene anche il richiamo alla creazione «a somiglianza di Dio», che riprende Gen 1,27 e non il secondo racconto. La forbice della cornice è quella del materiale sacerdotale di Gen 1,1-2,4a.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "David M. Carr",
+              "titolo": "The Formation of Genesis 1–11: Biblical and Other Precursors, cap. «The Book of the Toledot (Descendants) of Adam (Genesis 5; 11:10–26 and Related Texts)»",
+              "anno": 2020,
+              "url": "https://academic.oup.com/book/32142/chapter/268103942",
+              "dettaglio": "Oxford University Press. Consultato l'abstract del capitolo, non il testo integrale (volume ad accesso a pagamento): il claim va riverificato sul testo in F5.3."
+            },
+            {
+              "tipo": "dataset",
+              "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge",
+              "url": "https://github.com/STEPBible/STEPBible-Data",
+              "dettaglio": "CC BY 4.0 — dato testuale: sēfer (H5612H) e tôlədōṯ in gen.5.1; schema ripetuto nei versetti 3-31"
+            }
+          ]
+        },
+        {
+          "etichetta": "Materiale genealogico pre-sacerdotale",
+          "sintesi": "La lista dei patriarchi e la loro cronologia non sono composte da P: derivano da un rotolo dei toledot di Adamo anteriore e pre-sacerdotale, con la sua cronologia di patriarchi longevi, che secondo Carr l'autore della fonte sacerdotale riprese come base iniziale della storia primordiale — e che a sua volta aveva attinto a materiale non sacerdotale. Di qui la forbice larga di questa pericope: datare la cornice e trascinarci dentro il contenuto asserirebbe più di quanto la fonte autorizzi.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "David M. Carr",
+              "titolo": "The Formation of Genesis 1–11: Biblical and Other Precursors, cap. «The Book of the Toledot (Descendants) of Adam (Genesis 5; 11:10–26 and Related Texts)»",
+              "anno": 2020,
+              "url": "https://academic.oup.com/book/32142/chapter/268103942",
+              "dettaglio": "Oxford University Press. Consultato l'abstract del capitolo, non il testo integrale (volume ad accesso a pagamento): il claim va riverificato sul testo in F5.3."
+            }
+          ]
+        },
+        {
+          "etichetta": "Enoc e i saggi antidiluviani mesopotamici",
+          "sintesi": "La sorte di Enoc — «camminò con Dio, poi non c'era più, perché Dio lo prese» — assomiglia, secondo Coblentz Bautch, a racconti antico-orientali in cui un saggio come Adapa o Utuabzu, o il re Enmeduranki, ascende al cielo e riceve conoscenze riservate. Il confronto riguarda il motivo, non una dipendenza dimostrata.",
+          "fonti": [
+            {
+              "tipo": "url",
+              "autore": "Kelley Coblentz Bautch",
+              "titolo": "Enoch (Bible Odyssey, Society of Biblical Literature)",
+              "url": "https://www.bibleodyssey.org/articles/enoch/",
+              "dettaglio": "«Enoch's being taken by God is similar to ancient Near Eastern stories in which a sage like Adapa or Utuabzu or kingly Enmeduranki ascends to the heavens and receives privileged information»"
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione: la forbice del dibattito",
+          "sintesi": "Il range -900/-400 copre entrambi gli strati: l'estremo alto è quello del materiale non sacerdotale già usato sulle pericopi di Gen 2-3, l'estremo basso quello della redazione sacerdotale. Le posizioni in campo e i riferimenti bibliografici stanno per esteso sulle pericopi di Gen 1-3 e non si ripetono qui. Resta provvisoria come là.",
+          "fonti": []
+        }
+      ]
+    },
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TIPNR (Translators Individualised Proper Names with all References), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — età di Gen 5 già estratte nei dati_narrativi di people.json e qui solo sommate"
+      }
+    ],
+    "da_verificare": true
+  }
+]

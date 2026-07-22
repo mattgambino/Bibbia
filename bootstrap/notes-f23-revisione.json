@@ -1,0 +1,54 @@
+[
+  {
+    "id": "gen220-adam-nome-proprio",
+    "target": { "tipo": "parola", "ref": "gen.2.20.11" },
+    "tipo": "filologica",
+    "titolo": "«Adamo» o «l'uomo»: dove nasce la divergenza, e come è stata sciolta",
+    "testo": "Questo è il punto in cui si vede per intero come nasce una divergenza fra il tagging del database e la lettura della curation, e conviene tenerne distinti i tre livelli. Il testo consonantico non decide nulla: לאדם è identico nelle due letture. La vocalizzazione masoretica sì, ma solo in parte: punta la lamed con shewa (lə-) e non con qamets (lā-, cioè con l'articolo assimilato), quindi qui ʾāḏām è senza articolo — e TAHOT, taggando Npm, segue questo dato, non lo contraddice. Il terzo livello è però una scelta lessicale, non un dato: l'assenza dell'articolo è condizione necessaria ma non sufficiente perché una forma sia nome proprio, e in ebraico ʾāḏām ricorre senza articolo anche in senso generico o collettivo. Preferire il lemma H0121G (nome proprio) a H0120H (nome comune) è un'interpretazione di TAHOT, e la curation può dissentirne senza contraddire alcun dato.\n\nL'argomento decisivo sta dentro questo stesso versetto, e non viene da una fonte esterna: a nove parole di distanza lo stesso referente è taggato prima come nome comune articolato (gen.2.20.02, H0120H, HTd/Ncmsa) e poi come nome proprio (gen.2.20.11, H0121G, HC/R/Npm). Un referente che cambia statuto lessicale dentro una sola frase è precisamente ciò che ci si aspetta quando la forma senza articolo è ancora il nome comune in stato generico, e non un antroponimo.\n\nDecisione presa: la traduzione letterale rende «l'uomo» anche nelle tre occorrenze Npm (gen.2.20.11, gen.3.17.01, gen.3.21.04); gen.2.20.02 era già così. La divergenza non è nascosta — resta visibile nel pannello parola, che mostra morfologia e lemma di ogni parola, e chi legge può verificarla da sé. Il principio è quello del progetto: ogni resa dev'essere ricostruibile dai dati e dalla curation, e qui la curation dichiara su che base si discosta.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew Old Testament), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — gen.2.20.02 = HTd/Ncmsa (H0120H, articolo + nome comune); gen.2.20.11 = HC/R/Npm (H0121G); gen.3.17.01 = HC/R/Npm (H0121G); gen.3.21.04 = HR/Npm (H0121G). Nei tre casi Npm la lamed è puntata con shewa, quindi senza articolo assimilato"
+      },
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+        "dettaglio": "«The proper names \"Eve\" and \"Adam\" are not used of the first beings until they leave the garden (Gen 3:20 and Gen 4:1, Gen 5:1)»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen320-nomi-propri-tardivi",
+    "target": { "tipo": "versetto", "ref": "gen.3.20" },
+    "tipo": "filologica",
+    "titolo": "«Adamo» ed «Eva» come nomi propri arrivano tardi",
+    "testo": "I due protagonisti sono a lungo designati senza nomi propri: il testo parla dell'«umano» (ʾāḏām, con l'articolo) e della «donna», un tratto che suggerisce figure generiche o archetipiche. Per la donna il nome compare qui (Gen 3,20). Per l'uomo, Halvorson-Taylor colloca il passaggio fuori dal giardino, in Gen 4,1 e Gen 5,1, ed è la lettura che questa curation adotta.\n\nIl tagging di TAHOT lo anticipa in tre punti — Gen 2,20; 3,17; 3,21 — dove ʾāḏām ricorre senza articolo ed è marcato nome proprio maschile (H0121G, Npm), contro l'H0120H articolato dei versetti circostanti. Non è però un tagging arbitrario: segue la vocalizzazione masoretica, che in quei tre casi punta la lamed con shewa e non con qamets, cioè senza articolo assimilato. Ciò che TAHOT aggiunge di suo è il passo successivo — dall'assenza dell'articolo al nome proprio — e quel passo non è obbligato, perché un nome comune può ricorrere anche senza articolo. Lì, e solo lì, la curation si discosta.\n\nLa traduzione letterale del progetto rende quindi «l'uomo» in tutti e tre i punti. Il meccanismo per intero, con l'argomento interno a Gen 2,20, sta nella nota gen220-adam-nome-proprio.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Martien A. Halvorson-Taylor",
+        "titolo": "The Second Creation (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-second-creation/",
+        "dettaglio": "«Did you know?»: i nomi propri non sono usati dei primi esseri finché non lasciano il giardino"
+      },
+      {
+        "tipo": "dataset",
+        "titolo": "STEPBible TAHOT (Translators Amalgamated Hebrew Old Testament), Tyndale House Cambridge",
+        "url": "https://github.com/STEPBible/STEPBible-Data",
+        "dettaglio": "CC BY 4.0 — gen.2.20.11, gen.3.17.01, gen.3.21.04 = Npm (H0121G); gen.2.20.02 = HTd/Ncmsa (H0120H); gen.3.13.04 = HRd/Ncfsa, dove la preposizione incorpora l'articolo"
+      }
+    ],
+    "da_verificare": true
+  }
+]
