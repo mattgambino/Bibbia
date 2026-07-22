@@ -33,9 +33,12 @@ export function PannelloParola({ parola, indice, lexicon, onOccorrenza, onChiudi
         </button>
       </div>
 
-      <span className="parola-grande" lang="he" dir="rtl">
-        {parola.testo}
-      </span>
+      <div className="parola-testata">
+        <span className="parola-grande" lang="he" dir="rtl">
+          {parola.testo}
+        </span>
+        <GlossaGrande parola={parola} lexicon={lexicon} />
+      </div>
 
       <p className="parsing">
         <span className="translit">{parola.translit}</span>
@@ -85,6 +88,45 @@ export function PannelloParola({ parola, indice, lexicon, onOccorrenza, onChiudi
         </p>
       )}
     </section>
+  )
+}
+
+/**
+ * La glossa in testata: la parola tradotta sta accanto all'ebraico e con lo
+ * stesso peso visivo, non come didascalia di servizio più in basso. La misura
+ * latina è più piccola in cifre (--testo-lg contro --testo-ebraico-grande)
+ * perché l'ebraico va al ~125-140% del latino affiancato per pareggiare
+ * otticamente (DESIGN.md §2): a parità di px sembrerebbe l'italiano a gridare.
+ *
+ * Si glossano solo i morfemi lessicali: l'articolo di הַבְּהֵמָה o un suffisso
+ * pronominale in testata direbbero «il» e «suo» accanto alla parola, cioè
+ * rumore — il loro parsing resta per esteso nell'elenco dei morfemi sotto.
+ * Quando di lessicale non c'è nulla (parola fatta di soli prefissi e suffissi)
+ * la testata resta al solo ebraico: lo dice già la riga in fondo al pannello.
+ */
+function GlossaGrande({ parola, lexicon }: { parola: Parola; lexicon: Caricamento<LexiconIt> }) {
+  const lessicali = parola.morfemi.filter(eLessicale)
+  if (lessicali.length === 0) return null
+
+  const voci = lessicali.map((m) => (lexicon.stato === 'pronto' ? lexicon.dati[m.strong] : undefined))
+  // L'italiano si mostra solo se copre tutti i morfemi lessicali: una glossa
+  // parziale, messa dove sta la parola tradotta, si leggerebbe come la resa
+  // dell'intera parola.
+  const completa = voci.every((v): v is VoceLexiconIt => v !== undefined)
+  const daVerificare = completa && voci.some((v) => v.da_verificare)
+
+  return (
+    <p className="parola-glosse">
+      {completa && (
+        <span className={`parola-glossa-it${daVerificare ? ' da-verificare' : ''}`}>
+          {voci.map((v) => v.glossa_it).join(' · ')}
+          {daVerificare && <span className="solo-lettore-schermo"> (glossa da verificare)</span>}
+        </span>
+      )}
+      <span className="parola-glossa-en" lang="en">
+        {lessicali.map((m) => m.glossa_en).join(' · ')}
+      </span>
+    </p>
   )
 }
 

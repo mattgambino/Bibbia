@@ -383,12 +383,41 @@
   color: var(--inchiostro);
   background: var(--carta-incisa);
 }
+/* Testata del pannello parola: l'ebraico a destra, la parola tradotta a
+   sinistra, sulla stessa riga e con lo stesso peso. `row-reverse` tiene
+   l'ebraico primo nel DOM (è il soggetto del pannello) e ultimo in pagina. */
+.parola-testata {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
 .parola-grande {
   font-family: var(--font-ebraico);
   font-size: var(--testo-ebraico-grande);
   line-height: var(--interlinea-ebraico);
   display: block;
   text-align: right;
+}
+.parola-glosse {
+  margin: 0;
+  min-width: 0;
+  line-height: var(--interlinea-stretta);
+}
+/* Parità ottica con l'ebraico, non parità di px: vedi DESIGN.md §2. */
+.parola-glossa-it {
+  display: block;
+  font-family: var(--font-lettura);
+  font-size: var(--testo-lg);
+  color: var(--inchiostro);
+}
+.parola-glossa-en {
+  display: block;
+  font-family: var(--font-lettura);
+  font-size: var(--testo-lg);
+  color: var(--inchiostro-tenue);
 }
 .translit {
   font-family: var(--font-translit);
