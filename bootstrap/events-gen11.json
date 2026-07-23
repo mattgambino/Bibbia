@@ -44,8 +44,28 @@
       },
       "posizioni": [
         {
-          "etichetta": "Datazione: un’aggiunta postesilica?",
-          "sintesi": "La critica delle fonti assegnava tradizionalmente il racconto alla fonte più antica (non sacerdotale) della storia primordiale. Gertz obietta che esso si salda bene alle genealogie della fonte sacerdotale, più tarda, e sembra avere già in vista le storie di Abramo e Sara, entrambi dalla Mesopotamia (11,31): sarebbe quindi composto dopo l’unione della storia primordiale con il racconto dei patriarchi, tardi, nel VI secolo. Anche il rivestimento di mattoni cotti della ziggurat Etemenanki (VII sec.) e forse i danni di età persiana spingono in basso la data. Il range -900/-400 copre la forbice, dall’attribuzione alta al jahvista fino alla datazione postesilica di Gertz.",
+          "etichetta": "Attribuzione classica al materiale non sacerdotale",
+          "sintesi": "La critica delle fonti assegnava tradizionalmente il racconto di Babele alla fonte più antica, non sacerdotale, della storia primordiale — la stessa a cui appartengono gli altri episodi non sacerdotali di Gen 2-11. La forbice di datazione di quel materiale è quella condivisa: non una datazione assoluta, ma l’ampiezza delle posizioni in campo, esposte per esteso alle pericopi di Gen 2-3. Qui si citano le due opere che ne riassumono il dibattito.",
+          "fonti": [
+            {
+              "tipo": "opera",
+              "autore": "Christophe Nihan; Thomas Römer",
+              "titolo": "El debate actual sobre la formación del Pentateuco, cap. 5 di Introduction à l'Ancien Testament (a cura di T. Römer, J.-D. Macchi, C. Nihan)",
+              "anno": 2004,
+              "dettaglio": "§5.1.2-5.1.3, pp. 86-88 dell'edizione spagnola (Desclée De Brouwer 2008, trad. dall'originale Labor et Fides 2004): abbandono della fonte E, datazione bassa del jahwista, D-Komposition di Blum, unità maggiori di Rendtorff, separazione delle tradizioni di Genesi ed Esodo prima di P secondo Römer 1990 e K. Schmid 1999 La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            },
+            {
+              "tipo": "opera",
+              "autore": "John J. Scullion",
+              "titolo": "Genesis, The Narrative of, in The Anchor Bible Dictionary",
+              "anno": 1992,
+              "dettaglio": "ricostruzione della storia dell'ipotesi documentaria da Graf e Kuenen a Wellhausen, ed elenco delle critiche successive (Volz-Rudolph 1933, Cassuto 1961, Engnell 1969, H. H. Schmid 1976, Rendtorff 1977 e 1985, Thompson, Whybray) La forbice di datazione del materiale non sacerdotale è discussa per esteso alle pericopi di Gen 2-3; qui la citazione è portata per riferimento."
+            }
+          ]
+        },
+        {
+          "etichetta": "Datazione bassa: un’aggiunta postesilica (Gertz)",
+          "sintesi": "Gertz obietta all’attribuzione classica: il racconto si salda bene alle genealogie della fonte sacerdotale, più tarda, e sembra avere già in vista le storie di Abramo e Sara, entrambi dalla Mesopotamia (11,31). Sarebbe quindi composto dopo l’unione della storia primordiale con il racconto dei patriarchi, tardi, nel VI secolo o oltre; anche il rivestimento di mattoni cotti della ziggurat Etemenanki (VII sec.) e forse i danni di età persiana spingono in basso la data. Il range -900/-400 copre la forbice fra le due posizioni.",
           "fonti": [
             {
               "tipo": "url",
