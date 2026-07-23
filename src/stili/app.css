@@ -556,23 +556,30 @@
   border-radius: var(--raggio-sm);
   box-shadow: var(--ombra-pannello);
 }
+/* `--tinta-status` porta il colore dello status dentro il marker, così anello di
+   selezione e raggi lo riusano senza una regola per ogni status. */
 .marker-luogo--consensus {
+  --tinta-status: var(--status-consensus);
   background: var(--status-consensus);
   border: 2px var(--status-consensus-tratto) var(--status-consensus);
 }
 .marker-luogo--majority {
+  --tinta-status: var(--status-majority);
   background: var(--status-majority-fondo);
   border: 2px var(--status-majority-tratto) var(--status-majority);
 }
 .marker-luogo--disputed {
+  --tinta-status: var(--status-disputed);
   background: var(--status-disputed-fondo);
   border: 2px var(--status-disputed-tratto) var(--status-disputed);
 }
 .marker-luogo--speculative {
+  --tinta-status: var(--status-speculative);
   background: var(--status-speculative-fondo);
   border: 2px var(--status-speculative-tratto) var(--status-speculative);
 }
 .marker-luogo--symbolic {
+  --tinta-status: var(--status-symbolic);
   background: var(--status-symbolic-fondo);
   border: 3px var(--status-symbolic-tratto) var(--status-symbolic);
 }
@@ -999,4 +1006,673 @@
   font-size: var(--testo-sm);
   color: var(--inchiostro-tenue);
   margin: 0;
+}
+
+/* ==========================================================================
+   Viste a schermo pieno: mappa (F3.1) e timeline (F3.2)
+
+   Stessa impalcatura per tutte e due — testata, apparato a sinistra, campo a
+   destra — perché è la stessa promessa: il campo (carta o binari) è una
+   sintesi, l'apparato è la fonte. Ogni cosa che il campo mostra è scritta anche
+   lì, e ciò che nel campo non può stare (luoghi simbolici, pericopi senza
+   collocazione su un asse) esiste solo lì. Le regole condivise stanno sotto
+   `.vista-*`; sotto `.mappa-*` e `.timeline-*` solo ciò che è proprio di una.
+   ========================================================================== */
+
+.mappa-vista,
+.timeline-vista,
+.genealogie-vista {
+  display: grid;
+  grid-template-columns: var(--col-apparato) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100vh;
+  /* La vista occupa lo schermo e non scorre: a scorrere sono l'apparato e il
+     campo, ciascuno per conto suo. Senza questo, l'elenco lungo trascina con sé
+     anche la pagina e la carta scivola fuori campo. */
+  overflow: hidden;
+  background: var(--carta-apparato);
+  color: var(--inchiostro);
+  font-family: var(--font-ui);
+  font-size: var(--testo-base);
+  line-height: var(--interlinea-ui);
+}
+
+.vista-testa {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: var(--bordo-marcato);
+}
+.vista-testa h1 {
+  margin: 0;
+  font-size: var(--testo-lg);
+  font-weight: var(--peso-forte);
+  line-height: var(--interlinea-stretta);
+}
+.bottone-ritorno {
+  font: inherit;
+  font-size: var(--testo-sm);
+  background: var(--carta-rilievo);
+  border: var(--bordo-marcato);
+  border-radius: var(--raggio);
+  padding: var(--sp-1) var(--sp-3);
+  color: var(--inchiostro-medio);
+  cursor: pointer;
+  transition: background var(--transizione), color var(--transizione);
+}
+.bottone-ritorno:hover {
+  background: var(--carta-incisa);
+  color: var(--inchiostro);
+}
+
+.vista-apparato {
+  border-right: var(--bordo-sottile);
+  padding: var(--sp-4);
+  overflow-y: auto;
+}
+
+/* --- filtri --- */
+.filtro {
+  border: 0;
+  border-top: var(--bordo-sottile);
+  margin: 0;
+  padding: var(--sp-3) 0;
+}
+.filtro:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+.filtro legend {
+  padding: 0;
+  font-size: var(--testo-xs);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+}
+.filtro-voce {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) 0;
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+  cursor: pointer;
+}
+.filtro-voce:hover {
+  color: var(--inchiostro);
+}
+.filtro-voce input {
+  accent-color: var(--inchiostro);
+  /* Bersaglio comodo senza allargare la riga di testo. */
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  cursor: pointer;
+}
+.filtro-etichetta {
+  flex: 1;
+}
+.filtro-azzera {
+  margin: 0 0 var(--sp-3);
+}
+
+.vista-conto {
+  margin: 0 0 var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: var(--bordo-sottile);
+  font-size: var(--testo-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro-medio);
+}
+.vista-nota {
+  margin: var(--sp-4) 0 0;
+  padding-top: var(--sp-3);
+  border-top: var(--bordo-sottile);
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+}
+
+/* --- schede dell'elenco --- */
+.scheda-luogo {
+  padding: 0;
+}
+.scheda-luogo + .scheda-luogo {
+  border-top: 1px solid var(--filetto);
+}
+.scheda-maniglia {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: var(--raggio-sm);
+  padding: var(--sp-3) var(--sp-2);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background var(--transizione);
+}
+.scheda-maniglia--ferma {
+  cursor: default;
+}
+button.scheda-maniglia:hover {
+  background: var(--carta-incisa);
+}
+.scheda-maniglia .scheda-testa,
+.scheda-maniglia .translit,
+.scheda-maniglia .conteggio {
+  display: block;
+}
+/* Il luogo aperto sulla carta si riconosce nell'elenco per un filetto pieno a
+   sinistra: la stessa informazione del marker cerchiato, in forma di testo. */
+.scheda-luogo--scelta .scheda-maniglia {
+  background: var(--carta-incisa);
+  box-shadow: inset 3px 0 0 var(--inchiostro);
+}
+.scheda-riferimenti {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0 0 var(--sp-3);
+  padding: 0 var(--sp-2);
+}
+.rimando-versetto {
+  font: inherit;
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  background: none;
+  border: var(--bordo-sottile);
+  border-radius: var(--raggio-sm);
+  padding: 0 var(--sp-2);
+  color: var(--accento-link);
+  cursor: pointer;
+  transition: background var(--transizione), color var(--transizione);
+}
+.rimando-versetto:hover {
+  background: var(--carta-incisa);
+  color: var(--accento-link-attivo);
+}
+.rimando-vista {
+  margin: var(--sp-2) 0 0;
+}
+
+/* --- carta --- */
+.mappa-carta {
+  height: 100%;
+  background: var(--carta-incisa);
+}
+/* Un solo luogo aperto: i suoi punti restano in primo piano, gli altri
+   arretrano senza sparire — restano leggibili, smettono di competere. */
+.marker-luogo--sfondo {
+  opacity: 0.4;
+}
+/* Il luogo scelto si legge come **un insieme**: tutte le sue ipotesi prendono
+   l'anello nel colore dello status, non solo quella aperta. È il punto della
+   vista — un luogo conteso non è un punto sulla carta, è una rosa di punti, e
+   il perché lo dicono le note nel popup. */
+.marker-luogo--scelto {
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--carta-rilievo), 0 0 0 4px var(--tinta-status);
+}
+/* Dentro l'insieme, l'ipotesi di cui il popup sta parlando: anello più spesso e
+   in inchiostro, così la differenza non è affidata al solo colore. */
+.marker-luogo--attivo {
+  box-shadow: 0 0 0 3px var(--carta-rilievo), 0 0 0 6px var(--inchiostro);
+}
+/* I raggi legano le ipotesi di uno stesso luogo al loro baricentro: dicono
+   "stessa cosa, congetture diverse", non una rotta. Tratteggiati perché il
+   legame è di ipotesi, non di percorso. */
+.raggio-ipotesi {
+  stroke: var(--filetto-marcato);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 4;
+  fill: none;
+}
+.raggio-ipotesi--consensus {
+  stroke: var(--status-consensus);
+}
+.raggio-ipotesi--majority {
+  stroke: var(--status-majority);
+}
+.raggio-ipotesi--disputed {
+  stroke: var(--status-disputed);
+}
+.raggio-ipotesi--speculative {
+  stroke: var(--status-speculative);
+}
+.raggio-ipotesi--symbolic {
+  stroke: var(--status-symbolic);
+}
+
+/* --- popup --- */
+.popup-luogo .leaflet-popup-content-wrapper {
+  border-radius: var(--raggio);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro);
+  box-shadow: var(--ombra-pannello);
+  border: var(--bordo-marcato);
+}
+.popup-luogo .leaflet-popup-content {
+  margin: var(--sp-3);
+  font-family: var(--font-ui);
+  font-size: var(--testo-base);
+  line-height: var(--interlinea-ui);
+}
+.popup-luogo .leaflet-popup-tip {
+  background: var(--carta-rilievo);
+}
+.popup-corpo {
+  /* Da quando il popup porta anche le note curate, venti righe non bastano più:
+     prende l'altezza che la finestra concede, senza mai coprirla tutta. */
+  max-height: min(30rem, 60vh);
+  overflow-y: auto;
+}
+.popup-titolo {
+  margin: 0;
+  font-size: var(--testo-md);
+  font-weight: var(--peso-forte);
+  line-height: var(--interlinea-stretta);
+}
+.popup-status {
+  margin: var(--sp-1) 0 var(--sp-2);
+}
+
+/* --- ipotesi di localizzazione --- */
+.candidato {
+  padding: var(--sp-2) 0;
+  border-top: 1px solid var(--filetto);
+}
+.candidato:first-child {
+  border-top: 0;
+}
+.candidato-testa {
+  margin: 0;
+  font-size: var(--testo-sm);
+}
+/* L'ipotesi aperta è l'unica con l'apparato in chiaro: le altre restano righe. */
+.candidato--attivo {
+  background: var(--carta-incisa);
+  padding-left: var(--sp-2);
+  padding-right: var(--sp-2);
+  border-radius: var(--raggio-sm);
+}
+.candidato--attivo .candidato-testa {
+  font-weight: var(--peso-medio);
+}
+.argomenti {
+  margin: 0;
+  padding-left: var(--sp-4);
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+.candidato .etichetta {
+  margin: var(--sp-2) 0 var(--sp-1);
+}
+
+/* ==========================================================================
+   Vista timeline a tre binari (F3.2)
+
+   Tre pannelli separati, mai una linea sola: ciascuno con la sua scala, la sua
+   unità di conto e il suo conteggio di pericopi collocate. L'incertezza si
+   disegna come forcella — due limiti e ciò che sta in mezzo, senza riempimento
+   — mentre la durata narrata, che il testo dà per intero, è un blocco pieno.
+   Due segni diversi perché sono due affermazioni diverse.
+   ========================================================================== */
+
+.timeline-binari {
+  padding: var(--sp-4) var(--sp-5) var(--sp-7);
+  overflow-y: auto;
+  background: var(--carta-lettura);
+}
+
+/* L'avvertenza sta in cima e non è decorazione: senza, tre grafici impilati
+   invitano a leggere una colonna verticale che non esiste. */
+.timeline-avvertenza {
+  margin: 0 0 var(--sp-4);
+  padding: var(--sp-3);
+  max-width: 52rem;
+  border: var(--bordo-sottile);
+  border-left: var(--bordo-marcato);
+  border-radius: var(--raggio-sm);
+  background: var(--carta-apparato);
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+
+.binario {
+  margin-bottom: var(--sp-5);
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  background: var(--carta-rilievo);
+  border: var(--bordo-sottile);
+  border-radius: var(--raggio);
+}
+.binario-testa {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+}
+.binario-testa h3 {
+  margin: 0;
+  font-size: var(--testo-md);
+  font-weight: var(--peso-forte);
+  line-height: var(--interlinea-stretta);
+}
+/* L'unità sta accanto al titolo, non in una legenda: è ciò che impedisce di
+   leggere un Anno Mundi come un anno dell'era. */
+.binario-unita {
+  margin: 0;
+  font-size: var(--testo-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+}
+.binario-glossa {
+  margin: var(--sp-1) 0 var(--sp-3);
+  max-width: 52rem;
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+.binario-conto {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+}
+.binario-segno-nota {
+  color: var(--inchiostro-medio);
+}
+
+.binario-grafico {
+  display: block;
+  font-family: var(--font-ui);
+}
+.binario-griglia {
+  stroke: var(--filetto);
+  stroke-width: 1;
+}
+.binario-asse,
+.binario-tacca {
+  stroke: var(--filetto-marcato);
+  stroke-width: 1;
+}
+.binario-tacca-etichetta,
+.binario-corsia-etichetta,
+.binario-corsia-vuota {
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+}
+.binario-tacca-etichetta {
+  fill: var(--inchiostro-tenue);
+}
+.binario-corsia-etichetta {
+  fill: var(--inchiostro-medio);
+  text-anchor: end;
+}
+/* Una pericope senza collocazione su questo asse resta una corsia con il suo
+   nome: l'assenza è un dato, non una riga che sparisce. */
+.binario-corsia-vuota {
+  fill: var(--inchiostro-tenue);
+  font-style: italic;
+}
+
+.binario-corsia {
+  cursor: pointer;
+}
+.binario-corsia-fondo {
+  fill: transparent;
+}
+.binario-corsia:hover .binario-corsia-fondo {
+  fill: var(--evidenza-occorrenza);
+}
+/* La pericope scelta si marca su tutti e tre i binari: è il modo in cui si vede
+   che la stessa unità di testo sta in tre posti diversi. Le altre arretrano
+   senza sparire. */
+.binario-corsia--scelta .binario-corsia-fondo {
+  fill: var(--carta-incisa);
+}
+.binario-corsia--scelta .binario-corsia-etichetta {
+  fill: var(--inchiostro);
+  font-weight: var(--peso-forte);
+}
+.binario-corsia--arretrata {
+  opacity: 0.45;
+}
+
+/* Blocco pieno: durata dentro il racconto, estremi netti perché il testo li dà. */
+.binario-blocco {
+  fill: var(--inchiostro-medio);
+}
+.binario-corsia--scelta .binario-blocco {
+  fill: var(--inchiostro);
+}
+
+/* Forcella: intervallo di incertezza. Il colore viene dallo status quando l'asse
+   ne porta uno (tempo_storico), e il tratto lo raddoppia — in SVG il tratteggio
+   è un `stroke-dasharray`, non il `border-style` dei token, ma la grammatica
+   resta quella: colore E forma, mai il solo colore (DESIGN.md §4). */
+.binario-forcella {
+  color: var(--inchiostro-medio);
+}
+.forcella-tratto,
+.forcella-limite {
+  stroke: currentColor;
+  fill: none;
+}
+.forcella-tratto {
+  stroke-width: 1.5;
+}
+.forcella-limite {
+  stroke-width: 2;
+}
+.binario-forcella--consensus {
+  color: var(--status-consensus);
+}
+.binario-forcella--majority {
+  color: var(--status-majority);
+}
+.binario-forcella--majority .forcella-tratto {
+  stroke-width: 1;
+}
+.binario-forcella--disputed {
+  color: var(--status-disputed);
+}
+.binario-forcella--disputed .forcella-tratto {
+  stroke-dasharray: 5 3;
+}
+.binario-forcella--speculative {
+  color: var(--status-speculative);
+}
+.binario-forcella--speculative .forcella-tratto {
+  stroke-dasharray: 1 3;
+  stroke-linecap: round;
+}
+.binario-forcella--symbolic {
+  color: var(--status-symbolic);
+}
+.binario-forcella--symbolic .forcella-tratto {
+  stroke-dasharray: 7 2 1 2;
+}
+
+/* --- elenco delle pericopi --- */
+.scheda-pericope {
+  padding: 0;
+}
+.scheda-pericope + .scheda-pericope {
+  border-top: 1px solid var(--filetto);
+}
+.scheda-pericope--scelta .scheda-maniglia {
+  background: var(--carta-incisa);
+  box-shadow: inset 3px 0 0 var(--inchiostro);
+}
+/* Le tre collocazioni in parole, sempre visibili: chi legge l'elenco non deve
+   passare dalla figura per sapere dove cade una pericope. */
+.assi-sommario {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--sp-1);
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro-medio);
+}
+.assi-sommario-etichetta {
+  display: inline-block;
+  width: 8em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+}
+.scheda-apparato {
+  padding: 0 var(--sp-2) var(--sp-3);
+}
+.scheda-apparato .asse:first-child {
+  border-top: 1px solid var(--filetto);
+  padding-top: var(--sp-3);
+}
+.scheda-apparato .scheda-riferimenti {
+  padding: 0;
+  margin-top: var(--sp-3);
+}
+
+/* ==========================================================================
+   Genealogie (F3.3)
+
+   Stessa impalcatura di mappa e timeline (`.vista-*`): l'apparato a sinistra è
+   la fonte — selettore dell'albero, note della genealogia, scheda della figura
+   scelta con le età letterali — e la tela a destra è l'albero, una sintesi. Un
+   albero può presentarsi in tronchi separati quando un legame padre-figlio manca
+   dai dati: lo dichiara l'apparato, non lo nasconde la figura.
+   ========================================================================== */
+
+/* Il selettore dell'albero riusa .filtro/.filtro-voce; il radio non ha il segno
+   di status del filtro mappa, quindi l'etichetta parte dal bordo. */
+.filtro-voce--radio {
+  padding-left: 0;
+}
+
+.genealogie-tela {
+  overflow: auto;
+  background: var(--carta-lettura);
+}
+.albero-scorri {
+  padding: var(--sp-5);
+  /* Non si comprime sotto la larghezza dell'albero: si scorre. */
+  width: min-content;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+.albero {
+  display: block;
+}
+.albero-archi path {
+  stroke: var(--filetto-marcato);
+  stroke-width: 1.5;
+  fill: none;
+}
+
+/* Il nodo è un vero bottone dentro un foreignObject: raggiungibile da tastiera,
+   stilato con i token come ogni scheda dell'apparato. */
+.albero-nodo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: var(--sp-1) var(--sp-2);
+  text-align: left;
+  font: inherit;
+  color: var(--inchiostro);
+  background: var(--carta-rilievo);
+  border: var(--bordo-marcato);
+  border-radius: var(--raggio);
+  cursor: pointer;
+  transition: background var(--transizione), box-shadow var(--transizione);
+}
+.albero-nodo:hover {
+  background: var(--carta-incisa);
+}
+.albero-nome {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: var(--testo-sm);
+  font-weight: var(--peso-medio);
+  /* Spazio per il segno delle note nell'angolo. */
+  padding-right: var(--sp-3);
+}
+.albero-eta {
+  display: block;
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro-tenue);
+}
+/* Tutte le figure sono ancora `da_verificare` (passata F5.3): un bordo tratteggiato
+   pieno su ogni nodo sarebbe rumore uniforme. Il segno "non finito" resta, ma
+   ridotto a una sottolineatura del nome — presente, non gridato (DESIGN.md §4). */
+.albero-nodo--verificare .albero-nome {
+  text-decoration: underline dotted var(--verificare-colore);
+  text-underline-offset: 2px;
+}
+/* Il nodo scelto: anello pieno, non solo colore. */
+.albero-nodo--scelto {
+  background: var(--carta-incisa);
+  border-color: var(--inchiostro);
+  box-shadow: 0 0 0 2px var(--inchiostro);
+}
+/* Quante note critiche porta la figura: conteggio nell'angolo, l'apparato pieno
+   sta nella scheda a sinistra. */
+.albero-note-segno {
+  position: absolute;
+  top: 3px;
+  right: 4px;
+  min-width: 1rem;
+  height: 1rem;
+  padding: 0 2px;
+  box-sizing: border-box;
+  font-size: var(--testo-xs);
+  font-variant-numeric: tabular-nums;
+  line-height: 1rem;
+  text-align: center;
+  color: var(--accento-link);
+  border: 1px solid var(--filetto-marcato);
+  border-radius: 999px;
+  background: var(--carta-lettura);
+}
+
+/* --- apparato: tronchi separati, note, scheda della figura --- */
+.genealogie-tronchi {
+  margin: 0 0 var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  border-left: 3px solid var(--filetto-marcato);
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+.genealogie-note-albero,
+.genealogie-note-figura {
+  margin-top: var(--sp-4);
+}
+.scheda-figura {
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-4);
+  border-top: var(--bordo-marcato);
+}
+.figura-eta {
+  margin: var(--sp-2) 0;
+  font-size: var(--testo-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--inchiostro);
+}
+.figura-eta-nota {
+  font-variant-numeric: normal;
+  color: var(--inchiostro-tenue);
+}
+.scheda-figura .scheda-riferimenti {
+  padding: 0;
+  margin-top: var(--sp-3);
 }

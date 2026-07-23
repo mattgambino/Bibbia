@@ -78,15 +78,20 @@ export function PannelloNote({ ancoraggio, note, idEvidenziata, parolaDi, portaI
   )
 }
 
-function VoceNota({
+/**
+ * Una nota con tutto il suo apparato. Esportata perché la voce di una nota si
+ * scrive in un posto solo: oltre al pannello della lettura, la usa il popup
+ * della vista mappa (F3.1). Va sempre dentro un `<ul className="note">`.
+ */
+export function VoceNota({
   nota,
-  evidenziata,
-  parola,
+  evidenziata = false,
+  parola = null,
   riferimento,
 }: {
   nota: Nota
-  evidenziata: boolean
-  parola: Parola | null
+  evidenziata?: boolean
+  parola?: Parola | null
   riferimento?: React.RefObject<HTMLLIElement | null>
 }) {
   const prospettiva = prospettivaDi(nota)

@@ -211,6 +211,10 @@
   --col-navigazione: 15rem;
   --col-lettura-max: 40rem;  /* ~65-70 caratteri di traduzione a 17px */
   --col-contesto: 22rem;
+  /* Apparato delle viste a schermo pieno (mappa F3.1, timeline F3.2): un filo
+     più largo della colonna contesto, perché qui l'elenco è la fonte e non una
+     miniatura. */
+  --col-apparato: 24rem;
   /* Fascia di margine dell'apparato: numero di versetto e indicatori delle note
      vivono qui. Da F2.4 ospita sigla del tipo + segno della confidenza, quindi è
      più larga: la misura di lettura non cambia, è la colonna a spostarsi. */

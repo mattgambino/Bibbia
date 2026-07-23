@@ -13,6 +13,7 @@
 import { useMemo, useRef, useState } from 'react'
 import { Minimappa } from './Minimappa.tsx'
 import { BadgeConfidenza, ElencoFonti, SegnoDaVerificare, SegnoStatus } from './Elementi.tsx'
+import { idConAlbero } from '../lib/genealogia.ts'
 import {
   etichettaAnni,
   etichettaAnniMundi,
@@ -42,6 +43,12 @@ type Props = {
   notePerLuogo: Map<string, Nota[]>
   notePerPersona: Map<string, Nota[]>
   onNote: ApriNote
+  /** Apre la vista mappa a schermo pieno, sul luogo scelto se ce n'è uno (F3.1). */
+  onMappa: (luogo?: string) => void
+  /** Apre la timeline completa, sulla pericope in lettura (F3.2). */
+  onTimeline: (pericope?: string) => void
+  /** Apre le genealogie, sulla figura scelta se ne fa parte (F3.3). */
+  onGenealogia: (persona?: string) => void
 }
 
 export function ColonnaContesto({
@@ -52,6 +59,9 @@ export function ColonnaContesto({
   notePerLuogo,
   notePerPersona,
   onNote,
+  onMappa,
+  onTimeline,
+  onGenealogia,
 }: Props) {
   const [tab, setTab] = useState<Tab>('dove')
   const bottoni = useRef<(HTMLButtonElement | null)[]>([])
@@ -115,16 +125,19 @@ export function ColonnaContesto({
             stato={luoghi}
             notePerLuogo={notePerLuogo}
             onNote={onNote}
+            onMappa={onMappa}
           />
         ) : tab === 'quando' ? (
-          <Quando pericope={pericope} eventi={eventi} />
+          <Quando pericope={pericope} eventi={eventi} onTimeline={onTimeline} />
         ) : (
           <Chi
             pericope={pericope}
             personePerId={personePerId}
             stato={persone}
+            eventi={eventi}
             notePerPersona={notePerPersona}
             onNote={onNote}
+            onGenealogia={onGenealogia}
           />
         )}
       </div>
@@ -177,12 +190,14 @@ function Dove({
   stato,
   notePerLuogo,
   onNote,
+  onMappa,
 }: {
   pericope: Evento
   luoghiPerId: Map<string, Luogo>
   stato: Caricamento<Luoghi>
   notePerLuogo: Map<string, Nota[]>
   onNote: ApriNote
+  onMappa: (luogo?: string) => void
 }) {
   if (stato.stato === 'in_corso') return <p className="vuoto">Caricamento dei luoghi…</p>
   if (stato.stato === 'errore')
@@ -205,7 +220,18 @@ function Dove({
 
   return (
     <>
-      {conCoordinate.length > 0 && <Minimappa luoghi={conCoordinate} />}
+      {conCoordinate.length > 0 && (
+        <>
+          <Minimappa luoghi={conCoordinate} />
+          {/* La miniatura mostra i punti della sola pericope: il passaggio alla
+              carta intera è ciò che la rende leggibile su scala (specifica §8). */}
+          <p className="rimando-vista">
+            <button type="button" className="rimando-note" onClick={() => onMappa()}>
+              Apri la mappa completa
+            </button>
+          </p>
+        </>
+      )}
       <ul className="schede">
         {elencati.map((luogo) => (
           <li key={luogo.id} className="scheda">
@@ -242,6 +268,13 @@ function Dove({
                 ))}
               </ul>
             )}
+            {luogo.status !== 'symbolic' && luogo.candidati.length > 0 && (
+              <p className="rimando-vista">
+                <button type="button" className="rimando-note" onClick={() => onMappa(luogo.id)}>
+                  Vedi sulla mappa
+                </button>
+              </p>
+            )}
             <RimandoNote
               note={notePerLuogo.get(luogo.id) ?? []}
               ancoraggio={`Luogo: ${luogo.nomi.it || luogo.nomi.translit || luogo.id}`}
@@ -269,7 +302,15 @@ function dominio(valori: (RangeAnni | null)[]): RangeAnni | null {
   return a > da ? { da, a } : null
 }
 
-function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Eventi> }) {
+function Quando({
+  pericope,
+  eventi,
+  onTimeline,
+}: {
+  pericope: Evento
+  eventi: Caricamento<Eventi>
+  onTimeline: (pericope?: string) => void
+}) {
   const domini = useMemo(() => {
     const tutti = eventi.stato === 'pronto' ? eventi.dati : []
     return {
@@ -281,6 +322,15 @@ function Quando({ pericope, eventi }: { pericope: Evento; eventi: Caricamento<Ev
 
   return (
     <div className="assi">
+      {/* Le miniature dicono dove cade questa pericope; dove cadano tutte le
+          altre lo dice la timeline, ed è il passaggio che una miniatura non può
+          fare (specifica §8). */}
+      <p className="rimando-vista">
+        <button type="button" className="rimando-note" onClick={() => onTimeline(pericope.id)}>
+          Apri la timeline completa
+        </button>
+      </p>
+
       <section className="asse">
         <h3>Tempo narrato</h3>
         <p className="asse-nota">Cronologia interna al racconto (Anno Mundi). Dato testuale, non affermazione storica.</p>
@@ -411,15 +461,28 @@ function Chi({
   pericope,
   personePerId,
   stato,
+  eventi,
   notePerPersona,
   onNote,
+  onGenealogia,
 }: {
   pericope: Evento
   personePerId: Map<string, Persona>
   stato: Caricamento<Persone>
+  eventi: Caricamento<Eventi>
   notePerPersona: Map<string, Nota[]>
   onNote: ApriNote
+  onGenealogia: (persona?: string) => void
 }) {
+  // Chi ha un albero: solo per costoro «Vedi nell'albero» porta da qualche parte.
+  const conAlbero = useMemo(
+    () =>
+      stato.stato === 'pronto' && eventi.stato === 'pronto'
+        ? idConAlbero(eventi.dati, stato.dati)
+        : new Set<string>(),
+    [stato, eventi],
+  )
+
   if (stato.stato === 'in_corso') return <p className="vuoto">Caricamento delle persone…</p>
   if (stato.stato === 'errore')
     return (
@@ -435,9 +498,19 @@ function Chi({
   }
   const elencate = pericope.persone.map((id) => personePerId.get(id)).filter((p): p is Persona => !!p)
   const mancanti = pericope.persone.filter((id) => !personePerId.has(id))
+  // La figura della pericope che ha un albero: il link generale vi entra, così le
+  // genealogie si aprono su qualcosa di pertinente e non su un albero a caso.
+  const primaConAlbero = elencate.find((p) => conAlbero.has(p.id))
 
   return (
     <>
+      {primaConAlbero && (
+        <p className="rimando-vista">
+          <button type="button" className="rimando-note" onClick={() => onGenealogia(primaConAlbero.id)}>
+            Apri le genealogie
+          </button>
+        </p>
+      )}
       <ul className="schede">
         {elencate.map((persona) => {
           const parentele: [string, string[]][] = [
@@ -474,6 +547,13 @@ function Chi({
                 <p className="conteggio">Età nel racconto: {persona.dati_narrativi.eta_totale} anni.</p>
               )}
               <p className="conteggio">{persona.riferimenti.length} riferimenti nel Pentateuco.</p>
+              {conAlbero.has(persona.id) && (
+                <p className="rimando-vista">
+                  <button type="button" className="rimando-note" onClick={() => onGenealogia(persona.id)}>
+                    Vedi nell'albero
+                  </button>
+                </p>
+              )}
               <RimandoNote
                 note={notePerPersona.get(persona.id) ?? []}
                 ancoraggio={`Persona: ${persona.nomi.it || persona.nomi.translit || persona.id}`}

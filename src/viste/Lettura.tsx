@@ -47,8 +47,16 @@ type SelezioneNote = {
  * IntersectionObserver — nessun listener di scroll, nessun calcolo a ogni frame.
  * Il margine inferiore negativo esclude la metà bassa dello schermo: senza,
  * "visibile" comprenderebbe versetti che il lettore non ha ancora raggiunto.
+ *
+ * `testoMontato` non è un dettaglio: i versetti arrivano da `verses/`, ma la
+ * colonna centrale si disegna solo quando è pronto anche `words/`. Osservando
+ * appena arrivano i versetti si osservava il nulla — nessun elemento esisteva
+ * ancora — e l'osservatore non veniva più rifatto, perché l'elenco dei versetti
+ * non cambiava più. Da lì il difetto: allo scroll il contesto restava fermo sul
+ * primo versetto, e tornava a funzionare solo cambiando capitolo, cioè quando
+ * l'elenco cambiava con i file già in cache.
  */
-function usaVersettoInLettura(versetti: Versetto[]): string | null {
+function usaVersettoInLettura(versetti: Versetto[], testoMontato: boolean): string | null {
   const [id, setId] = useState<string | null>(null)
 
   useEffect(() => {
@@ -56,6 +64,7 @@ function usaVersettoInLettura(versetti: Versetto[]): string | null {
       setId(null)
       return
     }
+    if (!testoMontato) return
     setId(versetti[0].id)
 
     const visibili = new Set<string>()
@@ -76,12 +85,23 @@ function usaVersettoInLettura(versetti: Versetto[]): string | null {
       if (elemento) osservatore.observe(elemento)
     }
     return () => osservatore.disconnect()
-  }, [versetti])
+  }, [versetti, testoMontato])
 
   return id
 }
 
-export function Lettura() {
+type Props = {
+  /** Versetto su cui aprire la lettura tornando da una vista a schermo pieno. */
+  versettoIniziale?: string | null
+  /** Passa alla mappa completa, eventualmente sul luogo da cui si è partiti. */
+  onMappa: (luogo?: string) => void
+  /** Passa alla timeline, sulla pericope in lettura (F3.2). */
+  onTimeline: (pericope?: string) => void
+  /** Passa alle genealogie, sulla figura da cui si è partiti (F3.3). */
+  onGenealogia: (persona?: string) => void
+}
+
+export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia }: Props) {
   const [posizione, setPosizione] = usaPosizione()
   const [idTraduzione, setIdTraduzione] = usaTraduzione()
   const [parolaAttiva, setParolaAttiva] = useState<string | null>(null)
@@ -124,7 +144,20 @@ export function Lettura() {
 
   const parola = parolaAttiva ? (parolePerId.get(parolaAttiva) ?? null) : null
 
-  const versettoInLettura = usaVersettoInLettura(versettiCapitolo)
+  const inCorso = versetti.stato === 'in_corso' || parole.stato === 'in_corso'
+  const errore =
+    versetti.stato === 'errore'
+      ? versetti.messaggio
+      : parole.stato === 'errore'
+        ? parole.messaggio
+        : traduzione.stato === 'errore'
+          ? traduzione.messaggio
+          : null
+
+  // Le stesse due condizioni con cui, più sotto, si sceglie di disegnare la
+  // colonna di lettura: l'osservatore ha bisogno di sapere se i versetti sono
+  // già nella pagina, non solo se sono stati scaricati.
+  const versettoInLettura = usaVersettoInLettura(versettiCapitolo, !inCorso && !errore)
   const pericope = useMemo(() => {
     if (eventi.stato !== 'pronto' || !versettoInLettura) return null
     return pericopeDi(eventi.dati, versettoInLettura)
@@ -225,6 +258,17 @@ export function Lettura() {
     daPortareInVista.current = versettoDiParola(id)
   }
 
+  // Rientro da una vista a schermo pieno su un riferimento preciso (il rimando a
+  // un versetto dalla scheda di un luogo, F3.1): si sposta la posizione e si
+  // riusa lo stesso meccanismo della navigazione per occorrenza.
+  useEffect(() => {
+    if (!versettoIniziale) return
+    const rif = leggiVersettoId(versettoIniziale)
+    if (!rif) return
+    setPosizione({ libro: rif.libro, capitolo: rif.capitolo })
+    daPortareInVista.current = versettoIniziale
+  }, [versettoIniziale, setPosizione])
+
   useEffect(() => {
     const idVersetto = daPortareInVista.current
     if (!idVersetto || versettiCapitolo.length === 0) return
@@ -249,16 +293,6 @@ export function Lettura() {
     traduzione.stato === 'pronto'
       ? `Testo masoretico (TAHOT) · traduzione: ${traduzione.dati.meta.nome} (${traduzione.dati.meta.anno ?? 's.d.'})`
       : 'Testo masoretico (TAHOT)'
-
-  const inCorso = versetti.stato === 'in_corso' || parole.stato === 'in_corso'
-  const errore =
-    versetti.stato === 'errore'
-      ? versetti.messaggio
-      : parole.stato === 'errore'
-        ? parole.messaggio
-        : traduzione.stato === 'errore'
-          ? traduzione.messaggio
-          : null
 
   return (
     <div className="app">
@@ -341,6 +375,9 @@ export function Lettura() {
           notePerLuogo={indiceNote.perLuogo}
           notePerPersona={indiceNote.perPersona}
           onNote={apriNoteEntita}
+          onMappa={onMappa}
+          onTimeline={onTimeline}
+          onGenealogia={onGenealogia}
         />
       </aside>
 
