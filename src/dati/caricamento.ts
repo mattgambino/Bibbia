@@ -7,6 +7,7 @@
 
 import { z } from 'zod'
 import {
+  Embeddings,
   Evento,
   IndiceLemmi,
   LexiconIt,
@@ -91,6 +92,14 @@ export function caricaLexiconIt(): Promise<LexiconIt> {
     if (e instanceof RisorsaAssente) return {}
     throw e
   })
+}
+
+// embeddings.json è [G], derivato dalla curation (F4.1): serve solo all'assistente,
+// quindi si carica alla sua apertura, non con la vista lettura. Se manca (curation
+// non ancora embeddata) è un errore da mostrare: senza vettori l'assistente non può
+// recuperare nulla, e la vista lo dice a chiare lettere invece di fallire in silenzio.
+export function caricaEmbeddings(): Promise<Embeddings> {
+  return caricaJson('embeddings.json', Embeddings)
 }
 
 // I file di curation sono liste nude (nessun blocco meta: sono [C], non generati).

@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import type {
   CodiceLibro,
+  Embeddings,
   IndiceLemmi,
   LexiconIt,
   LibroParole,
@@ -12,6 +13,7 @@ import type {
 } from '../tipi/index.ts'
 import type { Eventi, Luoghi, Note, Persone } from './caricamento.ts'
 import {
+  caricaEmbeddings,
   caricaEventi,
   caricaIndiceLemmi,
   caricaLexiconIt,
@@ -100,5 +102,12 @@ export function useNote(): Caricamento<Note> {
 export function useLexiconIt(attivo: boolean): Caricamento<LexiconIt> {
   return useRisorsa(attivo ? 'lexicon_it' : '', () =>
     attivo ? caricaLexiconIt() : new Promise<LexiconIt>(() => {}),
+  )
+}
+
+/** I vettori (~1,6 MB) servono solo all'assistente: si scaricano alla sua apertura. */
+export function useEmbeddings(attivo: boolean): Caricamento<Embeddings> {
+  return useRisorsa(attivo ? 'embeddings' : '', () =>
+    attivo ? caricaEmbeddings() : new Promise<Embeddings>(() => {}),
   )
 }

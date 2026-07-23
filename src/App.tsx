@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Assistente } from './viste/Assistente.tsx'
 import { Lettura } from './viste/Lettura.tsx'
 import { Mappa } from './viste/Mappa.tsx'
 import { Timeline } from './viste/Timeline.tsx'
@@ -16,6 +17,7 @@ type Vista =
   | { nome: 'mappa'; luogo?: string }
   | { nome: 'timeline'; pericope?: string }
   | { nome: 'genealogie'; persona?: string }
+  | { nome: 'assistente' }
 
 function App() {
   const [vista, setVista] = useState<Vista>({ nome: 'lettura' })
@@ -47,12 +49,21 @@ function App() {
       />
     )
   }
+  if (vista.nome === 'assistente') {
+    return (
+      <Assistente
+        onLettura={() => setVista({ nome: 'lettura' })}
+        onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
+      />
+    )
+  }
   return (
     <Lettura
       versettoIniziale={vista.versetto ?? null}
       onMappa={(luogo) => setVista({ nome: 'mappa', luogo })}
       onTimeline={(pericope) => setVista({ nome: 'timeline', pericope })}
       onGenealogia={(persona) => setVista({ nome: 'genealogie', persona })}
+      onAssistente={() => setVista({ nome: 'assistente' })}
     />
   )
 }

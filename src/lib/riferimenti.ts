@@ -17,6 +17,7 @@ export const LIBRI: { codice: CodiceLibro; nome: string; capitoli: number }[] = 
 ]
 
 const NOMI = new Map(LIBRI.map((l) => [l.codice, l.nome]))
+const CODICI = new Map(LIBRI.map((l) => [l.nome, l.codice]))
 
 export type Posizione = { libro: CodiceLibro; capitolo: number }
 
@@ -64,4 +65,18 @@ export function etichettaVersetto(id: string): string {
   const rif = leggiVersettoId(id)
   if (!rif) return id
   return `${nomeLibro(rif.libro)} ${rif.capitolo},${rif.versetto}`
+}
+
+/**
+ * Inverso di `etichettaVersetto`: "Genesi 1,1" → "gen.1.1". `null` se il nome di
+ * libro non è del Pentateuco o la forma non è "Nome C,V" — serve alla post-verifica
+ * dei riferimenti citati dall'assistente (F4.3), che deve ricondurre l'etichetta a un
+ * id per controllare se il versetto esiste ed era nel contesto recuperato.
+ */
+export function idDaEtichetta(etichetta: string): VersettoId | null {
+  const m = etichetta.trim().match(/^(.+?)\s+(\d+)\s*,\s*(\d+)$/)
+  if (!m) return null
+  const codice = CODICI.get(m[1].trim())
+  if (!codice) return null
+  return `${codice}.${Number(m[2])}.${Number(m[3])}`
 }

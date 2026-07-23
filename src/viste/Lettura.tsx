@@ -99,9 +99,11 @@ type Props = {
   onTimeline: (pericope?: string) => void
   /** Passa alle genealogie, sulla figura da cui si è partiti (F3.3). */
   onGenealogia: (persona?: string) => void
+  /** Apre l'assistente RAG (F4.2). */
+  onAssistente: () => void
 }
 
-export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia }: Props) {
+export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia, onAssistente }: Props) {
   const [posizione, setPosizione] = usaPosizione()
   const [idTraduzione, setIdTraduzione] = usaTraduzione()
   const [parolaAttiva, setParolaAttiva] = useState<string | null>(null)
@@ -306,6 +308,7 @@ export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia }:
         traduzioni={traduzioni}
         traduzione={idTraduzione}
         onTraduzione={setIdTraduzione}
+        onAssistente={onAssistente}
       />
 
       {errore ? (

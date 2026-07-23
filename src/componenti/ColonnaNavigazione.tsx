@@ -11,6 +11,8 @@ type Props = {
   traduzioni: { id: string; nome: string }[]
   traduzione: string
   onTraduzione: (id: string) => void
+  /** Apre il modulo assistente RAG (F4.2). */
+  onAssistente: () => void
 }
 
 export function ColonnaNavigazione({
@@ -19,6 +21,7 @@ export function ColonnaNavigazione({
   traduzioni,
   traduzione,
   onTraduzione,
+  onAssistente,
 }: Props) {
   const capitoli = LIBRI.find((l) => l.codice === posizione.libro)!.capitoli
 
@@ -79,6 +82,10 @@ export function ColonnaNavigazione({
           </option>
         ))}
       </select>
+
+      <button type="button" className="apri-assistente" onClick={onAssistente}>
+        Assistente
+      </button>
     </nav>
   )
 }

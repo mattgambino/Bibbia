@@ -145,6 +145,26 @@
   cursor: pointer;
 }
 
+/* Accesso all'assistente dal fondo della navigazione: un bottone d'apparato, non
+   un invito colorato — l'assistente è uno strumento fra gli altri. */
+.apri-assistente {
+  width: 100%;
+  margin-top: var(--sp-5);
+  font: inherit;
+  font-size: var(--testo-sm);
+  padding: var(--sp-2);
+  border: var(--bordo-marcato);
+  border-radius: var(--raggio);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro-medio);
+  cursor: pointer;
+  transition: background var(--transizione), color var(--transizione);
+}
+.apri-assistente:hover {
+  background: var(--carta-incisa);
+  color: var(--inchiostro);
+}
+
 /* --- colonna centrale: lettura --- */
 .lettura {
   background: var(--carta-lettura);
@@ -1021,7 +1041,8 @@
 
 .mappa-vista,
 .timeline-vista,
-.genealogie-vista {
+.genealogie-vista,
+.assistente-vista {
   display: grid;
   grid-template-columns: var(--col-apparato) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
@@ -1675,4 +1696,279 @@ button.scheda-maniglia:hover {
 .scheda-figura .scheda-riferimenti {
   padding: 0;
   margin-top: var(--sp-3);
+}
+
+/* ==========================================================================
+   Assistente RAG (F4.2)
+
+   Stessa impalcatura di mappa/timeline/genealogie (`.vista-*`): apparato a
+   sinistra — ambito, modello, passi recuperati — e a destra la scena della
+   conversazione. Nessun accento decorativo: la risposta automatica è apparato,
+   e porta il suo avviso senza travestirsi da chat brillante.
+   ========================================================================== */
+
+.assistente-ambito {
+  margin: 0 0 var(--sp-4);
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+
+.assistente-modello {
+  padding-top: var(--sp-3);
+  border-top: var(--bordo-sottile);
+}
+.assistente-modello .selettore {
+  margin-top: var(--sp-1);
+}
+.assistente-nota-modello {
+  margin: var(--sp-2) 0 0;
+  font-size: var(--testo-xs);
+  color: var(--inchiostro-tenue);
+}
+.assistente-nota-modello code,
+.assistente-offline code,
+.assistente-passi code {
+  font-family: var(--font-ui);
+  font-size: 0.95em;
+  background: var(--carta-incisa);
+  padding: 0 var(--sp-1);
+  border-radius: var(--raggio-sm);
+}
+
+.assistente-fonti {
+  margin-top: var(--sp-5);
+  padding-top: var(--sp-3);
+  border-top: var(--bordo-sottile);
+}
+.assistente-fonti-elenco {
+  list-style: none;
+  margin: var(--sp-2) 0 var(--sp-3);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.assistente-fonte-nota {
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+  line-height: var(--interlinea-ui);
+}
+.assistente-fonte-sigla {
+  display: inline-block;
+  font-size: var(--testo-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--prospettiva-critica);
+  border: 1px solid var(--prospettiva-critica);
+  border-radius: var(--raggio-sm);
+  padding: 0 var(--sp-1);
+  vertical-align: 0.05em;
+}
+
+/* --- scena della conversazione --- */
+.assistente-scena {
+  overflow-y: auto;
+  padding: var(--sp-5) var(--sp-6);
+  /* Misura di lettura controllata anche qui: una risposta a tutta larghezza
+     stancherebbe come un testo a 120 caratteri per riga. */
+  max-width: calc(var(--col-lettura-max) + var(--sp-8));
+}
+
+.assistente-form {
+  margin-bottom: var(--sp-5);
+}
+.assistente-input {
+  width: 100%;
+  margin-top: var(--sp-1);
+  font: inherit;
+  font-size: var(--testo-md);
+  line-height: var(--interlinea-ui);
+  padding: var(--sp-3);
+  border: var(--bordo-marcato);
+  border-radius: var(--raggio);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro);
+  resize: vertical;
+}
+.assistente-azioni {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--sp-2);
+}
+.assistente-invia {
+  font: inherit;
+  font-size: var(--testo-sm);
+  font-weight: var(--peso-medio);
+  padding: var(--sp-2) var(--sp-5);
+  border: 1px solid var(--inchiostro);
+  border-radius: var(--raggio);
+  background: var(--inchiostro);
+  color: var(--carta-lettura);
+  cursor: pointer;
+  transition: opacity var(--transizione);
+}
+.assistente-invia:hover {
+  opacity: 0.88;
+}
+.assistente-invia:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.assistente-risposta {
+  padding-top: var(--sp-4);
+  border-top: var(--bordo-sottile);
+}
+.assistente-domanda-eco {
+  margin: 0 0 var(--sp-3);
+  font-family: var(--font-lettura);
+  font-size: var(--testo-md);
+  font-style: italic;
+  color: var(--inchiostro-medio);
+}
+.assistente-avviso {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--testo-xs);
+  color: var(--verificare-colore);
+  border-left: var(--verificare-bordo);
+  padding-left: var(--sp-2);
+}
+.assistente-testo {
+  font-family: var(--font-lettura);
+  font-size: var(--testo-md);
+  line-height: var(--interlinea-lettura);
+  color: var(--inchiostro);
+  white-space: pre-wrap;
+}
+/* Cursore di scrittura durante lo streaming: un segno che qualcosa arriva ancora,
+   non un'animazione decorativa. Si ferma con prefers-reduced-motion. */
+.assistente-cursore {
+  display: inline-block;
+  width: 0.5ch;
+  height: 1em;
+  margin-left: 0.1ch;
+  background: var(--inchiostro-tenue);
+  vertical-align: text-bottom;
+  animation: assistente-lampeggio 1s steps(2) infinite;
+}
+@keyframes assistente-lampeggio {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .assistente-cursore { animation: none; }
+}
+
+/* --- guardrail: banner permanente, avviso, riferimenti verificati (F4.3) --- */
+.assistente-avviso-fisso {
+  margin-bottom: var(--sp-4);
+}
+
+/* Avviso evidente per i riferimenti non verificati: è un allarme, non una nota. */
+.assistente-allarme {
+  margin: 0 0 var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--testo-sm);
+  line-height: var(--interlinea-ui);
+  color: var(--verificare-colore);
+  border: var(--verificare-bordo);
+  border-radius: var(--raggio-sm);
+  background: var(--carta-incisa);
+}
+.assistente-allarme-rif {
+  font-family: var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Riferimenti in linea nel corpo della risposta. */
+.rif-inline {
+  font: inherit;
+  font-size: 0.9em;
+  padding: 0 0.25em;
+  border-radius: var(--raggio-sm);
+  cursor: pointer;
+  transition: background var(--transizione), color var(--transizione);
+}
+.rif-verso {
+  font-variant-numeric: tabular-nums;
+  background: none;
+  border: var(--bordo-sottile);
+  color: var(--accento-link);
+}
+.rif-verso:hover {
+  background: var(--carta-incisa);
+  color: var(--accento-link-attivo);
+}
+/* Il testo del versetto, inserito dal database (mai dal modello): reso come citazione. */
+.rif-verso-testo {
+  font-style: italic;
+  color: var(--inchiostro-medio);
+}
+
+.rif-nota {
+  background: none;
+  border: var(--bordo-sottile);
+  color: var(--inchiostro);
+}
+.rif-nota:hover {
+  background: var(--carta-incisa);
+}
+.rif-nota-sigla {
+  font-size: 0.8em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--prospettiva-critica);
+}
+.rif-nota-testo {
+  display: block;
+  margin: var(--sp-2) 0;
+  padding: var(--sp-2) var(--sp-3);
+  border-left: var(--prospettiva-critica-bordo);
+  font-size: var(--testo-sm);
+  line-height: var(--interlinea-ui);
+  color: var(--inchiostro-medio);
+  white-space: normal;
+}
+
+/* Riferimento inventato o fuori dal contesto: marcato, non nascosto. */
+.rif-guasto {
+  font-variant-numeric: tabular-nums;
+  color: var(--verificare-colore);
+  background: var(--verificare-fondo);
+  border-bottom: var(--verificare-bordo);
+  cursor: help;
+}
+
+/* --- Ollama non raggiungibile --- */
+.assistente-offline {
+  max-width: var(--col-lettura-max);
+  font-size: var(--testo-base);
+  color: var(--inchiostro-medio);
+}
+.assistente-offline h2 {
+  margin: 0 0 var(--sp-3);
+  font-size: var(--testo-lg);
+  font-weight: var(--peso-forte);
+  color: var(--inchiostro);
+}
+.assistente-passi {
+  margin: var(--sp-4) 0 0;
+  padding-left: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.assistente-comando {
+  margin: var(--sp-2) 0 0;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--carta-incisa);
+  border: var(--bordo-sottile);
+  border-radius: var(--raggio-sm);
+  overflow-x: auto;
+}
+.assistente-comando code {
+  background: none;
+  padding: 0;
+  white-space: pre;
 }
