@@ -1,0 +1,151 @@
+[
+  {
+    "id": "gen111-rashi-una-lingua-e-un-piano",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.11.1"
+    },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: «una sola lingua» e «un solo discorso»",
+    "testo": "Il testo dice che tutta la terra aveva «una sola lingua e uno stesso parlare». Rashi identifica quell'unica lingua con la lingua santa, l'ebraico (da Midrash Tanchuma). Del «solo discorso» dà più spiegazioni: gli uomini vennero con un solo proposito — negare a Dio il possesso esclusivo dei cieli e salire a fargli guerra; oppure parole rivolte all'Unico del mondo; oppure ancora, con un gioco su devarim aḥadim / ḥadim, «parole aguzze»: dicevano che ogni 1656 anni — quanti ne erano passati dalla creazione al diluvio — il cielo vacilla, e proponevano di puntellarlo (Bereshit Rabbah 38). La generazione della dispersione diventa così, nella tradizione, quella di un progetto orgoglioso e concorde contro il cielo.",
+    "confidence": "attribuito",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 11:1",
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Rashi",
+        "titolo": "Rashi on Genesis 11:1 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.11.1",
+        "dettaglio": "versione «Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934», licenza dichiarata dall'API: Public Domain. Sintesi in italiano, senza copiare il testo della fonte"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen114-torre-e-ziggurat",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.11.4"
+    },
+    "tipo": "geografica",
+    "titolo": "La torre «con la cima nel cielo» e la ziggurat di Babilonia",
+    "testo": "«Una città e una torre con la cima nel cielo»: molti studiosi vi riconoscono la grande ziggurat di Babilonia, l'Etemenanki («casa fondamento del cielo e della terra»), il tempio a terrazze di Marduk descritto anche da Erodoto. L'immagine di un edificio che tocca il cielo, l'ambientazione a Babele nella pianura di Sinar e i mattoni cotti con bitume — tecnica edilizia babilonese, ignota all'antico Israele — sostengono l'accostamento; il rivestimento di mattoni cotti dell'Etemenanki risale al VII secolo. L'identificazione però non è ovvia: l'ebraico migdal indica una torre qualsiasi, anche una fortezza, e il testo non attribuisce alla costruzione alcuna funzione religiosa. Nella tradizione ebraica e islamica la torre fu ricondotta a Nimrod (vedi la nota a Gen 10,8-12), e le rovine di Birs Nimrud a sud di Babilonia — in realtà la ziggurat di Borsippa — furono a lungo indicate come il suo luogo.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Jan Christian Gertz",
+        "titolo": "The Tower of Babel (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-tower-of-babel/",
+        "dettaglio": "«as the story is located in Babylon, the identification with Etemenanki is reasonable»; «the Hebrew word migdal can describe every form of tower»; il rivestimento di mattoni cotti dell'Etemenanki al VII sec."
+      },
+      {
+        "tipo": "url",
+        "autore": "Christoph Uehlinger",
+        "titolo": "The Mesopotamian Influence behind the Tower of Babel (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-mesopotamian-influence-behind-the-tower-of-babel/",
+        "dettaglio": "Etemenanki «ziggurat of Marduk», descritta da Erodoto (Storie 2,89); Birs Nimrud a 17 km da Babilonia identificata oggi con la ziggurat di Borsippa del dio Nabu; «migdal [...] could point to a fortress or citadel as well»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen119-nessun-parallelo-mesopotamico",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.11.9"
+    },
+    "tipo": "storica",
+    "titolo": "Tratti mesopotamici, ma nessun modello del racconto",
+    "testo": "La storia primordiale (Gen 1-11) deve molto alla mitologia mesopotamica per la creazione e il diluvio, ma per il racconto di Babele non si conosce alcun parallelo anteriore all'età ellenistica. La sola somiglianza addotta è una leggenda sumerica citata nell'epopea di Enmerkar, dove il dio Enki moltiplica le lingue in età antidiluviana; ma Gen 11,7.9 non parla di moltiplicazione delle lingue, bensì di YHWH che confonde un'unica parlata comune, e l'epopea non è trasmessa oltre la metà del II millennio: un legame diretto è escluso. Alcuni leggono perciò Gen 11,1-9 come una critica alla costruzione degli imperi e all'urbanesimo, iscritta di proposito all'inizio della storia dell'umanità postdiluviana.",
+    "confidence": "consensus",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Christoph Uehlinger",
+        "titolo": "The Mesopotamian Influence behind the Tower of Babel (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/articles/the-mesopotamian-influence-behind-the-tower-of-babel/",
+        "dettaglio": "«no parallel earlier than the Hellenistic period is known for the Babel story»; sull'Enmerkar e Enki: «Yahweh did not multiply languages but rather mixed up humanity's common speech», epopea «not transmitted beyond the middle of the second millennium B.C.E.»; lettura anti-impero e anti-urbana"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1110-cifre-masoretiche-rinvio",
+    "target": {
+      "tipo": "pericope",
+      "ref": {
+        "da": "gen.11.10",
+        "a": "gen.11.26"
+      }
+    },
+    "tipo": "filologica",
+    "titolo": "Le età di questa genealogia sono quelle del Testo masoretico",
+    "testo": "Le età di questa genealogia divergono nei tre testimoni principali — Testo masoretico, Settanta, Pentateuco samaritano — con revisioni deliberate, non errori di copia. Secondo Carr, proprio in Gen 11,10-26 sono la Settanta e il samaritano ad allungare la vita dei patriarchi rispetto a una cronologia più antica conservata dal masoretico (mentre in Gen 5 il rapporto è diverso): non c'è un testimone da preferire in blocco. Le cifre in Anno Mundi mostrate qui seguono il masoretico e sono una fra tre. La questione è discussa per esteso nella nota alla genealogia di Gen 5.",
+    "confidence": "majority",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "opera",
+        "autore": "David M. Carr",
+        "titolo": "The Formation of Genesis 1–11: Biblical and Other Precursors, cap. «The Book of the Toledot (Descendants) of Adam (Genesis 5; 11:10–26 and Related Texts)»",
+        "anno": 2020,
+        "url": "https://academic.oup.com/book/32142/chapter/268103942",
+        "dettaglio": "Oxford University Press. Consultato l'abstract del capitolo, non il testo integrale: il claim va riverificato sul testo in F5.3. Stessa fonte della nota gen5-tre-tradizioni-testuali, cui si rimanda"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1128-ur-dei-caldei",
+    "target": {
+      "tipo": "luogo",
+      "ref": "ur"
+    },
+    "tipo": "geografica",
+    "titolo": "Ur dei Caldei: l'identificazione e un anacronismo",
+    "testo": "Ur, patria di Abramo prima della migrazione verso Haran e Canaan, è comunemente identificata con una delle più antiche città della Mesopotamia meridionale, l'odierna Tell el-Muqayyar, un tempo sulla riva dell'Eufrate. L'epiteto che il testo le dà, «dei Caldei» (kasdim), nomina però un popolo attestato in Mesopotamia solo nel I millennio, molto dopo l'età in cui il racconto ambienta i patriarchi: è la qualifica che rende l'identificazione discussa e che alcuni leggono come precisazione aggiunta più tardi. Il record del luogo resta perciò a confidenza «disputed».",
+    "confidence": "disputed",
+    "commentatore": null,
+    "sefaria_ref": null,
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "HarperCollins Bible Dictionary",
+        "titolo": "Ur (Bible Odyssey, Society of Biblical Literature)",
+        "url": "https://www.bibleodyssey.org/dictionary/ur/",
+        "dettaglio": "«One of the oldest cities of southern Mesopotamia. Ur, modern Tell el-Muqayyar [...] in each instance as the home of the patriarch Abraham before his migration to Haran and Canaan»"
+      }
+    ],
+    "da_verificare": true
+  },
+  {
+    "id": "gen1128-rashi-ur-la-fornace",
+    "target": {
+      "tipo": "versetto",
+      "ref": "gen.11.28"
+    },
+    "tipo": "tradizione_ebraica",
+    "titolo": "Rashi: Ur dei Caldei, la fornace di fuoco",
+    "testo": "Il testo dice che Aran morì «alla presenza di Terach suo padre», nel paese natale, a Ur dei Caldei. Rashi riporta la lettura midrashica: morì per causa del padre. Terach denunciò il figlio Abram davanti a Nimrod per aver frantumato i suoi idoli, e Abram fu gettato in una fornace ardente; Aran, indeciso, disse fra sé che avrebbe parteggiato per chi avesse vinto. Salvato Abram, Aran si dichiarò dalla sua parte, fu gettato a sua volta nella fornace e vi morì bruciato — e a questo alluderebbe il nome Ur-Kasdim, «fuoco dei Caldei». Rashi ricorda però anche Menachem ben Saruk, per cui ur significa «valle» o cavità profonda. La tradizione lega così Ur, Nimrod e la morte di Aran, e insieme registra che l'etimologia del nome è incerta.",
+    "confidence": "attribuito",
+    "commentatore": "Rashi",
+    "sefaria_ref": "Rashi on Genesis 11:28",
+    "fonti": [
+      {
+        "tipo": "url",
+        "autore": "Rashi",
+        "titolo": "Rashi on Genesis 11:28 (Sefaria)",
+        "url": "https://www.sefaria.org/Rashi_on_Genesis.11.28",
+        "dettaglio": "versione «Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934», licenza dichiarata dall'API: Public Domain. Sintesi in italiano (Bereshit Rabbah 38,13 e Menachem ben Saruk), senza copiare il testo della fonte"
+      }
+    ],
+    "da_verificare": true
+  }
+]
