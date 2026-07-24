@@ -20,18 +20,30 @@
       "range": { "da": -600, "a": -500 },
       "posizioni": [
         {
-          "etichetta": "Posizione finta",
-          "sintesi": "Sintesi finta di prova.",
+          "etichetta": "Posizione finta datata",
+          "sintesi": "Sintesi finta di prova. La datazione coincide con gli estremi del range: nessuno scarto da segnalare.",
+          "datazione": { "da": -600, "a": -500 },
+          "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }]
+        },
+        {
+          "etichetta": "Posizione finta senza datazione",
+          "sintesi": "Sintesi finta di prova. Non propone una collocazione nel tempo, quindi non concorre all'inviluppo.",
+          "datazione": null,
           "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }]
         }
-      ]
+      ],
+      "nota_di_metodo": {
+        "etichetta": "Nota di metodo finta",
+        "sintesi": "Scelta editoriale finta di prova: caso di controllo per la nota di metodo valorizzata, che non deve produrre errori.",
+        "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }]
+      }
     },
     "fonti": [],
     "da_verificare": true
   },
   {
     "id": "evento-finto-2",
-    "titolo": "Evento finto 2",
+    "titolo": "Evento finto 2 (AVVISO atteso: range più largo dell'inviluppo delle datazioni)",
     "range": { "da": "gen.1.3", "a": "gen.2.1" },
     "persone": ["persona-finta-b"],
     "luoghi": [],
@@ -42,7 +54,18 @@
       "sintesi": "Sintesi finta di prova.",
       "fonti": [{ "tipo": "url", "titolo": "Pagina finta di prova", "url": "https://example.com/finto" }]
     },
-    "composizione": { "range": { "da": -550, "a": -450 }, "posizioni": [] },
+    "composizione": {
+      "range": { "da": -550, "a": -450 },
+      "posizioni": [
+        {
+          "etichetta": "Posizione finta datata stretta",
+          "sintesi": "Sintesi finta di prova. Sta dentro il range ma non lo riempie: i cinquant'anni di scarto sono l'ampiezza che nessuna posizione sostiene.",
+          "datazione": { "da": -550, "a": -500 },
+          "fonti": []
+        }
+      ],
+      "nota_di_metodo": null
+    },
     "fonti": [],
     "da_verificare": true
   }

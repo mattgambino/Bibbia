@@ -439,6 +439,45 @@ function controllaFontiDaVerificare(file: string, record: string, totale: number
     err(file, record, 'nessuna fonte in tutto il record ma da_verificare = false: un record senza fonti deve avere da_verificare = true')
 }
 
+/**
+ * `composizione.range` contro le `datazione` delle posizioni. Il range è memorizzato,
+ * non calcolato (vedi tipi/evento.ts), quindi non può essere ricavato: può però essere
+ * smentito. Due controlli di peso diverso:
+ * - **errore** se il range non contiene una `datazione`: il range dichiara di coprire
+ *   la forbice delle posizioni, e una posizione fuori dai suoi estremi è una smentita.
+ * - **avviso** se il range è più largo dell'inviluppo delle datazioni presenti: non è
+ *   un dato invalido — le posizioni senza datazione possono benissimo spingere più in
+ *   là — ma dice quanta parte dell'ampiezza non è ancora sostenuta da nessuna di esse.
+ */
+function controllaComposizione(file: string, e: Evento): void {
+  const r = e.composizione.range
+  const datate = e.composizione.posizioni.filter((p) => p.datazione !== null)
+
+  e.composizione.posizioni.forEach((p, i) => {
+    const d = p.datazione
+    if (!d) return
+    controllaRangeAnni(file, e.id, `composizione.posizioni[${i}].datazione`, d)
+    if (d.da < r.da || d.a > r.a)
+      err(
+        file,
+        e.id,
+        `composizione.posizioni[${i}].datazione (${d.da}/${d.a}) non è contenuta in composizione.range (${r.da}/${r.a}): «${p.etichetta}»`,
+      )
+  })
+
+  if (datate.length === 0) return
+  const inviluppo = {
+    da: Math.min(...datate.map((p) => p.datazione!.da)),
+    a: Math.max(...datate.map((p) => p.datazione!.a)),
+  }
+  if (r.da < inviluppo.da || r.a > inviluppo.a)
+    avv(
+      file,
+      e.id,
+      `composizione.range (${r.da}/${r.a}) è più largo dell'inviluppo delle ${datate.length} posizioni datate (${inviluppo.da}/${inviluppo.a}): l'ampiezza in eccesso non è sostenuta da nessuna posizione`,
+    )
+}
+
 // A. verses ↔ words
 for (const { file, v } of fileVersetti)
   for (const vs of v.versetti)
@@ -513,8 +552,12 @@ for (const { file, e } of fileEventi) {
   controllaRangeAnni(file, e.id, 'tempo_narrato.am', e.tempo_narrato.am)
   controllaRangeAnni(file, e.id, 'tempo_storico.ancoraggio', e.tempo_storico.ancoraggio)
   controllaRangeAnni(file, e.id, 'composizione.range', e.composizione.range)
+  controllaComposizione(file, e)
   if (e.tempo_storico.confidence === 'attribuito')
     err(file, e.id, 'tempo_storico.confidence "attribuito": valore riservato alle note di tradizione ebraica')
+  // Le fonti di composizione.nota_di_metodo sono deliberatamente escluse: la nota è una
+  // scelta editoriale del progetto, non un claim di merito, e non può soddisfare al posto
+  // di una posizione il requisito di fonti del record. Vedi il commento in tipi/evento.ts.
   const totaleFonti =
     e.fonti.length + e.tempo_storico.fonti.length + e.composizione.posizioni.reduce((n, p) => n + p.fonti.length, 0)
   controllaFontiDaVerificare(file, e.id, totaleFonti, e.da_verificare)

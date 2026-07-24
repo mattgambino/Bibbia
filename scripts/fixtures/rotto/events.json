@@ -1,7 +1,7 @@
 [
   {
     "id": "evento-finto-1",
-    "titolo": "Evento finto 1",
+    "titolo": "Evento finto 1 (ROTTURA 19: datazione fuori dal range di composizione)",
     "range": { "da": "gen.1.1", "a": "gen.1.1" },
     "persone": ["persona-finta-a"],
     "luoghi": ["luogo-finto"],
@@ -20,18 +20,20 @@
       "range": { "da": -600, "a": -500 },
       "posizioni": [
         {
-          "etichetta": "Posizione finta",
-          "sintesi": "Sintesi finta di prova.",
+          "etichetta": "Posizione finta datata fuori dal range",
+          "sintesi": "Sintesi finta di prova. La datazione sborda dal range su entrambi gli estremi: il range dichiara di coprire la forbice delle posizioni e qui la smentisce.",
+          "datazione": { "da": -700, "a": -450 },
           "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }]
         }
-      ]
+      ],
+      "nota_di_metodo": null
     },
     "fonti": [],
     "da_verificare": true
   },
   {
     "id": "evento-finto-2",
-    "titolo": "Evento finto 2 (ROTTURE 11 e 12: buco su gen.1.2 e range di composizione invertito)",
+    "titolo": "Evento finto 2 (ROTTURE 11, 12 e 20: buco su gen.1.2, range di composizione invertito, fonti solo nella nota di metodo)",
     "range": { "da": "gen.1.3", "a": "gen.2.1" },
     "persone": ["persona-finta-b"],
     "luoghi": [],
@@ -40,10 +42,18 @@
       "ancoraggio": { "da": -900, "a": -800 },
       "confidence": "disputed",
       "sintesi": "Sintesi finta di prova.",
-      "fonti": [{ "tipo": "url", "titolo": "Pagina finta di prova", "url": "https://example.com/finto" }]
+      "fonti": []
     },
-    "composizione": { "range": { "da": -450, "a": -550 }, "posizioni": [] },
+    "composizione": {
+      "range": { "da": -450, "a": -550 },
+      "posizioni": [],
+      "nota_di_metodo": {
+        "etichetta": "Nota di metodo finta",
+        "sintesi": "Scelta editoriale finta di prova. Le sue fonti sono le sole del record: non devono bastare a soddisfare il controllo fonti ↔ da_verificare.",
+        "fonti": [{ "tipo": "opera", "titolo": "Opera finta di prova" }]
+      }
+    },
     "fonti": [],
-    "da_verificare": true
+    "da_verificare": false
   }
 ]

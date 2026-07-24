@@ -175,9 +175,13 @@ Note di progetto:
     "composizione": {
       "range": { "da": -700, "a": -400 },
       "posizioni": [
-        { "etichetta": "Ipotesi documentaria classica", "sintesi": "…", "fonti": [] },
-        { "etichetta": "Modelli supplementari / datazioni persiane", "sintesi": "…", "fonti": [] }
-      ]
+        // `datazione` è la collocazione che *quella* posizione propone; null quando non ne propone
+        { "etichetta": "Ipotesi documentaria classica", "sintesi": "…", "datazione": { "da": -700, "a": -600 }, "fonti": [] },
+        { "etichetta": "Modelli supplementari / datazioni persiane", "sintesi": "…", "datazione": { "da": -550, "a": -400 }, "fonti": [] },
+        { "etichetta": "Attribuzione di strato senza datazione propria", "sintesi": "…", "datazione": null, "fonti": [] }
+      ],
+      // nullable; scelta editoriale del progetto, non una posizione della letteratura
+      "nota_di_metodo": { "etichetta": "Perché una forbice sola", "sintesi": "…", "fonti": [] }
     },
     "fonti": [],
     "da_verificare": true
@@ -188,6 +192,9 @@ Note di progetto:
 Note di progetto:
 - `tempo_narrato` non ha `confidence`: la cronologia interna è un dato **testuale**, certo in quanto testo, non un'affermazione storica. È `tempo_storico` a portare la confidenza — anche quando qualifica un'*assenza* di ancoraggio (`ancoraggio: null` + `confidence: "consensus"` = "il consenso è che non c'è ancoraggio"). `tempo_narrato.am` e `tempo_narrato.nota` sono entrambi nullable: non tutti gli eventi hanno un ancoraggio in Anno Mundi o richiedono una nota sulla cronologia interna.
 - `composizione.range` rende l'incertezza come intervallo per la timeline; `posizioni` porta il ventaglio del dibattito, mai una scuola sola.
+- `composizione.range` resta un campo **memorizzato, non calcolato**: su alcune pericopi nessuna posizione porta una `datazione`, e un inviluppo calcolato sarebbe vuoto proprio dove l'incertezza è massima. È il validatore a legarlo alle posizioni: **errore** se il range non contiene una `datazione` (il range dichiara di coprire la forbice e una posizione fuori dai suoi estremi lo smentisce), **avviso** non bloccante se il range è più largo dell'inviluppo delle datazioni presenti (l'ampiezza in eccesso non è ancora sostenuta da nessuna posizione).
+- `posizioni[].datazione` è nullable perché molte posizioni non propongono affatto una collocazione nel tempo: un'attribuzione di strato («materiale sacerdotale») o un argomento letterario dicono di che testo si tratta, non di quando. Finché è null la posizione non concorre all'inviluppo.
+- `composizione.nota_di_metodo` (nullable) è la **scelta editoriale del progetto** sull'asse — perché una pericope porti una forbice sola su un testo che ne conterrebbe due, tipicamente. Sta fuori da `posizioni` perché non è una posizione della letteratura: nessuno l'ha sostenuta, è il progetto a dichiararla. Per la stessa ragione non porta `confidence` (non è un grado di consenso su un claim: non c'è claim) e le sue `fonti` **non contano** nel controllo `fonti ↔ da_verificare`. Se lì servisse una fonte, è il segno che nel testo è rimasta una premessa di merito: va scissa e messa in `posizioni`, dove il controllo la vede.
 - Gli eventi fanno anche da **segmentazione in pericopi** per la colonna contesto sincronizzata: sul range curato la copertura deve essere completa e senza buchi (controllo nel validatore). Non tutte le pericopi sono "eventi" in senso forte (una genealogia è una pericope): va bene, la collezione copre entrambi.
 
 ### 2.6 `notes.json` — `[C]`
