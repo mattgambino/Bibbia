@@ -9,19 +9,9 @@ del validatore**, mai da copiare in `bootstrap/` o `public/data/`.
 Uso:
 
 ```
-npx tsx scripts/valida.ts scripts/fixtures/valido   # atteso: 1 avviso non bloccante, 0 errori
+npx tsx scripts/valida.ts scripts/fixtures/valido   # atteso: 0 errori + 1 avviso non bloccante, exit 0
 npx tsx scripts/valida.ts scripts/fixtures/rotto    # atteso: 20 errori, exit 1
 ```
-
-> **Scarto noto, non intenzionale (rilevato il 24/07/2026, T1).** Entrambe le fixture
-> hanno `nota-finta-02` di tipo `tradizione_ebraica` con `confidence: "consensus"`, che
-> il controllo di `valida.ts` (`confidence "attribuito"` obbligatorio su quel tipo)
-> rifiuta. La regola è stata aggiunta dopo la scrittura delle fixture e queste non sono
-> mai state aggiornate: `valido/` esce quindi **1** ed elenca quell'errore, e `rotto/`
-> ne conta **21** invece dei 20 documentati qui sotto. Non è una rottura di questa
-> tabella: va deciso a parte se correggere le fixture (`"attribuito"`) o documentare la
-> 21ª riga. Fino ad allora i numeri attesi qui sopra sono quelli *voluti*, non quelli
-> osservati.
 
 ## `valido/`
 

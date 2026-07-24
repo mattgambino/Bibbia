@@ -25,7 +25,7 @@
 // parte della voce, non sull'intersezione simmetrica, che penalizzerebbe le voci
 // con molti versetti fuori dal Pentateuco.
 
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import * as path from 'node:path'
 
 const RADICE = path.resolve(import.meta.dirname, '..')
