@@ -11,6 +11,9 @@ scripts/sources/*
 # Dossier di lettura della curation (rigenerabile con `npm run dossier`)
 export
 
+# Script di verifica usa-e-getta (fuori convenzioni: gli script versionati sono TS)
+check.py
+
 # Log
 logs
 *.log
