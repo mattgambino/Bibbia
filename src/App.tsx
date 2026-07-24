@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Assistente } from './viste/Assistente.tsx'
 import { Lettura } from './viste/Lettura.tsx'
 import { Mappa } from './viste/Mappa.tsx'
+import { Ricerca } from './viste/Ricerca.tsx'
 import { Timeline } from './viste/Timeline.tsx'
 import { Genealogie } from './viste/Genealogie.tsx'
 
@@ -13,10 +14,11 @@ import { Genealogie } from './viste/Genealogie.tsx'
  * al passaggio perché sta in localStorage.
  */
 type Vista =
-  | { nome: 'lettura'; versetto?: string }
+  | { nome: 'lettura'; versetto?: string; parola?: string }
   | { nome: 'mappa'; luogo?: string }
   | { nome: 'timeline'; pericope?: string }
   | { nome: 'genealogie'; persona?: string }
+  | { nome: 'ricerca'; query?: string }
   | { nome: 'assistente' }
 
 function App() {
@@ -49,6 +51,16 @@ function App() {
       />
     )
   }
+  if (vista.nome === 'ricerca') {
+    return (
+      <Ricerca
+        queryIniziale={vista.query ?? ''}
+        onLettura={() => setVista({ nome: 'lettura' })}
+        onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
+        onLemma={(parola) => setVista({ nome: 'lettura', parola })}
+      />
+    )
+  }
   if (vista.nome === 'assistente') {
     return (
       <Assistente
@@ -60,9 +72,11 @@ function App() {
   return (
     <Lettura
       versettoIniziale={vista.versetto ?? null}
+      parolaIniziale={vista.parola ?? null}
       onMappa={(luogo) => setVista({ nome: 'mappa', luogo })}
       onTimeline={(pericope) => setVista({ nome: 'timeline', pericope })}
       onGenealogia={(persona) => setVista({ nome: 'genealogie', persona })}
+      onRicerca={(query) => setVista({ nome: 'ricerca', query })}
       onAssistente={() => setVista({ nome: 'assistente' })}
     />
   )

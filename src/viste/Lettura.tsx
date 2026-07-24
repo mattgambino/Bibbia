@@ -93,17 +93,29 @@ function usaVersettoInLettura(versetti: Versetto[], testoMontato: boolean): stri
 type Props = {
   /** Versetto su cui aprire la lettura tornando da una vista a schermo pieno. */
   versettoIniziale?: string | null
+  /** Parola su cui aprire il pannello, tornando da un lemma della ricerca (F5.1). */
+  parolaIniziale?: string | null
   /** Passa alla mappa completa, eventualmente sul luogo da cui si è partiti. */
   onMappa: (luogo?: string) => void
   /** Passa alla timeline, sulla pericope in lettura (F3.2). */
   onTimeline: (pericope?: string) => void
   /** Passa alle genealogie, sulla figura da cui si è partiti (F3.3). */
   onGenealogia: (persona?: string) => void
+  /** Apre la ricerca a schermo pieno, con la query digitata in navigazione (F5.1). */
+  onRicerca: (query: string) => void
   /** Apre l'assistente RAG (F4.2). */
   onAssistente: () => void
 }
 
-export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia, onAssistente }: Props) {
+export function Lettura({
+  versettoIniziale,
+  parolaIniziale,
+  onMappa,
+  onTimeline,
+  onGenealogia,
+  onRicerca,
+  onAssistente,
+}: Props) {
   const [posizione, setPosizione] = usaPosizione()
   const [idTraduzione, setIdTraduzione] = usaTraduzione()
   const [parolaAttiva, setParolaAttiva] = useState<string | null>(null)
@@ -271,6 +283,20 @@ export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia, o
     daPortareInVista.current = versettoIniziale
   }, [versettoIniziale, setPosizione])
 
+  // Rientro sulla prima occorrenza di un lemma cercato (F5.1): oltre a spostare
+  // la posizione e portare il versetto in vista, si apre il pannello parola —
+  // è la stessa cosa che fa la navigazione per occorrenza, e da lì si vedono
+  // tutte le altre occorrenze del lemma.
+  useEffect(() => {
+    if (!parolaIniziale) return
+    const rif = leggiVersettoId(versettoDiParola(parolaIniziale))
+    if (!rif) return
+    setPosizione({ libro: rif.libro, capitolo: rif.capitolo })
+    apriParola(parolaIniziale)
+    daPortareInVista.current = versettoDiParola(parolaIniziale)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [parolaIniziale])
+
   useEffect(() => {
     const idVersetto = daPortareInVista.current
     if (!idVersetto || versettiCapitolo.length === 0) return
@@ -308,6 +334,7 @@ export function Lettura({ versettoIniziale, onMappa, onTimeline, onGenealogia, o
         traduzioni={traduzioni}
         traduzione={idTraduzione}
         onTraduzione={setIdTraduzione}
+        onRicerca={onRicerca}
         onAssistente={onAssistente}
       />
 

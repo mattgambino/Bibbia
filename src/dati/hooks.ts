@@ -72,6 +72,33 @@ export function useTraduzione(id: string): Caricamento<Traduzione> {
   return useRisorsa(`translations/${id}`, () => caricaTraduzione(id))
 }
 
+/**
+ * Tutte le traduzioni installate, per la ricerca full-text (F5.1): prima il
+ * manifest, poi in parallelo ogni traduzione elencata (i fetch sono già dedupati
+ * dalla cache di caricamento.ts). `attivo: false` evita di scaricare la Luzzi
+ * intera finché la vista ricerca non si apre.
+ */
+export function useTuttiTesti(attivo: boolean): Caricamento<Traduzione[]> {
+  const [esito, setEsito] = useState<Caricamento<Traduzione[]>>({ stato: 'in_corso' })
+  useEffect(() => {
+    if (!attivo) return
+    let vivo = true
+    setEsito({ stato: 'in_corso' })
+    caricaManifestTraduzioni()
+      .then((m) => Promise.all(m.disponibili.map((id) => caricaTraduzione(id))))
+      .then((traduzioni) => {
+        if (vivo) setEsito({ stato: 'pronto', dati: traduzioni })
+      })
+      .catch((e: unknown) => {
+        if (vivo) setEsito({ stato: 'errore', messaggio: e instanceof Error ? e.message : String(e) })
+      })
+    return () => {
+      vivo = false
+    }
+  }, [attivo])
+  return esito
+}
+
 /** `attivo: false` evita di scaricare i ~2 MB dell'indice finché non serve. */
 export function useIndiceLemmi(attivo: boolean): Caricamento<IndiceLemmi> {
   return useRisorsa(attivo ? 'indices/lemmi' : '', () =>

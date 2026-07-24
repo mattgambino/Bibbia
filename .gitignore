@@ -8,6 +8,9 @@ dist-ssr
 scripts/sources/*
 !scripts/sources/.gitkeep
 
+# Dossier di lettura della curation (rigenerabile con `npm run dossier`)
+export
+
 # Log
 logs
 *.log

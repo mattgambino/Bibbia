@@ -1042,7 +1042,8 @@
 .mappa-vista,
 .timeline-vista,
 .genealogie-vista,
-.assistente-vista {
+.assistente-vista,
+.ricerca-vista {
   display: grid;
   grid-template-columns: var(--col-apparato) minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr);
@@ -1971,4 +1972,177 @@ button.scheda-maniglia:hover {
   background: none;
   padding: 0;
   white-space: pre;
+}
+
+/* ==========================================================================
+   Ricerca (F5.1)
+
+   Porta d'ingresso nella colonna di navigazione (specifica §8), vista piena con
+   la stessa impalcatura delle altre (`.vista-*`): campo e filtri nell'apparato,
+   risultati in tre sezioni nella scena a destra.
+   ========================================================================== */
+
+/* Campo nella colonna di navigazione: solo l'ingresso, non la ricerca vera. */
+.ricerca-avvio {
+  margin-top: var(--sp-4);
+}
+.ricerca-avvio .etichetta {
+  margin: 0 0 var(--sp-1);
+}
+.ricerca-avvio-campo {
+  width: 100%;
+  font: inherit;
+  font-size: var(--testo-sm);
+  padding: var(--sp-2);
+  border: var(--bordo-sottile);
+  border-radius: var(--raggio-sm);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro);
+}
+
+/* Campo nell'apparato della vista piena: il campo di lavoro, più prominente. */
+.ricerca-campo .etichetta {
+  margin-top: 0;
+}
+.ricerca-input {
+  width: 100%;
+  margin-top: var(--sp-1);
+  font: inherit;
+  font-size: var(--testo-md);
+  padding: var(--sp-2) var(--sp-3);
+  border: var(--bordo-marcato);
+  border-radius: var(--raggio);
+  background: var(--carta-rilievo);
+  color: var(--inchiostro);
+}
+.ricerca-eco {
+  font-weight: var(--peso-medio);
+  color: var(--inchiostro);
+}
+
+/* Scena dei risultati. */
+.ricerca-scena {
+  overflow-y: auto;
+  padding: var(--sp-5) var(--sp-6);
+  max-width: calc(var(--col-lettura-max) + var(--sp-8));
+}
+.ricerca-invito {
+  font-size: var(--testo-md);
+  color: var(--inchiostro-medio);
+  max-width: 34rem;
+  margin: 0;
+}
+
+.ricerca-sezione + .ricerca-sezione {
+  margin-top: var(--sp-6);
+}
+.ricerca-sezione-testa {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin: 0 0 var(--sp-2);
+  padding-bottom: var(--sp-2);
+  border-bottom: var(--bordo-marcato);
+  font-size: var(--testo-md);
+  font-weight: var(--peso-forte);
+}
+.ricerca-sezione-testa .conteggio {
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--peso-normale);
+}
+
+.ricerca-risultati {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.ricerca-riga {
+  border-top: 1px solid var(--filetto);
+}
+.ricerca-riga:first-child {
+  border-top: 0;
+}
+
+/* Un'etichetta minuta: nome della traduzione, «luogo»/«persona». */
+.ricerca-tag {
+  font-size: var(--testo-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--inchiostro-tenue);
+  background: var(--carta-incisa);
+  border-radius: var(--raggio-sm);
+  padding: 0.05em 0.4em;
+}
+
+/* Risultato di testo: riferimento + traduzione sulla prima riga, snippet sotto. */
+.ricerca-riga-testo {
+  padding: var(--sp-3) var(--sp-2);
+}
+.ricerca-riga-testo .ricerca-tag {
+  margin-left: var(--sp-2);
+}
+.ricerca-snippet {
+  display: block;
+  margin-top: var(--sp-1);
+  font-family: var(--font-lettura);
+  font-size: var(--testo-base);
+  line-height: var(--interlinea-ui);
+  color: var(--inchiostro-medio);
+}
+/* L'evidenziazione del termine trovato: lo stesso fondo dell'occorrenza nel
+   testo ebraico, non il giallo di default del browser. */
+.ricerca-hit {
+  background: var(--evidenza-occorrenza);
+  color: var(--inchiostro);
+  border-radius: var(--raggio-sm);
+  padding: 0 0.1em;
+}
+
+/* Righe di lemma ed entità: una maniglia a tutta larghezza, come le schede. */
+.ricerca-maniglia {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  border-radius: var(--raggio-sm);
+  padding: var(--sp-3) var(--sp-2);
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: background var(--transizione);
+}
+button.ricerca-maniglia:hover {
+  background: var(--carta-incisa);
+}
+.ricerca-maniglia--ferma {
+  cursor: default;
+}
+.ricerca-maniglia .conteggio {
+  display: block;
+  margin-top: var(--sp-1);
+}
+
+.ricerca-lemma-testa {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.ricerca-lemma-glossa {
+  display: block;
+  margin-top: var(--sp-1);
+  font-size: var(--testo-sm);
+  color: var(--inchiostro-medio);
+}
+
+.ricerca-entita-testa {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+.ricerca-entita-nome {
+  font-weight: var(--peso-medio);
 }
