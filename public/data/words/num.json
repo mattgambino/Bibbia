@@ -1,5 +1,5 @@
 {
-"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-21","script":"import-tahot v0.2"},
+"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-24","script":"import-tahot v0.3"},
 "parole": [
 {"id":"num.1.1.01","verso":"num.1.1","pos":1,"testo":"וַיְדַבֵּ֨ר","translit":"vay.da.Ber","morph":"Hc/Vpw3ms","morfemi":[{"strong":"H9001","lemma":"ו","glossa_en":"&"},{"strong":"H1696G","lemma":"דָבַר","glossa_en":"speak"}],"ketiv":null,"qere":null},
 {"id":"num.1.1.02","verso":"num.1.1","pos":2,"testo":"יְהוָ֧ה","translit":"Yah.weh","morph":"HNpt","morfemi":[{"strong":"H3068G","lemma":"יהוה","glossa_en":"LORD"}],"ketiv":null,"qere":null},

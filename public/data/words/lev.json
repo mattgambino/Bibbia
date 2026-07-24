@@ -1,5 +1,5 @@
 {
-"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-21","script":"import-tahot v0.2"},
+"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-24","script":"import-tahot v0.3"},
 "parole": [
 {"id":"lev.1.1.01","verso":"lev.1.1","pos":1,"testo":"וַיִּקְרָ֖א","translit":"vai.yik.Ra'","morph":"Hc/Vqw3ms","morfemi":[{"strong":"H9001","lemma":"ו","glossa_en":"&"},{"strong":"H7121G","lemma":"קָרָא","glossa_en":"call to"}],"ketiv":null,"qere":null},
 {"id":"lev.1.1.02","verso":"lev.1.1","pos":2,"testo":"אֶל־","translit":"'el-","morph":"HR","morfemi":[{"strong":"H0413","lemma":"אֶל","glossa_en":"to(wards)"}],"ketiv":null,"qere":null},

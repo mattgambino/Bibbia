@@ -1,5 +1,5 @@
 {
-"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-21","script":"import-tahot v0.2"},
+"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-24","script":"import-tahot v0.3"},
 "parole": [
 {"id":"exo.1.1.01","verso":"exo.1.1","pos":1,"testo":"וְאֵ֗לֶּה","translit":"ve.'E.leh","morph":"HC/Tm","morfemi":[{"strong":"H9002","lemma":"ו","glossa_en":"and"},{"strong":"H0428","lemma":"אֵ֫לֶּה","glossa_en":"these"}],"ketiv":null,"qere":null},
 {"id":"exo.1.1.02","verso":"exo.1.1","pos":2,"testo":"שְׁמוֹת֙","translit":"she.mOt","morph":"HNcfpc","morfemi":[{"strong":"H8034","lemma":"שֵׁם","glossa_en":"name"}],"ketiv":null,"qere":null},

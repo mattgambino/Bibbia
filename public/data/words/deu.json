@@ -1,5 +1,5 @@
 {
-"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-21","script":"import-tahot v0.2"},
+"meta": {"fonte":"STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data","licenza":"CC BY 4.0","generato":"2026-07-24","script":"import-tahot v0.3"},
 "parole": [
 {"id":"deu.1.1.01","verso":"deu.1.1","pos":1,"testo":"אֵ֣לֶּה","translit":"'E.leh","morph":"HTm","morfemi":[{"strong":"H0428","lemma":"אֵ֫לֶּה","glossa_en":"these"}],"ketiv":null,"qere":null},
 {"id":"deu.1.1.02","verso":"deu.1.1","pos":2,"testo":"הַדְּבָרִ֗ים","translit":"ha.de.va.Rim","morph":"HTd/Ncmpa","morfemi":[{"strong":"H9009","lemma":"ה","glossa_en":"the"},{"strong":"H1697G","lemma":"דָּבָר","glossa_en":"word"}],"ketiv":null,"qere":null},

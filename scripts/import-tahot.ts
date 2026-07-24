@@ -56,7 +56,9 @@
 //     strong    = dStrong con lettera di disambiguazione (es. H7225G),
 //                 chiave dell'indice lemmi (F1.2);
 //     lemma     = campo centrale com'è (per i suffissi pronominali TAHOT dà
-//                 un codice tipo "Ps3m", non un lemma ebraico: si copia fedele);
+//                 un codice tipo "Ps3m", non un lemma ebraico: si copia fedele).
+//                 NB: nell'indice lemmi questo valore NON è più la fonte del
+//                 campo `lemma` — vedi "FORMA DEL LEMMA" più sotto;
 //     glossa_en = parte della glossa prima di "»" (dopo "»" c'è il
 //                 sotto-significato o il nome più comune di persone/luoghi),
 //                 senza il prefisso ": " e con "_" → spazio.
@@ -73,6 +75,39 @@
 // alterna la forma del codice ("Os3m"/"Ss3m") o la glossa secondo il caso
 // sintattico. Scegliere il più frequente evita che una singola voce anomala
 // diventi l'etichetta del lemma in UI.
+//
+// FORMA DEL LEMMA: la base è TBESH, non TAHOT
+// -------------------------------------------
+// Il campo `lemma` dell'indice è la voce di dizionario mostrata nel pannello
+// parola e nella ricerca. TAHOT lo annota per occorrenza, TBESH (Translators
+// Brief lexicon of Extended Strongs for Hebrew, stessa fonte e stessa licenza)
+// lo dà per dStrong: è la granularità dell'indice, che per dStrong è appunto
+// chiavato. È lo stesso argomento che in F2.5 ha portato le glosse italiane a
+// derivare da TBESH invece che dalla glossa per parola.
+//
+// La differenza non è teorica: su 3968 dStrong lessicali le due sorgenti
+// divergono su 18, e in TAHOT ci sono errori veri — H1419A/K "grande" annotato
+// גַּל invece di גָּדוֹל su tutte le occorrenze, H5145G/H נָסָה (che è H5254
+// "mettere alla prova") invece di נֵזֶר, H8042G יְמָנִי "destro" al posto di
+// שְׂמָאלִי "sinistro", cioè la parola opposta.
+//
+// Ma TBESH non è uniformemente migliore: in alcune voci dà una forma flessa o
+// una variante testuale diversa da quella che la sua stessa traslitterazione
+// descrive. Quei casi stanno in ECCEZIONI_LEMMA qui sotto, uno per uno con la
+// ragione. Dove TBESH non ha la voce si ripiega su TAHOT.
+//
+// La regola vale solo per i dStrong LESSICALI. I morfemi grammaticali H9xxx
+// (prefissi, suffissi, pronomi legati) restano a TAHOT anche se TBESH li
+// elenca: lì TAHOT dà il codice del morfema ("Ps3m", "Os2f"), che è ciò che
+// src/lib/morfologia.ts decodifica in italiano, mentre TBESH dà la forma
+// dell'affisso — talvolta col separatore "/" dentro ("ה/", "/שׁ"). Sono due
+// dati diversi, e l'app usa il primo: F2.5 aveva già escluso gli H9xxx dal
+// lessico italiano per non creare due fonti di verità sullo stesso morfema.
+//
+// Difetto non correggibile, dichiarato e non aggirato: H4325G "acqua" è מַי in
+// ENTRAMBE le sorgenti, mentre la traslitterazione di entrambe è "ma.yim"
+// (מַיִם). Nessuna fonte disponibile porta la forma piena: scriverla qui
+// significherebbe inventare un dato, quindi il valore resta quello della fonte.
 //
 // I file prodotti sono [G]: mai editarli a mano, si corregge qui e si rigenera.
 // Formato di scrittura: un record per riga, così i file restano ispezionabili
@@ -99,6 +134,35 @@ const SORGENTE = path.join(
   'TAHOT Gen-Deu - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt',
 )
 
+// Lessico per dStrong: fonte del campo `lemma` dell'indice (vedi intestazione).
+const SORGENTE_TBESH = path.join(
+  'scripts',
+  'sources',
+  'STEPBible-Data',
+  'Lexicons',
+  'TBESH - Translators Brief lexicon of Extended Strongs for Hebrew - STEPBible.org CC BY.txt',
+)
+
+// Voci in cui si tiene la forma TAHOT invece di quella TBESH. Il valore è la
+// RAGIONE, non la forma: la tabella non contiene ebraico scritto a mano, così il
+// lemma resta in ogni caso una stringa copiata da una sorgente. Non è pedanteria
+// — riscrivendo a mano queste cinque forme, tre uscivano con i segni combinanti
+// in ordine diverso dalla sorgente (dagesh prima della vocale invece che dopo):
+// identiche da leggere, diverse a byte, e quindi invisibili in revisione ma
+// capaci di far fallire un confronto esatto.
+//
+// Il criterio è sempre lo stesso: il lemma è una voce di dizionario, quindi si
+// scarta la forma flessa e si tiene quella che concorda con la traslitterazione
+// che la sorgente stessa dà per quella voce.
+const ECCEZIONI_LEMMA: Record<string, string> = {
+  H0935H: 'TBESH dà una forma con preposizione ל e accento, non una voce di dizionario',
+  H1719B:
+    'variante testuale di Gen 10,4 (Dodanim/Rodanim): la traslitterazione di entrambe le sorgenti è "de.Dan", la variante resta questione di curation',
+  H0805A: 'TBESH dà il gentilizio singolare, ma la traslitterazione è "\'a.shu.Rim" (plurale)',
+  H1397: 'TBESH dà una forma vocalizzata "ga.ver", ma la traslitterazione di entrambe è "Ge.ver"',
+  H2796: 'TBESH elenca due forme (singolare e plurale): per l\'etichetta serve la sola voce di dizionario',
+}
+
 const LIBRI: Record<string, { codice: CodiceLibro; nome_it: string }> = {
   Gen: { codice: 'gen', nome_it: 'Genesi' },
   Exo: { codice: 'exo', nome_it: 'Esodo' },
@@ -111,7 +175,7 @@ const META = {
   fonte: 'STEPBible TAHOT (Translators Amalgamated Hebrew OT), Tyndale House Cambridge — github.com/STEPBible/STEPBible-Data',
   licenza: 'CC BY 4.0',
   generato: new Date().toISOString().slice(0, 10),
-  script: 'import-tahot v0.2',
+  script: 'import-tahot v0.3',
 }
 
 // ---------------------------------------------------------------------------
@@ -440,17 +504,65 @@ for (const { codice, nome_it } of Object.values(LIBRI)) {
   riepiloghi.push({ libro: `${nome_it} (${codice})`, capitoli, versetti: versetti.length, parole: parole.length })
 }
 
+/**
+ * Lemma per dStrong da TBESH. Colonne (TSV): 2 = "<dStrong> = [relazione]",
+ * da cui si ricava la chiave; 4 = forma ebraica del lemma. Le righe di
+ * preambolo non hanno quella forma nella colonna 2 e cadono da sé.
+ */
+function leggiLemmiTbesh(percorso: string): Map<string, string> {
+  const perDStrong = new Map<string, string>()
+  if (!existsSync(percorso)) {
+    err('TBESH', `sorgente non trovata: ${percorso}`)
+    return perDStrong
+  }
+  for (const riga of readFileSync(percorso, 'utf8').split(/\r?\n/)) {
+    const colonne = riga.split('\t')
+    if (colonne.length < 4) continue
+    const chiave = /^(H\d{4}[A-Za-z]?)\s*=/.exec(colonne[1] ?? '')
+    if (!chiave) continue
+    const lemma = (colonne[3] ?? '').trim()
+    // Prima occorrenza vincente: TBESH elenca la voce una volta sola per dStrong.
+    if (lemma !== '' && !perDStrong.has(chiave[1])) perDStrong.set(chiave[1], lemma)
+  }
+  if (perDStrong.size === 0) err('TBESH', 'nessun lemma letto: formato della sorgente inatteso')
+  return perDStrong
+}
+
+const lemmiTbesh = leggiLemmiTbesh(SORGENTE_TBESH)
+
 // indices/lemmi.json — un solo file per l'intero Pentateuco (SCHEMI-DATI.md §2.9).
 const lemmi: Record<string, VoceLemma> = {}
 let occorrenzeTotali = 0
 let lemmiSenzaTranslit = 0
+const provenienza = { tbesh: 0, eccezione: 0, ripiegoTahot: 0 }
+const divergenze: { strong: string; tahot: string; tbesh: string; scelto: string; occ: number }[] = []
 for (const strong of [...accumuloLemmi.keys()].sort(confrontaDStrong)) {
   const acc = accumuloLemmi.get(strong)!
   const translit = piuFrequente(acc.translit)
   if (translit === '') lemmiSenzaTranslit++
   occorrenzeTotali += acc.occorrenze.length
+
+  // Forma del lemma: eccezione dichiarata > TBESH > ripiego su TAHOT.
+  // Gli H9xxx non sono lemmi lessicali e non passano da TBESH (vedi intestazione).
+  const lessicale = !strong.startsWith('H9')
+  const daTahot = piuFrequente(acc.lemma)
+  const daTbesh = lessicale ? lemmiTbesh.get(strong) : undefined
+  let lemma: string
+  if (lessicale && strong in ECCEZIONI_LEMMA) {
+    lemma = daTahot
+    provenienza.eccezione++
+  } else if (daTbesh !== undefined && daTbesh !== '') {
+    lemma = daTbesh
+    provenienza.tbesh++
+  } else {
+    lemma = daTahot
+    provenienza.ripiegoTahot++
+  }
+  if (daTbesh !== undefined && daTbesh !== daTahot)
+    divergenze.push({ strong, tahot: daTahot, tbesh: daTbesh, scelto: lemma, occ: acc.occorrenze.length })
+
   lemmi[strong] = {
-    lemma: piuFrequente(acc.lemma),
+    lemma,
     translit,
     glossa_en: piuFrequente(acc.glossa_en),
     occorrenze: acc.occorrenze,
@@ -484,3 +596,13 @@ console.log(`  parole extra-TM dalla LXX escluse (tipo X): ${contaEscluseX}`)
 console.log(`\n  indice lemmi: ${Object.keys(lemmi).length} dStrong distinti, ${occorrenzeTotali} occorrenze`)
 console.log(`  lemmi senza traslitterazione: ${lemmiSenzaTranslit}`)
 console.log(`  parole con traslitterazione non allineata ai morfemi: ${contaTranslitNonAllineate}`)
+
+// Provenienza della forma del lemma. Si stampa a ogni esecuzione: se una
+// divergenza nuova compare in una versione futura delle sorgenti, va vista qui
+// e non scoperta nel pannello parola.
+console.log(`\n  forma del lemma — da TBESH: ${provenienza.tbesh}, eccezioni dichiarate: ${provenienza.eccezione}, ripiego su TAHOT (dStrong assenti da TBESH): ${provenienza.ripiegoTahot}`)
+console.log(`  divergenze TAHOT/TBESH: ${divergenze.length}`)
+for (const d of divergenze.sort((a, b) => b.occ - a.occ)) {
+  const fonte = d.scelto === d.tbesh ? 'TBESH' : 'eccezione → TAHOT'
+  console.log(`    ${d.strong.padEnd(7)} occ ${String(d.occ).padStart(5)}  TAHOT "${d.tahot}"  TBESH "${d.tbesh}"  → ${fonte}`)
+}
