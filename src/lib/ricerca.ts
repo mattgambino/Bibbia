@@ -11,9 +11,11 @@
 // corpus. Le funzioni `costruisci*` producono l'indice; le funzioni `cerca*` lo
 // filtrano.
 
+import { idsNelPerimetroDiCuration } from './luoghi.ts'
 import { chiaveVersetto, etichettaVersetto } from './riferimenti.ts'
 import type {
   Confidenza,
+  Evento,
   IndiceLemmi,
   LexiconIt,
   Luogo,
@@ -254,7 +256,10 @@ export type RisultatoEntita = {
   nome: string
   translit: string
   he: string
+  /** Lo status **da mostrare**: null quando non c'è un giudizio che qualcuno abbia dato. */
   status: Confidenza | null
+  /** Luogo mai nominato da una pericope: fuori dal perimetro della curation. */
+  fuoriPerimetro: boolean
   primoRiferimento: VersettoId | null
 }
 
@@ -271,11 +276,24 @@ function primoRiferimento(riferimenti: readonly VersettoId[]): VersettoId | null
  * l'insieme è tutto places.json/people.json — chi cerca «Nod» o «Enosh» vuole
  * trovarlo anche se la curation non l'ha ancora ripreso; il clic porta comunque a
  * un versetto del testo.
+ *
+ * Ed è proprio perché qui entrano anche i luoghi che la curation non ha ripreso
+ * che lo `status` va filtrato: su quelli, `disputed` non è un giudizio ma il
+ * default prudente dell'import TIPNR, e mostrarlo direbbe al lettore che la
+ * questione è aperta fra ipotesi concorrenti — un'affermazione di merito che
+ * nessuno ha fatto. Fuori dal perimetro lo status non si mostra affatto: si
+ * dichiara che il luogo non è ancora entrato in curation, che è il dato vero.
  */
-export function costruisciIndiceEntita(luoghi: readonly Luogo[], persone: readonly Persona[]): VoceEntitaRic[] {
+export function costruisciIndiceEntita(
+  luoghi: readonly Luogo[],
+  persone: readonly Persona[],
+  eventi: readonly Evento[],
+): VoceEntitaRic[] {
+  const perimetro = idsNelPerimetroDiCuration(eventi)
   const voci: VoceEntitaRic[] = []
   for (const l of luoghi) {
     const rif = primoRiferimento(l.riferimenti)
+    const fuoriPerimetro = !perimetro.has(l.id)
     voci.push({
       risultato: {
         tipo: 'luogo',
@@ -283,7 +301,8 @@ export function costruisciIndiceEntita(luoghi: readonly Luogo[], persone: readon
         nome: l.nomi.it || l.nomi.translit || l.id,
         translit: l.nomi.translit,
         he: l.nomi.he,
-        status: l.status,
+        status: fuoriPerimetro ? null : l.status,
+        fuoriPerimetro,
         primoRiferimento: rif,
       },
       campi: [l.nomi.it, l.nomi.translit, l.nomi.he, l.id].map(normalizzaEstesa),
@@ -299,7 +318,10 @@ export function costruisciIndiceEntita(luoghi: readonly Luogo[], persone: readon
         nome: p.nomi.it || p.nomi.translit || p.id,
         translit: p.nomi.translit,
         he: p.nomi.he,
+        // Le persone non portano status nello schema: niente da filtrare, e la
+        // dicitura di perimetro non le riguarda.
         status: null,
+        fuoriPerimetro: false,
         primoRiferimento: rif,
       },
       campi: [p.nomi.it, p.nomi.translit, p.nomi.he, p.id].map(normalizzaEstesa),

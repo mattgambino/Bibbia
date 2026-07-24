@@ -57,6 +57,20 @@ export function collocabile(luogo: Luogo): boolean {
 }
 
 /**
+ * Gli id dei luoghi nominati da almeno una pericope, cioè il **perimetro della
+ * curation**: chi sta dentro è stato guardato da qualcuno, chi sta fuori no.
+ *
+ * È un fatto strutturale già scritto nei dati (`evento.luoghi`), non una
+ * convenzione di compilazione: per questo lo si deriva qui invece di leggere
+ * `nomi.it`, che oggi dà lo stesso insieme ma per abitudine, e smetterebbe di
+ * darlo al primo luogo curato a mano senza nome italiano. Nessun campo nuovo di
+ * schema: il divieto di F5.3 vale anche per un campo comodo.
+ */
+export function idsNelPerimetroDiCuration(eventi: readonly Evento[]): Set<string> {
+  return new Set(eventi.flatMap((e) => e.luoghi))
+}
+
+/**
  * I luoghi nominati dalle pericopi curate, ordinati per prima comparsa nel testo
  * e, a parità, per nome. `mancanti` sono gli id citati da una pericope ma assenti
  * da places.json: un buco nei dati che va detto, non nascosto.

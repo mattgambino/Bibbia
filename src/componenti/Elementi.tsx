@@ -27,6 +27,37 @@ export function SegnoDaVerificare() {
   return <p className="scheda-verificare">Da verificare</p>
 }
 
+/** Dicitura unica per lo stato di perimetro: un solo posto in cui è scritta. */
+export const ETICHETTA_FUORI_PERIMETRO = 'non ancora entrato in curation'
+export const GLOSSA_FUORI_PERIMETRO =
+  'Nessuna pericope curata lo nomina ancora: il record viene dall’import e non porta nessun giudizio del progetto.'
+
+/**
+ * Luogo fuori dal perimetro della curation. Non è un sesto grado della scala e
+ * non deve sembrarlo: la scala resta chiusa ai 5 valori più `attribuito`.
+ *
+ * Per questo il segno non è una delle sei forme — cinque quadrangolari più il
+ * cerchio — ma una lineetta, che in quest'app significa già «nessun valore» (i
+ * binari della timeline la usano per le pericopi senza collocazione). Nessun
+ * colore di status e nessun fondo tinto: l'assenza di forma e di colore *è*
+ * l'informazione, cioè che qui un giudizio non c'è. Resta distinguibile in
+ * bianco e nero, come chiede DESIGN.md §4.
+ */
+export function SegnoFuoriPerimetro() {
+  return (
+    <span className="segno-fuori-perimetro" title={GLOSSA_FUORI_PERIMETRO} aria-hidden="true" />
+  )
+}
+
+/** La stessa cosa scritta per esteso, per quando il segno da solo non basta. */
+export function TagFuoriPerimetro() {
+  return (
+    <span className="tag-fuori-perimetro" title={GLOSSA_FUORI_PERIMETRO}>
+      {ETICHETTA_FUORI_PERIMETRO}
+    </span>
+  )
+}
+
 /**
  * `dettagli` mostra il campo `dettaglio` della fonte — la pagina, la sezione, il
  * codice esatto su cui la nota si regge. Nel pannello note serve, ed è ciò che

@@ -665,6 +665,26 @@
 .segno-status::before {
   font-size: var(--testo-sm);
 }
+
+/* Fuori dal perimetro della curation. Volutamente l'unico segno non geometrico
+   e senza colore di status: la scala resta chiusa ai suoi valori, e qui il
+   punto è che un giudizio non c'è — non che ce ne sia uno debole. */
+.segno-fuori-perimetro::before {
+  content: var(--segno-fuori-perimetro);
+  font-size: var(--testo-sm);
+  color: var(--fuori-perimetro-colore);
+}
+.tag-fuori-perimetro {
+  font-size: var(--testo-xs);
+  letter-spacing: 0.03em;
+  /* Testo sostanziale che il lettore deve leggere: inchiostro medio, non tenue —
+     a 12px la tenue cade a 4.25:1 sulla carta dell'apparato, sotto l'AA. Il segno
+     em-dash resta tenue perché è aria-hidden e ridondante con questa dicitura. */
+  color: var(--inchiostro-medio);
+  border: 1px solid var(--filetto-marcato);
+  border-radius: var(--raggio-sm);
+  padding: 0.05em 0.4em;
+}
 .segno-status--consensus::before {
   content: var(--segno-consensus);
   color: var(--status-consensus);

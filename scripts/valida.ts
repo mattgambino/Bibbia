@@ -496,6 +496,27 @@ for (const { file, record } of fileLuoghi) {
   controllaFontiDaVerificare(file, record.id, totaleFonti, record.da_verificare)
 }
 
+// B-bis. Perimetro della curation dei luoghi (F5.x).
+//
+// La ricerca non mostra lo `status` dei luoghi che nessuna pericope nomina: lì
+// `disputed` è il default prudente dell'import TIPNR, non un giudizio, e la vista
+// dichiara invece che il luogo non è ancora entrato in curation. Quella resa si
+// regge su un fatto che oggi vale senza eccezioni — fuori dal perimetro nessun
+// record è verificato — e che nessuno schema impone. Questo avviso lo sorveglia:
+// un luogo mai nominato con `da_verificare: false` è o una revisione fatta senza
+// agganciarlo a una pericope, o una svista di curation. In entrambi i casi va
+// guardato prima che la vista continui a chiamarlo «non ancora entrato».
+{
+  const nelPerimetro = new Set(fileEventi.flatMap(({ e }) => e.luoghi))
+  for (const { file, record } of fileLuoghi)
+    if (!nelPerimetro.has(record.id) && !record.da_verificare)
+      avv(
+        file,
+        record.id,
+        'luogo mai nominato da una pericope ma con da_verificare = false: fuori dal perimetro della curation, eppure dato per verificato — controllare se è una revisione non agganciata a nessuna pericope',
+      )
+}
+
 // C. people: riferimenti, relazioni risolvibili e reciproche
 for (const { file, p } of persone.values()) {
   p.riferimenti.forEach((id, i) => controllaVersettoRef(file, p.id, `riferimenti[${i}]`, id))

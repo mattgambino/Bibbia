@@ -12,8 +12,9 @@
 // battuta non è il costo della ricerca ma quello di ridisegnare le liste.
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { SegnoStatus } from '../componenti/Elementi.tsx'
+import { SegnoFuoriPerimetro, SegnoStatus, TagFuoriPerimetro } from '../componenti/Elementi.tsx'
 import {
+  useEventi,
   useIndiceLemmi,
   useLexiconIt,
   useLuoghi,
@@ -69,6 +70,9 @@ export function Ricerca({ queryIniziale = '', onLettura, onVersetto, onLemma }: 
   const lexicon = useLexiconIt(true)
   const luoghi = useLuoghi()
   const persone = usePersone()
+  // Le pericopi servono solo a sapere quali luoghi la curation ha già ripreso:
+  // il perimetro è un fatto di events.json, non un campo dei luoghi.
+  const eventi = useEventi()
 
   // La vista occupa lo schermo e non scorre: senza questo, arrivando da una
   // pagina scorsa a metà, la testata resterebbe sopra il bordo superiore.
@@ -98,10 +102,10 @@ export function Ricerca({ queryIniziale = '', onLettura, onVersetto, onLemma }: 
   )
   const indE = useMemo(
     () =>
-      luoghi.stato === 'pronto' && persone.stato === 'pronto'
-        ? costruisciIndiceEntita(luoghi.dati, persone.dati)
+      luoghi.stato === 'pronto' && persone.stato === 'pronto' && eventi.stato === 'pronto'
+        ? costruisciIndiceEntita(luoghi.dati, persone.dati, eventi.dati)
         : [],
-    [luoghi, persone],
+    [luoghi, persone, eventi],
   )
 
   const risTesto = useMemo(() => cercaTesto(corpus, query, LIMITE_TESTO), [corpus, query])
@@ -119,8 +123,10 @@ export function Ricerca({ queryIniziale = '', onLettura, onVersetto, onLemma }: 
   // Stato di caricamento per categoria: ogni sezione dice per sé se i suoi dati
   // non sono ancora pronti, invece di bloccare la vista intera.
   const statoTesto = statoCategoria(testi)
-  const statoLemmi = statoAmbedue(indiceLemmi, lexicon)
-  const statoEntita = statoAmbedue(luoghi, persone)
+  const statoLemmi = statoDiTutti(indiceLemmi, lexicon)
+  // Anche le pericopi: senza di esse il perimetro non è noto e le entità
+  // uscirebbero pronte ma senza la dicitura, cioè con lo status di nuovo esposto.
+  const statoEntita = statoDiTutti(luoghi, persone, eventi)
 
   const mostra = (c: Categoria) => !escluse.has(c)
 
@@ -266,10 +272,13 @@ function statoCategoria<T>(c: Caricamento<T>): { stato: 'in_corso' | 'pronto' | 
 }
 
 /** Come sopra ma per due caricamenti che devono essere pronti entrambi. */
-function statoAmbedue<A, B>(a: Caricamento<A>, b: Caricamento<B>): { stato: 'in_corso' | 'pronto' | 'errore'; messaggio?: string } {
-  if (a.stato === 'errore') return { stato: 'errore', messaggio: a.messaggio }
-  if (b.stato === 'errore') return { stato: 'errore', messaggio: b.messaggio }
-  if (a.stato === 'in_corso' || b.stato === 'in_corso') return { stato: 'in_corso' }
+/** Pronto solo quando lo sono tutti; il primo errore vince e porta il suo messaggio. */
+function statoDiTutti(
+  ...caricamenti: Caricamento<unknown>[]
+): { stato: 'in_corso' | 'pronto' | 'errore'; messaggio?: string } {
+  const rotto = caricamenti.find((c) => c.stato === 'errore')
+  if (rotto && rotto.stato === 'errore') return { stato: 'errore', messaggio: rotto.messaggio }
+  if (caricamenti.some((c) => c.stato === 'in_corso')) return { stato: 'in_corso' }
   return { stato: 'pronto' }
 }
 
@@ -392,7 +401,17 @@ function RigaEntita({ r, onVersetto }: { r: RisultatoEntita; onVersetto: (v: str
   const identita = (
     <span className="ricerca-entita-testa">
       <span className="ricerca-tag">{r.tipo === 'luogo' ? 'luogo' : 'persona'}</span>
-      {r.status && <SegnoStatus status={r.status} />}
+      {/* Lo status compare solo se qualcuno l'ha assegnato: fuori dal perimetro
+          della curation al suo posto va la dicitura per esteso, non un segno più
+          pallido — attenuare direbbe «giudizio debole», non «giudizio assente». */}
+      {r.fuoriPerimetro ? (
+        <>
+          <SegnoFuoriPerimetro />
+          <TagFuoriPerimetro />
+        </>
+      ) : (
+        r.status && <SegnoStatus status={r.status} />
+      )}
       <span className="ricerca-entita-nome">{r.nome}</span>
       {r.he && (
         <bdi className="lemma" lang="he" dir="rtl">
