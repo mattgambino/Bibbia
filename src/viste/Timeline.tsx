@@ -16,7 +16,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { BinarioTempo } from '../componenti/BinarioTempo.tsx'
-import { BadgeConfidenza, ElencoFonti, SegnoDaVerificare } from '../componenti/Elementi.tsx'
+import { BadgeConfidenza, ElencoFonti, NotaDiMetodo, SegnoDaVerificare } from '../componenti/Elementi.tsx'
 import { VoceNota } from '../componenti/PannelloNote.tsx'
 import { binari as costruisciBinari, notePericope, ordinaPericopi, riferimentoBreve } from '../lib/tempo.ts'
 import { etichettaAnni, etichettaAnniMundi, etichettaRange } from '../lib/pericopi.ts'
@@ -227,6 +227,10 @@ function SchedaPericope({
                 <ElencoFonti fonti={p.fonti} dettagli />
               </div>
             ))}
+            {/* In fondo, dopo le voci: è una nota sull'apparato, non una voce in più. */}
+            {pericope.composizione.nota_di_metodo && (
+              <NotaDiMetodo nota={pericope.composizione.nota_di_metodo} dettagli />
+            )}
           </section>
 
           <section className="asse">

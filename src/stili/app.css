@@ -897,6 +897,31 @@
   font-weight: var(--peso-medio);
 }
 
+/* Nota di metodo: la scelta editoriale del progetto sull'asse composizione.
+   Non porta il filetto verticale delle posizioni — quello dice "voce del
+   dibattito, di questa prospettiva" — ma un filetto orizzontale che chiude la
+   sezione: sta sotto le voci come una nota a piè di pagina sta sotto il testo.
+   Nessun tratteggio, che nella grammatica dell'app significa incertezza
+   (DESIGN.md §4), e nessun colore semantico: chi parla qui è l'edizione. */
+.nota-di-metodo {
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: var(--bordo-sottile);
+}
+.nota-di-metodo-genere {
+  margin: 0;
+  font-size: var(--testo-xs);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--inchiostro-tenue);
+  font-weight: var(--peso-medio);
+}
+.nota-di-metodo-etichetta {
+  margin: var(--sp-1) 0 0;
+  font-size: var(--testo-sm);
+  font-weight: var(--peso-medio);
+}
+
 /* Miniatura d'asse: la barra dice dove cade la pericope rispetto a tutta la
    curation. La scala è per confronto, non per lettura: le cifre esatte stanno
    sotto, in chiaro. */

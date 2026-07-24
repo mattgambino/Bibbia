@@ -5,7 +5,7 @@
 // ovunque (DESIGN.md §4): un solo posto in cui è scritta.
 
 import { ETICHETTA_CONFIDENZA, GLOSSA_CONFIDENZA } from '../lib/confidenza.ts'
-import type { Confidenza, Fonte } from '../tipi/index.ts'
+import type { Confidenza, Fonte, NotaDiMetodo as TipoNotaDiMetodo } from '../tipi/index.ts'
 
 export function SegnoStatus({ status }: { status: Confidenza }) {
   return (
@@ -55,5 +55,32 @@ export function ElencoFonti({ fonti, dettagli = false }: { fonti: Fonte[]; detta
         </li>
       ))}
     </ul>
+  )
+}
+
+/**
+ * Nota di metodo dell'asse composizione: la scelta editoriale del progetto —
+ * perché una pericope porti una forbice sola su un testo che ne conterrebbe due.
+ *
+ * Non è una posizione della letteratura, e la resa deve dirlo prima che si legga.
+ * Le posizioni portano tutte un filetto verticale a sinistra, del colore della
+ * prospettiva a cui appartengono (DESIGN.md §4); questa non ne porta nessuno e sta
+ * in fondo alla sezione, dopo le voci: è la nota a piè di pagina dell'apparato, non
+ * una colonna in più nel coro. La distinzione è quindi strutturale e tipografica,
+ * non affidata al colore.
+ *
+ * Niente tratteggio: `dashed` e `dotted` sono già la grammatica dell'incertezza
+ * (`da_verificare`, status `disputed` e `speculative`), e una scelta dichiarata del
+ * progetto non è una cosa incerta. Niente badge di confidenza: il tipo non ne ha
+ * uno, e non deve sembrare che gliene manchi uno.
+ */
+export function NotaDiMetodo({ nota, dettagli = false }: { nota: TipoNotaDiMetodo; dettagli?: boolean }) {
+  return (
+    <div className="nota-di-metodo">
+      <p className="nota-di-metodo-genere">Scelta editoriale del progetto</p>
+      <p className="nota-di-metodo-etichetta">{nota.etichetta}</p>
+      <p className="asse-sintesi">{nota.sintesi}</p>
+      <ElencoFonti fonti={nota.fonti} dettagli={dettagli} />
+    </div>
   )
 }

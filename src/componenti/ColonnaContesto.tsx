@@ -12,7 +12,7 @@
 
 import { useMemo, useRef, useState } from 'react'
 import { Minimappa } from './Minimappa.tsx'
-import { BadgeConfidenza, ElencoFonti, SegnoDaVerificare, SegnoStatus } from './Elementi.tsx'
+import { BadgeConfidenza, ElencoFonti, NotaDiMetodo, SegnoDaVerificare, SegnoStatus } from './Elementi.tsx'
 import { idConAlbero } from '../lib/genealogia.ts'
 import {
   etichettaAnni,
@@ -365,6 +365,8 @@ function Quando({
             <ElencoFonti fonti={p.fonti} />
           </div>
         ))}
+        {/* In fondo, dopo le voci: è una nota sull'apparato, non una voce in più. */}
+        {pericope.composizione.nota_di_metodo && <NotaDiMetodo nota={pericope.composizione.nota_di_metodo} />}
       </section>
     </div>
   )
