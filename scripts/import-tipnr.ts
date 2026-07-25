@@ -556,6 +556,17 @@ interface LuogoOb {
   risoluzioni: RisoluzioneOb[]
   /** Risoluzioni senza coordinate (unknown_place, nonspecific_place, not_a_place…). */
   speciali: string[]
+  /** Versetti del Pentateuco dichiarati dalla voce (campo `verses`), nei nostri id TM. */
+  versettiPent: Set<string>
+}
+
+/** OSIS del campo `verses` OpenBible → nostro id. OSIS usa Exod/Deut, non gli Exo/Deu di LIBRI. */
+const LIBRI_OSIS: Record<string, string> = { Gen: 'gen', Exod: 'exo', Lev: 'lev', Num: 'num', Deut: 'deu' }
+function osisANostro(osis: string): string | null {
+  const m = /^([A-Za-z0-9]+)\.(\d+)\.(\d+)$/.exec(osis)
+  if (!m) return null
+  const libro = LIBRI_OSIS[m[1]]
+  return libro ? `${libro}.${Number(m[2])}.${Number(m[3])}` : null
 }
 
 /** Via i tag XML delle descrizioni OpenBible: '<modern id="m…">Tel Rumeida</modern>' → 'Tel Rumeida'. */
@@ -581,12 +592,22 @@ function caricaOpenBible(): { perTipnr: Map<string, LuogoOb[]>; perSlug: Map<str
     const o = JSON.parse(riga) as {
       url_slug?: string
       linked_data?: Record<string, { id?: string; ids?: string[] }>
+      verses?: { osis?: string }[]
       identifications?: {
         id_source?: string
         special?: string
         score?: { time_total?: number }
         resolutions?: { lonlat?: string; description?: string; type?: string; special?: string }[]
       }[]
+    }
+
+    // I versetti del Pentateuco dichiarati dalla voce: servono a sciogliere le contese
+    // fra più voci sullo stesso id TIPNR (vedi costruisciLuogo). `verses` copre tutta la
+    // Bibbia; qui si tiene solo il Pentateuco, che è il perimetro dei nostri riferimenti.
+    const versettiPent = new Set<string>()
+    for (const v of o.verses ?? []) {
+      const nostro = v.osis ? osisANostro(v.osis) : null
+      if (nostro) versettiPent.add(nostro)
     }
 
     const risoluzioni: RisoluzioneOb[] = []
@@ -607,7 +628,7 @@ function caricaOpenBible(): { perTipnr: Map<string, LuogoOb[]>; perSlug: Map<str
     // Ordine di presentazione: prima i candidati più accreditati.
     risoluzioni.sort((a, b) => b.peso - a.peso)
 
-    const voce: LuogoOb = { url_slug: o.url_slug ?? '', risoluzioni, speciali }
+    const voce: LuogoOb = { url_slug: o.url_slug ?? '', risoluzioni, speciali, versettiPent }
     if (voce.url_slug !== '' && !perSlug.has(voce.url_slug)) perSlug.set(voce.url_slug, voce)
     const collegamento = o.linked_data?.[CHIAVE_TIPNR_IN_OPENBIBLE]
     if (collegamento)
@@ -683,20 +704,46 @@ function costruisciLuogo(e: Entita): Luogo {
     ob = vociPerId[0]
     statLuoghi.agganciatiPerId++
   } else if (vociPerId.length > 1) {
-    // Ogni id conteso finisce nel log, anche quando il nome discrimina: la scelta resta
-    // un'euristica su una sorgente ambigua, e ci sono casi in cui la voce indicata da
-    // TIPNR è la più povera delle due (Gihon@Gen.2.13-2Ch tiene insieme il fiume dell'Eden
-    // e la sorgente di Gerusalemme, che OpenBible separa). Sono decisioni di curation:
-    // lo script le espone, non le prende per conto di chi rivede.
-    const perNome = vociPerId.filter((v) => v.url_slug === slugTipnr)
-    const risoltoSulNome = perNome.length === 1
-    ob = risoltoSulNome ? perNome[0] : vociPerId[0]
-    if (risoltoSulNome) statLuoghi.agganciatiPerIdDisambiguati++
-    else statLuoghi.agganciatiPerIdAmbigui++
-    const scartate = vociPerId.filter((v) => v !== ob).map((v) => `${v.url_slug}(${v.risoluzioni.length})`)
+    // Contesa fra più voci sullo stesso id TIPNR. Il criterio primario è la COPERTURA:
+    // quante dei nostri riferimenti la voce dichiara nel suo campo `verses`. È un dato di
+    // entrambe le sorgenti, non l'ordine del file né un match di nome. Vince la voce con
+    // copertura massima se è una sola e non nulla — esclude la voce incompatibile col
+    // dato (es. Gihon@Gen.2.13, dove una voce cita Gen 2,13 e l'altra no). Quando la
+    // copertura è nulla ovunque o pareggia, il criterio non discrimina e si ripiega sul
+    // vecchio: la colonna "OpenBible name" di TIPNR, e se nemmeno quella discrimina, la
+    // prima voce (scelta arbitraria, dichiarata nel log). Ogni contesa finisce comunque
+    // nel log: la scelta resta un'euristica su una sorgente ambigua, revisionabile.
+    const miei = new Set(e.riferimenti)
+    let max = -1
+    for (const v of vociPerId) {
+      let coperti = 0
+      for (const r of miei) if (v.versettiPent.has(r)) coperti++
+      if (coperti > max) max = coperti
+    }
+    const inTesta = vociPerId.filter((v) => [...miei].filter((r) => v.versettiPent.has(r)).length === max)
+    const risoltoSuCopertura = max > 0 && inTesta.length === 1
+
+    let modo: 'copertura' | 'nome' | 'ARBITR'
+    if (risoltoSuCopertura) {
+      ob = inTesta[0]
+      modo = 'copertura'
+      statLuoghi.agganciatiPerIdDisambiguati++
+    } else {
+      const perNome = vociPerId.filter((v) => v.url_slug === slugTipnr)
+      const risoltoSulNome = perNome.length === 1
+      ob = risoltoSulNome ? perNome[0] : vociPerId[0]
+      modo = risoltoSulNome ? 'nome' : 'ARBITR'
+      if (risoltoSulNome) statLuoghi.agganciatiPerIdDisambiguati++
+      else statLuoghi.agganciatiPerIdAmbigui++
+    }
+
+    const coperturaDi = (v: LuogoOb): number => [...miei].filter((r) => v.versettiPent.has(r)).length
+    const scartate = vociPerId
+      .filter((v) => v !== ob)
+      .map((v) => `${v.url_slug}(${v.risoluzioni.length}, cop ${coperturaDi(v)}/${miei.size})`)
     statLuoghi.dettaglioContesi.push(
-      `${risoltoSulNome ? 'nome ' : 'ARBITR'} ${e.id.padEnd(20)} ${chiave} → "${ob.url_slug}"(${ob.risoluzioni.length}) ` +
-        `scartate [${scartate.join(', ')}]${risoltoSulNome ? '' : `; "OpenBible name" TIPNR = "${slugTipnr || '(vuoto)'}" non discrimina`}`,
+      `${modo.padEnd(9)} ${e.id.padEnd(20)} ${chiave} → "${ob.url_slug}"(${ob.risoluzioni.length}, cop ${coperturaDi(ob)}/${miei.size}) ` +
+        `scartate [${scartate.join(', ')}]${modo === 'ARBITR' ? `; "OpenBible name" TIPNR = "${slugTipnr || '(vuoto)'}" non discrimina` : ''}`,
     )
   } else {
     ob = slugTipnr === '' ? undefined : obPerSlug.get(slugTipnr)
