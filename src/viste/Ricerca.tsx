@@ -201,14 +201,15 @@ export function Ricerca({ queryIniziale = '', onLettura, onVersetto, onLemma }: 
       </aside>
 
       <main className="ricerca-scena">
+        {/* L'invito si ferma alla traslitterazione di proposito: una forma ebraica qui
+            sarebbe una stringa scritta a mano fuori dal database (regola 1 di CLAUDE.md),
+            e per giunta proprio dove indices/lemmi.json rende H4325 troncato (ROADMAP
+            F5.1) — cioè un esempio che smentirebbe il dato. */}
         {!attiva ? (
           <p className="ricerca-invito">
             Digita almeno {MIN_QUERY} caratteri. La ricerca ignora accenti, vocali
-            e segni di cantillazione: <em>acque</em>, <em>mayim</em> o{' '}
-            <bdi lang="he" dir="rtl">
-              מים
-            </bdi>{' '}
-            portano allo stesso posto.
+            e segni di cantillazione: <em>acque</em>, <em>mayim</em> e la parola
+            ebraica corrispondente portano allo stesso posto.
           </p>
         ) : totale === 0 && statoTesto.stato === 'pronto' && statoLemmi.stato === 'pronto' && statoEntita.stato === 'pronto' ? (
           <p className="vuoto">

@@ -13,6 +13,11 @@ npx tsx scripts/valida.ts scripts/fixtures/valido   # atteso: 0 errori + 1 avvis
 npx tsx scripts/valida.ts scripts/fixtures/rotto    # atteso: 20 errori, exit 1
 ```
 
+Questi due giri sono anche automatizzati in `test/valida-fixture.test.ts` (`npm test`),
+che ne verifica exit code e conteggi. **Chi aggiunge o toglie una rottura aggiorni sia la
+tabella qui sotto sia la costante `ROTTURE_ATTESE` di quel file**, altrimenti `npm test`
+diventa rosso.
+
 ## `valido/`
 
 Copre ogni schema di SCHEMI-DATI §2: 4 versetti finti di "gen" (2 capitoli), 5 parole,

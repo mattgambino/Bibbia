@@ -1,10 +1,6 @@
-import { useState } from 'react'
-import { Assistente } from './viste/Assistente.tsx'
+import { Suspense, lazy, useState } from 'react'
 import { Lettura } from './viste/Lettura.tsx'
-import { Mappa } from './viste/Mappa.tsx'
 import { Ricerca } from './viste/Ricerca.tsx'
-import { Timeline } from './viste/Timeline.tsx'
-import { Genealogie } from './viste/Genealogie.tsx'
 
 /**
  * Le viste a schermo pieno (mappa da F3.1, timeline da F3.2, genealogie da F3.3)
@@ -12,7 +8,17 @@ import { Genealogie } from './viste/Genealogie.tsx'
  * uno stato, non un router: l'app non ha URL da condividere e ogni dipendenza in
  * più va chiesta prima (CLAUDE.md, regola 5). La posizione di lettura sopravvive
  * al passaggio perché sta in localStorage.
+ *
+ * Le tre viste che portano una libreria di disegno (Leaflet per la mappa, D3 per
+ * timeline e genealogie) e l'assistente si caricano con `import()` dinamico: chi
+ * apre solo la lettura non ne scarica il codice. Il fallback usa la stessa
+ * dicitura di attesa del resto dell'app — è un caricamento, non un evento.
  */
+const Mappa = lazy(() => import('./viste/Mappa.tsx').then((m) => ({ default: m.Mappa })))
+const Timeline = lazy(() => import('./viste/Timeline.tsx').then((m) => ({ default: m.Timeline })))
+const Genealogie = lazy(() => import('./viste/Genealogie.tsx').then((m) => ({ default: m.Genealogie })))
+const Assistente = lazy(() => import('./viste/Assistente.tsx').then((m) => ({ default: m.Assistente })))
+
 type Vista =
   | { nome: 'lettura'; versetto?: string; parola?: string }
   | { nome: 'mappa'; luogo?: string }
@@ -21,34 +27,44 @@ type Vista =
   | { nome: 'ricerca'; query?: string }
   | { nome: 'assistente' }
 
+function Attesa({ children }: { children: React.ReactNode }) {
+  return <Suspense fallback={<p className="stato-caricamento">Caricamento della vista…</p>}>{children}</Suspense>
+}
+
 function App() {
   const [vista, setVista] = useState<Vista>({ nome: 'lettura' })
 
   if (vista.nome === 'mappa') {
     return (
-      <Mappa
-        luogoIniziale={vista.luogo ?? null}
-        onLettura={() => setVista({ nome: 'lettura' })}
-        onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
-      />
+      <Attesa>
+        <Mappa
+          luogoIniziale={vista.luogo ?? null}
+          onLettura={() => setVista({ nome: 'lettura' })}
+          onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
+        />
+      </Attesa>
     )
   }
   if (vista.nome === 'timeline') {
     return (
-      <Timeline
-        pericopeIniziale={vista.pericope ?? null}
-        onLettura={() => setVista({ nome: 'lettura' })}
-        onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
-      />
+      <Attesa>
+        <Timeline
+          pericopeIniziale={vista.pericope ?? null}
+          onLettura={() => setVista({ nome: 'lettura' })}
+          onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
+        />
+      </Attesa>
     )
   }
   if (vista.nome === 'genealogie') {
     return (
-      <Genealogie
-        personaIniziale={vista.persona ?? null}
-        onLettura={() => setVista({ nome: 'lettura' })}
-        onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
-      />
+      <Attesa>
+        <Genealogie
+          personaIniziale={vista.persona ?? null}
+          onLettura={() => setVista({ nome: 'lettura' })}
+          onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
+        />
+      </Attesa>
     )
   }
   if (vista.nome === 'ricerca') {
@@ -63,10 +79,12 @@ function App() {
   }
   if (vista.nome === 'assistente') {
     return (
-      <Assistente
-        onLettura={() => setVista({ nome: 'lettura' })}
-        onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
-      />
+      <Attesa>
+        <Assistente
+          onLettura={() => setVista({ nome: 'lettura' })}
+          onVersetto={(versetto) => setVista({ nome: 'lettura', versetto })}
+        />
+      </Attesa>
     )
   }
   return (

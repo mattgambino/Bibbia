@@ -12,7 +12,7 @@
 // sono segnalati con un avviso evidente. Il banner "sintesi automatica" è permanente.
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useEmbeddings, useNote, useTraduzione } from '../dati/hooks.ts'
+import { useEmbeddings, useIdVersetti, useNote, useTraduzione } from '../dati/hooks.ts'
 import {
   OLLAMA_BASE,
   embeddingQuery,
@@ -26,9 +26,25 @@ import {
   costruisciContesto,
   messaggiChat,
   recupera,
+  type EsitoRif,
   type Fonte,
   type SegmentoRif,
 } from '../lib/rag.ts'
+
+/**
+ * Come si dice all'utente un riferimento non verificato. Tre casi distinti, tutti
+ * bloccati allo stesso modo: quello che cambia è solo l'affermazione che si fa.
+ * `non-curato` esiste perché dire «inesistente nel dataset» di un versetto che il
+ * dataset contiene, e che è raggiungibile nella vista lettura, sarebbe falso.
+ */
+const DICITURA_ANOMALIA: Partial<Record<EsitoRif, { breve: string; estesa: string }>> = {
+  'fuori-contesto': { breve: 'fuori dal contesto', estesa: 'fuori dal contesto recuperato' },
+  'non-curato': { breve: 'senza testo curato', estesa: 'nel dataset, ma senza testo curato da citare' },
+  inesistente: { breve: 'inesistente', estesa: 'inesistente nel dataset' },
+}
+
+const dicituraAnomalia = (esito: EsitoRif) =>
+  DICITURA_ANOMALIA[esito] ?? { breve: 'non verificato', estesa: 'non verificato' }
 
 type Props = {
   onLettura: () => void
@@ -99,6 +115,9 @@ export function Assistente({ onLettura, onVersetto }: Props) {
   const embeddings = useEmbeddings(true)
   const note = useNote()
   const letterale = useTraduzione('letterale')
+  // Serve alla post-verifica per distinguere un riferimento inventato da uno reale
+  // ma privo di testo curato (v. `EsitoRif` in lib/rag.ts).
+  const idVersetti = useIdVersetti(true)
 
   const [ollama, setOllama] = useState<StatoOllama>({ fase: 'verifica' })
   const [modelloGen, setModelloGen] = useState<string>('')
@@ -148,6 +167,12 @@ export function Assistente({ onLettura, onVersetto }: Props) {
     if (note.stato === 'pronto') for (const n of note.dati) mappa.set(n.id, { titolo: n.titolo, testo: n.testo })
     return (id: string) => mappa.get(id)
   }, [note])
+  // Finché l'elenco non è caricato la risposta è `false`, cioè l'esito più prudente
+  // (`inesistente`): non si promuove mai un riferimento per un dato che non c'è.
+  const versettoEsiste = useMemo(() => {
+    const ids = idVersetti.stato === 'pronto' ? idVersetti.dati : new Set<string>()
+    return (id: string) => ids.has(id)
+  }, [idVersetti])
 
   const datiPronti = embeddings.stato === 'pronto' && note.stato === 'pronto' && letterale.stato === 'pronto'
 
@@ -363,6 +388,7 @@ export function Assistente({ onLettura, onVersetto }: Props) {
                     fonti={conv.fonti}
                     testoVersetto={testoVersetto}
                     nota={notaPerId}
+                    versettoEsiste={versettoEsiste}
                     onVersetto={onVersetto}
                   />
                 ) : null}
@@ -388,17 +414,19 @@ function RispostaVerificata({
   fonti,
   testoVersetto,
   nota,
+  versettoEsiste,
   onVersetto,
 }: {
   risposta: string
   fonti: Fonte[]
   testoVersetto: (ref: string) => string | undefined
   nota: (id: string) => { titolo: string; testo: string } | undefined
+  versettoEsiste: (id: string) => boolean
   onVersetto: (versetto: string) => void
 }) {
   const { segmenti, anomalie } = useMemo(
-    () => analizzaRisposta(risposta, { fonti, testoVersetto, nota }),
-    [risposta, fonti, testoVersetto, nota],
+    () => analizzaRisposta(risposta, { fonti, testoVersetto, nota, versettoEsiste }),
+    [risposta, fonti, testoVersetto, nota, versettoEsiste],
   )
 
   return (
@@ -413,7 +441,7 @@ function RispostaVerificata({
             <span key={`${a.ref}-${i}`}>
               {i > 0 && ', '}
               <span className="assistente-allarme-rif">[{a.etichetta}]</span>
-              {a.esito === 'inesistente' ? ' — inesistente' : ' — fuori dal contesto'}
+              {` — ${dicituraAnomalia(a.esito).breve}`}
             </span>
           ))}
           {'). '}
@@ -459,13 +487,13 @@ function RiferimentoInline({ seg, onVersetto }: { seg: SegmentoRif; onVersetto: 
 
   if (seg.esito === 'nota') return <NotaInline seg={seg} />
 
-  // fuori-contesto / inesistente: si segnala, non si nasconde.
+  // fuori-contesto / non-curato / inesistente: si segnala, non si nasconde.
   return (
-    <mark className="rif-inline rif-guasto">
+    <mark className="rif-inline rif-guasto" title={`Riferimento non verificato: ${dicituraAnomalia(seg.esito).estesa}`}>
       [{seg.etichetta}]
       <span className="solo-lettore-schermo">
         {' '}
-        riferimento non verificato: {seg.esito === 'inesistente' ? 'inesistente nel dataset' : 'fuori dal contesto recuperato'}
+        riferimento non verificato: {dicituraAnomalia(seg.esito).estesa}
       </span>
     </mark>
   )

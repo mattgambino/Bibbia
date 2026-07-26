@@ -17,7 +17,7 @@ All'inizio di una sessione: leggi il task corrente in ROADMAP e le sezioni perti
 2. **MAI inventare dati di curation**: coordinate, datazioni, identificazioni, attribuzioni di consenso accademico, citazioni di fonti. Ogni claim ha `fonti` reali o `da_verificare: true`. Se non hai una fonte solida: dillo e marca `da_verificare`.
 3. **I file curati `[C]` in `public/data/` si scrivono solo con approvazione esplicita dell'utente in sessione**, contenuto per contenuto (es. la traduzione letterale, approvata pericope per pericope): lì l'approvazione *è* la revisione, e passare da `bootstrap/` aggiungerebbe solo un travaso. Tutto ciò che è **generato o redatto in blocco senza approvazione riga per riga** va in `bootstrap/` e lì si ferma: la revisione e lo spostamento sono dell'utente. Nel dubbio su quale dei due casi sia: chiedi.
 4. **Tre assi temporali sempre distinti** (narrato / storico-critico / composizione), mai fusi in una linea sola. Scala di confidenza: solo i 5 valori definiti (`consensus`, `majority`, `disputed`, `speculative`, `symbolic`), più `attribuito`, che non è un grado della scala ma il valore obbligatorio (e riservato) delle note `tradizione_ebraica`. Prospettive storico-critica e `tradizione_ebraica` etichettate, mai fuse.
-5. **Niente backend, database server, o nuove dipendenze** oltre a quelle previste (React, Zod, Leaflet, D3) senza chiedere prima. Niente chiamate di rete a runtime salvo Ollama locale e API Sefaria dove previsto.
+5. **Niente backend, database server, o nuove dipendenze** oltre a quelle previste (React, Zod, Leaflet, D3) senza chiedere prima. Niente chiamate di rete a runtime salvo: **Ollama locale** (solo host di loopback: il valore di `ollama-base` è filtrato, v. `src/lib/ollama.ts`), **API Sefaria** dove previsto (oggi le note `tradizione_ebraica` linkano soltanto, non chiamano), e i **tile OpenStreetMap** della mappa, imposti da SPECIFICA §5 e §8. L'elenco è chiuso: qualunque altra origine si chiede prima. Offline l'app funziona per intero tranne la carta di sfondo della mappa.
 6. Dopo ogni modifica a schemi o dati: `npm run valida` deve passare. Un task non è chiuso con la validazione rossa.
 7. Nessun comando con effetti fuori dalla cartella del progetto senza chiedere prima: niente kill di processi per nome/immagine (`taskkill /IM`, `pkill`), niente modifiche a file di configurazione globali, niente install globali. I processi avviati (es. dev server) si fermano solo per PID specifico.
 
@@ -42,6 +42,7 @@ All'inizio di una sessione: leggi il task corrente in ROADMAP e le sezioni perti
 
 - `npm run dev` / `npm run build` / `npm run preview`
 - `npm run valida` → esegue `scripts/valida.ts` su `public/data/` e `bootstrap/`
+- `npm test` → regressione del guardrail RAG (`test/rag.test.ts`) + giro del validatore sulle fixture. Deve essere verde quanto `npm run valida`: è il punto in cui i non-negoziabili #1 e #3 diventano codice eseguito.
 - Import dati: `npx tsx scripts/import-<sorgente>.ts` (le sorgenti scaricate stanno in `scripts/sources/`, in `.gitignore`)
 
 ## Processo

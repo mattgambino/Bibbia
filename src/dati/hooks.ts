@@ -12,6 +12,7 @@ import type {
   Traduzione,
 } from '../tipi/index.ts'
 import type { Eventi, Luoghi, Note, Persone } from './caricamento.ts'
+import { LIBRI } from '../lib/riferimenti.ts'
 import {
   caricaEmbeddings,
   caricaEventi,
@@ -88,6 +89,35 @@ export function useTuttiTesti(attivo: boolean): Caricamento<Traduzione[]> {
       .then((m) => Promise.all(m.disponibili.map((id) => caricaTraduzione(id))))
       .then((traduzioni) => {
         if (vivo) setEsito({ stato: 'pronto', dati: traduzioni })
+      })
+      .catch((e: unknown) => {
+        if (vivo) setEsito({ stato: 'errore', messaggio: e instanceof Error ? e.message : String(e) })
+      })
+    return () => {
+      vivo = false
+    }
+  }, [attivo])
+  return esito
+}
+
+/**
+ * Gli id di tutti i versetti del Pentateuco, in un Set. Serve alla post-verifica
+ * dell'assistente (F4.3) per distinguere un riferimento **inventato** da uno
+ * **reale ma privo di testo curato**: entrambi restano non inseribili, ma dire
+ * «inesistente nel dataset» di un versetto che il dataset contiene sarebbe falso,
+ * e questa è un'app che sull'onestà di ciò che sa e non sa si regge tutta.
+ * I cinque file pesano ~260 kB gzip in tutto — metà di embeddings.json, che la
+ * stessa vista scarica comunque — e sono già in cache per il libro in lettura.
+ */
+export function useIdVersetti(attivo: boolean): Caricamento<Set<string>> {
+  const [esito, setEsito] = useState<Caricamento<Set<string>>>({ stato: 'in_corso' })
+  useEffect(() => {
+    if (!attivo) return
+    let vivo = true
+    setEsito({ stato: 'in_corso' })
+    Promise.all(LIBRI.map((l) => caricaVersetti(l.codice)))
+      .then((libri) => {
+        if (vivo) setEsito({ stato: 'pronto', dati: new Set(libri.flatMap((l) => l.versetti.map((v) => v.id))) })
       })
       .catch((e: unknown) => {
         if (vivo) setEsito({ stato: 'errore', messaggio: e instanceof Error ? e.message : String(e) })

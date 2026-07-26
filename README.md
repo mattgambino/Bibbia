@@ -11,6 +11,13 @@ sotto `public/data/`, caricati a runtime. Lingua di lavoro e UI: italiano. La cu
 copre **Genesi 1–11**; il testo ebraico e la struttura libro/capitolo/versetto sono
 importati per tutto il Pentateuco.
 
+**Rete a runtime.** L'app contatta tre sole origini, tutte facoltative: i **tile
+OpenStreetMap** per la carta di sfondo della mappa (SPECIFICA §5), **Ollama in locale**
+per il modulo assistente, e i link a **Sefaria** nelle note della tradizione ebraica (che
+sono `href`, non chiamate). Tutto il resto — testo, dati, font — è servito dalla stessa
+origine: **offline l'app funziona per intero**, con la sola mappa priva di carta di
+sfondo (i marker e i loro dati restano al loro posto).
+
 > Questo README è la guida tecnica (setup, comandi, dati). La **visione e i vincoli**
 > stanno in `docs/`: `SPECIFICA.md` (cosa e perché), `SCHEMI-DATI.md` (schemi v1 e
 > convenzioni — prevale sul §6 della specifica), `DESIGN.md` (direzione visiva),
@@ -52,10 +59,16 @@ npm run preview    # anteprima locale del build
 | `npm run build`    | Type-check (`tsc -b`) + build di produzione in `dist/`.                 |
 | `npm run preview`  | Serve il build di `dist/` in locale.                                    |
 | `npm run valida`   | Valida `public/data/` e `bootstrap/` contro gli schemi Zod + controlli incrociati. Exit ≠ 0 se ci sono errori. |
+| `npm test`         | Regressione del guardrail RAG (`src/lib/rag.ts`) + giro del validatore sulle fixture. Nessuna dipendenza aggiuntiva: `node --test` con `tsx`. |
 | `npm run dossier`  | Genera in `export/` il dossier leggibile dei soli file curati (`--solo-da-verificare` per il solo residuo da verificare). |
 
 **Regola d'oro:** dopo ogni modifica a schemi o dati, `npm run valida` deve essere
 verde. Un task non è chiuso con la validazione rossa.
+
+I test di `test/` coprono l'unico punto in cui i non-negoziabili sul testo biblico
+diventano codice eseguito: la post-verifica dei riferimenti della risposta
+dell'assistente. Anche lì vale la regola 1 — nessun testo biblico è scritto nei test,
+i casi si scelgono dal dataset e i testi attesi si leggono dai file.
 
 ## Struttura
 
@@ -119,7 +132,7 @@ conforme allo schema `Traduzione` in
     "completa": false
   },
   "testi": {
-    "gen.1.1": "In principio Dio creò il cielo e la terra.",
+    "gen.1.1": "…",
     "gen.1.2": "…"
   }
 }

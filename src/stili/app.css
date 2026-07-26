@@ -677,9 +677,11 @@
 .tag-fuori-perimetro {
   font-size: var(--testo-xs);
   letter-spacing: 0.03em;
-  /* Testo sostanziale che il lettore deve leggere: inchiostro medio, non tenue —
-     a 12px la tenue cade a 4.25:1 sulla carta dell'apparato, sotto l'AA. Il segno
-     em-dash resta tenue perché è aria-hidden e ridondante con questa dicitura. */
+  /* Testo sostanziale che il lettore deve leggere, non un'etichetta di apparato:
+     inchiostro medio, non tenue. La deviazione nacque per contrasto (la tenue di
+     allora cadeva a 4.25:1 sulla carta dell'apparato); ora la tenue è AA ovunque,
+     ma la ragione di gerarchia resta e il colore non cambia. Il segno em-dash
+     resta tenue perché è aria-hidden e ridondante con questa dicitura. */
   color: var(--inchiostro-medio);
   border: 1px solid var(--filetto-marcato);
   border-radius: var(--raggio-sm);
@@ -1541,7 +1543,11 @@ button.scheda-maniglia:hover {
   color: var(--status-majority);
 }
 .binario-forcella--majority .forcella-tratto {
+  /* Mezzo pixel di differenza da `consensus` non è un canale: senza confronto
+     affiancato è invisibile. Il tratteggio lungo separa i due gradi anche in
+     bianco e nero, e resta distante dal tratteggio corto di `disputed` (5 3). */
   stroke-width: 1;
+  stroke-dasharray: 12 3;
 }
 .binario-forcella--disputed {
   color: var(--status-disputed);

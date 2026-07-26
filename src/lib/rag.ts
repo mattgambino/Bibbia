@@ -134,9 +134,22 @@ export function messaggiChat(
  * - `versetto` / `nota`: esiste nel dataset **e** era nel contesto recuperato → ok;
  * - `fuori-contesto`: esiste nel dataset ma non era tra i passi recuperati (il
  *   modello lo ha portato da fuori) → da segnalare;
+ * - `non-curato`: il versetto esiste nel dataset ma non ne esiste il testo curato,
+ *   quindi l'app non ha nulla da inserire → da segnalare;
  * - `inesistente`: non risolvibile nel dataset (riferimento inventato) → da segnalare.
+ *
+ * Solo i primi due sono verificati: tutti gli altri finiscono in `anomalie` e non
+ * portano mai testo. `non-curato` esiste perché il blocco dev'essere prudente ma la
+ * *dicitura* dev'essere vera: chiamare «inesistente» un versetto che il dataset
+ * contiene sarebbe un'affermazione falsa in un'app che si regge sull'onestà di ciò
+ * che sa e non sa.
  */
-export type EsitoRif = 'versetto' | 'nota' | 'fuori-contesto' | 'inesistente'
+export type EsitoRif = 'versetto' | 'nota' | 'fuori-contesto' | 'non-curato' | 'inesistente'
+
+/** Un riferimento è verificato solo se risolve **e** era nel contesto recuperato. */
+export function verificato(esito: EsitoRif): boolean {
+  return esito === 'versetto' || esito === 'nota'
+}
 
 /** Un pezzo di risposta: testo semplice oppure un riferimento già verificato. */
 export type Segmento =
@@ -167,6 +180,8 @@ type ContestoVerifica = {
   fonti: Fonte[]
   testoVersetto: (ref: string) => string | undefined
   nota: (id: string) => { titolo: string; testo: string } | undefined
+  /** Il versetto esiste nel dataset (verses/<libro>.json), a prescindere dal testo curato. */
+  versettoEsiste: (id: string) => boolean
 }
 
 /**
@@ -199,7 +214,7 @@ export function analizzaRisposta(
       segmenti.push({ tipo: 'testo', testo: m[0] })
       continue
     }
-    if (seg.esito === 'fuori-contesto' || seg.esito === 'inesistente') anomalie.push(seg)
+    if (!verificato(seg.esito)) anomalie.push(seg)
     segmenti.push(seg)
   }
   if (cursore < testo.length) segmenti.push({ tipo: 'testo', testo: testo.slice(cursore) })
@@ -230,11 +245,17 @@ function classifica(
 
   const etichetta = etichettaVersetto(id)
   const testo = ctx.testoVersetto(id)
-  // "Esiste nel dataset" = l'app ne ha il testo curato. Un versetto fuori dal corpus
-  // (fuori da Gen 1–3, dove arriva la letterale) non è inseribile dal database:
-  // se non era nemmeno nel contesto lo si tratta come inventato.
+  // Senza testo curato l'app non ha nulla da inserire dal database: il riferimento
+  // non è inseribile in nessuno dei tre casi qui sotto. Ma "non inseribile" e
+  // "inventato" non sono la stessa cosa, e vengono detti in modo diverso: un
+  // versetto fuori dal corpus curato (fuori da Gen 1–3, dove arriva la letterale)
+  // esiste nel dataset ed è raggiungibile in lettura.
   if (testo === undefined) {
-    const esito: EsitoRif = versiInContesto.has(id) ? 'fuori-contesto' : 'inesistente'
+    const esito: EsitoRif = versiInContesto.has(id)
+      ? 'fuori-contesto'
+      : ctx.versettoEsiste(id)
+        ? 'non-curato'
+        : 'inesistente'
     return { tipo: 'rif', esito, refTipo: 'versetto', ref: id, etichetta }
   }
   if (!versiInContesto.has(id))

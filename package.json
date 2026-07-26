@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "valida": "tsx scripts/valida.ts",
+    "test": "node --import tsx --test test/*.test.ts",
     "dossier": "tsx scripts/export-dossier.ts"
   },
   "dependencies": {

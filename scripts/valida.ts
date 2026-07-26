@@ -9,7 +9,9 @@
 //     perfetta dei versetti: niente buchi, niente sovrapposizioni (la contiguità è
 //     verificata sull'ordine dei versetti del file verses/<libro>.json);
 //   - coerenza fonti ↔ da_verificare: un record senza alcuna fonte (in tutti i suoi
-//     array `fonti`, anche annidati) non può avere da_verificare: false;
+//     array `fonti`, anche annidati, ECCETTO composizione.nota_di_metodo.fonti, escluse
+//     di proposito da SCHEMI-DATI §2.5 — v. il commento sul posto) non può avere
+//     da_verificare: false;
 //   - chiavi delle traduzioni risolvibili su id TM; traduzione "completa" senza buchi
 //     oltre a quelli dichiarati in meta.lacune (e ogni lacuna dichiarata dev'essere reale);
 //   - commentatore e sefaria_ref valorizzati solo quando tipo = "tradizione_ebraica";

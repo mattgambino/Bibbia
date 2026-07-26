@@ -12,7 +12,7 @@ Esplicitamente **fuori direzione**, anche se le skill li propongono: gradienti d
 
 - Font con copertura **completa** di niqqud (vocali) e te'amim (accenti di cantillazione). Proposta di default: **Ezra SIL** (o la variante SR), licenza SIL OFL, progettato per il testo masoretico con cantillazione. Alternative con supporto te'amim se la resa a schermo delude: Taamey David CLM / Taamey Frank CLM (verificarne la licenza prima di includerle). SBL Hebrew ha resa eccellente ma licenza da verificare per il self-hosting: non è il default.
 - La scelta si chiude solo dopo **verifica visiva** su versetti reali con segni densi (più te'amim e niqqud sulla stessa parola), a più corpi.
-- Font **self-hosted** in `public/fonts/` con `@font-face`: l'app deve funzionare offline, niente CDN.
+- Font **self-hosted** in `public/fonts/` con `@font-face`: l'app deve funzionare offline, niente CDN. L'unica eccezione al funzionamento offline è la **carta di sfondo della mappa** (tile OpenStreetMap, imposti da SPECIFICA §5): senza rete i marker e i loro dati restano, manca solo lo sfondo. Nessun'altra superficie può dipendere dalla rete.
 - Ebraico sempre in `dir="rtl"`; quando compare inline dentro testo italiano (pannello parola, note), isolarlo (`<bdi>` o `unicode-bidi: isolate`) per evitare rotture bidirezionali.
 - Corpo dell'ebraico ~125–140% del corpo latino affiancato, interlinea generosa: i segni stanno sopra e sotto la riga e non devono collidere né tagliarsi.
 - Niente `letter-spacing` sull'ebraico; nessuna sillabazione o spezzatura delle parole.

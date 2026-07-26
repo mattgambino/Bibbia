@@ -120,7 +120,13 @@
 
   --inchiostro: #1c1c19;      /* testo primario, ebraico compreso */
   --inchiostro-medio: #4d4d46; /* traduzione secondaria, metadati leggibili */
-  --inchiostro-tenue: #6f6f66; /* etichette; contrasto ≥ 4.5:1 su --carta-* */
+  /* Etichette e apparato minore. Il valore è vincolato dalla carta PIÙ SCURA su cui
+     cade (--carta-incisa): a 12px non c'è "testo grande", quindi la soglia è 4.5:1
+     ovunque. Misurato: 4.67:1 su --carta-incisa, 5.09:1 su --carta-apparato,
+     5.86:1 su --carta-lettura, 6.07:1 su --carta-rilievo. Il valore precedente
+     (#6f6f66) cadeva a 3.90:1 e 4.25:1 sulle due carte laterali — sotto l'AA che
+     DESIGN.md §6.5 dà per non negoziabile. Chi lo cambia rimisuri su tutte e quattro. */
+  --inchiostro-tenue: #636359;
 
   --filetto: #d5d3ca;         /* righe di separazione */
   --filetto-marcato: #b3b0a4;

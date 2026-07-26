@@ -61,6 +61,20 @@ risponde.
 > Nota: da una pagina servita in **https** il browser blocca le chiamate in chiaro a
 > `http://localhost:11434` (mixed content). In sviluppo (http) non è un problema.
 
+## Spostare Ollama su un'altra porta (`ollama-base`)
+
+Chi non usa la porta standard può impostare a mano, dalla console del browser, la chiave
+`localStorage` **`ollama-base`** (nessuna UI dell'app la scrive):
+
+```js
+localStorage.setItem('ollama-base', 'http://127.0.0.1:11500')
+```
+
+Sono ammessi **solo host di loopback** (`localhost`, `127.0.0.1`, `::1`) in `http`/`https`:
+qualunque altro valore viene scartato con un avviso in console e si torna al default
+`http://localhost:11434`. Non è una limitazione formale — insieme alla domanda partirebbe
+anche il **contesto curato** allegato, e la specifica §9 vuole che non lasci mai la macchina.
+
 ## Come funziona (F4.2)
 
 1. La domanda viene trasformata in un embedding con `bge-m3` (stesso spazio dei vettori
@@ -83,9 +97,19 @@ il codice la ri-analizza (`analizzaRisposta` in `src/lib/rag.ts`):
     la nota si espande in linea col proprio testo dal database);
   - _fuori dal contesto_ → esistono nel dataset ma non erano tra i passi recuperati (il
     modello li ha portati da fuori) → **segnalati**;
+  - _senza testo curato_ → il versetto esiste nel dataset ed è raggiungibile in lettura, ma
+    la traduzione letterale non lo copre ancora: l'app non ha testo da inserire →
+    **segnalati**;
   - _inesistenti_ → non risolvibili nel dataset (riferimento inventato) → **segnalati**.
   I riferimenti non verificati sono marcati in linea e riepilogati in cima alla risposta con
   un avviso evidente (non vengono nascosti: si vede che il modello ha sbagliato).
+
+  Gli ultimi tre casi sono bloccati **allo stesso modo**: quello che cambia è solo
+  l'affermazione che si fa all'utente. «Senza testo curato» esiste apposta perché dire
+  «inesistente nel dataset» di un versetto che il dataset contiene sarebbe falso — e questa è
+  un'app che si regge sull'onestà di ciò che sa e ciò che non sa. Per distinguerli la vista
+  carica gli id di tutti i versetti del Pentateuco (`useIdVersetti`, ~260 kB gzip, in buona
+  parte già in cache dalla lettura); finché non sono arrivati vale l'esito più prudente.
 - **Versetti dal database.** Il testo di un versetto citato è **sempre** quello del database
   (traduzione letterale), inserito in linea alla prima citazione; il modello non lo produce
   mai (glielo vieta il system prompt del §9, e comunque non verrebbe usato).

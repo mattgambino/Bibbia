@@ -11,9 +11,44 @@
 // sono indistinguibili — entrambi arrivano come un `TypeError` di fetch — quindi il
 // messaggio di errore copre i due casi insieme (vedi la vista Assistente).
 
-/** Base URL del server Ollama. Sovrascrivibile per chi lo espone altrove. */
-export const OLLAMA_BASE =
-  (typeof localStorage !== 'undefined' && localStorage.getItem('ollama-base')) || 'http://localhost:11434'
+/** Base URL di default: Ollama sulla porta standard, sulla macchina dell'utente. */
+export const OLLAMA_DEFAULT = 'http://localhost:11434'
+
+/**
+ * Accetta solo un host di loopback. L'invariante «solo Ollama locale» (CLAUDE.md
+ * regola 5, specifica §9) non può reggersi sul valore di default: la chiave
+ * `ollama-base` di localStorage finirebbe intatta dentro fetch, e con lei
+ * partirebbero verso un'origine qualunque la domanda dell'utente **e il contesto
+ * curato** che le viene allegato. Un valore non locale viene scartato, non corretto
+ * in silenzio: si torna al default e lo si dice in console.
+ */
+export function baseLocale(grezzo: string | null | undefined): string {
+  if (!grezzo) return OLLAMA_DEFAULT
+  let url: URL
+  try {
+    url = new URL(grezzo)
+  } catch {
+    console.warn(`ollama-base ignorato ("${grezzo}"): non è un URL valido. Uso ${OLLAMA_DEFAULT}.`)
+    return OLLAMA_DEFAULT
+  }
+  const loopback = ['localhost', '127.0.0.1', '[::1]', '::1'].includes(url.hostname)
+  const schemaAmmesso = url.protocol === 'http:' || url.protocol === 'https:'
+  if (!loopback || !schemaAmmesso) {
+    console.warn(
+      `ollama-base ignorato ("${grezzo}"): l'assistente parla solo con un server locale ` +
+        `(localhost o 127.0.0.1, http/https). Uso ${OLLAMA_DEFAULT}.`,
+    )
+    return OLLAMA_DEFAULT
+  }
+  // Normalizza: via query, frammento e barra finale; un eventuale path resta
+  // (chi mette Ollama dietro un proxy locale con prefisso).
+  return url.origin + url.pathname.replace(/\/+$/, '')
+}
+
+/** Base URL del server Ollama. Sovrascrivibile, ma solo su loopback: v. `baseLocale`. */
+export const OLLAMA_BASE = baseLocale(
+  typeof localStorage !== 'undefined' ? localStorage.getItem('ollama-base') : null,
+)
 
 export type ModelloOllama = { nome: string }
 
