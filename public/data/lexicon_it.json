@@ -4422,10 +4422,10 @@
         "tipo": "dataset",
         "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
         "url": "https://github.com/STEPBible/STEPBible-Data",
-        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"autumn\""
+        "dettaglio": "CC BY 4.0 — TBESH dà senso 1 «autumn/harvest time» e senso 2 (CLBL) «winter»; per la coppia stagionale קַיִץ/חֹרֶף di Gen 8,22 (unica occorrenza) la resa è «inverno» (senso 2)."
       }
     ],
-    "da_verificare": true
+    "da_verificare": false
   },
   "H2790A": {
     "glossa_it": "arare | tramare | incidere",
@@ -6660,16 +6660,16 @@
     "da_verificare": false
   },
   "H8316": {
-    "glossa_it": "cottura",
+    "glossa_it": "arsione | incendio",
     "fonti": [
       {
         "tipo": "dataset",
         "titolo": "STEPBible TBESH (Translators Brief lexicon of Extended Strongs for Hebrew), Tyndale House Cambridge",
         "url": "https://github.com/STEPBible/STEPBible-Data",
-        "dettaglio": "CC BY 4.0 — resa italiana della colonna Gloss: \"fire\""
+        "dettaglio": "CC BY 4.0 — TBESH: glossa breve «fire», estesa «burning» (l'atto/evento del bruciare, non אֵשׁ); reso «arsione | incendio» sulle occorrenze del Pentateuco (arsioni rituali Lev 10,6; Num 19; conflagrazione Deu 29,22)."
       }
     ],
-    "da_verificare": true
+    "da_verificare": false
   },
   "H8337": {
     "glossa_it": "sei",
